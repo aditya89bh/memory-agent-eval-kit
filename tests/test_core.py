@@ -1118,3 +1118,35 @@ def test_create_adapter_cli_generates_template(
     output = capsys.readouterr().out
     assert "Adapter template generated" in output
     assert (tmp_path / "memory_agent_eval_kit" / "adapters" / "my_adapter.py").exists()
+
+
+def test_public_benchmark_submission_validation_accepts_valid_payload() -> None:
+    from memory_agent_eval_kit.submissions import validate_submission
+
+    payload = {
+        "agent_name": "ExternalAgent",
+        "adapter_name": "custom",
+        "suite_version": "v3",
+        "benchmark_score": 0.94,
+        "scenario_count": 1,
+        "results": [{"scenario_id": "recall_001", "category": "recall", "score": 1.0}],
+    }
+    assert validate_submission(payload).valid
+
+
+def test_public_benchmark_submission_validation_rejects_invalid_payload() -> None:
+    from memory_agent_eval_kit.submissions import validate_submission
+
+    result = validate_submission(
+        {
+            "agent_name": "",
+            "adapter_name": "custom",
+            "suite_version": "v3",
+            "benchmark_score": 1.5,
+            "scenario_count": 0,
+            "results": [{"scenario_id": "recall_001", "category": "recall", "score": -0.1}],
+        }
+    )
+    assert not result.valid
+    assert "benchmark_score must be a number between 0 and 1" in result.errors
+    assert "scenario_count must be a positive integer" in result.errors
