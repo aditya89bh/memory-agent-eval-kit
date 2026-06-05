@@ -259,6 +259,15 @@ def test_aggregate_results() -> None:
     assert metrics.hallucination_rate == 0.0
 
 
+def test_profile_benchmark(tmp_path: Path) -> None:
+    from memory_agent_eval_kit.benchmarks.profiling import profile_benchmark
+
+    profile = profile_benchmark(categories=["recall"], output_dir=tmp_path)
+    assert profile.scenario_count == 20
+    assert profile.peak_memory_kb > 0
+    assert (tmp_path / "profile.json").exists()
+
+
 def test_memory_scale_benchmark(tmp_path: Path) -> None:
     from memory_agent_eval_kit.benchmarks.scale import run_memory_scale_benchmark
 
