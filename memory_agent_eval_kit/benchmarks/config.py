@@ -15,6 +15,7 @@ class BenchmarkSuiteConfig:
     categories: list[Category] | None = None
     stress: bool = False
     metadata: dict[str, str] = field(default_factory=dict)
+    seed: int | None = None
 
     @classmethod
     def for_categories(

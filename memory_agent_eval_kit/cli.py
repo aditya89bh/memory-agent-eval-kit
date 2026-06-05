@@ -52,6 +52,12 @@ def build_parser() -> argparse.ArgumentParser:
     benchmark.add_argument(
         "--stress", action="store_true", help="Run synthetic memory stress suite"
     )
+    benchmark.add_argument(
+        "--seed",
+        type=int,
+        default=None,
+        help="Deterministic scenario order seed",
+    )
     validate = subparsers.add_parser("validate", help="Validate benchmark dataset")
     validate.add_argument("--dataset", type=Path, default=None)
 
@@ -85,7 +91,12 @@ def main(argv: list[str] | None = None) -> int:
         adapter = SimpleMemoryAgent()
         runner = BenchmarkRunner(adapter=adapter, dataset_path=args.dataset)
         categories = None if args.category is None else list(args.category)
-        run = runner.run(categories=categories, report_dir=args.report_dir, stress=args.stress)
+        run = runner.run(
+            categories=categories,
+            report_dir=args.report_dir,
+            stress=args.stress,
+            seed=args.seed,
+        )
         print(_format_summary(run.metrics))
         return 0
     parser.error("Unknown command")

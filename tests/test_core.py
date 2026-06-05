@@ -611,3 +611,22 @@ def test_expanded_poisoning_suite_has_trust_variants() -> None:
     }
     assert "malicious update" in poisoning_types
     assert "source trust" in poisoning_types
+
+
+def test_benchmark_seed_deterministic_order(tmp_path: Path) -> None:
+    run_a = BenchmarkRunner(SimpleMemoryAgent()).run(
+        categories=["recall"], report_dir=tmp_path / "a", seed=42
+    )
+    run_b = BenchmarkRunner(SimpleMemoryAgent()).run(
+        categories=["recall"], report_dir=tmp_path / "b", seed=42
+    )
+    assert [result.scenario_id for result in run_a.results] == [
+        result.scenario_id for result in run_b.results
+    ]
+
+
+def test_cli_seed_flag(tmp_path: Path) -> None:
+    assert (
+        main(["benchmark", "--category", "recall", "--seed", "42", "--report-dir", str(tmp_path)])
+        == 0
+    )

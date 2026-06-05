@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import random
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -70,13 +71,19 @@ class BenchmarkRunner:
         report_dir: Path | str | None = "reports",
         stress: bool = False,
         config: BenchmarkSuiteConfig | None = None,
+        seed: int | None = None,
     ) -> BenchmarkRun:
-        suite_config = config or BenchmarkSuiteConfig(categories=categories, stress=stress)
+        suite_config = config or BenchmarkSuiteConfig(
+            categories=categories, stress=stress, seed=seed
+        )
         scenarios = (
             generate_stress_scenarios()
             if suite_config.stress
             else load_scenarios(self.dataset_path, categories=suite_config.categories)
         )
+        if suite_config.seed is not None:
+            scenarios = list(scenarios)
+            random.Random(suite_config.seed).shuffle(scenarios)
         results = [
             self.evaluators[scenario.category].evaluate(scenario, self.adapter)
             for scenario in scenarios
