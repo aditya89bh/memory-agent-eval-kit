@@ -722,3 +722,34 @@ def test_leaderboard_assigns_overall_category_and_latency_ranks(tmp_path: Path) 
     LeaderboardGenerator(tmp_path).write(entries)
     payload = json.loads((tmp_path / "results.json").read_text(encoding="utf-8"))
     assert {"overall_rank", "category_rank", "latency_rank"} <= set(payload[0])
+
+
+def test_generate_visual_assets_writes_svg_files(tmp_path: Path) -> None:
+    from memory_agent_eval_kit.reports import generate_visual_assets
+
+    report = {
+        "metrics": {
+            "overall_score": 0.91,
+            "recall_accuracy": 1.0,
+            "forgetting_accuracy": 0.8,
+            "poisoning_resistance": 0.95,
+            "timeline_reasoning_accuracy": 0.9,
+            "drift_accuracy": 0.85,
+        },
+        "category_breakdown": {"recall": {"score": 1.0}, "forgetting": {"score": 0.8}},
+    }
+    leaderboard = [{"agent_name": "agent-a", "overall_score": 0.91}]
+    report_path = tmp_path / "report.json"
+    leaderboard_path = tmp_path / "leaderboard.json"
+    output_dir = tmp_path / "visuals"
+    report_path.write_text(json.dumps(report), encoding="utf-8")
+    leaderboard_path.write_text(json.dumps(leaderboard), encoding="utf-8")
+
+    paths = generate_visual_assets(report_path, leaderboard_path, output_dir)
+
+    assert {path.name for path in paths} == {
+        "category_score_chart.svg",
+        "leaderboard_chart.svg",
+        "benchmark_summary_chart.svg",
+    }
+    assert all(path.read_text(encoding="utf-8").startswith("<svg") for path in paths)

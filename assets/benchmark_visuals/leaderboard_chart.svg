@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="114" viewBox="0 0 700 114" role="img">
+<style>text{font-family:Inter,Arial,sans-serif}.title{font-size:22px;font-weight:700}.label{font-size:13px}.value{font-size:12px;fill:#334155}.bar{fill:#6366f1}.bg{fill:#eef2ff}</style>
+<text class="title" x="24" y="36">Leaderboard Overall Scores</text>
+<text class="label" x="24" y="80">SimpleMemoryAgent</text>
+<rect class="bg" x="190" y="64" width="430.0" height="22.0" rx="5"/>
+<rect class="bar" x="190" y="64" width="395.0" height="22.0" rx="5"/>
+<text class="value" x="632.0" y="80.0">92%</text>
+</svg>

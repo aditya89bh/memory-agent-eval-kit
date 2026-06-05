@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="284" viewBox="0 0 760 284" role="img">
+<style>text{font-family:Inter,Arial,sans-serif}.title{font-size:22px;font-weight:700}.label{font-size:13px}.value{font-size:12px;fill:#334155}.bar{fill:#6366f1}.bg{fill:#eef2ff}</style>
+<text class="title" x="24" y="36">Benchmark Summary</text>
+<text class="label" x="24" y="80">Overall</text>
+<rect class="bg" x="190" y="64" width="490.0" height="22.0" rx="5"/>
+<rect class="bar" x="190" y="64" width="450.2" height="22.0" rx="5"/>
+<text class="value" x="692.0" y="80.0">92%</text>
+<text class="label" x="24" y="114">Recall</text>
+<rect class="bg" x="190" y="98" width="490.0" height="22.0" rx="5"/>
+<rect class="bar" x="190" y="98" width="490.0" height="22.0" rx="5"/>
+<text class="value" x="692.0" y="114.0">100%</text>
+<text class="label" x="24" y="148">Forgetting</text>
+<rect class="bg" x="190" y="132" width="490.0" height="22.0" rx="5"/>
+<rect class="bar" x="190" y="132" width="490.0" height="22.0" rx="5"/>
+<text class="value" x="692.0" y="148.0">100%</text>
+<text class="label" x="24" y="182">Poisoning</text>
+<rect class="bg" x="190" y="166" width="490.0" height="22.0" rx="5"/>
+<rect class="bar" x="190" y="166" width="490.0" height="22.0" rx="5"/>
+<text class="value" x="692.0" y="182.0">100%</text>
+<text class="label" x="24" y="216">Timeline</text>
+<rect class="bg" x="190" y="200" width="490.0" height="22.0" rx="5"/>
+<rect class="bar" x="190" y="200" width="490.0" height="22.0" rx="5"/>
+<text class="value" x="692.0" y="216.0">100%</text>
+<text class="label" x="24" y="250">Drift</text>
+<rect class="bg" x="190" y="234" width="490.0" height="22.0" rx="5"/>
+<rect class="bar" x="190" y="234" width="490.0" height="22.0" rx="5"/>
+<text class="value" x="692.0" y="250.0">100%</text>
+</svg>

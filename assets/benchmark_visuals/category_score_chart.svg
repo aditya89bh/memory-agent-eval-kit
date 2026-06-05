@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="590" viewBox="0 0 900 590" role="img">
+<style>text{font-family:Inter,Arial,sans-serif}.title{font-size:22px;font-weight:700}.label{font-size:13px}.value{font-size:12px;fill:#334155}.bar{fill:#6366f1}.bg{fill:#eef2ff}</style>
+<text class="title" x="24" y="36">Category Scores</text>
+<text class="label" x="24" y="80">adversarial_contradiction</text>
+<rect class="bg" x="190" y="64" width="630.0" height="22.0" rx="5"/>
+<rect class="bar" x="190" y="64" width="630.0" height="22.0" rx="5"/>
+<text class="value" x="832.0" y="80.0">100%</text>
+<text class="label" x="24" y="114">continuity</text>
+<rect class="bg" x="190" y="98" width="630.0" height="22.0" rx="5"/>
+<rect class="bar" x="190" y="98" width="315.0" height="22.0" rx="5"/>
+<text class="value" x="832.0" y="114.0">50%</text>
+<text class="label" x="24" y="148">contradiction</text>
+<rect class="bg" x="190" y="132" width="630.0" height="22.0" rx="5"/>
+<rect class="bar" x="190" y="132" width="630.0" height="22.0" rx="5"/>
+<text class="value" x="832.0" y="148.0">100%</text>
+<text class="label" x="24" y="182">correction</text>
+<rect class="bg" x="190" y="166" width="630.0" height="22.0" rx="5"/>
+<rect class="bar" x="190" y="166" width="630.0" height="22.0" rx="5"/>
+<text class="value" x="832.0" y="182.0">100%</text>
+<text class="label" x="24" y="216">forgetting</text>
+<rect class="bg" x="190" y="200" width="630.0" height="22.0" rx="5"/>
+<rect class="bar" x="190" y="200" width="630.0" height="22.0" rx="5"/>
+<text class="value" x="832.0" y="216.0">100%</text>
+<text class="label" x="24" y="250">hallucinated_recall</text>
+<rect class="bg" x="190" y="234" width="630.0" height="22.0" rx="5"/>
+<rect class="bar" x="190" y="234" width="630.0" height="22.0" rx="5"/>
+<text class="value" x="832.0" y="250.0">100%</text>
+<text class="label" x="24" y="284">hallucination</text>
+<rect class="bg" x="190" y="268" width="630.0" height="22.0" rx="5"/>
+<rect class="bar" x="190" y="268" width="630.0" height="22.0" rx="5"/>
+<text class="value" x="832.0" y="284.0">100%</text>
+<text class="label" x="24" y="318">memory_drift</text>
+<rect class="bg" x="190" y="302" width="630.0" height="22.0" rx="5"/>
+<rect class="bar" x="190" y="302" width="630.0" height="22.0" rx="5"/>
+<text class="value" x="832.0" y="318.0">100%</text>
+<text class="label" x="24" y="352">memory_leakage</text>
+<rect class="bg" x="190" y="336" width="630.0" height="22.0" rx="5"/>
+<rect class="bar" x="190" y="336" width="630.0" height="22.0" rx="5"/>
+<text class="value" x="832.0" y="352.0">100%</text>
+<text class="label" x="24" y="386">memory_poisoning</text>
+<rect class="bg" x="190" y="370" width="630.0" height="22.0" rx="5"/>
+<rect class="bar" x="190" y="370" width="630.0" height="22.0" rx="5"/>
+<text class="value" x="832.0" y="386.0">100%</text>
+<text class="label" x="24" y="420">recall</text>
+<rect class="bg" x="190" y="404" width="630.0" height="22.0" rx="5"/>
+<rect class="bar" x="190" y="404" width="630.0" height="22.0" rx="5"/>
+<text class="value" x="832.0" y="420.0">100%</text>
+<text class="label" x="24" y="454">stale_memory</text>
+<rect class="bg" x="190" y="438" width="630.0" height="22.0" rx="5"/>
+<rect class="bar" x="190" y="438" width="456.8" height="22.0" rx="5"/>
+<text class="value" x="832.0" y="454.0">72%</text>
+<text class="label" x="24" y="488">temporal</text>
+<rect class="bg" x="190" y="472" width="630.0" height="22.0" rx="5"/>
+<rect class="bar" x="190" y="472" width="598.5" height="22.0" rx="5"/>
+<text class="value" x="832.0" y="488.0">95%</text>
+<text class="label" x="24" y="522">temporal_drift</text>
+<rect class="bg" x="190" y="506" width="630.0" height="22.0" rx="5"/>
+<rect class="bar" x="190" y="506" width="630.0" height="22.0" rx="5"/>
+<text class="value" x="832.0" y="522.0">100%</text>
+<text class="label" x="24" y="556">timeline_reasoning</text>
+<rect class="bg" x="190" y="540" width="630.0" height="22.0" rx="5"/>
+<rect class="bar" x="190" y="540" width="630.0" height="22.0" rx="5"/>
+<text class="value" x="832.0" y="556.0">100%</text>
+</svg>
