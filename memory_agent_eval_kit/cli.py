@@ -19,6 +19,7 @@ CATEGORY_CHOICES: tuple[Category, ...] = (
     "stale_memory",
     "continuity",
     "hallucination",
+    "stress",
 )
 
 
@@ -39,6 +40,9 @@ def build_parser() -> argparse.ArgumentParser:
         action="append",
         help="Run one or more categories",
     )
+    benchmark.add_argument(
+        "--stress", action="store_true", help="Run synthetic memory stress suite"
+    )
     return parser
 
 
@@ -49,7 +53,7 @@ def main(argv: list[str] | None = None) -> int:
         adapter = SimpleMemoryAgent()
         runner = BenchmarkRunner(adapter=adapter, dataset_path=args.dataset)
         categories = None if args.category is None else list(args.category)
-        run = runner.run(categories=categories, report_dir=args.report_dir)
+        run = runner.run(categories=categories, report_dir=args.report_dir, stress=args.stress)
         print(_format_summary(run.metrics))
         return 0
     parser.error("Unknown command")
@@ -73,6 +77,8 @@ def _format_summary(metrics: AggregateMetrics) -> str:
             f"Continuity: {pct(metrics.continuity_accuracy)}",
             f"Hallucination Rate: {pct(metrics.hallucination_rate)}",
             f"False Recall Rate: {pct(metrics.false_recall_rate)}",
+            f"Stress Recall: {pct(metrics.stress_recall_accuracy)}",
+            f"Latency Degradation: {metrics.latency_degradation_ms:.2f} ms",
         ]
     )
 

@@ -311,3 +311,23 @@ def test_hallucination_metrics_for_false_recall() -> None:
     metrics = aggregate_results([bad])
     assert metrics.hallucination_rate == 1.0
     assert metrics.false_recall_rate == 1.0
+
+
+def test_generate_stress_scenarios() -> None:
+    from memory_agent_eval_kit.benchmarks.stress import generate_stress_scenarios
+
+    scenarios = generate_stress_scenarios()
+    assert [len(scenario.memory_events) for scenario in scenarios] == [10, 100, 1000]
+    assert scenarios[-1].category == "stress"
+
+
+def test_stress_runner_and_metrics(tmp_path: Path) -> None:
+    run = BenchmarkRunner(SimpleMemoryAgent()).run(report_dir=tmp_path, stress=True)
+    assert run.metrics.total_scenarios == 3
+    assert run.metrics.stress_recall_accuracy == 1.0
+    assert run.metrics.latency_degradation_ms >= 0.0
+
+
+def test_cli_stress_flag(tmp_path: Path, capsys: pytest.CaptureFixture[str]) -> None:
+    assert main(["benchmark", "--stress", "--report-dir", str(tmp_path)]) == 0
+    assert "Stress Recall" in capsys.readouterr().out

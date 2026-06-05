@@ -6,6 +6,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 from memory_agent_eval_kit.adapters import MemoryAgentAdapter
+from memory_agent_eval_kit.benchmarks.stress import generate_stress_scenarios
 from memory_agent_eval_kit.datasets import load_scenarios
 from memory_agent_eval_kit.evaluators import (
     ContinuityEvaluator,
@@ -16,6 +17,7 @@ from memory_agent_eval_kit.evaluators import (
     RecallEvaluator,
     ScenarioEvaluator,
     StaleMemoryEvaluator,
+    StressEvaluator,
     TemporalEvaluator,
 )
 from memory_agent_eval_kit.metrics import AggregateMetrics, EvaluationResult, aggregate_results
@@ -44,12 +46,20 @@ class BenchmarkRunner:
             "stale_memory": StaleMemoryEvaluator(),
             "continuity": ContinuityEvaluator(),
             "hallucination": HallucinationEvaluator(),
+            "stress": StressEvaluator(),
         }
 
     def run(
-        self, categories: list[Category] | None = None, report_dir: Path | str | None = "reports"
+        self,
+        categories: list[Category] | None = None,
+        report_dir: Path | str | None = "reports",
+        stress: bool = False,
     ) -> BenchmarkRun:
-        scenarios = load_scenarios(self.dataset_path, categories=categories)
+        scenarios = (
+            generate_stress_scenarios()
+            if stress
+            else load_scenarios(self.dataset_path, categories=categories)
+        )
         results = [
             self.evaluators[scenario.category].evaluate(scenario, self.adapter)
             for scenario in scenarios
