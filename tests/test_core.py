@@ -277,6 +277,22 @@ def test_memory_scale_benchmark(tmp_path: Path) -> None:
     assert (tmp_path / "results.json").exists()
 
 
+def test_benchmark_registry(tmp_path: Path) -> None:
+    from memory_agent_eval_kit.benchmarks import BenchmarkRegistry, register_benchmark_suite
+
+    registry = BenchmarkRegistry()
+    suite = register_benchmark_suite(
+        "external",
+        tmp_path / "suite.json",
+        description="External suite",
+        version="v1",
+        registry=registry,
+    )
+    assert suite.name == "external"
+    assert registry.get("external").version == "v1"
+    assert registry.list()[0].description == "External suite"
+
+
 def test_benchmark_runner_runs_all(tmp_path: Path) -> None:
     run = BenchmarkRunner(SimpleMemoryAgent()).run(report_dir=tmp_path)
     assert run.metrics.total_scenarios >= 80
