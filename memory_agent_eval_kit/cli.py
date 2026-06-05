@@ -7,6 +7,7 @@ from pathlib import Path
 
 from memory_agent_eval_kit.adapters.simple import SimpleMemoryAgent
 from memory_agent_eval_kit.benchmarks import BenchmarkRunner
+from memory_agent_eval_kit.leaderboards import LeaderboardGenerator
 from memory_agent_eval_kit.metrics import AggregateMetrics
 from memory_agent_eval_kit.models import Category
 
@@ -46,12 +47,23 @@ def build_parser() -> argparse.ArgumentParser:
     benchmark.add_argument(
         "--stress", action="store_true", help="Run synthetic memory stress suite"
     )
+    leaderboard = subparsers.add_parser("leaderboard", help="Generate leaderboard files")
+    leaderboard.add_argument("--report", type=Path, default=Path("reports/results.json"))
+    leaderboard.add_argument("--output-dir", type=Path, default=Path("leaderboards"))
+    leaderboard.add_argument("--agent-name", default="SimpleMemoryAgent")
+    leaderboard.add_argument("--suite-name", default="default")
     return parser
 
 
 def main(argv: list[str] | None = None) -> int:
     parser = build_parser()
     args = parser.parse_args(argv)
+    if args.command == "leaderboard":
+        generator = LeaderboardGenerator(args.output_dir)
+        entry = generator.from_report(args.report, args.agent_name, args.suite_name)
+        generator.write([entry])
+        print(f"Leaderboard written to {args.output_dir}")
+        return 0
     if args.command == "benchmark":
         adapter = SimpleMemoryAgent()
         runner = BenchmarkRunner(adapter=adapter, dataset_path=args.dataset)

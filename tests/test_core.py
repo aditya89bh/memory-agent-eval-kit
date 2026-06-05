@@ -448,3 +448,36 @@ def test_benchmark_suite_config_filters_categories(tmp_path: Path) -> None:
 def test_cli_category_hallucination(tmp_path: Path, capsys: pytest.CaptureFixture[str]) -> None:
     assert main(["benchmark", "--category", "hallucination", "--report-dir", str(tmp_path)]) == 0
     assert "False Recall Rate" in capsys.readouterr().out
+
+
+def test_leaderboard_generation(tmp_path: Path) -> None:
+    from memory_agent_eval_kit.leaderboards import LeaderboardGenerator
+
+    report_dir = tmp_path / "reports"
+    BenchmarkRunner(SimpleMemoryAgent()).run(categories=["recall"], report_dir=report_dir)
+    output_dir = tmp_path / "leaderboards"
+    generator = LeaderboardGenerator(output_dir)
+    entry = generator.from_report(report_dir / "results.json", "agent", "recall")
+    generator.write([entry])
+    assert (output_dir / "results.json").exists()
+    assert "agent" in (output_dir / "results.md").read_text(encoding="utf-8")
+
+
+def test_cli_leaderboard(tmp_path: Path, capsys: pytest.CaptureFixture[str]) -> None:
+    report_dir = tmp_path / "reports"
+    BenchmarkRunner(SimpleMemoryAgent()).run(categories=["recall"], report_dir=report_dir)
+    output_dir = tmp_path / "leaderboards"
+    assert (
+        main(
+            [
+                "leaderboard",
+                "--report",
+                str(report_dir / "results.json"),
+                "--output-dir",
+                str(output_dir),
+            ]
+        )
+        == 0
+    )
+    assert "Leaderboard written" in capsys.readouterr().out
+    assert (output_dir / "results.md").exists()
