@@ -756,6 +756,50 @@ def test_leaderboard_assigns_overall_category_and_latency_ranks(tmp_path: Path) 
     )
 
 
+def test_write_comparison_dashboard(tmp_path: Path) -> None:
+    from memory_agent_eval_kit.reports import write_comparison_dashboard
+
+    report_a = tmp_path / "a.json"
+    report_b = tmp_path / "b.json"
+    report_a.write_text(
+        json.dumps(
+            {
+                "metrics": {
+                    "overall_score": 0.9,
+                    "total_scenarios": 2,
+                    "hallucination_rate": 0.0,
+                    "false_recall_rate": 0.0,
+                    "latency_avg_ms": 1.0,
+                    "latency_p95_ms": 2.0,
+                },
+                "category_breakdown": {"recall": {"score": 1.0}},
+            }
+        ),
+        encoding="utf-8",
+    )
+    report_b.write_text(
+        json.dumps(
+            {
+                "metrics": {
+                    "overall_score": 0.8,
+                    "total_scenarios": 2,
+                    "hallucination_rate": 0.1,
+                    "false_recall_rate": 0.1,
+                    "latency_avg_ms": 3.0,
+                    "latency_p95_ms": 4.0,
+                },
+                "category_breakdown": {"recall": {"score": 0.8}},
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    paths = write_comparison_dashboard({"agent-a": report_a, "agent-b": report_b}, tmp_path)
+
+    assert {path.name for path in paths} == {"comparison_dashboard.json", "comparison_dashboard.md"}
+    assert "agent-a" in (tmp_path / "comparison_dashboard.md").read_text(encoding="utf-8")
+
+
 def test_generate_visual_assets_writes_svg_files(tmp_path: Path) -> None:
     from memory_agent_eval_kit.reports import generate_visual_assets
 

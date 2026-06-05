@@ -8,6 +8,10 @@ from memory_agent_eval_kit.reports.comparison import (
     CategoryDelta,
     compare_results,
 )
+from memory_agent_eval_kit.reports.comparison_dashboard import (
+    DashboardEntry,
+    write_comparison_dashboard,
+)
 from memory_agent_eval_kit.reports.generator import ReportGenerator
 from memory_agent_eval_kit.reports.version_comparison import (
     BenchmarkVersionComparisonReport,
@@ -22,6 +26,7 @@ __all__ = [
     "BenchmarkComparison",
     "BenchmarkVersionComparisonReport",
     "CategoryDelta",
+    "DashboardEntry",
     "ReportGenerator",
     "VersionComparison",
     "archive_benchmark_report",
@@ -30,4 +35,5 @@ __all__ = [
     "generate_visual_assets",
     "list_benchmark_archives",
     "write_benchmark_version_comparison",
+    "write_comparison_dashboard",
 ]
