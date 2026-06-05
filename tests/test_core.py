@@ -392,3 +392,17 @@ def test_simple_agent_ignores_untrusted_overlap() -> None:
     answer = agent.query("What is the trusted timezone?")
     assert "Asia/Kolkata" in answer
     assert "UTC" not in answer
+
+
+def test_forgetting_evaluator_runs_delayed_leak_checks() -> None:
+    scenario = load_scenarios(categories=["forgetting"])[0]
+    result = ForgettingEvaluator().evaluate(scenario, SimpleMemoryAgent())
+    assert result.success
+    assert result.details["verification_queries"]
+    assert result.details["leak_detected"] is False
+
+
+def test_memory_leak_rate_metric() -> None:
+    leaked = EvaluationResult("f", "forgetting", False, 0.0, 1.0)
+    metrics = aggregate_results([leaked])
+    assert metrics.memory_leak_rate == 1.0
