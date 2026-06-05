@@ -4231,5 +4231,113 @@
       "seed phrase"
     ],
     "description": "No memory exists; agent must not invent recall."
+  },
+  {
+    "scenario_id": "timeline_reasoning_001",
+    "category": "timeline_reasoning",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "timeline_country_2022",
+        "timestamp": "2022-01-01T00:00:00Z",
+        "content": "In 2022 residence country was India"
+      },
+      {
+        "type": "fact",
+        "memory_id": "timeline_country_2024",
+        "timestamp": "2024-01-01T00:00:00Z",
+        "content": "In 2024 residence country was Germany"
+      },
+      {
+        "type": "fact",
+        "memory_id": "timeline_country_2026",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "content": "Current residence country is Greece"
+      }
+    ],
+    "query": "What is the current residence country?",
+    "expected_answer": "Greece",
+    "negative_assertions": [
+      "India",
+      "Germany"
+    ],
+    "expected_behavior": {
+      "answer": "Greece"
+    },
+    "scoring_rules": {
+      "mode": "exact"
+    },
+    "description": "Reason over chronological user state."
+  },
+  {
+    "scenario_id": "timeline_reasoning_002",
+    "category": "timeline_reasoning",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "timeline_country_2022",
+        "timestamp": "2022-01-01T00:00:00Z",
+        "content": "In 2022 residence country was India"
+      },
+      {
+        "type": "fact",
+        "memory_id": "timeline_country_2024",
+        "timestamp": "2024-01-01T00:00:00Z",
+        "content": "In 2024 residence country was Germany"
+      },
+      {
+        "type": "fact",
+        "memory_id": "timeline_country_2026",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "content": "Current residence country is Greece"
+      }
+    ],
+    "query": "What was the previous residence country?",
+    "expected_answer": "Germany",
+    "negative_assertions": [
+      "Greece"
+    ],
+    "expected_behavior": {
+      "answer": "Germany"
+    },
+    "scoring_rules": {
+      "mode": "exact"
+    },
+    "description": "Reason over chronological user state."
+  },
+  {
+    "scenario_id": "timeline_reasoning_003",
+    "category": "timeline_reasoning",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "timeline_country_2022",
+        "timestamp": "2022-01-01T00:00:00Z",
+        "content": "In 2022 residence country was India"
+      },
+      {
+        "type": "fact",
+        "memory_id": "timeline_country_2024",
+        "timestamp": "2024-01-01T00:00:00Z",
+        "content": "In 2024 residence country was Germany"
+      },
+      {
+        "type": "fact",
+        "memory_id": "timeline_country_2026",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "content": "Current residence country is Greece"
+      }
+    ],
+    "query": "Summarize the residence country timeline.",
+    "expected_answer": "India",
+    "negative_assertions": [],
+    "expected_behavior": {
+      "answer": "India",
+      "also_contains": "Germany Greece"
+    },
+    "scoring_rules": {
+      "mode": "contains_all"
+    },
+    "description": "Reason over chronological user state."
   }
 ]

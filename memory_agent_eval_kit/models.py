@@ -20,6 +20,7 @@ Category: TypeAlias = Literal[
     "memory_poisoning",
     "memory_leakage",
     "hallucinated_recall",
+    "timeline_reasoning",
 ]
 
 

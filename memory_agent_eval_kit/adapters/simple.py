@@ -32,12 +32,19 @@ class SimpleMemoryAgent(MemoryAgentAdapter):
             timeline = self._timeline(prompt, candidates)
             if timeline:
                 return " | ".join(timeline)
-        ranked = self._rank(prompt, candidates)
+        rank_candidates = candidates
+        if _asks_for_previous(prompt):
+            rank_candidates = [
+                memory
+                for memory in candidates
+                if not _is_current_memory(str(memory.get("content", "")))
+            ]
+        ranked = self._rank(prompt, rank_candidates)
         if not ranked:
             return "I do not know."
         top_score = ranked[0][0]
         top_memories = [memory for score, memory in ranked if score == top_score]
-        if self._looks_contradictory(prompt, top_memories):
+        if not _asks_for_previous(prompt) and self._looks_contradictory(prompt, top_memories):
             return "A contradiction is present in memory; this needs clarification."
         return str(ranked[0][1].get("content", "I do not know."))
 
@@ -92,11 +99,10 @@ class SimpleMemoryAgent(MemoryAgentAdapter):
             if memory.get("type") == "correction":
                 score += 2.0
             ranked.append((score, memory))
-        reverse_time = not _asks_for_previous(prompt)
         return sorted(
             ranked,
             key=lambda item: (item[0], _timestamp_value(item[1])),
-            reverse=reverse_time,
+            reverse=True,
         )
 
     def _timeline(self, prompt: str, memories: list[MemoryRecord]) -> list[str]:

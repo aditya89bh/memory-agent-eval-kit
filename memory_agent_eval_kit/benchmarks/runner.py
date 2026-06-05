@@ -25,6 +25,7 @@ from memory_agent_eval_kit.evaluators import (
     StressEvaluator,
     TemporalDriftEvaluator,
     TemporalEvaluator,
+    TimelineReasoningEvaluator,
 )
 from memory_agent_eval_kit.metrics import AggregateMetrics, EvaluationResult, aggregate_results
 from memory_agent_eval_kit.models import Category
@@ -58,6 +59,7 @@ class BenchmarkRunner:
             "memory_poisoning": PoisoningEvaluator(),
             "memory_leakage": MemoryLeakageEvaluator(),
             "hallucinated_recall": HallucinatedRecallEvaluator(),
+            "timeline_reasoning": TimelineReasoningEvaluator(),
         }
 
     def run(

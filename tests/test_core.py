@@ -576,3 +576,15 @@ def test_hallucinated_recall_suite() -> None:
     metrics = aggregate_results(results)
     assert metrics.hallucinated_recall_accuracy == 1.0
     assert metrics.false_recall_rate == 0.0
+
+
+def test_timeline_reasoning_suite() -> None:
+    from memory_agent_eval_kit.evaluators.timeline_reasoning import TimelineReasoningEvaluator
+
+    scenarios = load_scenarios(categories=["timeline_reasoning"])
+    assert len(scenarios) == 3
+    results = [
+        TimelineReasoningEvaluator().evaluate(scenario, SimpleMemoryAgent())
+        for scenario in scenarios
+    ]
+    assert aggregate_results(results).timeline_reasoning_accuracy == 1.0

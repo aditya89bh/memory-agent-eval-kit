@@ -54,7 +54,13 @@ class ScenarioEvaluator:
         score = self._positive_score(scenario, answer)
         extra_expected = scenario.expected_behavior.metadata.get("also_contains")
         if extra_expected is not None:
-            score = min(score, self._text_score(str(extra_expected), answer, scenario))
+            extra_text = str(extra_expected)
+            extra_score = (
+                1.0
+                if all(part.casefold() in answer.casefold() for part in extra_text.split())
+                else self._text_score(extra_text, answer, scenario)
+            )
+            score = min(score, extra_score)
         absent_ok = all(
             absent.casefold() not in answer.casefold() for absent in scenario.expected_absent
         )

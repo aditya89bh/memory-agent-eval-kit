@@ -15,6 +15,7 @@ from memory_agent_eval_kit.evaluators.stale_memory import StaleMemoryEvaluator
 from memory_agent_eval_kit.evaluators.stress import StressEvaluator
 from memory_agent_eval_kit.evaluators.temporal import TemporalEvaluator
 from memory_agent_eval_kit.evaluators.temporal_drift import TemporalDriftEvaluator
+from memory_agent_eval_kit.evaluators.timeline_reasoning import TimelineReasoningEvaluator
 
 __all__ = [
     "AdversarialContradictionEvaluator",
@@ -29,6 +30,7 @@ __all__ = [
     "PoisoningEvaluator",
     "TemporalEvaluator",
     "TemporalDriftEvaluator",
+    "TimelineReasoningEvaluator",
     "StaleMemoryEvaluator",
     "StressEvaluator",
     "ContinuityEvaluator",

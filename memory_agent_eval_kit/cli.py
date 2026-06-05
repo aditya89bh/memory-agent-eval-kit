@@ -27,6 +27,7 @@ CATEGORY_CHOICES: tuple[Category, ...] = (
     "memory_poisoning",
     "memory_leakage",
     "hallucinated_recall",
+    "timeline_reasoning",
 )
 
 
