@@ -822,3 +822,27 @@ def test_sensitive_memory_classification_benchmarks_measure_accuracy(tmp_path: P
     )
     assert len(run.results) == 5
     assert run.metrics.classification_accuracy == 1.0
+
+
+def test_enterprise_compliance_metrics_surface_in_reports_and_leaderboard(tmp_path: Path) -> None:
+    report_dir = tmp_path / "reports"
+    run = BenchmarkRunner(SimpleMemoryAgent()).run(
+        categories=[
+            "pii_deletion",
+            "gdpr_forgetting",
+            "retention_policy",
+            "sensitive_classification",
+        ],
+        report_dir=report_dir,
+    )
+    assert run.metrics.compliance_score == 1.0
+    assert run.metrics.deletion_score == 1.0
+    assert run.metrics.retention_score == 1.0
+    assert run.metrics.privacy_score == 1.0
+    report_text = (report_dir / "results.md").read_text(encoding="utf-8")
+    assert "Compliance Score" in report_text
+
+    from memory_agent_eval_kit.leaderboards import LeaderboardGenerator
+
+    entry = LeaderboardGenerator(tmp_path / "leaderboard").from_report(report_dir / "results.json")
+    assert entry.category_scores["compliance_score"] == 1.0

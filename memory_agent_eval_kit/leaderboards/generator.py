@@ -46,6 +46,8 @@ class LeaderboardGenerator:
             metrics.get("contradiction_resolution", 0.0)
         )
         category_scores["poisoning_resistance"] = float(metrics.get("poisoning_resistance", 0.0))
+        for key in ("compliance_score", "deletion_score", "retention_score", "privacy_score"):
+            category_scores[key] = float(metrics.get(key, 0.0))
         latency = {
             "avg_ms": float(metrics.get("latency_avg_ms", 0.0)),
             "p95_ms": float(metrics.get("latency_p95_ms", 0.0)),

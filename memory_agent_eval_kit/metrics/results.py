@@ -59,6 +59,10 @@ class AggregateMetrics:
     gdpr_compliance_score: float
     retention_compliance: float
     classification_accuracy: float
+    compliance_score: float
+    deletion_score: float
+    retention_score: float
+    privacy_score: float
     latency_degradation_ms: float
     latency_avg_ms: float
     latency_p95_ms: float
@@ -71,6 +75,11 @@ class AggregateMetrics:
 def _score_for(results: list[EvaluationResult], category: Category) -> float:
     category_results = [result.score for result in results if result.category == category]
     return mean(category_results) if category_results else 0.0
+
+
+def _mean_nonzero(values: list[float]) -> float:
+    present = [value for value in values if value > 0.0]
+    return mean(present) if present else 0.0
 
 
 def _latency_for(results: list[EvaluationResult], category: Category) -> float:
@@ -111,6 +120,22 @@ def aggregate_results(results: list[EvaluationResult]) -> AggregateMetrics:
     ambiguity_handling = (
         mean([result.score for result in ambiguous_results]) if ambiguous_results else 0.0
     )
+    deletion_score = _mean_nonzero(
+        [
+            _score_for(results, "pii_deletion"),
+            _score_for(results, "gdpr_forgetting"),
+            1.0 - _failure_rate_for(results, "memory_leakage"),
+        ]
+    )
+    retention_score = _score_for(results, "retention_policy")
+    privacy_score = _mean_nonzero(
+        [
+            _score_for(results, "sensitive_classification"),
+            _score_for(results, "gdpr_forgetting"),
+            _score_for(results, "pii_deletion"),
+        ]
+    )
+    compliance_score = _mean_nonzero([deletion_score, retention_score, privacy_score])
     return AggregateMetrics(
         overall_score=mean(scores) if scores else 0.0,
         recall_accuracy=_score_for(results, "recall"),
@@ -147,6 +172,10 @@ def aggregate_results(results: list[EvaluationResult]) -> AggregateMetrics:
         gdpr_compliance_score=_score_for(results, "gdpr_forgetting"),
         retention_compliance=_score_for(results, "retention_policy"),
         classification_accuracy=_score_for(results, "sensitive_classification"),
+        compliance_score=compliance_score,
+        deletion_score=deletion_score,
+        retention_score=retention_score,
+        privacy_score=privacy_score,
         latency_degradation_ms=latency_degradation_ms,
         latency_avg_ms=mean(latencies) if latencies else 0.0,
         latency_p95_ms=_p95(latencies),
