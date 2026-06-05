@@ -28,6 +28,7 @@ CATEGORY_CHOICES: tuple[Category, ...] = (
     "memory_leakage",
     "hallucinated_recall",
     "timeline_reasoning",
+    "memory_drift",
 )
 
 

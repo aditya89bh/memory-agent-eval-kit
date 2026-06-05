@@ -45,6 +45,8 @@ class AggregateMetrics:
     delayed_leak_rate: float
     hallucinated_recall_accuracy: float
     timeline_reasoning_accuracy: float
+    drift_accuracy: float
+    update_accuracy: float
     latency_degradation_ms: float
     latency_avg_ms: float
     latency_p95_ms: float
@@ -114,6 +116,8 @@ def aggregate_results(results: list[EvaluationResult]) -> AggregateMetrics:
         delayed_leak_rate=_failure_rate_for(results, "memory_leakage"),
         hallucinated_recall_accuracy=_score_for(results, "hallucinated_recall"),
         timeline_reasoning_accuracy=_score_for(results, "timeline_reasoning"),
+        drift_accuracy=_score_for(results, "memory_drift"),
+        update_accuracy=_score_for(results, "memory_drift"),
         latency_degradation_ms=latency_degradation_ms,
         latency_avg_ms=mean(latencies) if latencies else 0.0,
         latency_p95_ms=_p95(latencies),

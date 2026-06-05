@@ -4339,5 +4339,130 @@
       "mode": "contains_all"
     },
     "description": "Reason over chronological user state."
+  },
+  {
+    "scenario_id": "memory_drift_001",
+    "category": "memory_drift",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "drift_1_old",
+        "timestamp": "2025-01-01T00:00:00Z",
+        "content": "Previous preferred workspace was home office"
+      },
+      {
+        "type": "correction",
+        "memory_id": "drift_1_new",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "supersedes": "drift_1_old",
+        "content": "Current preferred workspace is coworking"
+      }
+    ],
+    "query": "What is my current preferred workspace?",
+    "expected_answer": "coworking",
+    "negative_assertions": [
+      "home office"
+    ],
+    "description": "Track updated user fact after drift."
+  },
+  {
+    "scenario_id": "memory_drift_002",
+    "category": "memory_drift",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "drift_2_old",
+        "timestamp": "2025-01-01T00:00:00Z",
+        "content": "Previous diet preference was vegetarian"
+      },
+      {
+        "type": "correction",
+        "memory_id": "drift_2_new",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "supersedes": "drift_2_old",
+        "content": "Current diet preference is vegan"
+      }
+    ],
+    "query": "What is my current diet preference?",
+    "expected_answer": "vegan",
+    "negative_assertions": [
+      "vegetarian"
+    ],
+    "description": "Track updated user fact after drift."
+  },
+  {
+    "scenario_id": "memory_drift_003",
+    "category": "memory_drift",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "drift_3_old",
+        "timestamp": "2025-01-01T00:00:00Z",
+        "content": "Previous daily focus was robotics"
+      },
+      {
+        "type": "correction",
+        "memory_id": "drift_3_new",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "supersedes": "drift_3_old",
+        "content": "Current daily focus is memory evals"
+      }
+    ],
+    "query": "What is my current daily focus?",
+    "expected_answer": "memory evals",
+    "negative_assertions": [
+      "robotics"
+    ],
+    "description": "Track updated user fact after drift."
+  },
+  {
+    "scenario_id": "memory_drift_004",
+    "category": "memory_drift",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "drift_4_old",
+        "timestamp": "2025-01-01T00:00:00Z",
+        "content": "Previous communication style was detailed"
+      },
+      {
+        "type": "correction",
+        "memory_id": "drift_4_new",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "supersedes": "drift_4_old",
+        "content": "Current communication style is concise"
+      }
+    ],
+    "query": "What is my current communication style?",
+    "expected_answer": "concise",
+    "negative_assertions": [
+      "detailed"
+    ],
+    "description": "Track updated user fact after drift."
+  },
+  {
+    "scenario_id": "memory_drift_005",
+    "category": "memory_drift",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "drift_5_old",
+        "timestamp": "2025-01-01T00:00:00Z",
+        "content": "Previous preferred runtime was local"
+      },
+      {
+        "type": "correction",
+        "memory_id": "drift_5_new",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "supersedes": "drift_5_old",
+        "content": "Current preferred runtime is cloud"
+      }
+    ],
+    "query": "What is my current preferred runtime?",
+    "expected_answer": "cloud",
+    "negative_assertions": [
+      "local"
+    ],
+    "description": "Track updated user fact after drift."
   }
 ]

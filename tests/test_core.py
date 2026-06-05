@@ -588,3 +588,16 @@ def test_timeline_reasoning_suite() -> None:
         for scenario in scenarios
     ]
     assert aggregate_results(results).timeline_reasoning_accuracy == 1.0
+
+
+def test_memory_drift_suite_metrics() -> None:
+    from memory_agent_eval_kit.evaluators.memory_drift import MemoryDriftEvaluator
+
+    scenarios = load_scenarios(categories=["memory_drift"])
+    assert len(scenarios) == 5
+    results = [
+        MemoryDriftEvaluator().evaluate(scenario, SimpleMemoryAgent()) for scenario in scenarios
+    ]
+    metrics = aggregate_results(results)
+    assert metrics.drift_accuracy == 1.0
+    assert metrics.update_accuracy == 1.0
