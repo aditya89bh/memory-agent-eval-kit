@@ -37,6 +37,8 @@ class AggregateMetrics:
     false_recall_rate: float
     stress_recall_accuracy: float
     temporal_drift_accuracy: float
+    contradiction_resolution: float
+    ambiguity_handling: float
     latency_degradation_ms: float
     latency_avg_ms: float
     latency_p95_ms: float
@@ -75,6 +77,15 @@ def aggregate_results(results: list[EvaluationResult]) -> AggregateMetrics:
     latency_degradation_ms = (
         (max(stress_latencies) - min(stress_latencies)) if stress_latencies else 0.0
     )
+    ambiguous_results = [
+        result
+        for result in results
+        if result.category == "adversarial_contradiction"
+        and result.details.get("expected_behavior", {}).get("ambiguity") is True
+    ]
+    ambiguity_handling = (
+        mean([result.score for result in ambiguous_results]) if ambiguous_results else 0.0
+    )
     return AggregateMetrics(
         overall_score=mean(scores) if scores else 0.0,
         recall_accuracy=_score_for(results, "recall"),
@@ -89,6 +100,8 @@ def aggregate_results(results: list[EvaluationResult]) -> AggregateMetrics:
         false_recall_rate=hallucination_rate,
         stress_recall_accuracy=_score_for(results, "stress"),
         temporal_drift_accuracy=_score_for(results, "temporal_drift"),
+        contradiction_resolution=_score_for(results, "adversarial_contradiction"),
+        ambiguity_handling=ambiguity_handling,
         latency_degradation_ms=latency_degradation_ms,
         latency_avg_ms=mean(latencies) if latencies else 0.0,
         latency_p95_ms=_p95(latencies),

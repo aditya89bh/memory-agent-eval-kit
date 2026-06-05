@@ -1,3 +1,6 @@
+from memory_agent_eval_kit.evaluators.adversarial_contradiction import (
+    AdversarialContradictionEvaluator,
+)
 from memory_agent_eval_kit.evaluators.base import ScenarioEvaluator
 from memory_agent_eval_kit.evaluators.continuity import ContinuityEvaluator
 from memory_agent_eval_kit.evaluators.contradiction import ContradictionEvaluator
@@ -11,6 +14,7 @@ from memory_agent_eval_kit.evaluators.temporal import TemporalEvaluator
 from memory_agent_eval_kit.evaluators.temporal_drift import TemporalDriftEvaluator
 
 __all__ = [
+    "AdversarialContradictionEvaluator",
     "ScenarioEvaluator",
     "RecallEvaluator",
     "ContradictionEvaluator",

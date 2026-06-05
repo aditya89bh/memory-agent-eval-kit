@@ -45,6 +45,7 @@ class ScenarioEvaluator:
                 "expected_answer": scenario.expected_answer,
                 "expected_absent": scenario.expected_absent,
                 "actual_answer": answer,
+                "expected_behavior": scenario.expected_behavior.to_dict(),
             },
         )
 

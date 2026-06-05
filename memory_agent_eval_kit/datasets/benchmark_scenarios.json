@@ -1857,5 +1857,161 @@
       "mode": "contains_all"
     },
     "description": "Return timeline containing old and new facts."
+  },
+  {
+    "scenario_id": "adversarial_contradiction_001",
+    "category": "adversarial_contradiction",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "adv_1_a",
+        "content": "Favorite language is Java"
+      },
+      {
+        "type": "fact",
+        "memory_id": "adv_1_b",
+        "content": "Favorite language is JavaScript"
+      }
+    ],
+    "query": "What is my favorite language?",
+    "expected_answer": "contradiction",
+    "expected_behavior": {
+      "answer": "contradiction",
+      "ambiguity": false
+    },
+    "scoring_rules": {
+      "mode": "contradiction"
+    },
+    "description": "Adversarial overlapping or conflicting memory case."
+  },
+  {
+    "scenario_id": "adversarial_contradiction_002",
+    "category": "adversarial_contradiction",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "adv_2_a",
+        "content": "Preferred office is Delhi NCR"
+      },
+      {
+        "type": "fact",
+        "memory_id": "adv_2_b",
+        "content": "Preferred office is Delhi"
+      }
+    ],
+    "query": "Which office do I prefer?",
+    "expected_answer": "contradiction",
+    "expected_behavior": {
+      "answer": "contradiction",
+      "ambiguity": true
+    },
+    "scoring_rules": {
+      "mode": "contradiction"
+    },
+    "description": "Adversarial overlapping or conflicting memory case."
+  },
+  {
+    "scenario_id": "adversarial_contradiction_003",
+    "category": "adversarial_contradiction",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "adv_3_a",
+        "content": "Project Apollo status is paused"
+      },
+      {
+        "type": "fact",
+        "memory_id": "adv_3_b",
+        "content": "Project Apollo status is active"
+      }
+    ],
+    "query": "What is Project Apollo status?",
+    "expected_answer": "contradiction",
+    "expected_behavior": {
+      "answer": "contradiction",
+      "ambiguity": false
+    },
+    "scoring_rules": {
+      "mode": "contradiction"
+    },
+    "description": "Adversarial overlapping or conflicting memory case."
+  },
+  {
+    "scenario_id": "adversarial_contradiction_004",
+    "category": "adversarial_contradiction",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "adv_4_a",
+        "content": "Favorite robot is UR5"
+      },
+      {
+        "type": "fact",
+        "memory_id": "adv_4_b",
+        "content": "Favorite robot is UR10"
+      }
+    ],
+    "query": "What is my favorite UR robot?",
+    "expected_answer": "contradiction",
+    "expected_behavior": {
+      "answer": "contradiction",
+      "ambiguity": true
+    },
+    "scoring_rules": {
+      "mode": "contradiction"
+    },
+    "description": "Adversarial overlapping or conflicting memory case."
+  },
+  {
+    "scenario_id": "adversarial_contradiction_005",
+    "category": "adversarial_contradiction",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "adv_5_a",
+        "content": "I eat peanuts"
+      },
+      {
+        "type": "fact",
+        "memory_id": "adv_5_b",
+        "content": "I do not eat peanuts"
+      }
+    ],
+    "query": "Do I eat peanuts?",
+    "expected_answer": "contradiction",
+    "expected_behavior": {
+      "answer": "contradiction",
+      "ambiguity": false
+    },
+    "scoring_rules": {
+      "mode": "contradiction"
+    },
+    "description": "Adversarial overlapping or conflicting memory case."
+  },
+  {
+    "scenario_id": "adversarial_contradiction_006",
+    "category": "adversarial_contradiction",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "adv_6_a",
+        "content": "Preferred model is GPT-5 mini"
+      },
+      {
+        "type": "fact",
+        "memory_id": "adv_6_b",
+        "content": "Preferred model is GPT-5"
+      }
+    ],
+    "query": "Which GPT-5 model do I prefer?",
+    "expected_answer": "contradiction",
+    "expected_behavior": {
+      "answer": "contradiction",
+      "ambiguity": true
+    },
+    "scoring_rules": {
+      "mode": "contradiction"
+    },
+    "description": "Adversarial overlapping or conflicting memory case."
   }
 ]

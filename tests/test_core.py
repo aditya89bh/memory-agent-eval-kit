@@ -351,3 +351,19 @@ def test_temporal_drift_evaluator_supports_timeline() -> None:
     ]
     assert all(result.success for result in results)
     assert aggregate_results(results).temporal_drift_accuracy == 1.0
+
+
+def test_adversarial_contradiction_scenarios_and_metrics() -> None:
+    from memory_agent_eval_kit.evaluators.adversarial_contradiction import (
+        AdversarialContradictionEvaluator,
+    )
+
+    scenarios = load_scenarios(categories=["adversarial_contradiction"])
+    assert len(scenarios) == 6
+    results = [
+        AdversarialContradictionEvaluator().evaluate(scenario, SimpleMemoryAgent())
+        for scenario in scenarios
+    ]
+    metrics = aggregate_results(results)
+    assert metrics.contradiction_resolution == 1.0
+    assert metrics.ambiguity_handling == 1.0

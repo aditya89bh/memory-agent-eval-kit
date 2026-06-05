@@ -9,6 +9,7 @@ from memory_agent_eval_kit.adapters import MemoryAgentAdapter
 from memory_agent_eval_kit.benchmarks.stress import generate_stress_scenarios
 from memory_agent_eval_kit.datasets import load_scenarios
 from memory_agent_eval_kit.evaluators import (
+    AdversarialContradictionEvaluator,
     ContinuityEvaluator,
     ContradictionEvaluator,
     CorrectionEvaluator,
@@ -49,6 +50,7 @@ class BenchmarkRunner:
             "hallucination": HallucinationEvaluator(),
             "stress": StressEvaluator(),
             "temporal_drift": TemporalDriftEvaluator(),
+            "adversarial_contradiction": AdversarialContradictionEvaluator(),
         }
 
     def run(
