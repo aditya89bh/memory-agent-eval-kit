@@ -1003,3 +1003,23 @@ def test_benchmark_version_comparison_generates_deltas(tmp_path: Path) -> None:
     assert payload["comparisons"][1]["baseline_version"] == "v2"
     assert payload["comparisons"][1]["candidate_version"] == "v3"
     assert payload["comparisons"][1]["category_deltas"][0]["category"] == "recall"
+
+
+def test_historical_benchmark_archive_support(tmp_path: Path) -> None:
+    from datetime import UTC, datetime
+
+    from memory_agent_eval_kit.reports import archive_benchmark_report, list_benchmark_archives
+
+    report = {"metrics": {"overall_score": 0.91, "total_scenarios": 253}}
+    record = archive_benchmark_report(
+        report,
+        tmp_path,
+        suite_version="v3",
+        created_at=datetime(2026, 1, 1, tzinfo=UTC),
+    )
+    archive_path = Path(record.archive_path)
+    assert archive_path.exists()
+    payload = json.loads(archive_path.read_text(encoding="utf-8"))
+    assert payload["archive"]["suite_version"] == "v3"
+    assert payload["archive"]["scenario_count"] == 253
+    assert list_benchmark_archives(tmp_path) == [archive_path]
