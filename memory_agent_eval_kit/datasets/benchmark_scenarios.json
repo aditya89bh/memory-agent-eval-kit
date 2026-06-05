@@ -5510,5 +5510,415 @@
       "noise"
     ],
     "description": "Recall target after 100 prior memories."
+  },
+  {
+    "scenario_id": "noisy_memory_001",
+    "category": "noisy_memory",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "noisy_memory_001_irrelevant_0",
+        "content": "Irrelevant travel note 0 references unrelated city marker 0"
+      },
+      {
+        "type": "fact",
+        "memory_id": "noisy_memory_001_irrelevant_1",
+        "content": "Irrelevant travel note 1 references unrelated city marker 1"
+      },
+      {
+        "type": "fact",
+        "memory_id": "noisy_memory_001_irrelevant_2",
+        "content": "Irrelevant travel note 2 references unrelated city marker 2"
+      },
+      {
+        "type": "fact",
+        "memory_id": "noisy_memory_001_irrelevant_3",
+        "content": "Irrelevant travel note 3 references unrelated city marker 3"
+      },
+      {
+        "type": "fact",
+        "memory_id": "noisy_memory_001_irrelevant_4",
+        "content": "Irrelevant travel note 4 references unrelated city marker 4"
+      },
+      {
+        "type": "fact",
+        "memory_id": "noisy_memory_001_irrelevant_5",
+        "content": "Irrelevant travel note 5 references unrelated city marker 5"
+      },
+      {
+        "type": "fact",
+        "memory_id": "noisy_memory_001_irrelevant_6",
+        "content": "Irrelevant travel note 6 references unrelated city marker 6"
+      },
+      {
+        "type": "fact",
+        "memory_id": "noisy_memory_001_irrelevant_7",
+        "content": "Irrelevant travel note 7 references unrelated city marker 7"
+      },
+      {
+        "type": "fact",
+        "memory_id": "noisy_memory_001_distractor_0",
+        "content": "Distractor deployment window candidate is decoy-1-0"
+      },
+      {
+        "type": "fact",
+        "memory_id": "noisy_memory_001_distractor_1",
+        "content": "Distractor deployment window candidate is decoy-1-1"
+      },
+      {
+        "type": "fact",
+        "memory_id": "noisy_memory_001_distractor_2",
+        "content": "Distractor deployment window candidate is decoy-1-2"
+      },
+      {
+        "type": "fact",
+        "memory_id": "noisy_memory_001_distractor_3",
+        "content": "Distractor deployment window candidate is decoy-1-3"
+      },
+      {
+        "type": "fact",
+        "memory_id": "noisy_memory_001_target",
+        "content": "Current deployment window is Saturday 04:00 UTC"
+      }
+    ],
+    "query": "What is my current deployment window?",
+    "expected_answer": "Saturday 04:00 UTC",
+    "negative_assertions": [
+      "decoy",
+      "unrelated city"
+    ],
+    "expected_behavior": {
+      "answer": "Saturday 04:00 UTC",
+      "noise_profile": "relevant+irrelevant+distractor"
+    },
+    "description": "Retrieve target memory despite noise and distractors."
+  },
+  {
+    "scenario_id": "noisy_memory_002",
+    "category": "noisy_memory",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "noisy_memory_002_irrelevant_0",
+        "content": "Irrelevant travel note 0 references unrelated city marker 0"
+      },
+      {
+        "type": "fact",
+        "memory_id": "noisy_memory_002_irrelevant_1",
+        "content": "Irrelevant travel note 1 references unrelated city marker 1"
+      },
+      {
+        "type": "fact",
+        "memory_id": "noisy_memory_002_irrelevant_2",
+        "content": "Irrelevant travel note 2 references unrelated city marker 2"
+      },
+      {
+        "type": "fact",
+        "memory_id": "noisy_memory_002_irrelevant_3",
+        "content": "Irrelevant travel note 3 references unrelated city marker 3"
+      },
+      {
+        "type": "fact",
+        "memory_id": "noisy_memory_002_irrelevant_4",
+        "content": "Irrelevant travel note 4 references unrelated city marker 4"
+      },
+      {
+        "type": "fact",
+        "memory_id": "noisy_memory_002_irrelevant_5",
+        "content": "Irrelevant travel note 5 references unrelated city marker 5"
+      },
+      {
+        "type": "fact",
+        "memory_id": "noisy_memory_002_irrelevant_6",
+        "content": "Irrelevant travel note 6 references unrelated city marker 6"
+      },
+      {
+        "type": "fact",
+        "memory_id": "noisy_memory_002_irrelevant_7",
+        "content": "Irrelevant travel note 7 references unrelated city marker 7"
+      },
+      {
+        "type": "fact",
+        "memory_id": "noisy_memory_002_distractor_0",
+        "content": "Distractor preferred invoice format candidate is decoy-2-0"
+      },
+      {
+        "type": "fact",
+        "memory_id": "noisy_memory_002_distractor_1",
+        "content": "Distractor preferred invoice format candidate is decoy-2-1"
+      },
+      {
+        "type": "fact",
+        "memory_id": "noisy_memory_002_distractor_2",
+        "content": "Distractor preferred invoice format candidate is decoy-2-2"
+      },
+      {
+        "type": "fact",
+        "memory_id": "noisy_memory_002_distractor_3",
+        "content": "Distractor preferred invoice format candidate is decoy-2-3"
+      },
+      {
+        "type": "fact",
+        "memory_id": "noisy_memory_002_target",
+        "content": "Current preferred invoice format is PDF with PO number"
+      }
+    ],
+    "query": "What is my current preferred invoice format?",
+    "expected_answer": "PDF with PO number",
+    "negative_assertions": [
+      "decoy",
+      "unrelated city"
+    ],
+    "expected_behavior": {
+      "answer": "PDF with PO number",
+      "noise_profile": "relevant+irrelevant+distractor"
+    },
+    "description": "Retrieve target memory despite noise and distractors."
+  },
+  {
+    "scenario_id": "noisy_memory_003",
+    "category": "noisy_memory",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "noisy_memory_003_irrelevant_0",
+        "content": "Irrelevant travel note 0 references unrelated city marker 0"
+      },
+      {
+        "type": "fact",
+        "memory_id": "noisy_memory_003_irrelevant_1",
+        "content": "Irrelevant travel note 1 references unrelated city marker 1"
+      },
+      {
+        "type": "fact",
+        "memory_id": "noisy_memory_003_irrelevant_2",
+        "content": "Irrelevant travel note 2 references unrelated city marker 2"
+      },
+      {
+        "type": "fact",
+        "memory_id": "noisy_memory_003_irrelevant_3",
+        "content": "Irrelevant travel note 3 references unrelated city marker 3"
+      },
+      {
+        "type": "fact",
+        "memory_id": "noisy_memory_003_irrelevant_4",
+        "content": "Irrelevant travel note 4 references unrelated city marker 4"
+      },
+      {
+        "type": "fact",
+        "memory_id": "noisy_memory_003_irrelevant_5",
+        "content": "Irrelevant travel note 5 references unrelated city marker 5"
+      },
+      {
+        "type": "fact",
+        "memory_id": "noisy_memory_003_irrelevant_6",
+        "content": "Irrelevant travel note 6 references unrelated city marker 6"
+      },
+      {
+        "type": "fact",
+        "memory_id": "noisy_memory_003_irrelevant_7",
+        "content": "Irrelevant travel note 7 references unrelated city marker 7"
+      },
+      {
+        "type": "fact",
+        "memory_id": "noisy_memory_003_distractor_0",
+        "content": "Distractor robot calibration room candidate is decoy-3-0"
+      },
+      {
+        "type": "fact",
+        "memory_id": "noisy_memory_003_distractor_1",
+        "content": "Distractor robot calibration room candidate is decoy-3-1"
+      },
+      {
+        "type": "fact",
+        "memory_id": "noisy_memory_003_distractor_2",
+        "content": "Distractor robot calibration room candidate is decoy-3-2"
+      },
+      {
+        "type": "fact",
+        "memory_id": "noisy_memory_003_distractor_3",
+        "content": "Distractor robot calibration room candidate is decoy-3-3"
+      },
+      {
+        "type": "fact",
+        "memory_id": "noisy_memory_003_target",
+        "content": "Current robot calibration room is Lab Delta"
+      }
+    ],
+    "query": "What is my current robot calibration room?",
+    "expected_answer": "Lab Delta",
+    "negative_assertions": [
+      "decoy",
+      "unrelated city"
+    ],
+    "expected_behavior": {
+      "answer": "Lab Delta",
+      "noise_profile": "relevant+irrelevant+distractor"
+    },
+    "description": "Retrieve target memory despite noise and distractors."
+  },
+  {
+    "scenario_id": "noisy_memory_004",
+    "category": "noisy_memory",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "noisy_memory_004_irrelevant_0",
+        "content": "Irrelevant travel note 0 references unrelated city marker 0"
+      },
+      {
+        "type": "fact",
+        "memory_id": "noisy_memory_004_irrelevant_1",
+        "content": "Irrelevant travel note 1 references unrelated city marker 1"
+      },
+      {
+        "type": "fact",
+        "memory_id": "noisy_memory_004_irrelevant_2",
+        "content": "Irrelevant travel note 2 references unrelated city marker 2"
+      },
+      {
+        "type": "fact",
+        "memory_id": "noisy_memory_004_irrelevant_3",
+        "content": "Irrelevant travel note 3 references unrelated city marker 3"
+      },
+      {
+        "type": "fact",
+        "memory_id": "noisy_memory_004_irrelevant_4",
+        "content": "Irrelevant travel note 4 references unrelated city marker 4"
+      },
+      {
+        "type": "fact",
+        "memory_id": "noisy_memory_004_irrelevant_5",
+        "content": "Irrelevant travel note 5 references unrelated city marker 5"
+      },
+      {
+        "type": "fact",
+        "memory_id": "noisy_memory_004_irrelevant_6",
+        "content": "Irrelevant travel note 6 references unrelated city marker 6"
+      },
+      {
+        "type": "fact",
+        "memory_id": "noisy_memory_004_irrelevant_7",
+        "content": "Irrelevant travel note 7 references unrelated city marker 7"
+      },
+      {
+        "type": "fact",
+        "memory_id": "noisy_memory_004_distractor_0",
+        "content": "Distractor customer escalation owner candidate is decoy-4-0"
+      },
+      {
+        "type": "fact",
+        "memory_id": "noisy_memory_004_distractor_1",
+        "content": "Distractor customer escalation owner candidate is decoy-4-1"
+      },
+      {
+        "type": "fact",
+        "memory_id": "noisy_memory_004_distractor_2",
+        "content": "Distractor customer escalation owner candidate is decoy-4-2"
+      },
+      {
+        "type": "fact",
+        "memory_id": "noisy_memory_004_distractor_3",
+        "content": "Distractor customer escalation owner candidate is decoy-4-3"
+      },
+      {
+        "type": "fact",
+        "memory_id": "noisy_memory_004_target",
+        "content": "Current customer escalation owner is Mira"
+      }
+    ],
+    "query": "What is my current customer escalation owner?",
+    "expected_answer": "Mira",
+    "negative_assertions": [
+      "decoy",
+      "unrelated city"
+    ],
+    "expected_behavior": {
+      "answer": "Mira",
+      "noise_profile": "relevant+irrelevant+distractor"
+    },
+    "description": "Retrieve target memory despite noise and distractors."
+  },
+  {
+    "scenario_id": "noisy_memory_005",
+    "category": "noisy_memory",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "noisy_memory_005_irrelevant_0",
+        "content": "Irrelevant travel note 0 references unrelated city marker 0"
+      },
+      {
+        "type": "fact",
+        "memory_id": "noisy_memory_005_irrelevant_1",
+        "content": "Irrelevant travel note 1 references unrelated city marker 1"
+      },
+      {
+        "type": "fact",
+        "memory_id": "noisy_memory_005_irrelevant_2",
+        "content": "Irrelevant travel note 2 references unrelated city marker 2"
+      },
+      {
+        "type": "fact",
+        "memory_id": "noisy_memory_005_irrelevant_3",
+        "content": "Irrelevant travel note 3 references unrelated city marker 3"
+      },
+      {
+        "type": "fact",
+        "memory_id": "noisy_memory_005_irrelevant_4",
+        "content": "Irrelevant travel note 4 references unrelated city marker 4"
+      },
+      {
+        "type": "fact",
+        "memory_id": "noisy_memory_005_irrelevant_5",
+        "content": "Irrelevant travel note 5 references unrelated city marker 5"
+      },
+      {
+        "type": "fact",
+        "memory_id": "noisy_memory_005_irrelevant_6",
+        "content": "Irrelevant travel note 6 references unrelated city marker 6"
+      },
+      {
+        "type": "fact",
+        "memory_id": "noisy_memory_005_irrelevant_7",
+        "content": "Irrelevant travel note 7 references unrelated city marker 7"
+      },
+      {
+        "type": "fact",
+        "memory_id": "noisy_memory_005_distractor_0",
+        "content": "Distractor benchmark review cadence candidate is decoy-5-0"
+      },
+      {
+        "type": "fact",
+        "memory_id": "noisy_memory_005_distractor_1",
+        "content": "Distractor benchmark review cadence candidate is decoy-5-1"
+      },
+      {
+        "type": "fact",
+        "memory_id": "noisy_memory_005_distractor_2",
+        "content": "Distractor benchmark review cadence candidate is decoy-5-2"
+      },
+      {
+        "type": "fact",
+        "memory_id": "noisy_memory_005_distractor_3",
+        "content": "Distractor benchmark review cadence candidate is decoy-5-3"
+      },
+      {
+        "type": "fact",
+        "memory_id": "noisy_memory_005_target",
+        "content": "Current benchmark review cadence is weekly Friday review"
+      }
+    ],
+    "query": "What is my current benchmark review cadence?",
+    "expected_answer": "weekly Friday review",
+    "negative_assertions": [
+      "decoy",
+      "unrelated city"
+    ],
+    "expected_behavior": {
+      "answer": "weekly Friday review",
+      "noise_profile": "relevant+irrelevant+distractor"
+    },
+    "description": "Retrieve target memory despite noise and distractors."
   }
 ]

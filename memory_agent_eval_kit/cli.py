@@ -30,6 +30,7 @@ CATEGORY_CHOICES: tuple[Category, ...] = (
     "timeline_reasoning",
     "memory_drift",
     "long_horizon",
+    "noisy_memory",
 )
 
 

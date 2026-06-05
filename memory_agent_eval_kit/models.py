@@ -23,6 +23,7 @@ Category: TypeAlias = Literal[
     "timeline_reasoning",
     "memory_drift",
     "long_horizon",
+    "noisy_memory",
 ]
 
 

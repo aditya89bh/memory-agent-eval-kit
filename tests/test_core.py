@@ -760,3 +760,10 @@ def test_long_horizon_memory_benchmarks_measure_recall_and_latency(tmp_path: Pat
     assert len(run.results) == 3
     assert run.metrics.long_horizon_recall_accuracy == 1.0
     assert run.metrics.long_horizon_latency_ms >= 0.0
+
+
+def test_noisy_memory_benchmarks_measure_precision_and_robustness(tmp_path: Path) -> None:
+    run = BenchmarkRunner(SimpleMemoryAgent()).run(categories=["noisy_memory"], report_dir=tmp_path)
+    assert len(run.results) == 5
+    assert run.metrics.retrieval_precision == 1.0
+    assert run.metrics.retrieval_robustness == 1.0
