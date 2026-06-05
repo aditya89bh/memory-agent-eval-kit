@@ -753,3 +753,10 @@ def test_generate_visual_assets_writes_svg_files(tmp_path: Path) -> None:
         "benchmark_summary_chart.svg",
     }
     assert all(path.read_text(encoding="utf-8").startswith("<svg") for path in paths)
+
+
+def test_long_horizon_memory_benchmarks_measure_recall_and_latency(tmp_path: Path) -> None:
+    run = BenchmarkRunner(SimpleMemoryAgent()).run(categories=["long_horizon"], report_dir=tmp_path)
+    assert len(run.results) == 3
+    assert run.metrics.long_horizon_recall_accuracy == 1.0
+    assert run.metrics.long_horizon_latency_ms >= 0.0

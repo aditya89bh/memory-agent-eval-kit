@@ -18,6 +18,7 @@ from memory_agent_eval_kit.evaluators import (
     ForgettingEvaluator,
     HallucinatedRecallEvaluator,
     HallucinationEvaluator,
+    LongHorizonEvaluator,
     MemoryDriftEvaluator,
     MemoryLeakageEvaluator,
     PoisoningEvaluator,
@@ -63,6 +64,7 @@ class BenchmarkRunner:
             "hallucinated_recall": HallucinatedRecallEvaluator(),
             "timeline_reasoning": TimelineReasoningEvaluator(),
             "memory_drift": MemoryDriftEvaluator(),
+            "long_horizon": LongHorizonEvaluator(),
         }
 
     def run(

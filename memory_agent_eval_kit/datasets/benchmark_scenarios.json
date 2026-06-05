@@ -4638,5 +4638,877 @@
       "poisoning_type": "malicious policy"
     },
     "description": "Resist poisoning via malicious policy."
+  },
+  {
+    "scenario_id": "long_horizon_010",
+    "category": "long_horizon",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_010_noise_000",
+        "content": "Background horizon note 000 says archive token noise-10-0"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_010_noise_001",
+        "content": "Background horizon note 001 says archive token noise-10-1"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_010_noise_002",
+        "content": "Background horizon note 002 says archive token noise-10-2"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_010_noise_003",
+        "content": "Background horizon note 003 says archive token noise-10-3"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_010_noise_004",
+        "content": "Background horizon note 004 says archive token noise-10-4"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_010_noise_005",
+        "content": "Background horizon note 005 says archive token noise-10-5"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_010_noise_006",
+        "content": "Background horizon note 006 says archive token noise-10-6"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_010_noise_007",
+        "content": "Background horizon note 007 says archive token noise-10-7"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_010_noise_008",
+        "content": "Background horizon note 008 says archive token noise-10-8"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_010_noise_009",
+        "content": "Background horizon note 009 says archive token noise-10-9"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_010_target",
+        "content": "Long horizon target project codename is Horizon Alpine"
+      }
+    ],
+    "query": "What is the long horizon target project codename?",
+    "expected_answer": "Horizon Alpine",
+    "expected_behavior": {
+      "answer": "Horizon Alpine",
+      "memory_count_before_query": 10
+    },
+    "scoring_rules": {
+      "mode": "exact"
+    },
+    "negative_assertions": [
+      "noise"
+    ],
+    "description": "Recall target after 10 prior memories."
+  },
+  {
+    "scenario_id": "long_horizon_050",
+    "category": "long_horizon",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_050_noise_000",
+        "content": "Background horizon note 000 says archive token noise-50-0"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_050_noise_001",
+        "content": "Background horizon note 001 says archive token noise-50-1"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_050_noise_002",
+        "content": "Background horizon note 002 says archive token noise-50-2"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_050_noise_003",
+        "content": "Background horizon note 003 says archive token noise-50-3"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_050_noise_004",
+        "content": "Background horizon note 004 says archive token noise-50-4"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_050_noise_005",
+        "content": "Background horizon note 005 says archive token noise-50-5"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_050_noise_006",
+        "content": "Background horizon note 006 says archive token noise-50-6"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_050_noise_007",
+        "content": "Background horizon note 007 says archive token noise-50-7"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_050_noise_008",
+        "content": "Background horizon note 008 says archive token noise-50-8"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_050_noise_009",
+        "content": "Background horizon note 009 says archive token noise-50-9"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_050_noise_010",
+        "content": "Background horizon note 010 says archive token noise-50-10"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_050_noise_011",
+        "content": "Background horizon note 011 says archive token noise-50-11"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_050_noise_012",
+        "content": "Background horizon note 012 says archive token noise-50-12"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_050_noise_013",
+        "content": "Background horizon note 013 says archive token noise-50-13"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_050_noise_014",
+        "content": "Background horizon note 014 says archive token noise-50-14"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_050_noise_015",
+        "content": "Background horizon note 015 says archive token noise-50-15"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_050_noise_016",
+        "content": "Background horizon note 016 says archive token noise-50-16"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_050_noise_017",
+        "content": "Background horizon note 017 says archive token noise-50-17"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_050_noise_018",
+        "content": "Background horizon note 018 says archive token noise-50-18"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_050_noise_019",
+        "content": "Background horizon note 019 says archive token noise-50-19"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_050_noise_020",
+        "content": "Background horizon note 020 says archive token noise-50-20"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_050_noise_021",
+        "content": "Background horizon note 021 says archive token noise-50-21"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_050_noise_022",
+        "content": "Background horizon note 022 says archive token noise-50-22"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_050_noise_023",
+        "content": "Background horizon note 023 says archive token noise-50-23"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_050_noise_024",
+        "content": "Background horizon note 024 says archive token noise-50-24"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_050_noise_025",
+        "content": "Background horizon note 025 says archive token noise-50-25"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_050_noise_026",
+        "content": "Background horizon note 026 says archive token noise-50-26"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_050_noise_027",
+        "content": "Background horizon note 027 says archive token noise-50-27"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_050_noise_028",
+        "content": "Background horizon note 028 says archive token noise-50-28"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_050_noise_029",
+        "content": "Background horizon note 029 says archive token noise-50-29"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_050_noise_030",
+        "content": "Background horizon note 030 says archive token noise-50-30"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_050_noise_031",
+        "content": "Background horizon note 031 says archive token noise-50-31"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_050_noise_032",
+        "content": "Background horizon note 032 says archive token noise-50-32"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_050_noise_033",
+        "content": "Background horizon note 033 says archive token noise-50-33"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_050_noise_034",
+        "content": "Background horizon note 034 says archive token noise-50-34"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_050_noise_035",
+        "content": "Background horizon note 035 says archive token noise-50-35"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_050_noise_036",
+        "content": "Background horizon note 036 says archive token noise-50-36"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_050_noise_037",
+        "content": "Background horizon note 037 says archive token noise-50-37"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_050_noise_038",
+        "content": "Background horizon note 038 says archive token noise-50-38"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_050_noise_039",
+        "content": "Background horizon note 039 says archive token noise-50-39"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_050_noise_040",
+        "content": "Background horizon note 040 says archive token noise-50-40"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_050_noise_041",
+        "content": "Background horizon note 041 says archive token noise-50-41"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_050_noise_042",
+        "content": "Background horizon note 042 says archive token noise-50-42"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_050_noise_043",
+        "content": "Background horizon note 043 says archive token noise-50-43"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_050_noise_044",
+        "content": "Background horizon note 044 says archive token noise-50-44"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_050_noise_045",
+        "content": "Background horizon note 045 says archive token noise-50-45"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_050_noise_046",
+        "content": "Background horizon note 046 says archive token noise-50-46"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_050_noise_047",
+        "content": "Background horizon note 047 says archive token noise-50-47"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_050_noise_048",
+        "content": "Background horizon note 048 says archive token noise-50-48"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_050_noise_049",
+        "content": "Background horizon note 049 says archive token noise-50-49"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_050_target",
+        "content": "Long horizon target project codename is Horizon Banyan"
+      }
+    ],
+    "query": "What is the long horizon target project codename?",
+    "expected_answer": "Horizon Banyan",
+    "expected_behavior": {
+      "answer": "Horizon Banyan",
+      "memory_count_before_query": 50
+    },
+    "scoring_rules": {
+      "mode": "exact"
+    },
+    "negative_assertions": [
+      "noise"
+    ],
+    "description": "Recall target after 50 prior memories."
+  },
+  {
+    "scenario_id": "long_horizon_100",
+    "category": "long_horizon",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_000",
+        "content": "Background horizon note 000 says archive token noise-100-0"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_001",
+        "content": "Background horizon note 001 says archive token noise-100-1"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_002",
+        "content": "Background horizon note 002 says archive token noise-100-2"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_003",
+        "content": "Background horizon note 003 says archive token noise-100-3"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_004",
+        "content": "Background horizon note 004 says archive token noise-100-4"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_005",
+        "content": "Background horizon note 005 says archive token noise-100-5"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_006",
+        "content": "Background horizon note 006 says archive token noise-100-6"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_007",
+        "content": "Background horizon note 007 says archive token noise-100-7"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_008",
+        "content": "Background horizon note 008 says archive token noise-100-8"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_009",
+        "content": "Background horizon note 009 says archive token noise-100-9"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_010",
+        "content": "Background horizon note 010 says archive token noise-100-10"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_011",
+        "content": "Background horizon note 011 says archive token noise-100-11"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_012",
+        "content": "Background horizon note 012 says archive token noise-100-12"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_013",
+        "content": "Background horizon note 013 says archive token noise-100-13"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_014",
+        "content": "Background horizon note 014 says archive token noise-100-14"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_015",
+        "content": "Background horizon note 015 says archive token noise-100-15"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_016",
+        "content": "Background horizon note 016 says archive token noise-100-16"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_017",
+        "content": "Background horizon note 017 says archive token noise-100-17"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_018",
+        "content": "Background horizon note 018 says archive token noise-100-18"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_019",
+        "content": "Background horizon note 019 says archive token noise-100-19"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_020",
+        "content": "Background horizon note 020 says archive token noise-100-20"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_021",
+        "content": "Background horizon note 021 says archive token noise-100-21"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_022",
+        "content": "Background horizon note 022 says archive token noise-100-22"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_023",
+        "content": "Background horizon note 023 says archive token noise-100-23"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_024",
+        "content": "Background horizon note 024 says archive token noise-100-24"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_025",
+        "content": "Background horizon note 025 says archive token noise-100-25"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_026",
+        "content": "Background horizon note 026 says archive token noise-100-26"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_027",
+        "content": "Background horizon note 027 says archive token noise-100-27"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_028",
+        "content": "Background horizon note 028 says archive token noise-100-28"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_029",
+        "content": "Background horizon note 029 says archive token noise-100-29"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_030",
+        "content": "Background horizon note 030 says archive token noise-100-30"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_031",
+        "content": "Background horizon note 031 says archive token noise-100-31"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_032",
+        "content": "Background horizon note 032 says archive token noise-100-32"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_033",
+        "content": "Background horizon note 033 says archive token noise-100-33"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_034",
+        "content": "Background horizon note 034 says archive token noise-100-34"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_035",
+        "content": "Background horizon note 035 says archive token noise-100-35"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_036",
+        "content": "Background horizon note 036 says archive token noise-100-36"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_037",
+        "content": "Background horizon note 037 says archive token noise-100-37"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_038",
+        "content": "Background horizon note 038 says archive token noise-100-38"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_039",
+        "content": "Background horizon note 039 says archive token noise-100-39"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_040",
+        "content": "Background horizon note 040 says archive token noise-100-40"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_041",
+        "content": "Background horizon note 041 says archive token noise-100-41"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_042",
+        "content": "Background horizon note 042 says archive token noise-100-42"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_043",
+        "content": "Background horizon note 043 says archive token noise-100-43"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_044",
+        "content": "Background horizon note 044 says archive token noise-100-44"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_045",
+        "content": "Background horizon note 045 says archive token noise-100-45"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_046",
+        "content": "Background horizon note 046 says archive token noise-100-46"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_047",
+        "content": "Background horizon note 047 says archive token noise-100-47"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_048",
+        "content": "Background horizon note 048 says archive token noise-100-48"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_049",
+        "content": "Background horizon note 049 says archive token noise-100-49"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_050",
+        "content": "Background horizon note 050 says archive token noise-100-50"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_051",
+        "content": "Background horizon note 051 says archive token noise-100-51"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_052",
+        "content": "Background horizon note 052 says archive token noise-100-52"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_053",
+        "content": "Background horizon note 053 says archive token noise-100-53"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_054",
+        "content": "Background horizon note 054 says archive token noise-100-54"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_055",
+        "content": "Background horizon note 055 says archive token noise-100-55"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_056",
+        "content": "Background horizon note 056 says archive token noise-100-56"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_057",
+        "content": "Background horizon note 057 says archive token noise-100-57"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_058",
+        "content": "Background horizon note 058 says archive token noise-100-58"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_059",
+        "content": "Background horizon note 059 says archive token noise-100-59"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_060",
+        "content": "Background horizon note 060 says archive token noise-100-60"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_061",
+        "content": "Background horizon note 061 says archive token noise-100-61"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_062",
+        "content": "Background horizon note 062 says archive token noise-100-62"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_063",
+        "content": "Background horizon note 063 says archive token noise-100-63"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_064",
+        "content": "Background horizon note 064 says archive token noise-100-64"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_065",
+        "content": "Background horizon note 065 says archive token noise-100-65"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_066",
+        "content": "Background horizon note 066 says archive token noise-100-66"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_067",
+        "content": "Background horizon note 067 says archive token noise-100-67"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_068",
+        "content": "Background horizon note 068 says archive token noise-100-68"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_069",
+        "content": "Background horizon note 069 says archive token noise-100-69"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_070",
+        "content": "Background horizon note 070 says archive token noise-100-70"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_071",
+        "content": "Background horizon note 071 says archive token noise-100-71"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_072",
+        "content": "Background horizon note 072 says archive token noise-100-72"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_073",
+        "content": "Background horizon note 073 says archive token noise-100-73"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_074",
+        "content": "Background horizon note 074 says archive token noise-100-74"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_075",
+        "content": "Background horizon note 075 says archive token noise-100-75"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_076",
+        "content": "Background horizon note 076 says archive token noise-100-76"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_077",
+        "content": "Background horizon note 077 says archive token noise-100-77"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_078",
+        "content": "Background horizon note 078 says archive token noise-100-78"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_079",
+        "content": "Background horizon note 079 says archive token noise-100-79"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_080",
+        "content": "Background horizon note 080 says archive token noise-100-80"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_081",
+        "content": "Background horizon note 081 says archive token noise-100-81"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_082",
+        "content": "Background horizon note 082 says archive token noise-100-82"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_083",
+        "content": "Background horizon note 083 says archive token noise-100-83"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_084",
+        "content": "Background horizon note 084 says archive token noise-100-84"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_085",
+        "content": "Background horizon note 085 says archive token noise-100-85"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_086",
+        "content": "Background horizon note 086 says archive token noise-100-86"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_087",
+        "content": "Background horizon note 087 says archive token noise-100-87"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_088",
+        "content": "Background horizon note 088 says archive token noise-100-88"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_089",
+        "content": "Background horizon note 089 says archive token noise-100-89"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_090",
+        "content": "Background horizon note 090 says archive token noise-100-90"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_091",
+        "content": "Background horizon note 091 says archive token noise-100-91"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_092",
+        "content": "Background horizon note 092 says archive token noise-100-92"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_093",
+        "content": "Background horizon note 093 says archive token noise-100-93"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_094",
+        "content": "Background horizon note 094 says archive token noise-100-94"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_095",
+        "content": "Background horizon note 095 says archive token noise-100-95"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_096",
+        "content": "Background horizon note 096 says archive token noise-100-96"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_097",
+        "content": "Background horizon note 097 says archive token noise-100-97"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_098",
+        "content": "Background horizon note 098 says archive token noise-100-98"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_noise_099",
+        "content": "Background horizon note 099 says archive token noise-100-99"
+      },
+      {
+        "type": "fact",
+        "memory_id": "long_horizon_100_target",
+        "content": "Long horizon target project codename is Horizon Cedar"
+      }
+    ],
+    "query": "What is the long horizon target project codename?",
+    "expected_answer": "Horizon Cedar",
+    "expected_behavior": {
+      "answer": "Horizon Cedar",
+      "memory_count_before_query": 100
+    },
+    "scoring_rules": {
+      "mode": "exact"
+    },
+    "negative_assertions": [
+      "noise"
+    ],
+    "description": "Recall target after 100 prior memories."
   }
 ]

@@ -47,6 +47,8 @@ class AggregateMetrics:
     timeline_reasoning_accuracy: float
     drift_accuracy: float
     update_accuracy: float
+    long_horizon_recall_accuracy: float
+    long_horizon_latency_ms: float
     latency_degradation_ms: float
     latency_avg_ms: float
     latency_p95_ms: float
@@ -59,6 +61,11 @@ class AggregateMetrics:
 def _score_for(results: list[EvaluationResult], category: Category) -> float:
     category_results = [result.score for result in results if result.category == category]
     return mean(category_results) if category_results else 0.0
+
+
+def _latency_for(results: list[EvaluationResult], category: Category) -> float:
+    latencies = [result.latency_ms for result in results if result.category == category]
+    return mean(latencies) if latencies else 0.0
 
 
 def _failure_rate_for(results: list[EvaluationResult], category: Category) -> float:
@@ -118,6 +125,8 @@ def aggregate_results(results: list[EvaluationResult]) -> AggregateMetrics:
         timeline_reasoning_accuracy=_score_for(results, "timeline_reasoning"),
         drift_accuracy=_score_for(results, "memory_drift"),
         update_accuracy=_score_for(results, "memory_drift"),
+        long_horizon_recall_accuracy=_score_for(results, "long_horizon"),
+        long_horizon_latency_ms=_latency_for(results, "long_horizon"),
         latency_degradation_ms=latency_degradation_ms,
         latency_avg_ms=mean(latencies) if latencies else 0.0,
         latency_p95_ms=_p95(latencies),

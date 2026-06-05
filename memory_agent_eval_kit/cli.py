@@ -29,6 +29,7 @@ CATEGORY_CHOICES: tuple[Category, ...] = (
     "hallucinated_recall",
     "timeline_reasoning",
     "memory_drift",
+    "long_horizon",
 )
 
 
