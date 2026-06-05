@@ -23,3 +23,21 @@ adapter = Mem0Adapter(fallback=SimpleMemoryAgent())
 ```
 
 This fallback path is intended for local smoke tests only; benchmark submissions should disclose whether a real Mem0 client was used.
+
+## LangGraph
+
+`LangGraphAdapter` wraps a configured LangGraph app/graph. Because LangGraph applications define their own memory shape, pass a compiled memory-aware graph exposing `invoke`, plus `add_memory` and `delete_memory` hooks when you want full benchmark coverage.
+
+```python
+from memory_agent_eval_kit.adapters import LangGraphAdapter
+
+adapter = LangGraphAdapter(graph=my_compiled_graph)
+```
+
+If `langgraph` is not installed or no graph is supplied, the adapter either delegates to an explicit fallback adapter or raises a clear runtime error. It does not emulate a LangGraph integration silently.
+
+```python
+from memory_agent_eval_kit.adapters import LangGraphAdapter, SimpleMemoryAgent
+
+adapter = LangGraphAdapter(fallback=SimpleMemoryAgent())
+```

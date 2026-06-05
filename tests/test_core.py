@@ -1061,3 +1061,40 @@ def test_mem0_adapter_uses_configured_client() -> None:
     assert "real" in adapter.query("What is the Mem0 client fact?")
     adapter.delete_memory("m1")
     assert client.deleted == ["u1:m1"]
+
+
+def test_langgraph_adapter_gracefully_falls_back_when_app_missing() -> None:
+    from memory_agent_eval_kit.adapters import LangGraphAdapter
+
+    adapter = LangGraphAdapter(fallback=SimpleMemoryAgent())
+    assert not adapter.available
+    adapter.add_memory({"memory_id": "lg-local", "content": "LangGraph fallback city is Pune"})
+    assert "Pune" in adapter.query("What is the LangGraph fallback city?")
+    adapter.delete_memory("lg-local")
+    assert "I do not know" in adapter.query("What is the LangGraph fallback city?")
+
+
+def test_langgraph_adapter_uses_configured_graph() -> None:
+    from memory_agent_eval_kit.adapters import LangGraphAdapter
+
+    class FakeGraph:
+        def __init__(self) -> None:
+            self.memories: list[str] = []
+            self.deleted: list[str] = []
+
+        def invoke(self, payload: dict[str, object]) -> dict[str, object]:
+            return {"messages": [("assistant", "\n".join(self.memories))]}
+
+        def add_memory(self, memory: dict[str, object]) -> None:
+            self.memories.append(str(memory["content"]))
+
+        def delete_memory(self, memory_id: str) -> None:
+            self.deleted.append(memory_id)
+
+    graph = FakeGraph()
+    adapter = LangGraphAdapter(graph=graph)
+    assert adapter.available
+    adapter.add_memory({"memory_id": "m1", "content": "LangGraph graph fact is real"})
+    assert "real" in adapter.query("What is the LangGraph graph fact?")
+    adapter.delete_memory("m1")
+    assert graph.deleted == ["m1"]
