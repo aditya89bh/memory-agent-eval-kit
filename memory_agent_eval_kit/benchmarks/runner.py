@@ -12,6 +12,7 @@ from memory_agent_eval_kit.benchmarks.stress import generate_stress_scenarios
 from memory_agent_eval_kit.datasets import load_scenarios
 from memory_agent_eval_kit.evaluators import (
     AdversarialContradictionEvaluator,
+    AgentDisagreementEvaluator,
     ContinuityEvaluator,
     ContradictionEvaluator,
     CorrectionEvaluator,
@@ -85,6 +86,7 @@ class BenchmarkRunner:
             "sensitive_classification": SensitiveClassificationEvaluator(),
             "shared_memory": SharedMemoryEvaluator(),
             "memory_synchronization": MemorySynchronizationEvaluator(),
+            "agent_disagreement": AgentDisagreementEvaluator(),
         }
 
     def run(

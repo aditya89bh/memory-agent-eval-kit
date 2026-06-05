@@ -863,3 +863,11 @@ def test_memory_synchronization_benchmarks_measure_propagation(tmp_path: Path) -
     assert len(run.results) == 3
     assert run.metrics.propagation_correctness == 1.0
     assert run.metrics.synchronization_accuracy == 1.0
+
+
+def test_agent_disagreement_benchmarks_measure_detection(tmp_path: Path) -> None:
+    run = BenchmarkRunner(SimpleMemoryAgent()).run(
+        categories=["agent_disagreement"], report_dir=tmp_path
+    )
+    assert len(run.results) == 3
+    assert run.metrics.disagreement_detection == 1.0

@@ -40,6 +40,7 @@ CATEGORY_CHOICES: tuple[Category, ...] = (
     "sensitive_classification",
     "shared_memory",
     "memory_synchronization",
+    "agent_disagreement",
 )
 
 

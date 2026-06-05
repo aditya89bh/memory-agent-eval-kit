@@ -6708,5 +6708,95 @@
       "propagated_to": "beta"
     },
     "description": "Validate propagated shared memory reaches another agent."
+  },
+  {
+    "scenario_id": "agent_disagreement_001",
+    "category": "agent_disagreement",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "agent_disagreement_001_a",
+        "content": "Agent alpha observed deployment region is India"
+      },
+      {
+        "type": "fact",
+        "memory_id": "agent_disagreement_001_b",
+        "content": "Agent beta observed deployment region is Germany"
+      }
+    ],
+    "query": "What is the observed deployment region?",
+    "expected_answer": "contradiction",
+    "expected_behavior": {
+      "answer": "contradiction",
+      "agents": [
+        "alpha",
+        "beta"
+      ],
+      "conflicting_values": [
+        "India",
+        "Germany"
+      ]
+    },
+    "description": "Detect disagreement from conflicting agent observations."
+  },
+  {
+    "scenario_id": "agent_disagreement_002",
+    "category": "agent_disagreement",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "agent_disagreement_002_a",
+        "content": "Agent alpha observed customer status is active"
+      },
+      {
+        "type": "fact",
+        "memory_id": "agent_disagreement_002_b",
+        "content": "Agent beta observed customer status is paused"
+      }
+    ],
+    "query": "What is the observed customer status?",
+    "expected_answer": "contradiction",
+    "expected_behavior": {
+      "answer": "contradiction",
+      "agents": [
+        "alpha",
+        "beta"
+      ],
+      "conflicting_values": [
+        "active",
+        "paused"
+      ]
+    },
+    "description": "Detect disagreement from conflicting agent observations."
+  },
+  {
+    "scenario_id": "agent_disagreement_003",
+    "category": "agent_disagreement",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "agent_disagreement_003_a",
+        "content": "Agent alpha observed release date is Monday"
+      },
+      {
+        "type": "fact",
+        "memory_id": "agent_disagreement_003_b",
+        "content": "Agent beta observed release date is Friday"
+      }
+    ],
+    "query": "What is the observed release date?",
+    "expected_answer": "contradiction",
+    "expected_behavior": {
+      "answer": "contradiction",
+      "agents": [
+        "alpha",
+        "beta"
+      ],
+      "conflicting_values": [
+        "Monday",
+        "Friday"
+      ]
+    },
+    "description": "Detect disagreement from conflicting agent observations."
   }
 ]

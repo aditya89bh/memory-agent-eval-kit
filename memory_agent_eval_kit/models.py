@@ -33,6 +33,7 @@ Category: TypeAlias = Literal[
     "sensitive_classification",
     "shared_memory",
     "memory_synchronization",
+    "agent_disagreement",
 ]
 
 
