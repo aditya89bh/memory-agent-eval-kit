@@ -1023,3 +1023,41 @@ def test_historical_benchmark_archive_support(tmp_path: Path) -> None:
     assert payload["archive"]["suite_version"] == "v3"
     assert payload["archive"]["scenario_count"] == 253
     assert list_benchmark_archives(tmp_path) == [archive_path]
+
+
+def test_mem0_adapter_gracefully_falls_back_when_dependency_missing() -> None:
+    from memory_agent_eval_kit.adapters import Mem0Adapter
+
+    fallback = SimpleMemoryAgent()
+    adapter = Mem0Adapter(fallback=fallback)
+    assert not adapter.available
+    adapter.add_memory({"memory_id": "mem0-local", "content": "Mem0 fallback color is blue"})
+    assert "blue" in adapter.query("What is the Mem0 fallback color?")
+    adapter.delete_memory("mem0-local")
+    assert "I do not know" in adapter.query("What is the Mem0 fallback color?")
+
+
+def test_mem0_adapter_uses_configured_client() -> None:
+    from memory_agent_eval_kit.adapters import Mem0Adapter
+
+    class FakeMem0Client:
+        def __init__(self) -> None:
+            self.memories: list[dict[str, object]] = []
+            self.deleted: list[str] = []
+
+        def add(self, content: str, *, user_id: str, metadata: dict[str, object]) -> None:
+            self.memories.append({"memory": content, "user_id": user_id, **metadata})
+
+        def search(self, prompt: str, *, user_id: str) -> list[dict[str, object]]:
+            return [item for item in self.memories if item["user_id"] == user_id]
+
+        def delete(self, *, memory_id: str, user_id: str) -> None:
+            self.deleted.append(f"{user_id}:{memory_id}")
+
+    client = FakeMem0Client()
+    adapter = Mem0Adapter(client=client, user_id="u1")
+    assert adapter.available
+    adapter.add_memory({"memory_id": "m1", "content": "Mem0 client fact is real"})
+    assert "real" in adapter.query("What is the Mem0 client fact?")
+    adapter.delete_memory("m1")
+    assert client.deleted == ["u1:m1"]
