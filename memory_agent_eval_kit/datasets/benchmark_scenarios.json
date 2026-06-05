@@ -6879,5 +6879,122 @@
       "resolution": "latest_correction"
     },
     "description": "Resolve conflicting memories using trusted correction."
+  },
+  {
+    "scenario_id": "collaborative_memory_001",
+    "category": "collaborative_memory",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "collaborative_memory_001_a",
+        "content": "Agent alpha contributed collaborative launch plan memory: design ready"
+      },
+      {
+        "type": "fact",
+        "memory_id": "collaborative_memory_001_b",
+        "content": "Agent beta contributed collaborative launch plan memory: QA ready"
+      },
+      {
+        "type": "fact",
+        "memory_id": "collaborative_memory_001_c",
+        "content": "Agent gamma contributed collaborative launch plan memory: release approved"
+      },
+      {
+        "type": "correction",
+        "memory_id": "collaborative_memory_001_summary",
+        "content": "Current final collaborative launch plan memory summary is design ready; QA ready; release approved",
+        "timestamp": "2026-02-01T00:00:00Z"
+      }
+    ],
+    "query": "What is the current final collaborative launch plan memory summary?",
+    "expected_answer": "design ready",
+    "expected_behavior": {
+      "answer": "design ready",
+      "also_contains": "QA ready release approved",
+      "contributors": [
+        "alpha",
+        "beta",
+        "gamma"
+      ]
+    },
+    "description": "Recall combined memory contributed by multiple agents."
+  },
+  {
+    "scenario_id": "collaborative_memory_002",
+    "category": "collaborative_memory",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "collaborative_memory_002_a",
+        "content": "Agent alpha contributed collaborative customer briefing memory: budget confirmed"
+      },
+      {
+        "type": "fact",
+        "memory_id": "collaborative_memory_002_b",
+        "content": "Agent beta contributed collaborative customer briefing memory: timeline confirmed"
+      },
+      {
+        "type": "fact",
+        "memory_id": "collaborative_memory_002_c",
+        "content": "Agent gamma contributed collaborative customer briefing memory: stakeholder aligned"
+      },
+      {
+        "type": "correction",
+        "memory_id": "collaborative_memory_002_summary",
+        "content": "Current final collaborative customer briefing memory summary is budget confirmed; timeline confirmed; stakeholder aligned",
+        "timestamp": "2026-02-01T00:00:00Z"
+      }
+    ],
+    "query": "What is the current final collaborative customer briefing memory summary?",
+    "expected_answer": "budget confirmed",
+    "expected_behavior": {
+      "answer": "budget confirmed",
+      "also_contains": "timeline confirmed stakeholder aligned",
+      "contributors": [
+        "alpha",
+        "beta",
+        "gamma"
+      ]
+    },
+    "description": "Recall combined memory contributed by multiple agents."
+  },
+  {
+    "scenario_id": "collaborative_memory_003",
+    "category": "collaborative_memory",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "collaborative_memory_003_a",
+        "content": "Agent alpha contributed collaborative research review memory: paper selected"
+      },
+      {
+        "type": "fact",
+        "memory_id": "collaborative_memory_003_b",
+        "content": "Agent beta contributed collaborative research review memory: baseline reproduced"
+      },
+      {
+        "type": "fact",
+        "memory_id": "collaborative_memory_003_c",
+        "content": "Agent gamma contributed collaborative research review memory: ablation complete"
+      },
+      {
+        "type": "correction",
+        "memory_id": "collaborative_memory_003_summary",
+        "content": "Current final collaborative research review memory summary is paper selected; baseline reproduced; ablation complete",
+        "timestamp": "2026-02-01T00:00:00Z"
+      }
+    ],
+    "query": "What is the current final collaborative research review memory summary?",
+    "expected_answer": "paper selected",
+    "expected_behavior": {
+      "answer": "paper selected",
+      "also_contains": "baseline reproduced ablation complete",
+      "contributors": [
+        "alpha",
+        "beta",
+        "gamma"
+      ]
+    },
+    "description": "Recall combined memory contributed by multiple agents."
   }
 ]

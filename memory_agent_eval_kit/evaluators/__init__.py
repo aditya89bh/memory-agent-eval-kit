@@ -3,6 +3,7 @@ from memory_agent_eval_kit.evaluators.adversarial_contradiction import (
 )
 from memory_agent_eval_kit.evaluators.agent_disagreement import AgentDisagreementEvaluator
 from memory_agent_eval_kit.evaluators.base import ScenarioEvaluator
+from memory_agent_eval_kit.evaluators.collaborative_memory import CollaborativeMemoryEvaluator
 from memory_agent_eval_kit.evaluators.conflict_resolution import ConflictResolutionEvaluator
 from memory_agent_eval_kit.evaluators.continuity import ContinuityEvaluator
 from memory_agent_eval_kit.evaluators.contradiction import ContradictionEvaluator
@@ -40,6 +41,7 @@ __all__ = [
     "RecallEvaluator",
     "RelationshipMemoryEvaluator",
     "RetentionPolicyEvaluator",
+    "CollaborativeMemoryEvaluator",
     "ConflictResolutionEvaluator",
     "ContradictionEvaluator",
     "CorrectionEvaluator",

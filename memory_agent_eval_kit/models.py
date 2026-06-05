@@ -35,6 +35,7 @@ Category: TypeAlias = Literal[
     "memory_synchronization",
     "agent_disagreement",
     "conflict_resolution",
+    "collaborative_memory",
 ]
 
 

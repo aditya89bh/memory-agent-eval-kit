@@ -880,3 +880,11 @@ def test_conflict_resolution_benchmarks_measure_resolution_quality(tmp_path: Pat
     assert len(run.results) == 3
     assert run.metrics.conflict_handling_accuracy == 1.0
     assert run.metrics.resolution_quality == 1.0
+
+
+def test_collaborative_memory_benchmarks_measure_recall(tmp_path: Path) -> None:
+    run = BenchmarkRunner(SimpleMemoryAgent()).run(
+        categories=["collaborative_memory"], report_dir=tmp_path
+    )
+    assert len(run.results) == 3
+    assert run.metrics.collaborative_recall == 1.0
