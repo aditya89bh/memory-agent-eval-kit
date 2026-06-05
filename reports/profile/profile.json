@@ -1,8 +1,8 @@
 {
-  "wall_time_ms": 77.490461000707,
-  "cpu_time_ms": 77.485621,
-  "peak_memory_kb": 947.4638671875,
-  "avg_latency_ms": 0.11299480281479421,
-  "p95_latency_ms": 0.16577800852246583,
+  "wall_time_ms": 72.4109269795008,
+  "cpu_time_ms": 72.40016699999995,
+  "peak_memory_kb": 905.0302734375,
+  "avg_latency_ms": 0.11325680688502113,
+  "p95_latency_ms": 0.1612310006748885,
   "scenario_count": 253
 }

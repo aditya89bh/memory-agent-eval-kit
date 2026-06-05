@@ -24,7 +24,7 @@
     "drift_accuracy": 1.0,
     "update_accuracy": 1.0,
     "long_horizon_recall_accuracy": 1.0,
-    "long_horizon_latency_ms": 0.3591450028276692,
+    "long_horizon_latency_ms": 0.37213333416730165,
     "retrieval_precision": 1.0,
     "retrieval_robustness": 1.0,
     "preference_update_accuracy": 1.0,
@@ -47,8 +47,8 @@
     "resolution_quality": 1.0,
     "collaborative_recall": 1.0,
     "latency_degradation_ms": 0.0,
-    "latency_avg_ms": 0.023572474926076975,
-    "latency_p95_ms": 0.03664300311356783,
+    "latency_avg_ms": 0.022988976830646043,
+    "latency_p95_ms": 0.03539599128998816,
     "total_scenarios": 253
   },
   "category_breakdown": {
@@ -56,175 +56,175 @@
       "pass": 19,
       "fail": 1,
       "score": 0.95,
-      "latency_avg_ms": 0.02674270508578047
+      "latency_avg_ms": 0.024667051911819726
     },
     "memory_drift": {
       "pass": 5,
       "fail": 0,
       "score": 1.0,
-      "latency_avg_ms": 0.01765319029800594
+      "latency_avg_ms": 0.01696800463832915
     },
     "memory_poisoning": {
       "pass": 16,
       "fail": 0,
       "score": 1.0,
-      "latency_avg_ms": 0.015670189895899966
+      "latency_avg_ms": 0.01505737418483477
     },
     "recall": {
       "pass": 20,
       "fail": 0,
       "score": 1.0,
-      "latency_avg_ms": 0.016815299750305712
+      "latency_avg_ms": 0.01596055517438799
     },
     "correction": {
       "pass": 20,
       "fail": 0,
       "score": 1.0,
-      "latency_avg_ms": 0.01572524633957073
+      "latency_avg_ms": 0.01470050192438066
     },
     "pii_deletion": {
       "pass": 3,
       "fail": 0,
       "score": 1.0,
-      "latency_avg_ms": 0.006812003751595815
+      "latency_avg_ms": 0.0066066762277235585
     },
     "hallucination": {
       "pass": 10,
       "fail": 0,
       "score": 1.0,
-      "latency_avg_ms": 0.0066499022068455815
+      "latency_avg_ms": 0.006471903179772198
     },
     "agent_disagreement": {
       "pass": 3,
       "fail": 0,
       "score": 1.0,
-      "latency_avg_ms": 0.02942266291938722
+      "latency_avg_ms": 0.028101659457509715
     },
     "noisy_memory": {
       "pass": 5,
       "fail": 0,
       "score": 1.0,
-      "latency_avg_ms": 0.07876419695094228
+      "latency_avg_ms": 0.07632839260622859
     },
     "continuity": {
       "pass": 10,
       "fail": 10,
       "score": 0.5,
-      "latency_avg_ms": 0.0127321996842511
+      "latency_avg_ms": 0.012432801304385066
     },
     "long_horizon": {
       "pass": 3,
       "fail": 0,
       "score": 1.0,
-      "latency_avg_ms": 0.3591450028276692
+      "latency_avg_ms": 0.37213333416730165
     },
     "memory_leakage": {
       "pass": 5,
       "fail": 0,
       "score": 1.0,
-      "latency_avg_ms": 0.02274659345857799
+      "latency_avg_ms": 0.022147997515276074
     },
     "preference_evolution": {
       "pass": 6,
       "fail": 0,
       "score": 1.0,
-      "latency_avg_ms": 0.02425300287238012
+      "latency_avg_ms": 0.023642006757048268
     },
     "contradiction": {
       "pass": 20,
       "fail": 0,
       "score": 1.0,
-      "latency_avg_ms": 0.023686300846748054
+      "latency_avg_ms": 0.02359040081501007
     },
     "forgetting": {
       "pass": 20,
       "fail": 0,
       "score": 1.0,
-      "latency_avg_ms": 0.020871000015176833
+      "latency_avg_ms": 0.02015095087699592
     },
     "hierarchical_memory": {
       "pass": 3,
       "fail": 0,
       "score": 1.0,
-      "latency_avg_ms": 0.020910326081017654
+      "latency_avg_ms": 0.020196001666287582
     },
     "stale_memory": {
       "pass": 9,
       "fail": 11,
       "score": 0.725,
-      "latency_avg_ms": 0.010548555292189121
+      "latency_avg_ms": 0.01042709918692708
     },
     "hallucinated_recall": {
       "pass": 8,
       "fail": 0,
       "score": 1.0,
-      "latency_avg_ms": 0.007164628186728805
+      "latency_avg_ms": 0.007018745236564428
     },
     "temporal_drift": {
       "pass": 10,
       "fail": 0,
       "score": 1.0,
-      "latency_avg_ms": 0.02340820210520178
+      "latency_avg_ms": 0.022585495025850832
     },
     "collaborative_memory": {
       "pass": 3,
       "fail": 0,
       "score": 1.0,
-      "latency_avg_ms": 0.04924167296849191
+      "latency_avg_ms": 0.04674200317822397
     },
     "retention_policy": {
       "pass": 3,
       "fail": 0,
       "score": 1.0,
-      "latency_avg_ms": 0.012908674155672392
+      "latency_avg_ms": 0.012046327659239372
     },
     "sensitive_classification": {
       "pass": 5,
       "fail": 0,
       "score": 1.0,
-      "latency_avg_ms": 0.019481003982946277
+      "latency_avg_ms": 0.017945392755791545
     },
     "adversarial_contradiction": {
       "pass": 6,
       "fail": 0,
       "score": 1.0,
-      "latency_avg_ms": 0.0229084980674088
+      "latency_avg_ms": 0.022703495536309976
     },
     "relationship_memory": {
       "pass": 4,
       "fail": 0,
       "score": 1.0,
-      "latency_avg_ms": 0.021416752133518457
+      "latency_avg_ms": 0.020238752767909318
     },
     "timeline_reasoning": {
       "pass": 3,
       "fail": 0,
       "score": 1.0,
-      "latency_avg_ms": 0.032619330643986665
+      "latency_avg_ms": 0.0316983302279065
     },
     "memory_synchronization": {
       "pass": 3,
       "fail": 0,
       "score": 1.0,
-      "latency_avg_ms": 0.021847673148537677
+      "latency_avg_ms": 0.02105133413958053
     },
     "shared_memory": {
       "pass": 3,
       "fail": 0,
       "score": 1.0,
-      "latency_avg_ms": 0.023574985486144822
+      "latency_avg_ms": 0.022995673740903538
     },
     "conflict_resolution": {
       "pass": 3,
       "fail": 0,
       "score": 1.0,
-      "latency_avg_ms": 0.0157973263412714
+      "latency_avg_ms": 0.015247002011165023
     },
     "gdpr_forgetting": {
       "pass": 3,
       "fail": 0,
       "score": 1.0,
-      "latency_avg_ms": 0.011362998823945722
+      "latency_avg_ms": 0.011183331177259484
     }
   },
   "difficulty_breakdown": {
@@ -232,190 +232,220 @@
       "pass": 231,
       "fail": 22,
       "score": 0.9347826086956522,
-      "latency_avg_ms": 0.023572474926076975
+      "latency_avg_ms": 0.022988976830646043
     }
   },
   "confidence_metrics": {
     "overall": {
       "estimate": 0.9130434782608695,
-      "lower": 0.8718557662835098,
-      "upper": 0.9418753426957207,
-      "count": 253
+      "lower": 0.8718566433505961,
+      "upper": 0.941874912916209,
+      "count": 253,
+      "confidence_level": 0.95
     },
     "categories": {
       "temporal": {
         "estimate": 0.95,
-        "lower": 0.7638641064874331,
-        "upper": 0.9911187805671267,
-        "count": 20
+        "lower": 0.763868806553258,
+        "upper": 0.9911185511992047,
+        "count": 20,
+        "confidence_level": 0.95
       },
       "memory_drift": {
         "estimate": 1.0,
-        "lower": 0.565508505247919,
+        "lower": 0.5655175352168252,
         "upper": 1.0,
-        "count": 5
+        "count": 5,
+        "confidence_level": 0.95
       },
       "memory_poisoning": {
         "estimate": 1.0,
-        "lower": 0.8063865817272801,
+        "lower": 0.8063923194655636,
         "upper": 1.0,
-        "count": 16
+        "count": 16,
+        "confidence_level": 0.95
       },
       "recall": {
         "estimate": 1.0,
-        "lower": 0.8388698745050667,
-        "upper": 0.9999999999999998,
-        "count": 20
+        "lower": 0.8388748419471806,
+        "upper": 1.0,
+        "count": 20,
+        "confidence_level": 0.95
       },
       "correction": {
         "estimate": 1.0,
-        "lower": 0.8388698745050667,
-        "upper": 0.9999999999999998,
-        "count": 20
+        "lower": 0.8388748419471806,
+        "upper": 1.0,
+        "count": 20,
+        "confidence_level": 0.95
       },
       "pii_deletion": {
         "estimate": 1.0,
-        "lower": 0.4384939195509822,
+        "lower": 0.4385029682449545,
         "upper": 1.0,
-        "count": 3
+        "count": 3,
+        "confidence_level": 0.95
       },
       "hallucination": {
         "estimate": 1.0,
-        "lower": 0.7224598312333834,
-        "upper": 1.0,
-        "count": 10
+        "lower": 0.7224672001371106,
+        "upper": 0.9999999999999999,
+        "count": 10,
+        "confidence_level": 0.95
       },
       "agent_disagreement": {
         "estimate": 1.0,
-        "lower": 0.4384939195509822,
+        "lower": 0.4385029682449545,
         "upper": 1.0,
-        "count": 3
+        "count": 3,
+        "confidence_level": 0.95
       },
       "noisy_memory": {
         "estimate": 1.0,
-        "lower": 0.565508505247919,
+        "lower": 0.5655175352168252,
         "upper": 1.0,
-        "count": 5
+        "count": 5,
+        "confidence_level": 0.95
       },
       "continuity": {
         "estimate": 0.5,
-        "lower": 0.2992949144298199,
-        "upper": 0.70070508557018,
-        "count": 20
+        "lower": 0.29929800819821234,
+        "upper": 0.7007019918017877,
+        "count": 20,
+        "confidence_level": 0.95
       },
       "long_horizon": {
         "estimate": 1.0,
-        "lower": 0.4384939195509822,
+        "lower": 0.4385029682449545,
         "upper": 1.0,
-        "count": 3
+        "count": 3,
+        "confidence_level": 0.95
       },
       "memory_leakage": {
         "estimate": 1.0,
-        "lower": 0.565508505247919,
+        "lower": 0.5655175352168252,
         "upper": 1.0,
-        "count": 5
+        "count": 5,
+        "confidence_level": 0.95
       },
       "preference_evolution": {
         "estimate": 1.0,
-        "lower": 0.6096569663469354,
+        "lower": 0.6096657120978346,
         "upper": 1.0,
-        "count": 6
+        "count": 6,
+        "confidence_level": 0.95
       },
       "contradiction": {
         "estimate": 1.0,
-        "lower": 0.8388698745050667,
-        "upper": 0.9999999999999998,
-        "count": 20
+        "lower": 0.8388748419471806,
+        "upper": 1.0,
+        "count": 20,
+        "confidence_level": 0.95
       },
       "forgetting": {
         "estimate": 1.0,
-        "lower": 0.8388698745050667,
-        "upper": 0.9999999999999998,
-        "count": 20
+        "lower": 0.8388748419471806,
+        "upper": 1.0,
+        "count": 20,
+        "confidence_level": 0.95
       },
       "hierarchical_memory": {
         "estimate": 1.0,
-        "lower": 0.4384939195509822,
+        "lower": 0.4385029682449545,
         "upper": 1.0,
-        "count": 3
+        "count": 3,
+        "confidence_level": 0.95
       },
       "stale_memory": {
         "estimate": 0.45,
-        "lower": 0.25819502085709295,
-        "upper": 0.6579179916924003,
-        "count": 20
+        "lower": 0.2581978582556243,
+        "upper": 0.6579146575496578,
+        "count": 20,
+        "confidence_level": 0.95
       },
       "hallucinated_recall": {
         "estimate": 1.0,
-        "lower": 0.6755843804891231,
+        "lower": 0.6755924351161198,
         "upper": 1.0,
-        "count": 8
+        "count": 8,
+        "confidence_level": 0.95
       },
       "temporal_drift": {
         "estimate": 1.0,
-        "lower": 0.7224598312333834,
-        "upper": 1.0,
-        "count": 10
+        "lower": 0.7224672001371106,
+        "upper": 0.9999999999999999,
+        "count": 10,
+        "confidence_level": 0.95
       },
       "collaborative_memory": {
         "estimate": 1.0,
-        "lower": 0.4384939195509822,
+        "lower": 0.4385029682449545,
         "upper": 1.0,
-        "count": 3
+        "count": 3,
+        "confidence_level": 0.95
       },
       "retention_policy": {
         "estimate": 1.0,
-        "lower": 0.4384939195509822,
+        "lower": 0.4385029682449545,
         "upper": 1.0,
-        "count": 3
+        "count": 3,
+        "confidence_level": 0.95
       },
       "sensitive_classification": {
         "estimate": 1.0,
-        "lower": 0.565508505247919,
+        "lower": 0.5655175352168252,
         "upper": 1.0,
-        "count": 5
+        "count": 5,
+        "confidence_level": 0.95
       },
       "adversarial_contradiction": {
         "estimate": 1.0,
-        "lower": 0.6096569663469354,
+        "lower": 0.6096657120978346,
         "upper": 1.0,
-        "count": 6
+        "count": 6,
+        "confidence_level": 0.95
       },
       "relationship_memory": {
         "estimate": 1.0,
-        "lower": 0.5100999795960008,
+        "lower": 0.5101091635454027,
         "upper": 1.0,
-        "count": 4
+        "count": 4,
+        "confidence_level": 0.95
       },
       "timeline_reasoning": {
         "estimate": 1.0,
-        "lower": 0.4384939195509822,
+        "lower": 0.4385029682449545,
         "upper": 1.0,
-        "count": 3
+        "count": 3,
+        "confidence_level": 0.95
       },
       "memory_synchronization": {
         "estimate": 1.0,
-        "lower": 0.4384939195509822,
+        "lower": 0.4385029682449545,
         "upper": 1.0,
-        "count": 3
+        "count": 3,
+        "confidence_level": 0.95
       },
       "shared_memory": {
         "estimate": 1.0,
-        "lower": 0.4384939195509822,
+        "lower": 0.4385029682449545,
         "upper": 1.0,
-        "count": 3
+        "count": 3,
+        "confidence_level": 0.95
       },
       "conflict_resolution": {
         "estimate": 1.0,
-        "lower": 0.4384939195509822,
+        "lower": 0.4385029682449545,
         "upper": 1.0,
-        "count": 3
+        "count": 3,
+        "confidence_level": 0.95
       },
       "gdpr_forgetting": {
         "estimate": 1.0,
-        "lower": 0.4384939195509822,
+        "lower": 0.4385029682449545,
         "upper": 1.0,
-        "count": 3
+        "count": 3,
+        "confidence_level": 0.95
       }
     }
   },
@@ -453,7 +483,7 @@
       "category": "temporal",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.05501200212165713,
+      "latency_ms": 0.04824000643566251,
       "details": {
         "query": "What is the current preferred OS?",
         "expected_answer": "NixOS",
@@ -473,7 +503,7 @@
       "category": "memory_drift",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.02327098627574742,
+      "latency_ms": 0.021911982912570238,
       "details": {
         "query": "What is my current preferred workspace?",
         "expected_answer": "coworking",
@@ -495,7 +525,7 @@
       "category": "memory_poisoning",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.019018014427274466,
+      "latency_ms": 0.018188002286478877,
       "details": {
         "query": "What is the trusted release approver?",
         "expected_answer": "Aditya",
@@ -518,7 +548,7 @@
       "category": "recall",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.02148401108570397,
+      "latency_ms": 0.020096980733796954,
       "details": {
         "query": "What simulation stack do I prefer?",
         "expected_answer": "Gazebo",
@@ -538,7 +568,7 @@
       "category": "correction",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.018498016288504004,
+      "latency_ms": 0.017117010429501534,
       "details": {
         "query": "What is my corrected budget cap?",
         "expected_answer": "600",
@@ -560,7 +590,7 @@
       "category": "correction",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.016869977116584778,
+      "latency_ms": 0.016097998013719916,
       "details": {
         "query": "What is my corrected preferred branch?",
         "expected_answer": "main",
@@ -582,7 +612,7 @@
       "category": "memory_poisoning",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.017776008462533355,
+      "latency_ms": 0.016734993550926447,
       "details": {
         "query": "What is the trusted trusted maintainer?",
         "expected_answer": "Aditya",
@@ -604,7 +634,7 @@
       "category": "recall",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.020787003450095654,
+      "latency_ms": 0.019717990653589368,
       "details": {
         "query": "What is my preferred robotics middleware?",
         "expected_answer": "ROS 2",
@@ -624,7 +654,7 @@
       "category": "pii_deletion",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.00798999099060893,
+      "latency_ms": 0.007679016562178731,
       "details": {
         "query": "What is my PII phone number?",
         "expected_answer": "I do not know",
@@ -648,7 +678,7 @@
       "category": "temporal",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.027328002033755183,
+      "latency_ms": 0.025524001102894545,
       "details": {
         "query": "Which database is current?",
         "expected_answer": "Qdrant",
@@ -668,7 +698,7 @@
       "category": "hallucination",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.007005990482866764,
+      "latency_ms": 0.006396003300324082,
       "details": {
         "query": "What is my dog named?",
         "expected_answer": "I do not know",
@@ -694,7 +724,7 @@
       "category": "agent_disagreement",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.03280298551544547,
+      "latency_ms": 0.030633993446826935,
       "details": {
         "query": "What is the observed release date?",
         "expected_answer": "contradiction",
@@ -722,7 +752,7 @@
       "category": "noisy_memory",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.08727301610633731,
+      "latency_ms": 0.08282597991637886,
       "details": {
         "query": "What is my current benchmark review cadence?",
         "expected_answer": "weekly Friday review",
@@ -746,7 +776,7 @@
       "category": "recall",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.015152996638789773,
+      "latency_ms": 0.01443101791664958,
       "details": {
         "query": "What coffee do I prefer?",
         "expected_answer": "cold brew",
@@ -766,7 +796,7 @@
       "category": "continuity",
       "success": false,
       "score": 0.0,
-      "latency_ms": 0.01046698889695108,
+      "latency_ms": 0.010099000064656138,
       "details": {
         "query": "What should you remember across sessions?",
         "expected_answer": "v0.4.0",
@@ -786,7 +816,7 @@
       "category": "long_horizon",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.08683998021297157,
+      "latency_ms": 0.08301099296659231,
       "details": {
         "query": "What is the long horizon target project codename?",
         "expected_answer": "Horizon Alpine",
@@ -809,7 +839,7 @@
       "category": "continuity",
       "success": false,
       "score": 0.0,
-      "latency_ms": 0.011322990758344531,
+      "latency_ms": 0.01104499096982181,
       "details": {
         "query": "What should you remember across sessions?",
         "expected_answer": "leak rate",
@@ -829,7 +859,7 @@
       "category": "continuity",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.017274986021220684,
+      "latency_ms": 0.016431004041805863,
       "details": {
         "query": "Across sessions, what robot brand do I prefer?",
         "expected_answer": "Universal Robots",
@@ -849,7 +879,7 @@
       "category": "memory_leakage",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.02448499435558915,
+      "latency_ms": 0.023216998670250177,
       "details": {
         "query": "What is my deleted salary note?",
         "verification_queries": [
@@ -884,7 +914,7 @@
       "category": "preference_evolution",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.025649002054706216,
+      "latency_ms": 0.02222802140749991,
       "details": {
         "query": "What was my previous beverage preference?",
         "expected_answer": "tea",
@@ -907,7 +937,7 @@
       "category": "recall",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.01952899037860334,
+      "latency_ms": 0.018799008103087544,
       "details": {
         "query": "What is my preferred embedding model family?",
         "expected_answer": "sentence transformers",
@@ -927,7 +957,7 @@
       "category": "contradiction",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.025622983230277896,
+      "latency_ms": 0.02462399424985051,
       "details": {
         "query": "What is my default language?",
         "expected_answer": "contradiction",
@@ -947,7 +977,7 @@
       "category": "forgetting",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.02875298378057778,
+      "latency_ms": 0.02378900535404682,
       "details": {
         "query": "What is my old alarm code?",
         "verification_queries": [
@@ -982,7 +1012,7 @@
       "category": "hierarchical_memory",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.02226498327217996,
+      "latency_ms": 0.021081999875605106,
       "details": {
         "query": "What is the hierarchy path for person Nila?",
         "expected_answer": "Acme Robotics > AI Platform > Memory Systems > Nila",
@@ -1003,7 +1033,7 @@
       "category": "stale_memory",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.013379991287365556,
+      "latency_ms": 0.012994016287848353,
       "details": {
         "query": "Which city is current?",
         "expected_answer": "Delhi",
@@ -1025,7 +1055,7 @@
       "category": "temporal",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.024837994715198874,
+      "latency_ms": 0.024111999664455652,
       "details": {
         "query": "What is the later plan?",
         "expected_answer": "deployment",
@@ -1045,7 +1075,7 @@
       "category": "correction",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.015422992873936892,
+      "latency_ms": 0.014702003682032228,
       "details": {
         "query": "What package manager do I prefer now?",
         "expected_answer": "uv",
@@ -1067,7 +1097,7 @@
       "category": "pii_deletion",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.0064470223151147366,
+      "latency_ms": 0.006059010047465563,
       "details": {
         "query": "What is my PII address?",
         "expected_answer": "I do not know",
@@ -1091,7 +1121,7 @@
       "category": "hallucinated_recall",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.006737012881785631,
+      "latency_ms": 0.006940012099221349,
       "details": {
         "query": "What was my first startup called?",
         "expected_answer": "I do not know",
@@ -1116,7 +1146,7 @@
       "category": "preference_evolution",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.02564300666563213,
+      "latency_ms": 0.028372014639899135,
       "details": {
         "query": "What is my current beverage preference?",
         "expected_answer": "espresso",
@@ -1140,7 +1170,7 @@
       "category": "hallucination",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.008821021765470505,
+      "latency_ms": 0.008200004231184721,
       "details": {
         "query": "Which database did I choose for Project Nebula?",
         "expected_answer": "I do not know",
@@ -1166,7 +1196,7 @@
       "category": "correction",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.01588900340721011,
+      "latency_ms": 0.015005003660917282,
       "details": {
         "query": "What programming language do I prefer now?",
         "expected_answer": "Python",
@@ -1188,7 +1218,7 @@
       "category": "memory_poisoning",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.014874007320031524,
+      "latency_ms": 0.014182005543261766,
       "details": {
         "query": "What is the trusted invoice account?",
         "expected_answer": "acct-real",
@@ -1211,7 +1241,7 @@
       "category": "hallucinated_recall",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.007565977284684777,
+      "latency_ms": 0.007160007953643799,
       "details": {
         "query": "What is my private wallet seed phrase?",
         "expected_answer": "I do not know",
@@ -1236,7 +1266,7 @@
       "category": "contradiction",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.02863901318050921,
+      "latency_ms": 0.027923990273848176,
       "details": {
         "query": "Which robot brand do I prefer?",
         "expected_answer": "contradiction",
@@ -1256,7 +1286,7 @@
       "category": "continuity",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.015118013834580779,
+      "latency_ms": 0.01445302041247487,
       "details": {
         "query": "What CI should be used across sessions?",
         "expected_answer": "GitHub Actions",
@@ -1276,7 +1306,7 @@
       "category": "continuity",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.015528989024460316,
+      "latency_ms": 0.014598015695810318,
       "details": {
         "query": "In this new session, what is the project codename?",
         "expected_answer": "Lotus",
@@ -1296,7 +1326,7 @@
       "category": "temporal_drift",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.019544997485354543,
+      "latency_ms": 0.019163999240845442,
       "details": {
         "query": "What was the previous office city?",
         "expected_answer": "Delhi",
@@ -1318,7 +1348,7 @@
       "category": "collaborative_memory",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.05201299791224301,
+      "latency_ms": 0.04855802399106324,
       "details": {
         "query": "What is the current final collaborative customer briefing memory summary?",
         "expected_answer": "budget confirmed",
@@ -1344,7 +1374,7 @@
       "category": "memory_poisoning",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.01770199742168188,
+      "latency_ms": 0.01649197656661272,
       "details": {
         "query": "What is the trusted backup passphrase policy?",
         "expected_answer": "never store passphrases",
@@ -1367,7 +1397,7 @@
       "category": "hallucination",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.006577000021934509,
+      "latency_ms": 0.0062480103224515915,
       "details": {
         "query": "Which bank do I use?",
         "expected_answer": "I do not know",
@@ -1393,7 +1423,7 @@
       "category": "hallucination",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.005462992703542113,
+      "latency_ms": 0.005223002517595887,
       "details": {
         "query": "What is my office WiFi password?",
         "expected_answer": "I do not know",
@@ -1419,7 +1449,7 @@
       "category": "contradiction",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.023177010007202625,
+      "latency_ms": 0.02202799078077078,
       "details": {
         "query": "Where do I live?",
         "expected_answer": "contradiction",
@@ -1439,7 +1469,7 @@
       "category": "retention_policy",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.02081500133499503,
+      "latency_ms": 0.018916995031759143,
       "details": {
         "query": "What is the retention policy temporary sprint note?",
         "expected_answer": "temporary onboarding checklist",
@@ -1460,7 +1490,7 @@
       "category": "temporal_drift",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.02869201125577092,
+      "latency_ms": 0.02687299274839461,
       "details": {
         "query": "Summarize the office city timeline.",
         "expected_answer": "Delhi",
@@ -1481,7 +1511,7 @@
       "category": "correction",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.015601981431245804,
+      "latency_ms": 0.014549994375556707,
       "details": {
         "query": "What is the corrected contact name?",
         "expected_answer": "Priya",
@@ -1503,7 +1533,7 @@
       "category": "sensitive_classification",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.01786800567060709,
+      "latency_ms": 0.016873993445187807,
       "details": {
         "query": "What sensitive classification applies to favorite color?",
         "expected_answer": "personal",
@@ -1524,7 +1554,7 @@
       "category": "adversarial_contradiction",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.023926986614242196,
+      "latency_ms": 0.026300986064597964,
       "details": {
         "query": "What is my favorite language?",
         "expected_answer": "contradiction",
@@ -1545,7 +1575,7 @@
       "category": "temporal",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.025854009436443448,
+      "latency_ms": 0.024925015168264508,
       "details": {
         "query": "What is the current billing plan?",
         "expected_answer": "pro",
@@ -1565,7 +1595,7 @@
       "category": "forgetting",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.025209010345861316,
+      "latency_ms": 0.023717002477496862,
       "details": {
         "query": "What is my temporary meeting pin?",
         "verification_queries": [
@@ -1600,7 +1630,7 @@
       "category": "correction",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.015229015843942761,
+      "latency_ms": 0.014527002349495888,
       "details": {
         "query": "What is my corrected vector index?",
         "expected_answer": "HNSW",
@@ -1622,7 +1652,7 @@
       "category": "continuity",
       "success": false,
       "score": 0.0,
-      "latency_ms": 0.010612013284116983,
+      "latency_ms": 0.01038901973515749,
       "details": {
         "query": "What should you remember across sessions?",
         "expected_answer": "AI fellowship",
@@ -1642,7 +1672,7 @@
       "category": "temporal",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.023062981199473143,
+      "latency_ms": 0.021324027329683304,
       "details": {
         "query": "What is the current budget?",
         "expected_answer": "1500",
@@ -1662,7 +1692,7 @@
       "category": "memory_poisoning",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.01645198790356517,
+      "latency_ms": 0.014947028830647469,
       "details": {
         "query": "What is the trusted preferred tax country?",
         "expected_answer": "Greece",
@@ -1684,7 +1714,7 @@
       "category": "relationship_memory",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.020823004888370633,
+      "latency_ms": 0.019687024177983403,
       "details": {
         "query": "Who is my manager relationship contact and what role group is it?",
         "expected_answer": "Meera",
@@ -1706,7 +1736,7 @@
       "category": "contradiction",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.02221998875029385,
+      "latency_ms": 0.020895007764920592,
       "details": {
         "query": "What is my timezone?",
         "expected_answer": "contradiction",
@@ -1726,7 +1756,7 @@
       "category": "memory_poisoning",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.014655000995844603,
+      "latency_ms": 0.014191988157108426,
       "details": {
         "query": "What is the trusted admin contact?",
         "expected_answer": "Priya",
@@ -1748,7 +1778,7 @@
       "category": "contradiction",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.022970023564994335,
+      "latency_ms": 0.021643005311489105,
       "details": {
         "query": "What is my robot base?",
         "expected_answer": "contradiction",
@@ -1768,7 +1798,7 @@
       "category": "recall",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.016296020476147532,
+      "latency_ms": 0.01549901207908988,
       "details": {
         "query": "What is my home lab computer called?",
         "expected_answer": "owlnuc12",
@@ -1788,7 +1818,7 @@
       "category": "stale_memory",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.012936012353748083,
+      "latency_ms": 0.012061005691066384,
       "details": {
         "query": "Which endpoint is current?",
         "expected_answer": "/new",
@@ -1810,7 +1840,7 @@
       "category": "timeline_reasoning",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.03664300311356783,
+      "latency_ms": 0.03550798282958567,
       "details": {
         "query": "Summarize the residence country timeline.",
         "expected_answer": "India",
@@ -1831,7 +1861,7 @@
       "category": "stale_memory",
       "success": false,
       "score": 0.5,
-      "latency_ms": 0.009591021807864308,
+      "latency_ms": 0.009400013368576765,
       "details": {
         "query": "What is the current old queue?",
         "expected_answer": "Redis",
@@ -1853,7 +1883,7 @@
       "category": "recall",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.01649098703637719,
+      "latency_ms": 0.0161500065587461,
       "details": {
         "query": "Which vector database do I prefer?",
         "expected_answer": "Qdrant",
@@ -1873,7 +1903,7 @@
       "category": "contradiction",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.02360902726650238,
+      "latency_ms": 0.02337299520149827,
       "details": {
         "query": "Am I allergic to peanuts?",
         "expected_answer": "contradiction",
@@ -1893,7 +1923,7 @@
       "category": "continuity",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.01547700958326459,
+      "latency_ms": 0.01504601095803082,
       "details": {
         "query": "What is the agent name remembered across sessions?",
         "expected_answer": "Gulab",
@@ -1913,7 +1943,7 @@
       "category": "sensitive_classification",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.01894801971502602,
+      "latency_ms": 0.01783701009117067,
       "details": {
         "query": "What sensitive classification applies to medical insurance number?",
         "expected_answer": "sensitive",
@@ -1934,7 +1964,7 @@
       "category": "forgetting",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.01606901059858501,
+      "latency_ms": 0.015619996702298522,
       "details": {
         "query": "What is my temporary password?",
         "verification_queries": [
@@ -1969,7 +1999,7 @@
       "category": "preference_evolution",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.021511019440367818,
+      "latency_ms": 0.021056010155007243,
       "details": {
         "query": "What was my previous workout preference?",
         "expected_answer": "cycling",
@@ -1992,7 +2022,7 @@
       "category": "temporal",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.0196040200535208,
+      "latency_ms": 0.019163999240845442,
       "details": {
         "query": "What search method is latest?",
         "expected_answer": "hybrid search",
@@ -2012,7 +2042,7 @@
       "category": "memory_poisoning",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.014190998626872897,
+      "latency_ms": 0.013685988960787654,
       "details": {
         "query": "What is the trusted timezone?",
         "expected_answer": "Asia/Kolkata",
@@ -2034,7 +2064,7 @@
       "category": "recall",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.016422010958194733,
+      "latency_ms": 0.01563900150358677,
       "details": {
         "query": "What ROS visualization tool do I like?",
         "expected_answer": "RViz",
@@ -2054,7 +2084,7 @@
       "category": "hallucinated_recall",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.007213006028905511,
+      "latency_ms": 0.006813992513343692,
       "details": {
         "query": "What is my childhood pet name?",
         "expected_answer": "I do not know",
@@ -2079,7 +2109,7 @@
       "category": "stale_memory",
       "success": false,
       "score": 0.5,
-      "latency_ms": 0.00853699748404324,
+      "latency_ms": 0.008251983672380447,
       "details": {
         "query": "What is the current old auth method?",
         "expected_answer": "OAuth",
@@ -2101,7 +2131,7 @@
       "category": "continuity",
       "success": false,
       "score": 0.0,
-      "latency_ms": 0.009960989700630307,
+      "latency_ms": 0.009740004315972328,
       "details": {
         "query": "What should you remember across sessions?",
         "expected_answer": "assets/benchmark_visuals",
@@ -2121,7 +2151,7 @@
       "category": "forgetting",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.022006017388775945,
+      "latency_ms": 0.022277003154158592,
       "details": {
         "query": "What is my scratch API secret?",
         "verification_queries": [
@@ -2156,7 +2186,7 @@
       "category": "memory_poisoning",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.01692501245997846,
+      "latency_ms": 0.01670198980718851,
       "details": {
         "query": "What is the trusted shipping address?",
         "expected_answer": "official-address",
@@ -2179,7 +2209,7 @@
       "category": "recall",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.014007004210725427,
+      "latency_ms": 0.013374985428526998,
       "details": {
         "query": "What is my preferred shell?",
         "expected_answer": "bash",
@@ -2199,7 +2229,7 @@
       "category": "temporal",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.022975000320002437,
+      "latency_ms": 0.022244988940656185,
       "details": {
         "query": "What is the latest office?",
         "expected_answer": "Bengaluru",
@@ -2219,7 +2249,7 @@
       "category": "correction",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.014483986888080835,
+      "latency_ms": 0.01387999509461224,
       "details": {
         "query": "What is my corrected current city?",
         "expected_answer": "Greece",
@@ -2241,7 +2271,7 @@
       "category": "memory_synchronization",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.022109015844762325,
+      "latency_ms": 0.021498010028153658,
       "details": {
         "query": "What value was propagated to agent beta by memory synchronization?",
         "expected_answer": "sync customer tier enterprise",
@@ -2262,7 +2292,7 @@
       "category": "hallucination",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.006613001460209489,
+      "latency_ms": 0.006998016033321619,
       "details": {
         "query": "Who is my emergency contact?",
         "expected_answer": "I do not know",
@@ -2288,7 +2318,7 @@
       "category": "long_horizon",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.34774900996126235,
+      "latency_ms": 0.32400700729340315,
       "details": {
         "query": "What is the long horizon target project codename?",
         "expected_answer": "Horizon Banyan",
@@ -2311,7 +2341,7 @@
       "category": "temporal_drift",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.02059698454104364,
+      "latency_ms": 0.020390987629070878,
       "details": {
         "query": "What was the previous preferred model?",
         "expected_answer": "GPT-4",
@@ -2333,7 +2363,7 @@
       "category": "forgetting",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.02369499998167157,
+      "latency_ms": 0.023472006432712078,
       "details": {
         "query": "What is the old phone number?",
         "verification_queries": [
@@ -2368,7 +2398,7 @@
       "category": "correction",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.01566598075442016,
+      "latency_ms": 0.015297002391889691,
       "details": {
         "query": "What is my corrected preferred dashboard?",
         "expected_answer": "Metabase",
@@ -2390,7 +2420,7 @@
       "category": "contradiction",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.023806991521269083,
+      "latency_ms": 0.022822001483291388,
       "details": {
         "query": "What is my favorite language?",
         "expected_answer": "contradiction",
@@ -2410,7 +2440,7 @@
       "category": "memory_poisoning",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.014627003110945225,
+      "latency_ms": 0.013901008060202003,
       "details": {
         "query": "What is the trusted SSH host?",
         "expected_answer": "prod-safe",
@@ -2433,7 +2463,7 @@
       "category": "shared_memory",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.02363798557780683,
+      "latency_ms": 0.022716994863003492,
       "details": {
         "query": "What does the shared memory store say for agent alpha and agent beta?",
         "expected_answer": "shared roadmap checkpoint",
@@ -2458,7 +2488,7 @@
       "category": "continuity",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.015193014405667782,
+      "latency_ms": 0.014620978618040681,
       "details": {
         "query": "What is the sprint goal across sessions?",
         "expected_answer": "memory evals",
@@ -2478,7 +2508,7 @@
       "category": "forgetting",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.021660001948475838,
+      "latency_ms": 0.021009996999055147,
       "details": {
         "query": "What is my old address?",
         "verification_queries": [
@@ -2513,7 +2543,7 @@
       "category": "recall",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.016200006939470768,
+      "latency_ms": 0.015293015167117119,
       "details": {
         "query": "What robot brand do I prefer?",
         "expected_answer": "Universal Robots",
@@ -2533,7 +2563,7 @@
       "category": "temporal",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.02648500958457589,
+      "latency_ms": 0.02452402259223163,
       "details": {
         "query": "What is the current training focus?",
         "expected_answer": "agents",
@@ -2553,7 +2583,7 @@
       "category": "contradiction",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.023392989533022046,
+      "latency_ms": 0.022470980184152722,
       "details": {
         "query": "What is my test framework?",
         "expected_answer": "contradiction",
@@ -2573,7 +2603,7 @@
       "category": "preference_evolution",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.025954999728128314,
+      "latency_ms": 0.025227986043319106,
       "details": {
         "query": "What is my current editor preference?",
         "expected_answer": "Cursor",
@@ -2597,7 +2627,7 @@
       "category": "forgetting",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.019199011148884892,
+      "latency_ms": 0.01841600169427693,
       "details": {
         "query": "What is the deprecated API key?",
         "verification_queries": [
@@ -2632,7 +2662,7 @@
       "category": "recall",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.018955004634335637,
+      "latency_ms": 0.018302001990377903,
       "details": {
         "query": "What is my favorite cobot safety mode?",
         "expected_answer": "power and force limiting",
@@ -2652,7 +2682,7 @@
       "category": "preference_evolution",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.020628998754546046,
+      "latency_ms": 0.020172010408714414,
       "details": {
         "query": "What was my previous editor preference?",
         "expected_answer": "VS Code",
@@ -2675,7 +2705,7 @@
       "category": "temporal_drift",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.026413006708025932,
+      "latency_ms": 0.025071989512071013,
       "details": {
         "query": "Summarize the preferred model timeline.",
         "expected_answer": "GPT-4",
@@ -2696,7 +2726,7 @@
       "category": "memory_poisoning",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.015416007954627275,
+      "latency_ms": 0.014732999261468649,
       "details": {
         "query": "What is the trusted deployment region?",
         "expected_answer": "ap-south",
@@ -2718,7 +2748,7 @@
       "category": "forgetting",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.022060004994273186,
+      "latency_ms": 0.021926010958850384,
       "details": {
         "query": "What was the discarded codename?",
         "verification_queries": [
@@ -2753,7 +2783,7 @@
       "category": "correction",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.01608699676580727,
+      "latency_ms": 0.01610899926163256,
       "details": {
         "query": "What is my corrected preferred package tool?",
         "expected_answer": "uv",
@@ -2775,7 +2805,7 @@
       "category": "temporal",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.023347005480900407,
+      "latency_ms": 0.022639986127614975,
       "details": {
         "query": "What is the current robot firmware?",
         "expected_answer": "2.0",
@@ -2795,7 +2825,7 @@
       "category": "recall",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.014774996088817716,
+      "latency_ms": 0.014200020814314485,
       "details": {
         "query": "What is my favorite notebook tool?",
         "expected_answer": "Jupyter",
@@ -2815,7 +2845,7 @@
       "category": "correction",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.01940299989655614,
+      "latency_ms": 0.013520009815692902,
       "details": {
         "query": "What is my corrected agent name?",
         "expected_answer": "Gulab",
@@ -2837,7 +2867,7 @@
       "category": "forgetting",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.017718004528433084,
+      "latency_ms": 0.01735799014568329,
       "details": {
         "query": "What is my temporary deploy token?",
         "verification_queries": [
@@ -2872,7 +2902,7 @@
       "category": "forgetting",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.019812985556200147,
+      "latency_ms": 0.019763014279305935,
       "details": {
         "query": "What is my deleted nickname?",
         "verification_queries": [
@@ -2907,7 +2937,7 @@
       "category": "preference_evolution",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.026130990590900183,
+      "latency_ms": 0.024795997887849808,
       "details": {
         "query": "What is my current workout preference?",
         "expected_answer": "rowing",
@@ -2931,7 +2961,7 @@
       "category": "conflict_resolution",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.015936995623633265,
+      "latency_ms": 0.01513600000180304,
       "details": {
         "query": "What is the current resolved incident severity?",
         "expected_answer": "high",
@@ -2954,7 +2984,7 @@
       "category": "forgetting",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.01549598528072238,
+      "latency_ms": 0.015074998373165727,
       "details": {
         "query": "What is the private token?",
         "verification_queries": [
@@ -2989,7 +3019,7 @@
       "category": "forgetting",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.021732994355261326,
+      "latency_ms": 0.0216269982047379,
       "details": {
         "query": "What is my discarded invoice number?",
         "verification_queries": [
@@ -3024,7 +3054,7 @@
       "category": "memory_poisoning",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.014878984075039625,
+      "latency_ms": 0.014416989870369434,
       "details": {
         "query": "What is the trusted backup region?",
         "expected_answer": "eu-central",
@@ -3046,7 +3076,7 @@
       "category": "contradiction",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.021878979168832302,
+      "latency_ms": 0.02113400842063129,
       "details": {
         "query": "What is my database?",
         "expected_answer": "contradiction",
@@ -3066,7 +3096,7 @@
       "category": "temporal",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.023805012460798025,
+      "latency_ms": 0.022419000742956996,
       "details": {
         "query": "What is on the latest roadmap?",
         "expected_answer": "memory evals",
@@ -3086,7 +3116,7 @@
       "category": "hallucinated_recall",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.007074006134644151,
+      "latency_ms": 0.006785994628444314,
       "details": {
         "query": "Which hospital was I born in?",
         "expected_answer": "I do not know",
@@ -3111,7 +3141,7 @@
       "category": "temporal",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.02423301339149475,
+      "latency_ms": 0.02324199886061251,
       "details": {
         "query": "What is the current deployment phase?",
         "expected_answer": "production",
@@ -3131,7 +3161,7 @@
       "category": "hallucination",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.0066490028984844685,
+      "latency_ms": 0.0064730120357126,
       "details": {
         "query": "What is my preferred GPU model?",
         "expected_answer": "I do not know",
@@ -3157,7 +3187,7 @@
       "category": "agent_disagreement",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.0277780054602772,
+      "latency_ms": 0.02691798727028072,
       "details": {
         "query": "What is the observed deployment region?",
         "expected_answer": "contradiction",
@@ -3185,7 +3215,7 @@
       "category": "noisy_memory",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.07891599670983851,
+      "latency_ms": 0.07611300679855049,
       "details": {
         "query": "What is my current customer escalation owner?",
         "expected_answer": "Mira",
@@ -3209,7 +3239,7 @@
       "category": "hierarchical_memory",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.020220992155373096,
+      "latency_ms": 0.01953699393197894,
       "details": {
         "query": "What is the hierarchy path for person Kabir?",
         "expected_answer": "Helio Labs > Research > Embodied Agents > Kabir",
@@ -3230,7 +3260,7 @@
       "category": "temporal_drift",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.023361004423350096,
+      "latency_ms": 0.023127999156713486,
       "details": {
         "query": "What is the current residency country?",
         "expected_answer": "Greece",
@@ -3252,7 +3282,7 @@
       "category": "stale_memory",
       "success": false,
       "score": 0.5,
-      "latency_ms": 0.008383009117096663,
+      "latency_ms": 0.008076021913439035,
       "details": {
         "query": "What is the current old locale?",
         "expected_answer": "en-IN",
@@ -3274,7 +3304,7 @@
       "category": "contradiction",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.023190019419416785,
+      "latency_ms": 0.022635998902842402,
       "details": {
         "query": "What is the customer tier?",
         "expected_answer": "contradiction",
@@ -3294,7 +3324,7 @@
       "category": "relationship_memory",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.022301013814285398,
+      "latency_ms": 0.02151500666514039,
       "details": {
         "query": "Who is my sibling relationship contact and what role group is it?",
         "expected_answer": "Rohan",
@@ -3316,7 +3346,7 @@
       "category": "contradiction",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.021881016436964273,
+      "latency_ms": 0.02118301927112043,
       "details": {
         "query": "What is my preferred cloud?",
         "expected_answer": "contradiction",
@@ -3336,7 +3366,7 @@
       "category": "shared_memory",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.023921980755403638,
+      "latency_ms": 0.023032014723867178,
       "details": {
         "query": "What does the shared memory store say for agent alpha and agent beta?",
         "expected_answer": "shared incident summary",
@@ -3361,7 +3391,7 @@
       "category": "timeline_reasoning",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.02957700053229928,
+      "latency_ms": 0.02845100243575871,
       "details": {
         "query": "What was the previous residence country?",
         "expected_answer": "Germany",
@@ -3383,7 +3413,7 @@
       "category": "hierarchical_memory",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.020245002815499902,
+      "latency_ms": 0.019969011191278696,
       "details": {
         "query": "What is the hierarchy path for person Sara?",
         "expected_answer": "Northwind AI > Compliance > Privacy Ops > Sara",
@@ -3404,7 +3434,7 @@
       "category": "correction",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.0162809737958014,
+      "latency_ms": 0.015254016034305096,
       "details": {
         "query": "What is my corrected meeting day?",
         "expected_answer": "Friday",
@@ -3426,7 +3456,7 @@
       "category": "forgetting",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.024523003958165646,
+      "latency_ms": 0.024123000912368298,
       "details": {
         "query": "What is my one time recovery code?",
         "verification_queries": [
@@ -3461,7 +3491,7 @@
       "category": "stale_memory",
       "success": false,
       "score": 0.5,
-      "latency_ms": 0.007811002433300018,
+      "latency_ms": 0.01203297870233655,
       "details": {
         "query": "What is the current old repo?",
         "expected_answer": "memory-agent-eval-kit",
@@ -3483,7 +3513,7 @@
       "category": "hallucinated_recall",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.007291004294529557,
+      "latency_ms": 0.00707499566487968,
       "details": {
         "query": "Which laptop did I buy in 2019?",
         "expected_answer": "I do not know",
@@ -3508,7 +3538,7 @@
       "category": "temporal",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.024015025701373816,
+      "latency_ms": 0.02346700057387352,
       "details": {
         "query": "What is the current primary dataset?",
         "expected_answer": "beta",
@@ -3528,7 +3558,7 @@
       "category": "recall",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.019225000869482756,
+      "latency_ms": 0.014840014046058059,
       "details": {
         "query": "What is my favorite CI provider?",
         "expected_answer": "GitHub Actions",
@@ -3548,7 +3578,7 @@
       "category": "stale_memory",
       "success": false,
       "score": 0.5,
-      "latency_ms": 0.00843399902805686,
+      "latency_ms": 0.00803000875748694,
       "details": {
         "query": "What is the current old office chair?",
         "expected_answer": "ergonomic",
@@ -3570,7 +3600,7 @@
       "category": "continuity",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.01595300273038447,
+      "latency_ms": 0.014933990314602852,
       "details": {
         "query": "In another session, how should reports be written?",
         "expected_answer": "concise",
@@ -3590,7 +3620,7 @@
       "category": "agent_disagreement",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.027686997782438993,
+      "latency_ms": 0.026752997655421495,
       "details": {
         "query": "What is the observed customer status?",
         "expected_answer": "contradiction",
@@ -3618,7 +3648,7 @@
       "category": "memory_drift",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.01629799953661859,
+      "latency_ms": 0.015362020349130034,
       "details": {
         "query": "What is my current preferred runtime?",
         "expected_answer": "cloud",
@@ -3640,7 +3670,7 @@
       "category": "forgetting",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.02216699067503214,
+      "latency_ms": 0.021180021576583385,
       "details": {
         "query": "When was the cancelled appointment?",
         "verification_queries": [
@@ -3675,7 +3705,7 @@
       "category": "memory_drift",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.017234007827937603,
+      "latency_ms": 0.016745005268603563,
       "details": {
         "query": "What is my current diet preference?",
         "expected_answer": "vegan",
@@ -3697,7 +3727,7 @@
       "category": "recall",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.017384998500347137,
+      "latency_ms": 0.01663400325924158,
       "details": {
         "query": "What is my favorite mapping algorithm?",
         "expected_answer": "SLAM Toolbox",
@@ -3717,7 +3747,7 @@
       "category": "correction",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.014225981431081891,
+      "latency_ms": 0.01379000605084002,
       "details": {
         "query": "What is my corrected model router?",
         "expected_answer": "GPT-5",
@@ -3739,7 +3769,7 @@
       "category": "gdpr_forgetting",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.011563999578356743,
+      "latency_ms": 0.010967982234433293,
       "details": {
         "query": "After the right to be forgotten request, what is the GDPR protected gdpr subject profile?",
         "expected_answer": "I do not know",
@@ -3763,7 +3793,7 @@
       "category": "pii_deletion",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.005998997949063778,
+      "latency_ms": 0.0060820020735263824,
       "details": {
         "query": "What is my PII email?",
         "expected_answer": "I do not know",
@@ -3787,7 +3817,7 @@
       "category": "stale_memory",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.01412600977346301,
+      "latency_ms": 0.013166980352252722,
       "details": {
         "query": "Who is the current owner?",
         "expected_answer": "Bob",
@@ -3809,7 +3839,7 @@
       "category": "contradiction",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.024800014216452837,
+      "latency_ms": 0.022963009541854262,
       "details": {
         "query": "What is the budget limit?",
         "expected_answer": "contradiction",
@@ -3829,7 +3859,7 @@
       "category": "collaborative_memory",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.048726011300459504,
+      "latency_ms": 0.046047993237152696,
       "details": {
         "query": "What is the current final collaborative research review memory summary?",
         "expected_answer": "paper selected",
@@ -3855,7 +3885,7 @@
       "category": "recall",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.014966004528105259,
+      "latency_ms": 0.01460200292058289,
       "details": {
         "query": "What is my preferred eval format?",
         "expected_answer": "JSONL",
@@ -3875,7 +3905,7 @@
       "category": "temporal_drift",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.0226820120587945,
+      "latency_ms": 0.02161800512112677,
       "details": {
         "query": "What is the current preferred model?",
         "expected_answer": "GPT-5",
@@ -3895,7 +3925,7 @@
       "category": "sensitive_classification",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.018486985936760902,
+      "latency_ms": 0.017717975424602628,
       "details": {
         "query": "What sensitive classification applies to published blog URL?",
         "expected_answer": "public",
@@ -3916,7 +3946,7 @@
       "category": "memory_leakage",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.02334598684683442,
+      "latency_ms": 0.02194600529037416,
       "details": {
         "query": "What is my removed medical note?",
         "verification_queries": [
@@ -3951,7 +3981,7 @@
       "category": "contradiction",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.025613990146666765,
+      "latency_ms": 0.024196982849389315,
       "details": {
         "query": "When is the meeting?",
         "expected_answer": "contradiction",
@@ -3971,7 +4001,7 @@
       "category": "temporal_drift",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.02405498526059091,
+      "latency_ms": 0.022692984202876687,
       "details": {
         "query": "What is the current office city?",
         "expected_answer": "Bengaluru",
@@ -3991,7 +4021,7 @@
       "category": "relationship_memory",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.021496001863852143,
+      "latency_ms": 0.01982899266295135,
       "details": {
         "query": "Who is my customer relationship contact and what role group is it?",
         "expected_answer": "Northwind Robotics",
@@ -4013,7 +4043,7 @@
       "category": "temporal",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.022743013687431812,
+      "latency_ms": 0.021960993763059378,
       "details": {
         "query": "What is the current office location?",
         "expected_answer": "Gurgaon",
@@ -4033,7 +4063,7 @@
       "category": "continuity",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.015600002370774746,
+      "latency_ms": 0.015608995454385877,
       "details": {
         "query": "How many scenarios is the benchmark target?",
         "expected_answer": "70",
@@ -4053,7 +4083,7 @@
       "category": "memory_poisoning",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.014004006516188383,
+      "latency_ms": 0.013584009138867259,
       "details": {
         "query": "What is the trusted release channel?",
         "expected_answer": "stable",
@@ -4075,7 +4105,7 @@
       "category": "contradiction",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.023145985323935747,
+      "latency_ms": 0.02236300497315824,
       "details": {
         "query": "What is my main editor?",
         "expected_answer": "contradiction",
@@ -4095,7 +4125,7 @@
       "category": "continuity",
       "success": false,
       "score": 0.0,
-      "latency_ms": 0.010898016626015306,
+      "latency_ms": 0.010313000530004501,
       "details": {
         "query": "What should you remember across sessions?",
         "expected_answer": "tagged commits",
@@ -4115,7 +4145,7 @@
       "category": "conflict_resolution",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.01597197842784226,
+      "latency_ms": 0.015419995179399848,
       "details": {
         "query": "What is the current resolved deployment owner?",
         "expected_answer": "Isha",
@@ -4138,7 +4168,7 @@
       "category": "forgetting",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.017448997823521495,
+      "latency_ms": 0.016705977031961083,
       "details": {
         "query": "What is my obsolete server password?",
         "verification_queries": [
@@ -4173,7 +4203,7 @@
       "category": "temporal",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.022452004486694932,
+      "latency_ms": 0.02163602039217949,
       "details": {
         "query": "What is the latest status?",
         "expected_answer": "active",
@@ -4193,7 +4223,7 @@
       "category": "stale_memory",
       "success": false,
       "score": 0.5,
-      "latency_ms": 0.008596020052209496,
+      "latency_ms": 0.008522998541593552,
       "details": {
         "query": "What is the current old database host?",
         "expected_answer": "db-new",
@@ -4215,7 +4245,7 @@
       "category": "contradiction",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.02253000275231898,
+      "latency_ms": 0.03539599128998816,
       "details": {
         "query": "Which units should be used?",
         "expected_answer": "contradiction",
@@ -4235,7 +4265,7 @@
       "category": "continuity",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.014953984646126628,
+      "latency_ms": 0.015483994502574205,
       "details": {
         "query": "What is the main repo across sessions?",
         "expected_answer": "memory-agent-eval-kit",
@@ -4255,7 +4285,7 @@
       "category": "stale_memory",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.01342699397355318,
+      "latency_ms": 0.012232019798830152,
       "details": {
         "query": "What budget is current?",
         "expected_answer": "250",
@@ -4277,7 +4307,7 @@
       "category": "adversarial_contradiction",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.02308402326889336,
+      "latency_ms": 0.02240799949504435,
       "details": {
         "query": "Which office do I prefer?",
         "expected_answer": "contradiction",
@@ -4298,7 +4328,7 @@
       "category": "adversarial_contradiction",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.022966996766626835,
+      "latency_ms": 0.021748972358182073,
       "details": {
         "query": "Which GPT-5 model do I prefer?",
         "expected_answer": "contradiction",
@@ -4319,7 +4349,7 @@
       "category": "temporal",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.045275024604052305,
+      "latency_ms": 0.027283007511869073,
       "details": {
         "query": "What is the latest meeting time?",
         "expected_answer": "3 PM",
@@ -4339,7 +4369,7 @@
       "category": "adversarial_contradiction",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.01992398756556213,
+      "latency_ms": 0.019175000488758087,
       "details": {
         "query": "Do I eat peanuts?",
         "expected_answer": "contradiction",
@@ -4360,7 +4390,7 @@
       "category": "continuity",
       "success": false,
       "score": 0.0,
-      "latency_ms": 0.010106014087796211,
+      "latency_ms": 0.009695999324321747,
       "details": {
         "query": "What should you remember across sessions?",
         "expected_answer": "pytest",
@@ -4380,7 +4410,7 @@
       "category": "contradiction",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.022023014025762677,
+      "latency_ms": 0.021799001842737198,
       "details": {
         "query": "What is my vector store?",
         "expected_answer": "contradiction",
@@ -4400,7 +4430,7 @@
       "category": "noisy_memory",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.07734200335107744,
+      "latency_ms": 0.0765679869800806,
       "details": {
         "query": "What is my current robot calibration room?",
         "expected_answer": "Lab Delta",
@@ -4424,7 +4454,7 @@
       "category": "memory_poisoning",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.015313009498640895,
+      "latency_ms": 0.014854012988507748,
       "details": {
         "query": "What is the trusted support email?",
         "expected_answer": "support@real.dev",
@@ -4447,7 +4477,7 @@
       "category": "correction",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.013406010111793876,
+      "latency_ms": 0.013280980056151748,
       "details": {
         "query": "What is the corrected timezone?",
         "expected_answer": "Asia/Kolkata",
@@ -4469,7 +4499,7 @@
       "category": "retention_policy",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.00934000127017498,
+      "latency_ms": 0.00894197728484869,
       "details": {
         "query": "What is the retention policy expiring access note?",
         "expected_answer": "I do not know",
@@ -4492,7 +4522,7 @@
       "category": "memory_synchronization",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.021857995307072997,
+      "latency_ms": 0.021065003238618374,
       "details": {
         "query": "What value was propagated to agent beta by memory synchronization?",
         "expected_answer": "sync build status green",
@@ -4513,7 +4543,7 @@
       "category": "hallucination",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.0062680046539753675,
+      "latency_ms": 0.0060559832490980625,
       "details": {
         "query": "What is my passport number?",
         "expected_answer": "I do not know",
@@ -4539,7 +4569,7 @@
       "category": "stale_memory",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.012586999218910933,
+      "latency_ms": 0.012865988537669182,
       "details": {
         "query": "Which region is current?",
         "expected_answer": "ap-south",
@@ -4561,7 +4591,7 @@
       "category": "continuity",
       "success": false,
       "score": 0.0,
-      "latency_ms": 0.009948009392246604,
+      "latency_ms": 0.010062998626381159,
       "details": {
         "query": "What should you remember across sessions?",
         "expected_answer": "agent agnostic",
@@ -4581,7 +4611,7 @@
       "category": "long_horizon",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.6428460183087736,
+      "latency_ms": 0.7093820022419095,
       "details": {
         "query": "What is the long horizon target project codename?",
         "expected_answer": "Horizon Cedar",
@@ -4604,7 +4634,7 @@
       "category": "contradiction",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.024851993657648563,
+      "latency_ms": 0.025635003112256527,
       "details": {
         "query": "What is the project status?",
         "expected_answer": "contradiction",
@@ -4624,7 +4654,7 @@
       "category": "memory_leakage",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.02361499355174601,
+      "latency_ms": 0.02354799653403461,
       "details": {
         "query": "What is my removed private contact?",
         "verification_queries": [
@@ -4659,7 +4689,7 @@
       "category": "temporal",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.025868997909128666,
+      "latency_ms": 0.025350978830829263,
       "details": {
         "query": "What task came later?",
         "expected_answer": "coding",
@@ -4679,7 +4709,7 @@
       "category": "temporal",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.02257499727420509,
+      "latency_ms": 0.02233200939372182,
       "details": {
         "query": "What is the current search stack?",
         "expected_answer": "hybrid",
@@ -4699,7 +4729,7 @@
       "category": "adversarial_contradiction",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.022948981495574117,
+      "latency_ms": 0.02296999446116388,
       "details": {
         "query": "What is my favorite UR robot?",
         "expected_answer": "contradiction",
@@ -4720,7 +4750,7 @@
       "category": "stale_memory",
       "success": false,
       "score": 0.5,
-      "latency_ms": 0.008830014849081635,
+      "latency_ms": 0.008914998034015298,
       "details": {
         "query": "What is the current old benchmark suite?",
         "expected_answer": "v0.3",
@@ -4742,7 +4772,7 @@
       "category": "continuity",
       "success": false,
       "score": 0.0,
-      "latency_ms": 0.009666982805356383,
+      "latency_ms": 0.00985100632533431,
       "details": {
         "query": "What should you remember across sessions?",
         "expected_answer": "public",
@@ -4762,7 +4792,7 @@
       "category": "hallucination",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.006743008270859718,
+      "latency_ms": 0.006671994924545288,
       "details": {
         "query": "Which city was I born in?",
         "expected_answer": "I do not know",
@@ -4788,7 +4818,7 @@
       "category": "temporal",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.02326001413166523,
+      "latency_ms": 0.022369000362232327,
       "details": {
         "query": "What is the current project owner?",
         "expected_answer": "Vikram",
@@ -4808,7 +4838,7 @@
       "category": "correction",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.0159699993673712,
+      "latency_ms": 0.015854020603001118,
       "details": {
         "query": "What robot brand do I prefer now?",
         "expected_answer": "Universal Robots",
@@ -4830,7 +4860,7 @@
       "category": "memory_poisoning",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.014335993910208344,
+      "latency_ms": 0.014143006410449743,
       "details": {
         "query": "What is the trusted payment account?",
         "expected_answer": "official-account",
@@ -4852,7 +4882,7 @@
       "category": "forgetting",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.016856996808201075,
+      "latency_ms": 0.01645000884309411,
       "details": {
         "query": "What is the door code?",
         "verification_queries": [
@@ -4887,7 +4917,7 @@
       "category": "forgetting",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.02204001066274941,
+      "latency_ms": 0.02138499985449016,
       "details": {
         "query": "What is my old Aadhaar note?",
         "verification_queries": [
@@ -4922,7 +4952,7 @@
       "category": "contradiction",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.02411298919469118,
+      "latency_ms": 0.023692002287134528,
       "details": {
         "query": "What is my deployment target?",
         "expected_answer": "contradiction",
@@ -4942,7 +4972,7 @@
       "category": "hallucinated_recall",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.0068369845394045115,
+      "latency_ms": 0.006894988473504782,
       "details": {
         "query": "Which professor advised my thesis?",
         "expected_answer": "I do not know",
@@ -4967,7 +4997,7 @@
       "category": "contradiction",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.023990985937416553,
+      "latency_ms": 0.02322401269339025,
       "details": {
         "query": "What should you say about my preferred IDE?",
         "expected_answer": "contradiction",
@@ -4987,7 +5017,7 @@
       "category": "continuity",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.013449985999614,
+      "latency_ms": 0.01334599801339209,
       "details": {
         "query": "What license should be used?",
         "expected_answer": "MIT",
@@ -5007,7 +5037,7 @@
       "category": "gdpr_forgetting",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.011424999684095383,
+      "latency_ms": 0.011307012755423784,
       "details": {
         "query": "After the right to be forgotten request, what is the GDPR protected delayed deletion validation?",
         "expected_answer": "I do not know",
@@ -5031,7 +5061,7 @@
       "category": "temporal_drift",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.026237015845254064,
+      "latency_ms": 0.02575098187662661,
       "details": {
         "query": "Summarize the project phase timeline.",
         "expected_answer": "research",
@@ -5052,7 +5082,7 @@
       "category": "adversarial_contradiction",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.024600012693554163,
+      "latency_ms": 0.02361802035011351,
       "details": {
         "query": "What is Project Apollo status?",
         "expected_answer": "contradiction",
@@ -5073,7 +5103,7 @@
       "category": "correction",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.014244986232370138,
+      "latency_ms": 0.01360199530608952,
       "details": {
         "query": "What is the corrected budget?",
         "expected_answer": "300 dollars",
@@ -5095,7 +5125,7 @@
       "category": "memory_poisoning",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.014843011740595102,
+      "latency_ms": 0.014819001080468297,
       "details": {
         "query": "What is the trusted robot brand?",
         "expected_answer": "Universal Robots",
@@ -5117,7 +5147,7 @@
       "category": "sensitive_classification",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.023136002710089087,
+      "latency_ms": 0.019189988961443305,
       "details": {
         "query": "What sensitive classification applies to home city preference?",
         "expected_answer": "personal",
@@ -5138,7 +5168,7 @@
       "category": "memory_synchronization",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.021576008293777704,
+      "latency_ms": 0.020590989151969552,
       "details": {
         "query": "What value was propagated to agent beta by memory synchronization?",
         "expected_answer": "sync policy version 3",
@@ -5159,7 +5189,7 @@
       "category": "temporal_drift",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.023427011910825968,
+      "latency_ms": 0.022481021005660295,
       "details": {
         "query": "What is the current project phase?",
         "expected_answer": "deployment",
@@ -5179,7 +5209,7 @@
       "category": "memory_drift",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.015376979717984796,
+      "latency_ms": 0.0148940016515553,
       "details": {
         "query": "What is my current communication style?",
         "expected_answer": "concise",
@@ -5201,7 +5231,7 @@
       "category": "retention_policy",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.008571019861847162,
+      "latency_ms": 0.008280010661110282,
       "details": {
         "query": "What is the retention policy archived project note?",
         "expected_answer": "I do not know",
@@ -5224,7 +5254,7 @@
       "category": "forgetting",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.02440001117065549,
+      "latency_ms": 0.02370498259551823,
       "details": {
         "query": "What forgotten preference did I have?",
         "verification_queries": [
@@ -5259,7 +5289,7 @@
       "category": "relationship_memory",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.021046987967565656,
+      "latency_ms": 0.01992398756556213,
       "details": {
         "query": "Who is my spouse relationship contact and what role group is it?",
         "expected_answer": "Asha",
@@ -5281,7 +5311,7 @@
       "category": "temporal_drift",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.019072991563007236,
+      "latency_ms": 0.018683989765122533,
       "details": {
         "query": "What was the previous project phase?",
         "expected_answer": "research",
@@ -5303,7 +5333,7 @@
       "category": "sensitive_classification",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.018966005882248282,
+      "latency_ms": 0.018107995856553316,
       "details": {
         "query": "What sensitive classification applies to private phone contact?",
         "expected_answer": "sensitive",
@@ -5324,7 +5354,7 @@
       "category": "memory_leakage",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.021001993445679545,
+      "latency_ms": 0.020799983758479357,
       "details": {
         "query": "What is my forgotten location?",
         "verification_queries": [
@@ -5359,7 +5389,7 @@
       "category": "temporal",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.025051995180547237,
+      "latency_ms": 0.024468987248837948,
       "details": {
         "query": "What model was preferred most recently?",
         "expected_answer": "GPT-5",
@@ -5379,7 +5409,7 @@
       "category": "noisy_memory",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.07442498463205993,
+      "latency_ms": 0.07267500041052699,
       "details": {
         "query": "What is my current deployment window?",
         "expected_answer": "Saturday 04:00 UTC",
@@ -5403,7 +5433,7 @@
       "category": "memory_drift",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.016085978131741285,
+      "latency_ms": 0.015927013009786606,
       "details": {
         "query": "What is my current daily focus?",
         "expected_answer": "memory evals",
@@ -5425,7 +5455,7 @@
       "category": "recall",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.016333971871063113,
+      "latency_ms": 0.01585899735800922,
       "details": {
         "query": "What programming language do I prefer?",
         "expected_answer": "Python",
@@ -5445,7 +5475,7 @@
       "category": "noisy_memory",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.0758649839553982,
+      "latency_ms": 0.07345998892560601,
       "details": {
         "query": "What is my current preferred invoice format?",
         "expected_answer": "PDF with PO number",
@@ -5469,7 +5499,7 @@
       "category": "hallucination",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.006346992449834943,
+      "latency_ms": 0.006465998012572527,
       "details": {
         "query": "Which airline do I prefer?",
         "expected_answer": "I do not know",
@@ -5495,7 +5525,7 @@
       "category": "stale_memory",
       "success": false,
       "score": 0.5,
-      "latency_ms": 0.008032016921788454,
+      "latency_ms": 0.008004019036889076,
       "details": {
         "query": "What is the current old skill?",
         "expected_answer": "Blender",
@@ -5517,7 +5547,7 @@
       "category": "contradiction",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.02226899960078299,
+      "latency_ms": 0.02180601586587727,
       "details": {
         "query": "What is my license?",
         "expected_answer": "contradiction",
@@ -5537,7 +5567,7 @@
       "category": "stale_memory",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.013384007615968585,
+      "latency_ms": 0.012859003618359566,
       "details": {
         "query": "Which framework is current?",
         "expected_answer": "FastAPI",
@@ -5559,7 +5589,7 @@
       "category": "recall",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.016409001545980573,
+      "latency_ms": 0.015913014067336917,
       "details": {
         "query": "What is my favorite planning library?",
         "expected_answer": "MoveIt",
@@ -5579,7 +5609,7 @@
       "category": "shared_memory",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.023164990125223994,
+      "latency_ms": 0.02323801163583994,
       "details": {
         "query": "What does the shared memory store say for agent alpha and agent beta?",
         "expected_answer": "shared customer preference",
@@ -5604,7 +5634,7 @@
       "category": "memory_leakage",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.021284999093040824,
+      "latency_ms": 0.02122900332324207,
       "details": {
         "query": "What is my deleted credential?",
         "verification_queries": [
@@ -5639,7 +5669,7 @@
       "category": "continuity",
       "success": false,
       "score": 0.0,
-      "latency_ms": 0.009216018952429295,
+      "latency_ms": 0.009201990906149149,
       "details": {
         "query": "What should you remember across sessions?",
         "expected_answer": "Greece",
@@ -5659,7 +5689,7 @@
       "category": "hallucinated_recall",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.006333022611215711,
+      "latency_ms": 0.0062219914980232716,
       "details": {
         "query": "What is my secret project budget?",
         "expected_answer": "I do not know",
@@ -5684,7 +5714,7 @@
       "category": "stale_memory",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.013703014701604843,
+      "latency_ms": 0.013322976883500814,
       "details": {
         "query": "What model should be used?",
         "expected_answer": "GPT-5",
@@ -5706,7 +5736,7 @@
       "category": "temporal",
       "success": false,
       "score": 0.0,
-      "latency_ms": 0.027068977942690253,
+      "latency_ms": 0.02611399395391345,
       "details": {
         "query": "What is the current current roadmap?",
         "expected_answer": "memory evals",
@@ -5726,7 +5756,7 @@
       "category": "collaborative_memory",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.04698600969277322,
+      "latency_ms": 0.04561999230645597,
       "details": {
         "query": "What is the current final collaborative launch plan memory summary?",
         "expected_answer": "design ready",
@@ -5752,7 +5782,7 @@
       "category": "stale_memory",
       "success": false,
       "score": 0.5,
-      "latency_ms": 0.008362025255337358,
+      "latency_ms": 0.008132017683237791,
       "details": {
         "query": "What is the current old calendar?",
         "expected_answer": "Cron",
@@ -5774,7 +5804,7 @@
       "category": "correction",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.019163999240845442,
+      "latency_ms": 0.015793979400768876,
       "details": {
         "query": "What is my corrected report cadence?",
         "expected_answer": "daily",
@@ -5796,7 +5826,7 @@
       "category": "stale_memory",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.012793985661119223,
+      "latency_ms": 0.01243999577127397,
       "details": {
         "query": "Which vendor is current?",
         "expected_answer": "VendorB",
@@ -5818,7 +5848,7 @@
       "category": "stale_memory",
       "success": false,
       "score": 0.5,
-      "latency_ms": 0.007566995918750763,
+      "latency_ms": 0.007308990461751819,
       "details": {
         "query": "What is the current priority?",
         "expected_answer": "high",
@@ -5840,7 +5870,7 @@
       "category": "correction",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.01516798511147499,
+      "latency_ms": 0.014313001884147525,
       "details": {
         "query": "What API endpoint should be used now?",
         "expected_answer": "/v2/search",
@@ -5862,7 +5892,7 @@
       "category": "recall",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.017058977391570807,
+      "latency_ms": 0.016606005374342203,
       "details": {
         "query": "What robot arm class do I like?",
         "expected_answer": "collaborative cobot",
@@ -5882,7 +5912,7 @@
       "category": "recall",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.014530000044032931,
+      "latency_ms": 0.014067016309127212,
       "details": {
         "query": "What task tracker do I prefer?",
         "expected_answer": "GitHub Issues",
@@ -5902,7 +5932,7 @@
       "category": "recall",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.015922007150948048,
+      "latency_ms": 0.015085010090842843,
       "details": {
         "query": "What is my preferred logging style?",
         "expected_answer": "structured logs",
@@ -5922,7 +5952,7 @@
       "category": "stale_memory",
       "success": false,
       "score": 0.5,
-      "latency_ms": 0.007530004950240254,
+      "latency_ms": 0.007431983249261975,
       "details": {
         "query": "What is the current old CRM?",
         "expected_answer": "Attio",
@@ -5944,7 +5974,7 @@
       "category": "correction",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.014921999536454678,
+      "latency_ms": 0.013979995856061578,
       "details": {
         "query": "When is the meeting now?",
         "expected_answer": "Tuesday",
@@ -5966,7 +5996,7 @@
       "category": "forgetting",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.022199994418770075,
+      "latency_ms": 0.021510000806301832,
       "details": {
         "query": "What is my cancelled travel code?",
         "verification_queries": [
@@ -6001,7 +6031,7 @@
       "category": "gdpr_forgetting",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.011099997209385037,
+      "latency_ms": 0.011274998541921377,
       "details": {
         "query": "After the right to be forgotten request, what is the GDPR protected right to be forgotten note?",
         "expected_answer": "I do not know",
@@ -6025,7 +6055,7 @@
       "category": "conflict_resolution",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.015483004972338676,
+      "latency_ms": 0.01518501085229218,
       "details": {
         "query": "What is the current resolved contract status?",
         "expected_answer": "signed",
@@ -6048,7 +6078,7 @@
       "category": "memory_poisoning",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.015711993910372257,
+      "latency_ms": 0.01534298644401133,
       "details": {
         "query": "What is the trusted billing email?",
         "expected_answer": "official@example.com",
@@ -6070,7 +6100,7 @@
       "category": "correction",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.01457001781091094,
+      "latency_ms": 0.014084012946113944,
       "details": {
         "query": "Which model should route now?",
         "expected_answer": "GPT-5",
@@ -6092,7 +6122,7 @@
       "category": "hallucinated_recall",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.008266011718660593,
+      "latency_ms": 0.008257979061454535,
       "details": {
         "query": "Which exact street did I live on in 2018?",
         "expected_answer": "I do not know",
@@ -6117,7 +6147,7 @@
       "category": "forgetting",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.014372984878718853,
+      "latency_ms": 0.013910001143813133,
       "details": {
         "query": "What is the OTP?",
         "verification_queries": [
@@ -6152,7 +6182,7 @@
       "category": "stale_memory",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.01296098344027996,
+      "latency_ms": 0.012493983376771212,
       "details": {
         "query": "Which branch is current?",
         "expected_answer": "main",
@@ -6174,7 +6204,7 @@
       "category": "continuity",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.014063989510759711,
+      "latency_ms": 0.014050019672140479,
       "details": {
         "query": "Across sessions, what timezone should you use?",
         "expected_answer": "Asia/Kolkata",
@@ -6194,7 +6224,7 @@
       "category": "hallucination",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.006012007361277938,
+      "latency_ms": 0.005987007170915604,
       "details": {
         "query": "What is my favorite color?",
         "expected_answer": "I do not know",
@@ -6220,7 +6250,7 @@
       "category": "timeline_reasoning",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.03163798828609288,
+      "latency_ms": 0.031136005418375134,
       "details": {
         "query": "What is the current residence country?",
         "expected_answer": "Greece",
@@ -6243,7 +6273,7 @@
       "category": "recall",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.014377001207321882,
+      "latency_ms": 0.014101999113336205,
       "details": {
         "query": "What note format do I prefer?",
         "expected_answer": "Markdown",
@@ -6263,7 +6293,7 @@
       "category": "correction",
       "success": true,
       "score": 1.0,
-      "latency_ms": 0.013402022887021303,
+      "latency_ms": 0.013253011275082827,
       "details": {
         "query": "What is the corrected deadline?",
         "expected_answer": "June 12",
@@ -6285,7 +6315,7 @@
       "category": "continuity",
       "success": false,
       "score": 0.0,
-      "latency_ms": 0.009832991054281592,
+      "latency_ms": 0.00968598760664463,
       "details": {
         "query": "What should you remember across sessions?",
         "expected_answer": "concise",

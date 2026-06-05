@@ -1,29 +1,29 @@
 [
   {
     "memory_count": 100,
-    "add_ms": 0.08700002217665315,
-    "query_ms": 0.5842579994350672,
+    "add_ms": 0.07462699431926012,
+    "query_ms": 0.567993993172422,
     "success": true,
     "answer": "Large scale benchmark target is scale-target-100"
   },
   {
     "memory_count": 1000,
-    "add_ms": 0.8290719997603446,
-    "query_ms": 5.299077020026743,
+    "add_ms": 0.69189298665151,
+    "query_ms": 5.390603007981554,
     "success": true,
     "answer": "Large scale benchmark target is scale-target-1000"
   },
   {
     "memory_count": 10000,
-    "add_ms": 8.29484302084893,
-    "query_ms": 53.5779969941359,
+    "add_ms": 7.574288989417255,
+    "query_ms": 52.45826501050033,
     "success": true,
     "answer": "Large scale benchmark target is scale-target-10000"
   },
   {
     "memory_count": 100000,
-    "add_ms": 90.67638398846611,
-    "query_ms": 563.373651006259,
+    "add_ms": 89.85747399856336,
+    "query_ms": 569.858253991697,
     "success": true,
     "answer": "Large scale benchmark target is scale-target-100000"
   }

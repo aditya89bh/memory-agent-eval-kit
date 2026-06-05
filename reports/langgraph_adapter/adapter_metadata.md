@@ -1,12 +1,10 @@
-# LangGraph Adapter Benchmark
+# LangGraph Adapter Benchmark Metadata
 
-- Adapter: LangGraphAdapter
-- Real LangGraph graph available: False
-- Execution mode: graceful fallback to SimpleMemoryAgent because a compiled LangGraph app is not configured locally.
-- Seed: 42
+- Adapter: `LangGraphAdapter`
+- Provider package available locally: no compiled LangGraph app configured
+- Execution mode: documented fallback through `SimpleMemoryAgent`
 - Scenario count: 253
-- Overall score: 93.48%
-- Hallucination rate: 0.00%
-- False recall rate: 0.00%
+- Seed: 42
+- Release: v0.6.0
 
-These artifacts exercise the LangGraph adapter integration path. Install LangGraph and pass a compiled memory-aware graph to replace fallback-mode results with live graph-backed results.
+These artifacts are real benchmark outputs for the LangGraph adapter code path available in this environment. They explicitly do not claim a production LangGraph memory-app result because no compiled graph/app was supplied locally.

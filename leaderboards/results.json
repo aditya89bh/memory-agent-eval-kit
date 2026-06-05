@@ -34,8 +34,8 @@
       "privacy_score": 1.0
     },
     "latency": {
-      "avg_ms": 0.023572474926076975,
-      "p95_ms": 0.03664300311356783
+      "avg_ms": 0.022988976830646043,
+      "p95_ms": 0.03539599128998816
     },
     "hallucination_rate": 0.0,
     "false_recall_rate": 0.0,

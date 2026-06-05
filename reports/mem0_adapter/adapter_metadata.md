@@ -1,12 +1,10 @@
-# Mem0 Adapter Benchmark
+# Mem0 Adapter Benchmark Metadata
 
-- Adapter: Mem0Adapter
-- Real Mem0 client available: False
-- Execution mode: graceful fallback to SimpleMemoryAgent because `mem0` is not installed locally.
-- Seed: 42
+- Adapter: `Mem0Adapter`
+- Provider package available locally: no live Mem0 client configured
+- Execution mode: documented fallback through `SimpleMemoryAgent`
 - Scenario count: 253
-- Overall score: 93.48%
-- Hallucination rate: 0.00%
-- False recall rate: 0.00%
+- Seed: 42
+- Release: v0.6.0
 
-These artifacts exercise the Mem0 adapter integration path. Install and configure `mem0ai` to replace fallback-mode results with live Mem0-backed results.
+These artifacts are real benchmark outputs for the Mem0 adapter code path available in this environment. They explicitly do not claim hosted Mem0 service performance because no provider client or API configuration was installed locally.

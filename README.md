@@ -2,7 +2,7 @@
 
 **Benchmark authority and evaluation toolkit for memory-enabled AI agents.**
 
-[![Release](https://img.shields.io/badge/release-v0.5.0-blue)](#quickstart)
+[![Release](https://img.shields.io/badge/release-v0.6.0-blue)](#quickstart)
 [![Python](https://img.shields.io/badge/python-3.11%2B-brightgreen)](pyproject.toml)
 [![Tests](https://img.shields.io/badge/tests-95%20passing-brightgreen)](tests/)
 [![Coverage](https://img.shields.io/badge/coverage-94%25-brightgreen)](pyproject.toml)
@@ -14,10 +14,10 @@ Memory agents fail in subtle ways: stale facts, missed corrections, invented mem
 |---|---:|
 | Default scenarios | 253 |
 | Benchmark categories | 29 |
-| Test suite | 95 tests |
-| Coverage gate | 94% measured / 90% required |
+| Test suite | 105 tests |
+| Coverage gate | 93%+ measured / 90% required |
 | Seeded default score | 93% with `--seed 42` |
-| Release line | v0.5.0 authority-building release |
+| Release line | v0.6.0 real-world credibility release |
 
 ## Overview
 
@@ -58,7 +58,7 @@ The benchmark architecture keeps datasets, validation, adapters, evaluators, met
 - **Multi-Agent Memory**: covers shared memory, synchronization, disagreement detection, conflict resolution, and collaborative recall.
 - **Memory Stress**: measures recall and latency degradation at larger memory scales.
 
-The default dataset now includes a broad authority corpus across benchmark methodology, enterprise compliance, multi-agent memory, versioning, and adapter ecosystem suites. Synthetic stress scenarios are generated on demand for 10, 100, and 1000 memory scales.
+The default dataset now includes a broad authority corpus across benchmark methodology, enterprise compliance, multi-agent memory, versioning, and adapter ecosystem suites. Synthetic stress scenarios are generated on demand for 10, 100, and 1000 memory scales, while the large-scale benchmark exercises 100, 1,000, 10,000, and 100,000 stored memories.
 
 ## Quickstart
 
@@ -113,6 +113,14 @@ memory-eval benchmark --seed 42 --fail-under 90
 
 Programmatic comparison utilities are available via `compare_results()` and `compare_benchmark_versions()` for score deltas, category deltas, version-to-version comparisons, and regression detection. Dataset changelog, deprecation, archive, and submission-validation utilities support public benchmark governance.
 
+## v0.6.0 Credibility Additions
+
+- Mem0 and LangGraph adapter benchmark artifacts with transparent fallback metadata when optional providers are unavailable.
+- Side-by-side comparison dashboard for multiple agents.
+- Confidence intervals, bootstrap resampling, and statistical significance helpers for research-quality analysis.
+- Large-scale memory benchmark, profiling reports, and exchange packages for third-party submissions.
+- Benchmark registry, plugin entry points, and a 5-minute onboarding notebook.
+
 ## Reports and Assets
 
 Each benchmark run writes:
@@ -125,6 +133,13 @@ Leaderboards write:
 
 - `leaderboards/results.json`
 - `leaderboards/results.md`
+
+Comparison and performance assets include:
+
+- `reports/comparison_dashboard.json`
+- `reports/comparison_dashboard.md`
+- `reports/memory_scale/results.json`
+- `reports/profile/profile.json`
 
 Visualization assets are generated under:
 

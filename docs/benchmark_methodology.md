@@ -29,6 +29,16 @@ Scores are scenario-level and then aggregated into category and overall metrics.
 - **Latency visibility:** latency is reported alongside correctness because memory quality and retrieval cost both matter in production.
 - **Regression usefulness:** scores are intended to compare the same agent across versions or configurations, not to overclaim universal capability.
 
+## v0.6.0 Evidence Layers
+
+The v0.6.0 release adds evidence beyond a single default benchmark score:
+
+- **Adapter artifacts:** Mem0 and LangGraph benchmark reports are generated separately from the default run, with metadata documenting whether a live provider client or fallback adapter was used.
+- **Comparison dashboards:** multiple agents can be viewed side-by-side with overall score, latency, hallucination rate, and false-recall rate.
+- **Statistical analysis:** Wilson confidence intervals, bootstrap score intervals, and score-difference significance tests help distinguish noise from meaningful movement.
+- **Performance evidence:** scale and profiling reports expose retrieval latency, CPU time, wall time, and peak memory usage.
+- **Ecosystem evidence:** exchange packages, suite registries, and plugin entry points make third-party benchmark submissions reproducible and auditable.
+
 ## Benchmark Limitations
 
 The benchmark does not prove that an agent is safe, truthful, or reliable in every deployment. Important limitations include:

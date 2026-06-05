@@ -58,5 +58,6 @@ This distribution keeps the default benchmark practical to run in CI while still
 | v0.3.0 | Adapter ecosystem and public benchmark submission support | 80+ |
 | v0.4.0 | Authority corpus covering enterprise compliance, multi-agent memory, poisoning, drift, and long-horizon suites | 253 |
 | v0.5.0 | Methodology, reproducibility, difficulty metadata, confidence reporting, and presentation hardening | 253 |
+| v0.6.0 | Real-world adapter artifacts, comparison dashboards, statistical analysis, scale benchmarks, profiling, exchange format, registry, plugins, and onboarding notebook | 253 |
 
-Scenario count can remain stable across authority-building releases when the release improves methodology, reporting quality, reproducibility, and documentation rather than expanding the benchmark surface area.
+Scenario count can remain stable across authority-building releases when the release improves methodology, reporting quality, reproducibility, ecosystem integrations, performance evidence, and documentation rather than expanding the benchmark surface area.

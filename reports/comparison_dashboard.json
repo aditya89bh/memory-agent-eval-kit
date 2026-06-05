@@ -6,8 +6,8 @@
     "scenario_count": 253,
     "hallucination_rate": 0.0,
     "false_recall_rate": 0.0,
-    "latency_avg_ms": 0.023572474926076975,
-    "latency_p95_ms": 0.03664300311356783,
+    "latency_avg_ms": 0.022988976830646043,
+    "latency_p95_ms": 0.03539599128998816,
     "category_scores": {
       "temporal": 0.95,
       "memory_drift": 1.0,
@@ -41,14 +41,14 @@
     }
   },
   {
-    "agent_name": "Mem0Adapter (fallback)",
+    "agent_name": "Mem0AdapterFallback",
     "report_path": "reports/mem0_adapter/results.json",
     "overall_score": 0.9347826086956522,
     "scenario_count": 253,
     "hallucination_rate": 0.0,
     "false_recall_rate": 0.0,
-    "latency_avg_ms": 0.024341009423806674,
-    "latency_p95_ms": 0.03309900057502091,
+    "latency_avg_ms": 0.023434585233664384,
+    "latency_p95_ms": 0.036048004403710365,
     "category_scores": {
       "temporal": 0.95,
       "memory_drift": 1.0,
@@ -82,14 +82,14 @@
     }
   },
   {
-    "agent_name": "LangGraphAdapter (fallback)",
+    "agent_name": "LangGraphAdapterFallback",
     "report_path": "reports/langgraph_adapter/results.json",
     "overall_score": 0.9347826086956522,
     "scenario_count": 253,
     "hallucination_rate": 0.0,
     "false_recall_rate": 0.0,
-    "latency_avg_ms": 0.024143779206755957,
-    "latency_p95_ms": 0.03253098111599684,
+    "latency_avg_ms": 0.02376373149565027,
+    "latency_p95_ms": 0.03583499346859753,
     "category_scores": {
       "temporal": 0.95,
       "memory_drift": 1.0,

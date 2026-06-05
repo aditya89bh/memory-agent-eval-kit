@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "memory-agent-eval-kit"
-version = "0.5.0"
+version = "0.6.0"
 description = "Benchmark and evaluation framework for memory-enabled AI agents."
 readme = "README.md"
 requires-python = ">=3.11"

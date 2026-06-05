@@ -5,7 +5,7 @@
 - Overall Score: 93%
 - Total Scenarios: 253
 - Average Latency: 0.02 ms
-- P95 Latency: 0.03 ms
+- P95 Latency: 0.04 ms
 - Compliance Score: 100%
 - Deletion Score: 100%
 - Retention Score: 100%
@@ -23,7 +23,7 @@
 |---|---:|---:|---:|---:|---:|
 | adversarial_contradiction | 6 | 0 | 100% | 61%-100% | 0.02 |
 | agent_disagreement | 3 | 0 | 100% | 44%-100% | 0.03 |
-| collaborative_memory | 3 | 0 | 100% | 44%-100% | 0.07 |
+| collaborative_memory | 3 | 0 | 100% | 44%-100% | 0.05 |
 | conflict_resolution | 3 | 0 | 100% | 44%-100% | 0.02 |
 | continuity | 10 | 10 | 50% | 30%-70% | 0.01 |
 | contradiction | 20 | 0 | 100% | 84%-100% | 0.02 |
@@ -33,12 +33,12 @@
 | hallucinated_recall | 8 | 0 | 100% | 68%-100% | 0.01 |
 | hallucination | 10 | 0 | 100% | 72%-100% | 0.01 |
 | hierarchical_memory | 3 | 0 | 100% | 44%-100% | 0.02 |
-| long_horizon | 3 | 0 | 100% | 44%-100% | 0.38 |
+| long_horizon | 3 | 0 | 100% | 44%-100% | 0.37 |
 | memory_drift | 5 | 0 | 100% | 57%-100% | 0.02 |
 | memory_leakage | 5 | 0 | 100% | 57%-100% | 0.02 |
 | memory_poisoning | 16 | 0 | 100% | 81%-100% | 0.02 |
 | memory_synchronization | 3 | 0 | 100% | 44%-100% | 0.02 |
-| noisy_memory | 5 | 0 | 100% | 57%-100% | 0.08 |
+| noisy_memory | 5 | 0 | 100% | 57%-100% | 0.09 |
 | pii_deletion | 3 | 0 | 100% | 44%-100% | 0.01 |
 | preference_evolution | 6 | 0 | 100% | 61%-100% | 0.02 |
 | recall | 20 | 0 | 100% | 84%-100% | 0.02 |
@@ -75,28 +75,28 @@
 
 | Scenario | Category | Difficulty | Result | Score | Latency ms |
 |---|---|---|---:|---:|---:|
-| temporal_011 | temporal | medium | PASS | 1.00 | 0.05 |
+| temporal_011 | temporal | medium | PASS | 1.00 | 0.04 |
 | memory_drift_001 | memory_drift | medium | PASS | 1.00 | 0.02 |
 | memory_poisoning_014 | memory_poisoning | medium | PASS | 1.00 | 0.02 |
 | recall_010 | recall | medium | PASS | 1.00 | 0.02 |
 | correction_015 | correction | medium | PASS | 1.00 | 0.02 |
-| correction_014 | correction | medium | PASS | 1.00 | 0.02 |
-| memory_poisoning_007 | memory_poisoning | medium | PASS | 1.00 | 0.02 |
+| correction_014 | correction | medium | PASS | 1.00 | 0.01 |
+| memory_poisoning_007 | memory_poisoning | medium | PASS | 1.00 | 0.01 |
 | recall_011 | recall | medium | PASS | 1.00 | 0.02 |
 | pii_deletion_001 | pii_deletion | medium | PASS | 1.00 | 0.01 |
-| temporal_005 | temporal | medium | PASS | 1.00 | 0.03 |
+| temporal_005 | temporal | medium | PASS | 1.00 | 0.02 |
 | hallucination_003 | hallucination | medium | PASS | 1.00 | 0.01 |
-| agent_disagreement_003 | agent_disagreement | medium | PASS | 1.00 | 0.03 |
+| agent_disagreement_003 | agent_disagreement | medium | PASS | 1.00 | 0.04 |
 | noisy_memory_005 | noisy_memory | medium | PASS | 1.00 | 0.08 |
-| recall_004 | recall | medium | PASS | 1.00 | 0.02 |
+| recall_004 | recall | medium | PASS | 1.00 | 0.01 |
 | continuity_015 | continuity | medium | FAIL | 0.00 | 0.01 |
-| long_horizon_010 | long_horizon | medium | PASS | 1.00 | 0.09 |
+| long_horizon_010 | long_horizon | medium | PASS | 1.00 | 0.10 |
 | continuity_019 | continuity | medium | FAIL | 0.00 | 0.01 |
 | continuity_001 | continuity | medium | PASS | 1.00 | 0.02 |
 | memory_leakage_001 | memory_leakage | medium | PASS | 1.00 | 0.02 |
 | preference_evolution_001_previous | preference_evolution | medium | PASS | 1.00 | 0.02 |
 | recall_017 | recall | medium | PASS | 1.00 | 0.02 |
-| contradiction_012 | contradiction | medium | PASS | 1.00 | 0.03 |
+| contradiction_012 | contradiction | medium | PASS | 1.00 | 0.02 |
 | forgetting_012 | forgetting | medium | PASS | 1.00 | 0.02 |
 | hierarchical_memory_001 | hierarchical_memory | medium | PASS | 1.00 | 0.02 |
 | stale_memory_002 | stale_memory | medium | PASS | 1.00 | 0.01 |
@@ -139,7 +139,7 @@
 | stale_memory_017 | stale_memory | medium | FAIL | 0.50 | 0.01 |
 | recall_006 | recall | medium | PASS | 1.00 | 0.02 |
 | contradiction_001 | contradiction | medium | PASS | 1.00 | 0.02 |
-| continuity_007 | continuity | medium | PASS | 1.00 | 0.01 |
+| continuity_007 | continuity | medium | PASS | 1.00 | 0.02 |
 | sensitive_classification_002 | sensitive_classification | medium | PASS | 1.00 | 0.02 |
 | forgetting_001 | forgetting | medium | PASS | 1.00 | 0.02 |
 | preference_evolution_003_previous | preference_evolution | medium | PASS | 1.00 | 0.02 |
@@ -156,7 +156,7 @@
 | correction_012 | correction | medium | PASS | 1.00 | 0.01 |
 | memory_synchronization_002 | memory_synchronization | medium | PASS | 1.00 | 0.02 |
 | hallucination_008 | hallucination | medium | PASS | 1.00 | 0.01 |
-| long_horizon_050 | long_horizon | medium | PASS | 1.00 | 0.35 |
+| long_horizon_050 | long_horizon | medium | PASS | 1.00 | 0.34 |
 | temporal_drift_1_previous | temporal_drift | medium | PASS | 1.00 | 0.02 |
 | forgetting_009 | forgetting | medium | PASS | 1.00 | 0.02 |
 | correction_011 | correction | medium | PASS | 1.00 | 0.02 |
@@ -220,7 +220,7 @@
 | pii_deletion_002 | pii_deletion | medium | PASS | 1.00 | 0.01 |
 | stale_memory_005 | stale_memory | medium | PASS | 1.00 | 0.01 |
 | contradiction_007 | contradiction | medium | PASS | 1.00 | 0.02 |
-| collaborative_memory_003 | collaborative_memory | medium | PASS | 1.00 | 0.10 |
+| collaborative_memory_003 | collaborative_memory | medium | PASS | 1.00 | 0.05 |
 | recall_013 | recall | medium | PASS | 1.00 | 0.02 |
 | temporal_drift_1_current | temporal_drift | medium | PASS | 1.00 | 0.02 |
 | sensitive_classification_003 | sensitive_classification | medium | PASS | 1.00 | 0.02 |
@@ -238,7 +238,7 @@
 | temporal_004 | temporal | medium | PASS | 1.00 | 0.02 |
 | stale_memory_016 | stale_memory | medium | FAIL | 0.50 | 0.01 |
 | contradiction_009 | contradiction | medium | PASS | 1.00 | 0.02 |
-| continuity_009 | continuity | medium | PASS | 1.00 | 0.02 |
+| continuity_009 | continuity | medium | PASS | 1.00 | 0.01 |
 | stale_memory_004 | stale_memory | medium | PASS | 1.00 | 0.01 |
 | adversarial_contradiction_002 | adversarial_contradiction | medium | PASS | 1.00 | 0.02 |
 | adversarial_contradiction_006 | adversarial_contradiction | medium | PASS | 1.00 | 0.02 |
@@ -254,7 +254,7 @@
 | hallucination_005 | hallucination | medium | PASS | 1.00 | 0.01 |
 | stale_memory_009 | stale_memory | medium | PASS | 1.00 | 0.01 |
 | continuity_020 | continuity | medium | FAIL | 0.00 | 0.01 |
-| long_horizon_100 | long_horizon | medium | PASS | 1.00 | 0.71 |
+| long_horizon_100 | long_horizon | medium | PASS | 1.00 | 0.66 |
 | contradiction_008 | contradiction | medium | PASS | 1.00 | 0.03 |
 | memory_leakage_005 | memory_leakage | medium | PASS | 1.00 | 0.02 |
 | temporal_010 | temporal | medium | PASS | 1.00 | 0.03 |
@@ -274,15 +274,15 @@
 | continuity_008 | continuity | medium | PASS | 1.00 | 0.01 |
 | gdpr_forgetting_003 | gdpr_forgetting | medium | PASS | 1.00 | 0.01 |
 | temporal_drift_3_timeline | temporal_drift | medium | PASS | 1.00 | 0.03 |
-| adversarial_contradiction_003 | adversarial_contradiction | medium | PASS | 1.00 | 0.02 |
-| correction_005 | correction | medium | PASS | 1.00 | 0.02 |
+| adversarial_contradiction_003 | adversarial_contradiction | medium | PASS | 1.00 | 0.03 |
+| correction_005 | correction | medium | PASS | 1.00 | 0.01 |
 | memory_poisoning_003 | memory_poisoning | medium | PASS | 1.00 | 0.02 |
 | sensitive_classification_001 | sensitive_classification | medium | PASS | 1.00 | 0.02 |
 | memory_synchronization_003 | memory_synchronization | medium | PASS | 1.00 | 0.02 |
 | temporal_drift_3_current | temporal_drift | medium | PASS | 1.00 | 0.02 |
 | memory_drift_004 | memory_drift | medium | PASS | 1.00 | 0.02 |
 | retention_policy_003 | retention_policy | medium | PASS | 1.00 | 0.01 |
-| forgetting_010 | forgetting | medium | PASS | 1.00 | 0.02 |
+| forgetting_010 | forgetting | medium | PASS | 1.00 | 0.03 |
 | relationship_memory_001 | relationship_memory | medium | PASS | 1.00 | 0.02 |
 | temporal_drift_3_previous | temporal_drift | medium | PASS | 1.00 | 0.02 |
 | sensitive_classification_004 | sensitive_classification | medium | PASS | 1.00 | 0.02 |
@@ -291,7 +291,7 @@
 | noisy_memory_001 | noisy_memory | medium | PASS | 1.00 | 0.08 |
 | memory_drift_003 | memory_drift | medium | PASS | 1.00 | 0.02 |
 | recall_002 | recall | medium | PASS | 1.00 | 0.02 |
-| noisy_memory_002 | noisy_memory | medium | PASS | 1.00 | 0.08 |
+| noisy_memory_002 | noisy_memory | medium | PASS | 1.00 | 0.13 |
 | hallucination_002 | hallucination | medium | PASS | 1.00 | 0.01 |
 | stale_memory_011 | stale_memory | medium | FAIL | 0.50 | 0.01 |
 | contradiction_015 | contradiction | medium | PASS | 1.00 | 0.02 |
@@ -310,21 +310,21 @@
 | stale_memory_006 | stale_memory | medium | FAIL | 0.50 | 0.01 |
 | correction_004 | correction | medium | PASS | 1.00 | 0.02 |
 | recall_008 | recall | medium | PASS | 1.00 | 0.02 |
-| recall_009 | recall | medium | PASS | 1.00 | 0.02 |
+| recall_009 | recall | medium | PASS | 1.00 | 0.01 |
 | recall_019 | recall | medium | PASS | 1.00 | 0.02 |
 | stale_memory_012 | stale_memory | medium | FAIL | 0.50 | 0.01 |
-| correction_003 | correction | medium | PASS | 1.00 | 0.01 |
+| correction_003 | correction | medium | PASS | 1.00 | 0.02 |
 | forgetting_020 | forgetting | medium | PASS | 1.00 | 0.02 |
 | gdpr_forgetting_002 | gdpr_forgetting | medium | PASS | 1.00 | 0.01 |
 | conflict_resolution_003 | conflict_resolution | medium | PASS | 1.00 | 0.02 |
 | memory_poisoning_009 | memory_poisoning | medium | PASS | 1.00 | 0.02 |
 | correction_007 | correction | medium | PASS | 1.00 | 0.02 |
 | hallucinated_recall_008 | hallucinated_recall | medium | PASS | 1.00 | 0.01 |
-| forgetting_006 | forgetting | medium | PASS | 1.00 | 0.01 |
+| forgetting_006 | forgetting | medium | PASS | 1.00 | 0.02 |
 | stale_memory_008 | stale_memory | medium | PASS | 1.00 | 0.01 |
 | continuity_003 | continuity | medium | PASS | 1.00 | 0.01 |
 | hallucination_001 | hallucination | medium | PASS | 1.00 | 0.01 |
 | timeline_reasoning_001 | timeline_reasoning | medium | PASS | 1.00 | 0.03 |
-| recall_007 | recall | medium | PASS | 1.00 | 0.01 |
+| recall_007 | recall | medium | PASS | 1.00 | 0.02 |
 | correction_009 | correction | medium | PASS | 1.00 | 0.01 |
 | continuity_014 | continuity | medium | FAIL | 0.00 | 0.01 |
