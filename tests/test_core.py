@@ -499,3 +499,14 @@ def test_session_memory_agent_sets_default_session() -> None:
     agent = SessionMemoryAgent("session-a")
     agent.add_memory({"memory_id": "m", "content": "Project codename is Lotus"})
     assert "Lotus" in agent.query_session("What is the project codename?", "session-a")
+
+
+def test_improved_report_contains_breakdowns(tmp_path: Path) -> None:
+    run = BenchmarkRunner(SimpleMemoryAgent()).run(categories=["recall"], report_dir=tmp_path)
+    payload = json.loads((tmp_path / "results.json").read_text(encoding="utf-8"))
+    assert "category_breakdown" in payload
+    assert "weakest_categories" in payload
+    markdown = (tmp_path / "results.md").read_text(encoding="utf-8")
+    assert "## Pass/Fail Table" in markdown
+    assert "## Strongest Categories" in markdown
+    assert run.metrics.total_scenarios == 10
