@@ -5,13 +5,19 @@ from memory_agent_eval_kit.metrics.results import (
     EvaluationResult,
     aggregate_results,
 )
+from memory_agent_eval_kit.metrics.significance import (
+    SignificanceResult,
+    score_difference_significance,
+)
 
 __all__ = [
     "AggregateMetrics",
     "BootstrapAnalysis",
     "ConfidenceInterval",
     "EvaluationResult",
+    "SignificanceResult",
     "aggregate_results",
     "bootstrap_score_interval",
+    "score_difference_significance",
     "wilson_score_interval",
 ]

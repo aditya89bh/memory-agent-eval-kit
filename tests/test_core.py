@@ -215,6 +215,17 @@ def test_evaluator_rejects_wrong_category() -> None:
         CorrectionEvaluator().evaluate(scenario, SimpleMemoryAgent())
 
 
+def test_score_difference_significance() -> None:
+    from memory_agent_eval_kit.metrics import EvaluationResult, score_difference_significance
+
+    baseline = [EvaluationResult(str(index), "recall", False, 0.0, 1.0) for index in range(10)]
+    candidate = [EvaluationResult(str(index), "recall", True, 1.0, 1.0) for index in range(10)]
+    result = score_difference_significance(baseline, candidate)
+    assert result.score_delta == 1.0
+    assert result.p_value <= 1.0
+    assert result.alpha == 0.05
+
+
 def test_bootstrap_score_interval() -> None:
     from memory_agent_eval_kit.metrics import EvaluationResult, bootstrap_score_interval
 
