@@ -5,7 +5,10 @@ from __future__ import annotations
 import csv
 import json
 import math
+import platform
 from collections import defaultdict
+from datetime import UTC, datetime
+from importlib import metadata
 from pathlib import Path
 from typing import TYPE_CHECKING, Any
 
@@ -25,6 +28,7 @@ class ReportGenerator:
         self.write_json(run)
         self.write_csv(run)
         self.write_markdown(run)
+        self.write_reproducibility(run)
 
     def write_json(self, run: BenchmarkRun) -> None:
         payload = {
@@ -166,6 +170,27 @@ class ReportGenerator:
             encoding="utf-8",
         )
 
+    def write_reproducibility(self, run: BenchmarkRun) -> None:
+        seed = getattr(run, "seed", None)
+        lines = [
+            "# Reproducibility Report",
+            "",
+            f"- Benchmark version: {_package_version()}",
+            f"- Seed: {seed if seed is not None else 'not set'}",
+            f"- Scenario count: {run.metrics.total_scenarios}",
+            f"- Timestamp: {datetime.now(UTC).isoformat()}",
+            f"- Python: {platform.python_version()}",
+            f"- Platform: {platform.platform()}",
+            f"- Implementation: {platform.python_implementation()}",
+            "",
+            "Use this file with `results.json`, `results.csv`, and `results.md` to reproduce "
+            "the benchmark context for a specific run.",
+        ]
+        (self.report_dir / "reproducibility.md").write_text(
+            "\n".join(lines) + "\n",
+            encoding="utf-8",
+        )
+
 
 def _category_breakdown(results: list[EvaluationResult]) -> dict[str, dict[str, float | int]]:
     grouped: dict[str, list[EvaluationResult]] = defaultdict(list)
@@ -182,6 +207,13 @@ def _category_breakdown(results: list[EvaluationResult]) -> dict[str, dict[str, 
             "latency_avg_ms": sum(result.latency_ms for result in category_results) / count,
         }
     return breakdown
+
+
+def _package_version() -> str:
+    try:
+        return metadata.version("memory-agent-eval-kit")
+    except metadata.PackageNotFoundError:
+        return "unknown"
 
 
 def _confidence_metrics(results: list[EvaluationResult]) -> dict[str, Any]:

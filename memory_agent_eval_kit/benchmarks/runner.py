@@ -52,6 +52,7 @@ from memory_agent_eval_kit.reports.generator import ReportGenerator
 class BenchmarkRun:
     results: list[EvaluationResult]
     metrics: AggregateMetrics
+    seed: int | None = None
 
 
 class BenchmarkRunner:
@@ -119,7 +120,7 @@ class BenchmarkRunner:
                 replace(result, details={**result.details, "difficulty": scenario.difficulty})
             )
         metrics = aggregate_results(results)
-        run = BenchmarkRun(results=results, metrics=metrics)
+        run = BenchmarkRun(results=results, metrics=metrics, seed=suite_config.seed)
         if report_dir is not None:
             ReportGenerator(Path(report_dir)).write(run)
         return run

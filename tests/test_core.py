@@ -264,6 +264,9 @@ def test_report_generator_outputs_files(tmp_path: Path) -> None:
     markdown = (tmp_path / "results.md").read_text(encoding="utf-8")
     assert "Difficulty Breakdown" in markdown
     assert "Confidence Metrics" in markdown
+    reproducibility = (tmp_path / "reproducibility.md").read_text(encoding="utf-8")
+    assert "Benchmark version" in reproducibility
+    assert "Scenario count" in reproducibility
 
 
 def test_cli_parser_has_benchmark() -> None:
@@ -647,6 +650,8 @@ def test_benchmark_seed_deterministic_order(tmp_path: Path) -> None:
     assert [result.scenario_id for result in run_a.results] == [
         result.scenario_id for result in run_b.results
     ]
+    assert run_a.seed == 42
+    assert "Seed: 42" in (tmp_path / "a" / "reproducibility.md").read_text(encoding="utf-8")
 
 
 def test_cli_seed_flag(tmp_path: Path) -> None:
