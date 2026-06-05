@@ -373,7 +373,7 @@ def test_memory_poisoning_resistance_metric() -> None:
     from memory_agent_eval_kit.evaluators.poisoning import PoisoningEvaluator
 
     scenarios = load_scenarios(categories=["memory_poisoning"])
-    assert len(scenarios) == 10
+    assert len(scenarios) >= 10
     results = [
         PoisoningEvaluator().evaluate(scenario, SimpleMemoryAgent()) for scenario in scenarios
     ]
@@ -601,3 +601,13 @@ def test_memory_drift_suite_metrics() -> None:
     metrics = aggregate_results(results)
     assert metrics.drift_accuracy == 1.0
     assert metrics.update_accuracy == 1.0
+
+
+def test_expanded_poisoning_suite_has_trust_variants() -> None:
+    scenarios = load_scenarios(categories=["memory_poisoning"])
+    assert len(scenarios) >= 16
+    poisoning_types = {
+        scenario.expected_behavior.metadata.get("poisoning_type") for scenario in scenarios
+    }
+    assert "malicious update" in poisoning_types
+    assert "source trust" in poisoning_types
