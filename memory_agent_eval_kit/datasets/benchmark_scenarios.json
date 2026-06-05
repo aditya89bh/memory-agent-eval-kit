@@ -6654,5 +6654,59 @@
       "shared_store": true
     },
     "description": "Both agents should observe the same shared memory fact."
+  },
+  {
+    "scenario_id": "memory_synchronization_001",
+    "category": "memory_synchronization",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "memory_synchronization_001",
+        "content": "Memory synchronization propagated to agent beta with value sync build status green"
+      }
+    ],
+    "query": "What value was propagated to agent beta by memory synchronization?",
+    "expected_answer": "sync build status green",
+    "expected_behavior": {
+      "answer": "sync build status green",
+      "propagated_to": "beta"
+    },
+    "description": "Validate propagated shared memory reaches another agent."
+  },
+  {
+    "scenario_id": "memory_synchronization_002",
+    "category": "memory_synchronization",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "memory_synchronization_002",
+        "content": "Memory synchronization propagated to agent beta with value sync customer tier enterprise"
+      }
+    ],
+    "query": "What value was propagated to agent beta by memory synchronization?",
+    "expected_answer": "sync customer tier enterprise",
+    "expected_behavior": {
+      "answer": "sync customer tier enterprise",
+      "propagated_to": "beta"
+    },
+    "description": "Validate propagated shared memory reaches another agent."
+  },
+  {
+    "scenario_id": "memory_synchronization_003",
+    "category": "memory_synchronization",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "memory_synchronization_003",
+        "content": "Memory synchronization propagated to agent beta with value sync policy version 3"
+      }
+    ],
+    "query": "What value was propagated to agent beta by memory synchronization?",
+    "expected_answer": "sync policy version 3",
+    "expected_behavior": {
+      "answer": "sync policy version 3",
+      "propagated_to": "beta"
+    },
+    "description": "Validate propagated shared memory reaches another agent."
   }
 ]

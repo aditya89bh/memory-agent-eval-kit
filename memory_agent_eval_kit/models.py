@@ -32,6 +32,7 @@ Category: TypeAlias = Literal[
     "retention_policy",
     "sensitive_classification",
     "shared_memory",
+    "memory_synchronization",
 ]
 
 

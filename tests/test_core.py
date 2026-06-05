@@ -854,3 +854,12 @@ def test_shared_memory_benchmarks_measure_consistency(tmp_path: Path) -> None:
     )
     assert len(run.results) == 3
     assert run.metrics.shared_memory_consistency == 1.0
+
+
+def test_memory_synchronization_benchmarks_measure_propagation(tmp_path: Path) -> None:
+    run = BenchmarkRunner(SimpleMemoryAgent()).run(
+        categories=["memory_synchronization"], report_dir=tmp_path
+    )
+    assert len(run.results) == 3
+    assert run.metrics.propagation_correctness == 1.0
+    assert run.metrics.synchronization_accuracy == 1.0

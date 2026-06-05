@@ -23,6 +23,7 @@ from memory_agent_eval_kit.evaluators import (
     LongHorizonEvaluator,
     MemoryDriftEvaluator,
     MemoryLeakageEvaluator,
+    MemorySynchronizationEvaluator,
     NoisyMemoryEvaluator,
     PIIDeletionEvaluator,
     PoisoningEvaluator,
@@ -83,6 +84,7 @@ class BenchmarkRunner:
             "retention_policy": RetentionPolicyEvaluator(),
             "sensitive_classification": SensitiveClassificationEvaluator(),
             "shared_memory": SharedMemoryEvaluator(),
+            "memory_synchronization": MemorySynchronizationEvaluator(),
         }
 
     def run(

@@ -13,6 +13,7 @@ from memory_agent_eval_kit.evaluators.hierarchical_memory import HierarchicalMem
 from memory_agent_eval_kit.evaluators.long_horizon import LongHorizonEvaluator
 from memory_agent_eval_kit.evaluators.memory_drift import MemoryDriftEvaluator
 from memory_agent_eval_kit.evaluators.memory_leakage import MemoryLeakageEvaluator
+from memory_agent_eval_kit.evaluators.memory_synchronization import MemorySynchronizationEvaluator
 from memory_agent_eval_kit.evaluators.noisy_memory import NoisyMemoryEvaluator
 from memory_agent_eval_kit.evaluators.pii_deletion import PIIDeletionEvaluator
 from memory_agent_eval_kit.evaluators.poisoning import PoisoningEvaluator
@@ -47,6 +48,7 @@ __all__ = [
     "MemoryDriftEvaluator",
     "NoisyMemoryEvaluator",
     "MemoryLeakageEvaluator",
+    "MemorySynchronizationEvaluator",
     "PIIDeletionEvaluator",
     "PoisoningEvaluator",
     "PreferenceEvolutionEvaluator",
