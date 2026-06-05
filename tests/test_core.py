@@ -1098,3 +1098,23 @@ def test_langgraph_adapter_uses_configured_graph() -> None:
     assert "real" in adapter.query("What is the LangGraph graph fact?")
     adapter.delete_memory("m1")
     assert graph.deleted == ["m1"]
+
+
+def test_adapter_template_generator_creates_adapter_tests_and_docs(tmp_path: Path) -> None:
+    from memory_agent_eval_kit.adapters.templates import create_adapter_template
+
+    result = create_adapter_template("my_adapter", tmp_path)
+    assert result.adapter_path.exists()
+    assert result.test_path.exists()
+    assert result.docs_path.exists()
+    assert "class MyAdapterAdapter" in result.adapter_path.read_text(encoding="utf-8")
+    assert "test_my_adapter_adapter_smoke" in result.test_path.read_text(encoding="utf-8")
+
+
+def test_create_adapter_cli_generates_template(
+    tmp_path: Path, capsys: pytest.CaptureFixture[str]
+) -> None:
+    assert main(["create-adapter", "my_adapter", "--output-dir", str(tmp_path)]) == 0
+    output = capsys.readouterr().out
+    assert "Adapter template generated" in output
+    assert (tmp_path / "memory_agent_eval_kit" / "adapters" / "my_adapter.py").exists()

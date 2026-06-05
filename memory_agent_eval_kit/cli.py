@@ -6,6 +6,7 @@ import argparse
 from pathlib import Path
 
 from memory_agent_eval_kit.adapters.simple import SimpleMemoryAgent
+from memory_agent_eval_kit.adapters.templates import create_adapter_template
 from memory_agent_eval_kit.benchmarks import BenchmarkRunner
 from memory_agent_eval_kit.datasets import validate_dataset
 from memory_agent_eval_kit.leaderboards import LeaderboardGenerator
@@ -86,6 +87,13 @@ def build_parser() -> argparse.ArgumentParser:
     leaderboard.add_argument("--output-dir", type=Path, default=Path("leaderboards"))
     leaderboard.add_argument("--agent-name", default="SimpleMemoryAgent")
     leaderboard.add_argument("--suite-name", default="default")
+
+    create_adapter = subparsers.add_parser(
+        "create-adapter", help="Generate a custom adapter template"
+    )
+    create_adapter.add_argument("name", help="Adapter module name, for example my_adapter")
+    create_adapter.add_argument("--output-dir", type=Path, default=Path("."))
+    create_adapter.add_argument("--force", action="store_true", help="Overwrite generated files")
     return parser
 
 
@@ -101,6 +109,13 @@ def main(argv: list[str] | None = None) -> int:
         for error in result.errors:
             print(f"- {error}")
         return 1
+    if args.command == "create-adapter":
+        template_result = create_adapter_template(args.name, args.output_dir, force=args.force)
+        print("Adapter template generated:")
+        print(f"- {template_result.adapter_path}")
+        print(f"- {template_result.test_path}")
+        print(f"- {template_result.docs_path}")
+        return 0
     if args.command == "leaderboard":
         generator = LeaderboardGenerator(args.output_dir)
         entry = generator.from_report(args.report, args.agent_name, args.suite_name)
