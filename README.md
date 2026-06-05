@@ -1,6 +1,23 @@
 # memory-agent-eval-kit
 
-Benchmark authority and evaluation toolkit for memory-enabled AI agents.
+**Benchmark authority and evaluation toolkit for memory-enabled AI agents.**
+
+[![Release](https://img.shields.io/badge/release-v0.5.0-blue)](#quickstart)
+[![Python](https://img.shields.io/badge/python-3.11%2B-brightgreen)](pyproject.toml)
+[![Tests](https://img.shields.io/badge/tests-95%20passing-brightgreen)](tests/)
+[![Coverage](https://img.shields.io/badge/coverage-94%25-brightgreen)](pyproject.toml)
+[![Benchmark](https://img.shields.io/badge/benchmark-253%20scenarios-purple)](docs/benchmark_statistics.md)
+
+Memory agents fail in subtle ways: stale facts, missed corrections, invented memories, deleted-data leaks, timeline confusion, poisoning, and multi-agent drift. `memory-agent-eval-kit` turns those failures into reproducible benchmark evidence.
+
+| Benchmark | Current Status |
+|---|---:|
+| Default scenarios | 253 |
+| Benchmark categories | 29 |
+| Test suite | 95 tests |
+| Coverage gate | 94% measured / 90% required |
+| Seeded default score | 93% with `--seed 42` |
+| Release line | v0.5.0 authority-building release |
 
 ## Overview
 
@@ -41,17 +58,25 @@ The benchmark architecture keeps datasets, validation, adapters, evaluators, met
 - **Multi-Agent Memory**: covers shared memory, synchronization, disagreement detection, conflict resolution, and collaborative recall.
 - **Memory Stress**: measures recall and latency degradation at larger memory scales.
 
-The default dataset now includes a broad v0.4.0 corpus across benchmark authority, enterprise compliance, multi-agent memory, versioning, and adapter ecosystem suites. Synthetic stress scenarios are generated on demand for 10, 100, and 1000 memory scales.
+The default dataset now includes a broad authority corpus across benchmark methodology, enterprise compliance, multi-agent memory, versioning, and adapter ecosystem suites. Synthetic stress scenarios are generated on demand for 10, 100, and 1000 memory scales.
 
 ## Quickstart
+
+Install locally, validate the corpus, run a seeded benchmark, and generate leaderboard artifacts:
 
 ```bash
 python -m venv .venv
 source .venv/bin/activate
 pip install -e '.[dev]'
+
 memory-eval validate
 memory-eval benchmark --seed 42
 memory-eval leaderboard
+```
+
+Create a custom adapter when you are ready to evaluate your own memory system:
+
+```bash
 memory-eval create-adapter my_adapter
 ```
 
