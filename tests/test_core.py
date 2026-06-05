@@ -117,7 +117,7 @@ def test_load_default_dataset_has_70_scenarios() -> None:
 
 
 def test_load_dataset_filter_category() -> None:
-    assert len(load_scenarios(categories=["recall"])) == 10
+    assert len(load_scenarios(categories=["recall"])) == 20
 
 
 def test_load_dataset_rejects_non_list(tmp_path: Path) -> None:
@@ -219,7 +219,7 @@ def test_benchmark_runner_runs_all(tmp_path: Path) -> None:
 
 def test_benchmark_runner_category_filter(tmp_path: Path) -> None:
     run = BenchmarkRunner(SimpleMemoryAgent()).run(categories=["recall"], report_dir=tmp_path)
-    assert run.metrics.total_scenarios == 10
+    assert run.metrics.total_scenarios == 20
 
 
 def test_report_generator_outputs_files(tmp_path: Path) -> None:
@@ -335,7 +335,7 @@ def test_cli_stress_flag(tmp_path: Path, capsys: pytest.CaptureFixture[str]) -> 
 
 def test_temporal_drift_dataset_current_previous_timeline() -> None:
     scenarios = load_scenarios(categories=["temporal_drift"])
-    assert len(scenarios) == 9
+    assert len(scenarios) == 10
     ids = {scenario.scenario_id for scenario in scenarios}
     assert "temporal_drift_1_current" in ids
     assert "temporal_drift_1_previous" in ids
@@ -373,7 +373,7 @@ def test_memory_poisoning_resistance_metric() -> None:
     from memory_agent_eval_kit.evaluators.poisoning import PoisoningEvaluator
 
     scenarios = load_scenarios(categories=["memory_poisoning"])
-    assert len(scenarios) == 5
+    assert len(scenarios) == 10
     results = [
         PoisoningEvaluator().evaluate(scenario, SimpleMemoryAgent()) for scenario in scenarios
     ]
@@ -509,4 +509,43 @@ def test_improved_report_contains_breakdowns(tmp_path: Path) -> None:
     markdown = (tmp_path / "results.md").read_text(encoding="utf-8")
     assert "## Pass/Fail Table" in markdown
     assert "## Strongest Categories" in markdown
-    assert run.metrics.total_scenarios == 10
+    assert run.metrics.total_scenarios == 20
+
+
+def test_validate_dataset_success() -> None:
+    from memory_agent_eval_kit.datasets import validate_dataset
+
+    result = validate_dataset()
+    assert result.valid
+    assert result.scenario_count >= 150
+
+
+def test_validate_dataset_reports_duplicates(tmp_path: Path) -> None:
+    from memory_agent_eval_kit.datasets import validate_dataset
+
+    payload = [
+        {
+            "scenario_id": "dup",
+            "category": "recall",
+            "events": [],
+            "query": "q",
+            "expected_answer": "a",
+        },
+        {
+            "scenario_id": "dup",
+            "category": "recall",
+            "events": [],
+            "query": "q",
+            "expected_answer": "a",
+        },
+    ]
+    path = tmp_path / "dup.json"
+    path.write_text(json.dumps(payload), encoding="utf-8")
+    result = validate_dataset(path)
+    assert not result.valid
+    assert result.errors
+
+
+def test_cli_validate(capsys: pytest.CaptureFixture[str]) -> None:
+    assert main(["validate"]) == 0
+    assert "Dataset valid" in capsys.readouterr().out

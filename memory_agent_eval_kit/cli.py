@@ -7,6 +7,7 @@ from pathlib import Path
 
 from memory_agent_eval_kit.adapters.simple import SimpleMemoryAgent
 from memory_agent_eval_kit.benchmarks import BenchmarkRunner
+from memory_agent_eval_kit.datasets import validate_dataset
 from memory_agent_eval_kit.leaderboards import LeaderboardGenerator
 from memory_agent_eval_kit.metrics import AggregateMetrics
 from memory_agent_eval_kit.models import Category
@@ -47,6 +48,9 @@ def build_parser() -> argparse.ArgumentParser:
     benchmark.add_argument(
         "--stress", action="store_true", help="Run synthetic memory stress suite"
     )
+    validate = subparsers.add_parser("validate", help="Validate benchmark dataset")
+    validate.add_argument("--dataset", type=Path, default=None)
+
     leaderboard = subparsers.add_parser("leaderboard", help="Generate leaderboard files")
     leaderboard.add_argument("--report", type=Path, default=Path("reports/results.json"))
     leaderboard.add_argument("--output-dir", type=Path, default=Path("leaderboards"))
@@ -58,6 +62,15 @@ def build_parser() -> argparse.ArgumentParser:
 def main(argv: list[str] | None = None) -> int:
     parser = build_parser()
     args = parser.parse_args(argv)
+    if args.command == "validate":
+        result = validate_dataset(args.dataset)
+        if result.valid:
+            print(f"Dataset valid: {result.scenario_count} scenarios")
+            return 0
+        print("Dataset invalid:")
+        for error in result.errors:
+            print(f"- {error}")
+        return 1
     if args.command == "leaderboard":
         generator = LeaderboardGenerator(args.output_dir)
         entry = generator.from_report(args.report, args.agent_name, args.suite_name)
