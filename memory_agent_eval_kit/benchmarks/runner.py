@@ -16,6 +16,7 @@ from memory_agent_eval_kit.evaluators import (
     CorrectionEvaluator,
     ForgettingEvaluator,
     HallucinationEvaluator,
+    MemoryLeakageEvaluator,
     PoisoningEvaluator,
     RecallEvaluator,
     ScenarioEvaluator,
@@ -54,6 +55,7 @@ class BenchmarkRunner:
             "temporal_drift": TemporalDriftEvaluator(),
             "adversarial_contradiction": AdversarialContradictionEvaluator(),
             "memory_poisoning": PoisoningEvaluator(),
+            "memory_leakage": MemoryLeakageEvaluator(),
         }
 
     def run(

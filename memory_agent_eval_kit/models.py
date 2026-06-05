@@ -18,6 +18,7 @@ Category: TypeAlias = Literal[
     "temporal_drift",
     "adversarial_contradiction",
     "memory_poisoning",
+    "memory_leakage",
 ]
 
 

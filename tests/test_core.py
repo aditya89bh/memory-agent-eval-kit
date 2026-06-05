@@ -549,3 +549,16 @@ def test_validate_dataset_reports_duplicates(tmp_path: Path) -> None:
 def test_cli_validate(capsys: pytest.CaptureFixture[str]) -> None:
     assert main(["validate"]) == 0
     assert "Dataset valid" in capsys.readouterr().out
+
+
+def test_memory_leakage_suite_metrics() -> None:
+    from memory_agent_eval_kit.evaluators.memory_leakage import MemoryLeakageEvaluator
+
+    scenarios = load_scenarios(categories=["memory_leakage"])
+    assert len(scenarios) == 5
+    results = [
+        MemoryLeakageEvaluator().evaluate(scenario, SimpleMemoryAgent()) for scenario in scenarios
+    ]
+    metrics = aggregate_results(results)
+    assert metrics.leak_rate == 0.0
+    assert metrics.delayed_leak_rate == 0.0
