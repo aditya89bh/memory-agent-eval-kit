@@ -814,3 +814,11 @@ def test_retention_policy_benchmarks_measure_compliance(tmp_path: Path) -> None:
     )
     assert len(run.results) == 3
     assert run.metrics.retention_compliance == 1.0
+
+
+def test_sensitive_memory_classification_benchmarks_measure_accuracy(tmp_path: Path) -> None:
+    run = BenchmarkRunner(SimpleMemoryAgent()).run(
+        categories=["sensitive_classification"], report_dir=tmp_path
+    )
+    assert len(run.results) == 5
+    assert run.metrics.classification_accuracy == 1.0

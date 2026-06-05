@@ -30,6 +30,7 @@ Category: TypeAlias = Literal[
     "pii_deletion",
     "gdpr_forgetting",
     "retention_policy",
+    "sensitive_classification",
 ]
 
 

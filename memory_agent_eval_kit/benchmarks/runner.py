@@ -31,6 +31,7 @@ from memory_agent_eval_kit.evaluators import (
     RelationshipMemoryEvaluator,
     RetentionPolicyEvaluator,
     ScenarioEvaluator,
+    SensitiveClassificationEvaluator,
     StaleMemoryEvaluator,
     StressEvaluator,
     TemporalDriftEvaluator,
@@ -79,6 +80,7 @@ class BenchmarkRunner:
             "pii_deletion": PIIDeletionEvaluator(),
             "gdpr_forgetting": GDPRForgettingEvaluator(),
             "retention_policy": RetentionPolicyEvaluator(),
+            "sensitive_classification": SensitiveClassificationEvaluator(),
         }
 
     def run(

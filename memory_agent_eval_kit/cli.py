@@ -37,6 +37,7 @@ CATEGORY_CHOICES: tuple[Category, ...] = (
     "pii_deletion",
     "gdpr_forgetting",
     "retention_policy",
+    "sensitive_classification",
 )
 
 

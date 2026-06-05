@@ -6498,5 +6498,95 @@
       "retention_status": "expired"
     },
     "description": "Validate temporary, expiring, and archived memory retention behavior."
+  },
+  {
+    "scenario_id": "sensitive_classification_001",
+    "category": "sensitive_classification",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "sensitive_classification_001",
+        "content": "Sensitive classification for home city preference is personal"
+      }
+    ],
+    "query": "What sensitive classification applies to home city preference?",
+    "expected_answer": "personal",
+    "expected_behavior": {
+      "answer": "personal",
+      "classification": "personal"
+    },
+    "description": "Classify memory sensitivity as personal, sensitive, or public."
+  },
+  {
+    "scenario_id": "sensitive_classification_002",
+    "category": "sensitive_classification",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "sensitive_classification_002",
+        "content": "Sensitive classification for medical insurance number is sensitive"
+      }
+    ],
+    "query": "What sensitive classification applies to medical insurance number?",
+    "expected_answer": "sensitive",
+    "expected_behavior": {
+      "answer": "sensitive",
+      "classification": "sensitive"
+    },
+    "description": "Classify memory sensitivity as personal, sensitive, or public."
+  },
+  {
+    "scenario_id": "sensitive_classification_003",
+    "category": "sensitive_classification",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "sensitive_classification_003",
+        "content": "Sensitive classification for published blog URL is public"
+      }
+    ],
+    "query": "What sensitive classification applies to published blog URL?",
+    "expected_answer": "public",
+    "expected_behavior": {
+      "answer": "public",
+      "classification": "public"
+    },
+    "description": "Classify memory sensitivity as personal, sensitive, or public."
+  },
+  {
+    "scenario_id": "sensitive_classification_004",
+    "category": "sensitive_classification",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "sensitive_classification_004",
+        "content": "Sensitive classification for private phone contact is sensitive"
+      }
+    ],
+    "query": "What sensitive classification applies to private phone contact?",
+    "expected_answer": "sensitive",
+    "expected_behavior": {
+      "answer": "sensitive",
+      "classification": "sensitive"
+    },
+    "description": "Classify memory sensitivity as personal, sensitive, or public."
+  },
+  {
+    "scenario_id": "sensitive_classification_005",
+    "category": "sensitive_classification",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "sensitive_classification_005",
+        "content": "Sensitive classification for favorite color is personal"
+      }
+    ],
+    "query": "What sensitive classification applies to favorite color?",
+    "expected_answer": "personal",
+    "expected_behavior": {
+      "answer": "personal",
+      "classification": "personal"
+    },
+    "description": "Classify memory sensitivity as personal, sensitive, or public."
   }
 ]
