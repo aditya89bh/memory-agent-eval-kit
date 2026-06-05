@@ -256,3 +256,41 @@ def test_cli_benchmark(tmp_path: Path, capsys: pytest.CaptureFixture[str]) -> No
     captured = capsys.readouterr()
     assert "Overall Score" in captured.out
     assert (tmp_path / "results.md").exists()
+
+
+def test_rich_scenario_schema_aliases_and_defaults() -> None:
+    scenario = BenchmarkScenario.from_dict(
+        {
+            "scenario_id": "rich_001",
+            "category": "recall",
+            "events": [
+                {
+                    "type": "fact",
+                    "memory_id": "m1",
+                    "session_id": "s1",
+                    "timestamp": "2026-06-01T00:00:00Z",
+                    "content": "Favorite robot is UR5",
+                }
+            ],
+            "query": "What robot is favorite?",
+            "expected_behavior": {"answer": "UR5", "rationale": "stored fact"},
+            "scoring_rules": {"mode": "exact", "threshold": 0.9},
+            "negative_assertions": ["ABB"],
+        }
+    )
+    assert scenario.memory_events == scenario.events
+    assert scenario.expected_answer == "UR5"
+    assert scenario.expected_behavior.rationale == "stored fact"
+    assert scenario.scoring_rules.threshold == 0.9
+    assert scenario.sessions == ["s1"]
+    assert scenario.timestamps == ["2026-06-01T00:00:00Z"]
+    assert scenario.expected_absent == ["ABB"]
+
+
+def test_scenario_to_dict_contains_legacy_and_rich_fields() -> None:
+    scenario = load_scenarios(categories=["recall"])[0]
+    payload = scenario.to_dict()
+    assert "events" in payload
+    assert "memory_events" in payload
+    assert "expected_behavior" in payload
+    assert "negative_assertions" in payload

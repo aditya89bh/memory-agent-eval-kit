@@ -3,9 +3,9 @@
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from typing import Any, Literal
+from typing import Any, Literal, TypeAlias, cast
 
-Category = Literal[
+Category: TypeAlias = Literal[
     "recall",
     "contradiction",
     "correction",
@@ -63,8 +63,84 @@ class MemoryEvent:
 
 
 @dataclass(frozen=True)
+class ExpectedBehavior:
+    """Human-readable and machine-checkable expected behavior."""
+
+    answer: str
+    should_know: bool = True
+    should_refuse: bool = False
+    rationale: str = ""
+    metadata: dict[str, Any] = field(default_factory=dict)
+
+    @classmethod
+    def from_raw(cls, raw: object, fallback_answer: str) -> ExpectedBehavior:
+        if raw is None:
+            return cls(answer=fallback_answer)
+        if isinstance(raw, str):
+            return cls(answer=raw)
+        if isinstance(raw, dict):
+            known = {"answer", "should_know", "should_refuse", "rationale"}
+            return cls(
+                answer=str(raw.get("answer", fallback_answer)),
+                should_know=bool(raw.get("should_know", True)),
+                should_refuse=bool(raw.get("should_refuse", False)),
+                rationale=str(raw.get("rationale", "")),
+                metadata={key: value for key, value in raw.items() if key not in known},
+            )
+        return cls(answer=fallback_answer)
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "answer": self.answer,
+            "should_know": self.should_know,
+            "should_refuse": self.should_refuse,
+            "rationale": self.rationale,
+            **self.metadata,
+        }
+
+
+@dataclass(frozen=True)
+class ScoringRules:
+    """Per-scenario scoring controls."""
+
+    mode: str = "exact"
+    threshold: float = 1.0
+    require_all_assertions: bool = True
+    allow_partial: bool = False
+    metadata: dict[str, Any] = field(default_factory=dict)
+
+    @classmethod
+    def from_raw(cls, raw: object) -> ScoringRules:
+        if not isinstance(raw, dict):
+            return cls()
+        known = {"mode", "threshold", "require_all_assertions", "allow_partial"}
+        return cls(
+            mode=str(raw.get("mode", "exact")),
+            threshold=float(raw.get("threshold", 1.0)),
+            require_all_assertions=bool(raw.get("require_all_assertions", True)),
+            allow_partial=bool(raw.get("allow_partial", False)),
+            metadata={key: value for key, value in raw.items() if key not in known},
+        )
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "mode": self.mode,
+            "threshold": self.threshold,
+            "require_all_assertions": self.require_all_assertions,
+            "allow_partial": self.allow_partial,
+            **self.metadata,
+        }
+
+
+@dataclass(frozen=True)
 class BenchmarkScenario:
-    """A single benchmark case."""
+    """A single benchmark case.
+
+    The model accepts both v0.1 fields (``memory_events``, ``expected_answer``,
+    ``expected_absent``) and the richer v0.2 schema (``events``, ``sessions``,
+    ``timestamps``, ``expected_behavior``, ``scoring_rules``,
+    ``negative_assertions``).
+    """
 
     scenario_id: str
     category: Category
@@ -73,15 +149,66 @@ class BenchmarkScenario:
     expected_answer: str
     expected_absent: list[str] = field(default_factory=list)
     description: str = ""
+    sessions: list[str] = field(default_factory=list)
+    timestamps: list[str] = field(default_factory=list)
+    expected_behavior: ExpectedBehavior = field(default_factory=lambda: ExpectedBehavior(answer=""))
+    scoring_rules: ScoringRules = field(default_factory=ScoringRules)
+    negative_assertions: list[str] = field(default_factory=list)
+
+    @property
+    def events(self) -> list[MemoryEvent]:
+        """Alias for richer v0.2 schema naming."""
+
+        return self.memory_events
 
     @classmethod
     def from_dict(cls, data: dict[str, Any]) -> BenchmarkScenario:
+        raw_events = data.get("events", data.get("memory_events", []))
+        memory_events = [MemoryEvent.from_dict(event) for event in raw_events]
+        expected_answer = str(data.get("expected_answer", ""))
+        expected_behavior = ExpectedBehavior.from_raw(
+            data.get("expected_behavior"),
+            fallback_answer=expected_answer,
+        )
+        if not expected_answer:
+            expected_answer = expected_behavior.answer
+        negative_assertions = [
+            str(item) for item in data.get("negative_assertions", data.get("expected_absent", []))
+        ]
+        sessions = [str(item) for item in data.get("sessions", [])]
+        if not sessions:
+            sessions = sorted({event.session_id for event in memory_events if event.session_id})
+        timestamps = [str(item) for item in data.get("timestamps", [])]
+        if not timestamps:
+            timestamps = [event.timestamp for event in memory_events if event.timestamp]
         return cls(
             scenario_id=str(data["scenario_id"]),
-            category=data["category"],
-            memory_events=[MemoryEvent.from_dict(event) for event in data.get("memory_events", [])],
+            category=cast(Category, str(data["category"])),
+            memory_events=memory_events,
             query=str(data["query"]),
-            expected_answer=str(data["expected_answer"]),
-            expected_absent=[str(item) for item in data.get("expected_absent", [])],
+            expected_answer=expected_answer,
+            expected_absent=negative_assertions,
             description=str(data.get("description", "")),
+            sessions=sessions,
+            timestamps=timestamps,
+            expected_behavior=expected_behavior,
+            scoring_rules=ScoringRules.from_raw(data.get("scoring_rules")),
+            negative_assertions=negative_assertions,
         )
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "scenario_id": self.scenario_id,
+            "category": self.category,
+            "events": [event.to_memory() for event in self.memory_events],
+            "memory_events": [event.to_memory() for event in self.memory_events],
+            "sessions": self.sessions,
+            "timestamps": self.timestamps,
+            "query": self.query,
+            "expected_answer": self.expected_answer,
+            "expected_behavior": self.expected_behavior.to_dict(),
+            "scoring_rules": self.scoring_rules.to_dict(),
+            "negative_assertions": self.negative_assertions,
+            "expected_absent": self.expected_absent,
+            "description": self.description,
+        }
