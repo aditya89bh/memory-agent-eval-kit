@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="520" viewBox="0 0 1120 520" role="img" aria-labelledby="title desc">
+  <title id="title">memory-agent-eval-kit benchmark architecture</title>
+  <desc id="desc">Architecture diagram showing datasets, validation, adapters, benchmark runner, evaluators, metrics, reports, leaderboards, and release artifacts.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#0f172a"/>
+      <stop offset="1" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" x2="1">
+      <stop offset="0" stop-color="#f8fafc"/>
+      <stop offset="1" stop-color="#e2e8f0"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#38bdf8"/>
+    </marker>
+    <style>
+      .title{font:700 32px system-ui,-apple-system,Segoe UI,sans-serif;fill:#f8fafc}
+      .subtitle{font:500 15px system-ui,-apple-system,Segoe UI,sans-serif;fill:#cbd5e1}
+      .box{fill:url(#card);stroke:#38bdf8;stroke-width:2;rx:18}
+      .box-alt{fill:#ecfeff;stroke:#22d3ee;stroke-width:2;rx:18}
+      .label{font:700 17px system-ui,-apple-system,Segoe UI,sans-serif;fill:#0f172a}
+      .small{font:500 13px system-ui,-apple-system,Segoe UI,sans-serif;fill:#334155}
+      .arrow{stroke:#38bdf8;stroke-width:3;fill:none;marker-end:url(#arrow)}
+      .pill{fill:#0891b2;rx:14}
+      .pill-text{font:700 12px system-ui,-apple-system,Segoe UI,sans-serif;fill:white}
+    </style>
+  </defs>
+
+  <rect width="1120" height="520" fill="url(#bg)"/>
+  <text x="48" y="56" class="title">Memory Agent Benchmark Architecture</text>
+  <text x="50" y="84" class="subtitle">Deterministic datasets → adapter-agnostic evaluation → reproducible reports and leaderboards</text>
+
+  <rect x="50" y="135" width="190" height="110" class="box"/>
+  <text x="72" y="170" class="label">Scenario Corpus</text>
+  <text x="72" y="196" class="small">JSON benchmark cases</text>
+  <text x="72" y="216" class="small">difficulty + category</text>
+
+  <rect x="300" y="135" width="190" height="110" class="box"/>
+  <text x="322" y="170" class="label">Validation</text>
+  <text x="322" y="196" class="small">schema checks</text>
+  <text x="322" y="216" class="small">IDs, status, scoring</text>
+
+  <rect x="550" y="120" width="220" height="140" class="box-alt"/>
+  <text x="575" y="158" class="label">BenchmarkRunner</text>
+  <text x="575" y="184" class="small">seeded execution</text>
+  <text x="575" y="204" class="small">category filtering</text>
+  <text x="575" y="224" class="small">reproducibility metadata</text>
+
+  <rect x="830" y="135" width="220" height="110" class="box"/>
+  <text x="855" y="170" class="label">Evaluators</text>
+  <text x="855" y="196" class="small">recall, forgetting, drift</text>
+  <text x="855" y="216" class="small">poisoning, compliance</text>
+
+  <rect x="50" y="330" width="220" height="110" class="box"/>
+  <text x="75" y="365" class="label">Agent Adapter</text>
+  <text x="75" y="391" class="small">Simple / Mem0 / LangGraph</text>
+  <text x="75" y="411" class="small">or custom memory agent</text>
+
+  <rect x="335" y="330" width="210" height="110" class="box"/>
+  <text x="360" y="365" class="label">Metrics</text>
+  <text x="360" y="391" class="small">scores + latency</text>
+  <text x="360" y="411" class="small">confidence intervals</text>
+
+  <rect x="610" y="330" width="210" height="110" class="box"/>
+  <text x="635" y="365" class="label">Reports</text>
+  <text x="635" y="391" class="small">JSON / CSV / Markdown</text>
+  <text x="635" y="411" class="small">reproducibility.md</text>
+
+  <rect x="875" y="330" width="190" height="110" class="box"/>
+  <text x="900" y="365" class="label">Leaderboards</text>
+  <text x="900" y="391" class="small">overall ranking</text>
+  <text x="900" y="411" class="small">hallucination ranking</text>
+
+  <path d="M240 190 H300" class="arrow"/>
+  <path d="M490 190 H550" class="arrow"/>
+  <path d="M770 190 H830" class="arrow"/>
+  <path d="M660 260 V300 H160 V330" class="arrow"/>
+  <path d="M270 385 H335" class="arrow"/>
+  <path d="M545 385 H610" class="arrow"/>
+  <path d="M820 385 H875" class="arrow"/>
+  <path d="M940 245 V330" class="arrow"/>
+
+  <rect x="760" y="38" width="115" height="28" class="pill"/>
+  <text x="778" y="57" class="pill-text">253 scenarios</text>
+  <rect x="890" y="38" width="94" height="28" class="pill"/>
+  <text x="909" y="57" class="pill-text">29 categories</text>
+  <rect x="998" y="38" width="74" height="28" class="pill"/>
+  <text x="1018" y="57" class="pill-text">v0.5</text>
+</svg>

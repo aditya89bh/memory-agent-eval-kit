@@ -12,18 +12,9 @@ Memory agents fail in subtle ways: they recall stale facts, miss corrections, le
 
 ## Architecture
 
-```mermaid
-flowchart LR
-  D[JSON Benchmark Datasets] --> V[Dataset Validation]
-  V --> R[BenchmarkRunner]
-  A[MemoryAgentAdapter] --> R
-  R --> E[Category Evaluators]
-  E --> M[Aggregate Metrics]
-  M --> P[JSON / CSV / Markdown Reports]
-  P --> C[Comparison + Regression Detection]
-  P --> L[Leaderboards + SVG Visuals]
-  X[Mem0 / LangGraph / OpenAI Memory / Custom Agent] --> A
-```
+![Benchmark architecture](assets/architecture/benchmark_architecture.svg)
+
+The benchmark architecture keeps datasets, validation, adapters, evaluators, metrics, reports, and leaderboards separate so agents can be compared without coupling the corpus to any one memory implementation.
 
 ## Benchmark Categories
 
