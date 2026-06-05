@@ -481,3 +481,21 @@ def test_cli_leaderboard(tmp_path: Path, capsys: pytest.CaptureFixture[str]) -> 
     )
     assert "Leaderboard written" in capsys.readouterr().out
     assert (output_dir / "results.md").exists()
+
+
+def test_file_backed_memory_agent_persists(tmp_path: Path) -> None:
+    from memory_agent_eval_kit.adapters import FileBackedMemoryAgent
+
+    path = tmp_path / "memories.json"
+    agent = FileBackedMemoryAgent(path)
+    agent.add_memory({"memory_id": "m", "content": "Favorite robot brand is Universal Robots"})
+    reloaded = FileBackedMemoryAgent(path)
+    assert "Universal Robots" in reloaded.query("What robot brand do I prefer?")
+
+
+def test_session_memory_agent_sets_default_session() -> None:
+    from memory_agent_eval_kit.adapters import SessionMemoryAgent
+
+    agent = SessionMemoryAgent("session-a")
+    agent.add_memory({"memory_id": "m", "content": "Project codename is Lotus"})
+    assert "Lotus" in agent.query_session("What is the project codename?", "session-a")
