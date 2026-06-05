@@ -112,8 +112,8 @@ def test_benchmark_scenario_from_dict_defaults() -> None:
 
 def test_load_default_dataset_has_70_scenarios() -> None:
     scenarios = load_scenarios()
-    assert len(scenarios) == 70
-    assert len({scenario.scenario_id for scenario in scenarios}) == 70
+    assert len(scenarios) == 80
+    assert len({scenario.scenario_id for scenario in scenarios}) == 80
 
 
 def test_load_dataset_filter_category() -> None:
@@ -208,11 +208,12 @@ def test_aggregate_results() -> None:
     assert metrics.overall_score == 0.5
     assert metrics.recall_accuracy == 0.5
     assert metrics.latency_avg_ms == 2.0
+    assert metrics.hallucination_rate == 0.0
 
 
 def test_benchmark_runner_runs_all(tmp_path: Path) -> None:
     run = BenchmarkRunner(SimpleMemoryAgent()).run(report_dir=tmp_path)
-    assert run.metrics.total_scenarios == 70
+    assert run.metrics.total_scenarios == 80
     assert (tmp_path / "results.json").exists()
 
 
@@ -294,3 +295,19 @@ def test_scenario_to_dict_contains_legacy_and_rich_fields() -> None:
     assert "memory_events" in payload
     assert "expected_behavior" in payload
     assert "negative_assertions" in payload
+
+
+def test_hallucination_dataset_and_evaluator() -> None:
+    from memory_agent_eval_kit.evaluators.hallucination import HallucinationEvaluator
+
+    scenarios = load_scenarios(categories=["hallucination"])
+    assert len(scenarios) == 10
+    result = HallucinationEvaluator().evaluate(scenarios[0], SimpleMemoryAgent())
+    assert result.success
+
+
+def test_hallucination_metrics_for_false_recall() -> None:
+    bad = EvaluationResult("h", "hallucination", False, 0.0, 1.0)
+    metrics = aggregate_results([bad])
+    assert metrics.hallucination_rate == 1.0
+    assert metrics.false_recall_rate == 1.0

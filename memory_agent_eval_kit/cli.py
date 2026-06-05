@@ -18,6 +18,7 @@ CATEGORY_CHOICES: tuple[Category, ...] = (
     "temporal",
     "stale_memory",
     "continuity",
+    "hallucination",
 )
 
 
@@ -70,6 +71,8 @@ def _format_summary(metrics: AggregateMetrics) -> str:
             f"Temporal: {pct(metrics.temporal_accuracy)}",
             f"Stale Memory: {pct(metrics.stale_memory_accuracy)}",
             f"Continuity: {pct(metrics.continuity_accuracy)}",
+            f"Hallucination Rate: {pct(metrics.hallucination_rate)}",
+            f"False Recall Rate: {pct(metrics.false_recall_rate)}",
         ]
     )
 

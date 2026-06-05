@@ -13,6 +13,7 @@ Category: TypeAlias = Literal[
     "temporal",
     "stale_memory",
     "continuity",
+    "hallucination",
 ]
 
 

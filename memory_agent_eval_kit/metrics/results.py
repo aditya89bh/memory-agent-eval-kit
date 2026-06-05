@@ -32,6 +32,9 @@ class AggregateMetrics:
     temporal_accuracy: float
     stale_memory_accuracy: float
     continuity_accuracy: float
+    hallucination_accuracy: float
+    hallucination_rate: float
+    false_recall_rate: float
     latency_avg_ms: float
     latency_p95_ms: float
     total_scenarios: int
@@ -45,6 +48,13 @@ def _score_for(results: list[EvaluationResult], category: Category) -> float:
     return mean(category_results) if category_results else 0.0
 
 
+def _failure_rate_for(results: list[EvaluationResult], category: Category) -> float:
+    category_results = [result for result in results if result.category == category]
+    if not category_results:
+        return 0.0
+    return 1.0 - mean(result.score for result in category_results)
+
+
 def _p95(values: list[float]) -> float:
     if not values:
         return 0.0
@@ -56,6 +66,7 @@ def _p95(values: list[float]) -> float:
 def aggregate_results(results: list[EvaluationResult]) -> AggregateMetrics:
     scores = [result.score for result in results]
     latencies = [result.latency_ms for result in results]
+    hallucination_rate = _failure_rate_for(results, "hallucination")
     return AggregateMetrics(
         overall_score=mean(scores) if scores else 0.0,
         recall_accuracy=_score_for(results, "recall"),
@@ -65,6 +76,9 @@ def aggregate_results(results: list[EvaluationResult]) -> AggregateMetrics:
         temporal_accuracy=_score_for(results, "temporal"),
         stale_memory_accuracy=_score_for(results, "stale_memory"),
         continuity_accuracy=_score_for(results, "continuity"),
+        hallucination_accuracy=_score_for(results, "hallucination"),
+        hallucination_rate=hallucination_rate,
+        false_recall_rate=hallucination_rate,
         latency_avg_ms=mean(latencies) if latencies else 0.0,
         latency_p95_ms=_p95(latencies),
         total_scenarios=len(results),

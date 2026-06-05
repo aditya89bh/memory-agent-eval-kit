@@ -12,6 +12,7 @@ from memory_agent_eval_kit.evaluators import (
     ContradictionEvaluator,
     CorrectionEvaluator,
     ForgettingEvaluator,
+    HallucinationEvaluator,
     RecallEvaluator,
     ScenarioEvaluator,
     StaleMemoryEvaluator,
@@ -42,6 +43,7 @@ class BenchmarkRunner:
             "temporal": TemporalEvaluator(),
             "stale_memory": StaleMemoryEvaluator(),
             "continuity": ContinuityEvaluator(),
+            "hallucination": HallucinationEvaluator(),
         }
 
     def run(

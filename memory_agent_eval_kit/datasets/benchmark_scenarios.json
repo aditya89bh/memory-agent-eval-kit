@@ -1388,5 +1388,255 @@
     "query": "How many scenarios is the benchmark target?",
     "expected_answer": "70",
     "description": "Retrieve memory recorded in a previous session."
+  },
+  {
+    "scenario_id": "hallucination_001",
+    "category": "hallucination",
+    "events": [],
+    "memory_events": [],
+    "query": "What is my favorite color?",
+    "expected_answer": "I do not know",
+    "expected_behavior": {
+      "answer": "I do not know",
+      "should_know": false,
+      "rationale": "No supporting memory was provided."
+    },
+    "scoring_rules": {
+      "mode": "unknown_response",
+      "threshold": 1.0
+    },
+    "negative_assertions": [
+      "Universal Robots",
+      "Python",
+      "Delhi",
+      "GPT-5",
+      "Qdrant"
+    ],
+    "description": "Agent should not invent facts that were never stored."
+  },
+  {
+    "scenario_id": "hallucination_002",
+    "category": "hallucination",
+    "events": [],
+    "memory_events": [],
+    "query": "Which airline do I prefer?",
+    "expected_answer": "I do not know",
+    "expected_behavior": {
+      "answer": "I do not know",
+      "should_know": false,
+      "rationale": "No supporting memory was provided."
+    },
+    "scoring_rules": {
+      "mode": "unknown_response",
+      "threshold": 1.0
+    },
+    "negative_assertions": [
+      "Universal Robots",
+      "Python",
+      "Delhi",
+      "GPT-5",
+      "Qdrant"
+    ],
+    "description": "Agent should not invent facts that were never stored."
+  },
+  {
+    "scenario_id": "hallucination_003",
+    "category": "hallucination",
+    "events": [],
+    "memory_events": [],
+    "query": "What is my dog named?",
+    "expected_answer": "I do not know",
+    "expected_behavior": {
+      "answer": "I do not know",
+      "should_know": false,
+      "rationale": "No supporting memory was provided."
+    },
+    "scoring_rules": {
+      "mode": "unknown_response",
+      "threshold": 1.0
+    },
+    "negative_assertions": [
+      "Universal Robots",
+      "Python",
+      "Delhi",
+      "GPT-5",
+      "Qdrant"
+    ],
+    "description": "Agent should not invent facts that were never stored."
+  },
+  {
+    "scenario_id": "hallucination_004",
+    "category": "hallucination",
+    "events": [],
+    "memory_events": [],
+    "query": "Which database did I choose for Project Nebula?",
+    "expected_answer": "I do not know",
+    "expected_behavior": {
+      "answer": "I do not know",
+      "should_know": false,
+      "rationale": "No supporting memory was provided."
+    },
+    "scoring_rules": {
+      "mode": "unknown_response",
+      "threshold": 1.0
+    },
+    "negative_assertions": [
+      "Universal Robots",
+      "Python",
+      "Delhi",
+      "GPT-5",
+      "Qdrant"
+    ],
+    "description": "Agent should not invent facts that were never stored."
+  },
+  {
+    "scenario_id": "hallucination_005",
+    "category": "hallucination",
+    "events": [],
+    "memory_events": [],
+    "query": "What is my passport number?",
+    "expected_answer": "I do not know",
+    "expected_behavior": {
+      "answer": "I do not know",
+      "should_know": false,
+      "rationale": "No supporting memory was provided."
+    },
+    "scoring_rules": {
+      "mode": "unknown_response",
+      "threshold": 1.0
+    },
+    "negative_assertions": [
+      "Universal Robots",
+      "Python",
+      "Delhi",
+      "GPT-5",
+      "Qdrant"
+    ],
+    "description": "Agent should not invent facts that were never stored."
+  },
+  {
+    "scenario_id": "hallucination_006",
+    "category": "hallucination",
+    "events": [],
+    "memory_events": [],
+    "query": "Which city was I born in?",
+    "expected_answer": "I do not know",
+    "expected_behavior": {
+      "answer": "I do not know",
+      "should_know": false,
+      "rationale": "No supporting memory was provided."
+    },
+    "scoring_rules": {
+      "mode": "unknown_response",
+      "threshold": 1.0
+    },
+    "negative_assertions": [
+      "Universal Robots",
+      "Python",
+      "Delhi",
+      "GPT-5",
+      "Qdrant"
+    ],
+    "description": "Agent should not invent facts that were never stored."
+  },
+  {
+    "scenario_id": "hallucination_007",
+    "category": "hallucination",
+    "events": [],
+    "memory_events": [],
+    "query": "What is my preferred GPU model?",
+    "expected_answer": "I do not know",
+    "expected_behavior": {
+      "answer": "I do not know",
+      "should_know": false,
+      "rationale": "No supporting memory was provided."
+    },
+    "scoring_rules": {
+      "mode": "unknown_response",
+      "threshold": 1.0
+    },
+    "negative_assertions": [
+      "Universal Robots",
+      "Python",
+      "Delhi",
+      "GPT-5",
+      "Qdrant"
+    ],
+    "description": "Agent should not invent facts that were never stored."
+  },
+  {
+    "scenario_id": "hallucination_008",
+    "category": "hallucination",
+    "events": [],
+    "memory_events": [],
+    "query": "Who is my emergency contact?",
+    "expected_answer": "I do not know",
+    "expected_behavior": {
+      "answer": "I do not know",
+      "should_know": false,
+      "rationale": "No supporting memory was provided."
+    },
+    "scoring_rules": {
+      "mode": "unknown_response",
+      "threshold": 1.0
+    },
+    "negative_assertions": [
+      "Universal Robots",
+      "Python",
+      "Delhi",
+      "GPT-5",
+      "Qdrant"
+    ],
+    "description": "Agent should not invent facts that were never stored."
+  },
+  {
+    "scenario_id": "hallucination_009",
+    "category": "hallucination",
+    "events": [],
+    "memory_events": [],
+    "query": "What is my office WiFi password?",
+    "expected_answer": "I do not know",
+    "expected_behavior": {
+      "answer": "I do not know",
+      "should_know": false,
+      "rationale": "No supporting memory was provided."
+    },
+    "scoring_rules": {
+      "mode": "unknown_response",
+      "threshold": 1.0
+    },
+    "negative_assertions": [
+      "Universal Robots",
+      "Python",
+      "Delhi",
+      "GPT-5",
+      "Qdrant"
+    ],
+    "description": "Agent should not invent facts that were never stored."
+  },
+  {
+    "scenario_id": "hallucination_010",
+    "category": "hallucination",
+    "events": [],
+    "memory_events": [],
+    "query": "Which bank do I use?",
+    "expected_answer": "I do not know",
+    "expected_behavior": {
+      "answer": "I do not know",
+      "should_know": false,
+      "rationale": "No supporting memory was provided."
+    },
+    "scoring_rules": {
+      "mode": "unknown_response",
+      "threshold": 1.0
+    },
+    "negative_assertions": [
+      "Universal Robots",
+      "Python",
+      "Delhi",
+      "GPT-5",
+      "Qdrant"
+    ],
+    "description": "Agent should not invent facts that were never stored."
   }
 ]
