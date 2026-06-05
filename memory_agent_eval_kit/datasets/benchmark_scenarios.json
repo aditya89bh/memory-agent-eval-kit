@@ -6798,5 +6798,86 @@
       ]
     },
     "description": "Detect disagreement from conflicting agent observations."
+  },
+  {
+    "scenario_id": "conflict_resolution_001",
+    "category": "conflict_resolution",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "conflict_resolution_001_old",
+        "content": "Conflicted deployment owner is Ravi"
+      },
+      {
+        "type": "correction",
+        "memory_id": "conflict_resolution_001_new",
+        "supersedes": "conflict_resolution_001_old",
+        "content": "Current resolved deployment owner is Isha"
+      }
+    ],
+    "query": "What is the current resolved deployment owner?",
+    "expected_answer": "Isha",
+    "negative_assertions": [
+      "Ravi"
+    ],
+    "expected_behavior": {
+      "answer": "Isha",
+      "resolution": "latest_correction"
+    },
+    "description": "Resolve conflicting memories using trusted correction."
+  },
+  {
+    "scenario_id": "conflict_resolution_002",
+    "category": "conflict_resolution",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "conflict_resolution_002_old",
+        "content": "Conflicted incident severity is low"
+      },
+      {
+        "type": "correction",
+        "memory_id": "conflict_resolution_002_new",
+        "supersedes": "conflict_resolution_002_old",
+        "content": "Current resolved incident severity is high"
+      }
+    ],
+    "query": "What is the current resolved incident severity?",
+    "expected_answer": "high",
+    "negative_assertions": [
+      "low"
+    ],
+    "expected_behavior": {
+      "answer": "high",
+      "resolution": "latest_correction"
+    },
+    "description": "Resolve conflicting memories using trusted correction."
+  },
+  {
+    "scenario_id": "conflict_resolution_003",
+    "category": "conflict_resolution",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "conflict_resolution_003_old",
+        "content": "Conflicted contract status is draft"
+      },
+      {
+        "type": "correction",
+        "memory_id": "conflict_resolution_003_new",
+        "supersedes": "conflict_resolution_003_old",
+        "content": "Current resolved contract status is signed"
+      }
+    ],
+    "query": "What is the current resolved contract status?",
+    "expected_answer": "signed",
+    "negative_assertions": [
+      "draft"
+    ],
+    "expected_behavior": {
+      "answer": "signed",
+      "resolution": "latest_correction"
+    },
+    "description": "Resolve conflicting memories using trusted correction."
   }
 ]

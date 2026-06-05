@@ -871,3 +871,12 @@ def test_agent_disagreement_benchmarks_measure_detection(tmp_path: Path) -> None
     )
     assert len(run.results) == 3
     assert run.metrics.disagreement_detection == 1.0
+
+
+def test_conflict_resolution_benchmarks_measure_resolution_quality(tmp_path: Path) -> None:
+    run = BenchmarkRunner(SimpleMemoryAgent()).run(
+        categories=["conflict_resolution"], report_dir=tmp_path
+    )
+    assert len(run.results) == 3
+    assert run.metrics.conflict_handling_accuracy == 1.0
+    assert run.metrics.resolution_quality == 1.0

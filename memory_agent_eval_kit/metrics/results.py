@@ -67,6 +67,8 @@ class AggregateMetrics:
     propagation_correctness: float
     synchronization_accuracy: float
     disagreement_detection: float
+    conflict_handling_accuracy: float
+    resolution_quality: float
     latency_degradation_ms: float
     latency_avg_ms: float
     latency_p95_ms: float
@@ -184,6 +186,8 @@ def aggregate_results(results: list[EvaluationResult]) -> AggregateMetrics:
         propagation_correctness=_score_for(results, "memory_synchronization"),
         synchronization_accuracy=_score_for(results, "memory_synchronization"),
         disagreement_detection=_score_for(results, "agent_disagreement"),
+        conflict_handling_accuracy=_score_for(results, "conflict_resolution"),
+        resolution_quality=_score_for(results, "conflict_resolution"),
         latency_degradation_ms=latency_degradation_ms,
         latency_avg_ms=mean(latencies) if latencies else 0.0,
         latency_p95_ms=_p95(latencies),

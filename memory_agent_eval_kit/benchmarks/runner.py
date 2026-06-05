@@ -13,6 +13,7 @@ from memory_agent_eval_kit.datasets import load_scenarios
 from memory_agent_eval_kit.evaluators import (
     AdversarialContradictionEvaluator,
     AgentDisagreementEvaluator,
+    ConflictResolutionEvaluator,
     ContinuityEvaluator,
     ContradictionEvaluator,
     CorrectionEvaluator,
@@ -87,6 +88,7 @@ class BenchmarkRunner:
             "shared_memory": SharedMemoryEvaluator(),
             "memory_synchronization": MemorySynchronizationEvaluator(),
             "agent_disagreement": AgentDisagreementEvaluator(),
+            "conflict_resolution": ConflictResolutionEvaluator(),
         }
 
     def run(

@@ -41,6 +41,7 @@ CATEGORY_CHOICES: tuple[Category, ...] = (
     "shared_memory",
     "memory_synchronization",
     "agent_disagreement",
+    "conflict_resolution",
 )
 
 
