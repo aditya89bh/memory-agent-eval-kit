@@ -1,5 +1,16 @@
 # Changelog
 
+## v0.4.0 - 2026-06-05
+
+- Added benchmark authority suites: long-horizon, noisy memory, preference evolution, relationship memory, and hierarchical memory.
+- Added enterprise privacy/compliance suites and aggregate compliance metrics.
+- Added multi-agent memory suites for shared stores, synchronization, disagreement, conflict resolution, and collaborative recall.
+- Added benchmark suite version metadata, dataset changelog generation, scenario deprecation support, version comparison, and historical archives.
+- Added optional Mem0 and LangGraph adapters with graceful fallback behavior.
+- Added adapter template generation via `memory-eval create-adapter my_adapter`.
+- Added public benchmark submission format and validation.
+- Regenerated reports, leaderboard, and visualization assets for the v0.4.0 benchmark suite.
+
 ## v0.3.0 - 2026-06-05
 
 - Expanded the benchmark corpus and added dataset validation via `memory-eval validate`.

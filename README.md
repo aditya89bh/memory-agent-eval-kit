@@ -1,6 +1,6 @@
 # memory-agent-eval-kit
 
-Production-quality benchmark and evaluation toolkit for memory-enabled AI agents.
+Benchmark authority and evaluation toolkit for memory-enabled AI agents.
 
 ## Overview
 
@@ -41,9 +41,16 @@ flowchart LR
 - **Temporal Drift**: reasons over current, previous, and timeline facts.
 - **Adversarial Contradiction**: handles overlapping, ambiguous, and conflicting memories.
 - **Memory Poisoning**: resists malicious updates, conflicting updates, and low-trust sources.
+- **Long-Horizon Memory**: measures recall after 10, 50, and 100 prior memories.
+- **Noisy Memory**: mixes relevant facts, irrelevant facts, and distractors.
+- **Preference Evolution**: tests current and previous preference recall.
+- **Relationship Memory**: validates spouse, sibling, manager, and customer role recall.
+- **Hierarchical Memory**: retrieves company → department → team → person facts.
+- **Enterprise Privacy and Compliance**: covers PII deletion, GDPR forgetting, retention policies, and sensitive-memory classification.
+- **Multi-Agent Memory**: covers shared memory, synchronization, disagreement detection, conflict resolution, and collaborative recall.
 - **Memory Stress**: measures recall and latency degradation at larger memory scales.
 
-The default dataset now includes a broad v0.3.0 corpus across core recall, safety, temporal, leakage, drift, poisoning, and reasoning suites. Synthetic stress scenarios are generated on demand for 10, 100, and 1000 memory scales.
+The default dataset now includes a broad v0.4.0 corpus across benchmark authority, enterprise compliance, multi-agent memory, versioning, and adapter ecosystem suites. Synthetic stress scenarios are generated on demand for 10, 100, and 1000 memory scales.
 
 ## Quickstart
 
@@ -54,6 +61,7 @@ pip install -e '.[dev]'
 memory-eval validate
 memory-eval benchmark --seed 42
 memory-eval leaderboard
+memory-eval create-adapter my_adapter
 ```
 
 If your shell does not support extras quoting, use:
@@ -76,6 +84,7 @@ memory-eval benchmark --seed 42
 memory-eval benchmark --fail-under 90
 memory-eval benchmark --dataset path/to/custom_scenarios.json
 memory-eval leaderboard
+memory-eval create-adapter my_adapter
 ```
 
 ## Reproducibility and Regression Detection
@@ -86,7 +95,7 @@ Use `--seed` for deterministic scenario ordering and `--fail-under` to fail CI w
 memory-eval benchmark --seed 42 --fail-under 90
 ```
 
-Programmatic comparison utilities are available via `compare_results()` for score deltas, category deltas, and regression detection.
+Programmatic comparison utilities are available via `compare_results()` and `compare_benchmark_versions()` for score deltas, category deltas, version-to-version comparisons, and regression detection. Dataset changelog, deprecation, archive, and submission-validation utilities support public benchmark governance.
 
 ## Reports and Assets
 
@@ -123,3 +132,7 @@ class MemoryAgentAdapter(ABC):
     def add_memory(self, memory: dict) -> None: ...
     def delete_memory(self, memory_id: str) -> None: ...
 ```
+
+## Public Submissions and Adapters
+
+Public benchmark submissions live under `submissions/` and should be validated before leaderboard acceptance. Optional Mem0 and LangGraph adapters are documented in `docs/adapters.md`; both use graceful fallback behavior without requiring paid APIs.

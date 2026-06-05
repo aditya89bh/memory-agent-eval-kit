@@ -13,9 +13,13 @@ Core fields:
 - `scoring_rules`: threshold and assertion behavior
 - `negative_assertions`: substrings that must not appear
 
-## v0.3.0 suites
+## v0.4.0 suites
 
-The v0.3.0 corpus covers recall, contradiction, correction, forgetting, temporal memory, stale memory, continuity, hallucination, hallucinated recall, memory leakage, timeline reasoning, memory drift, temporal drift, adversarial contradiction, and memory poisoning. Stress cases are generated programmatically rather than stored in the JSON dataset.
+The v0.4.0 corpus extends the v0.3.0 research toolkit into benchmark authority coverage. It includes long-horizon recall, noisy retrieval, preference evolution, relationship memory, hierarchical memory, enterprise deletion/retention/privacy compliance, and multi-agent shared memory, synchronization, disagreement, conflict resolution, and collaboration suites. Stress cases are generated programmatically rather than stored in the JSON dataset.
+
+## Benchmark governance
+
+Scenarios carry suite version metadata and active/deprecated status. Dataset changelog generation tracks added, removed, and modified scenarios. Version comparison reports compare score and category deltas across v1, v2, v3, and future suites. Historical benchmark snapshots can be archived under `archives/`.
 
 Dataset validation checks schema shape, duplicate scenario IDs, supported categories, and category consistency. Run:
 

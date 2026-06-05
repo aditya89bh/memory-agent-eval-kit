@@ -2,7 +2,7 @@
   {
     "agent_name": "SimpleMemoryAgent",
     "suite_name": "default",
-    "overall_score": 0.9187192118226601,
+    "overall_score": 0.9347826086956522,
     "category_scores": {
       "recall": 1.0,
       "contradiction": 1.0,
@@ -18,12 +18,24 @@
       "timeline_reasoning": 1.0,
       "drift": 1.0,
       "update": 1.0,
+      "long_horizon_recall": 1.0,
+      "preference_update": 1.0,
+      "relationship_recall": 1.0,
+      "role_recall": 1.0,
+      "hierarchical_retrieval": 1.0,
+      "classification": 1.0,
+      "synchronization": 1.0,
+      "conflict_handling": 1.0,
       "contradiction_resolution": 1.0,
-      "poisoning_resistance": 1.0
+      "poisoning_resistance": 1.0,
+      "compliance_score": 1.0,
+      "deletion_score": 1.0,
+      "retention_score": 1.0,
+      "privacy_score": 1.0
     },
     "latency": {
-      "avg_ms": 0.017060432583093643,
-      "p95_ms": 0.025805988116189837
+      "avg_ms": 0.023412865493630645,
+      "p95_ms": 0.03542602644301951
     },
     "overall_rank": 1,
     "category_rank": 1,

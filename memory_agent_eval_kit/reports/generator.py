@@ -46,6 +46,7 @@ class ReportGenerator:
         ) as handle:
             writer = csv.DictWriter(
                 handle,
+                lineterminator="\n",
                 fieldnames=[
                     "scenario_id",
                     "category",

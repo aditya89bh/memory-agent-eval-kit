@@ -63,3 +63,7 @@ Leaderboards include:
 - `overall_rank`: rank by overall score, descending
 - `category_rank`: rank by mean category score, descending
 - `latency_rank`: rank by average latency, ascending
+
+## v0.4.0 Metrics
+
+The v0.4.0 suite adds recall and latency impact for long-horizon memory, retrieval precision and robustness for noisy memory, preference update accuracy, relationship and hierarchy accuracy, GDPR/deletion/retention/privacy compliance scores, and multi-agent consistency, propagation, disagreement, conflict-resolution, and collaborative-recall metrics.

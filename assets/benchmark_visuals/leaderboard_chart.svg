@@ -3,6 +3,6 @@
 <text class="title" x="24" y="36">Leaderboard Overall Scores</text>
 <text class="label" x="24" y="80">SimpleMemoryAgent</text>
 <rect class="bg" x="190" y="64" width="430.0" height="22.0" rx="5"/>
-<rect class="bar" x="190" y="64" width="395.0" height="22.0" rx="5"/>
-<text class="value" x="632.0" y="80.0">92%</text>
+<rect class="bar" x="190" y="64" width="402.0" height="22.0" rx="5"/>
+<text class="value" x="632.0" y="80.0">93%</text>
 </svg>

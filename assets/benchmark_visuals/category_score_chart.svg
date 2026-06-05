@@ -1,64 +1,120 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="590" viewBox="0 0 900 590" role="img">
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1066" viewBox="0 0 900 1066" role="img">
 <style>text{font-family:Inter,Arial,sans-serif}.title{font-size:22px;font-weight:700}.label{font-size:13px}.value{font-size:12px;fill:#334155}.bar{fill:#6366f1}.bg{fill:#eef2ff}</style>
 <text class="title" x="24" y="36">Category Scores</text>
 <text class="label" x="24" y="80">adversarial_contradiction</text>
 <rect class="bg" x="190" y="64" width="630.0" height="22.0" rx="5"/>
 <rect class="bar" x="190" y="64" width="630.0" height="22.0" rx="5"/>
 <text class="value" x="832.0" y="80.0">100%</text>
-<text class="label" x="24" y="114">continuity</text>
+<text class="label" x="24" y="114">agent_disagreement</text>
 <rect class="bg" x="190" y="98" width="630.0" height="22.0" rx="5"/>
-<rect class="bar" x="190" y="98" width="315.0" height="22.0" rx="5"/>
-<text class="value" x="832.0" y="114.0">50%</text>
-<text class="label" x="24" y="148">contradiction</text>
+<rect class="bar" x="190" y="98" width="630.0" height="22.0" rx="5"/>
+<text class="value" x="832.0" y="114.0">100%</text>
+<text class="label" x="24" y="148">collaborative_memory</text>
 <rect class="bg" x="190" y="132" width="630.0" height="22.0" rx="5"/>
 <rect class="bar" x="190" y="132" width="630.0" height="22.0" rx="5"/>
 <text class="value" x="832.0" y="148.0">100%</text>
-<text class="label" x="24" y="182">correction</text>
+<text class="label" x="24" y="182">conflict_resolution</text>
 <rect class="bg" x="190" y="166" width="630.0" height="22.0" rx="5"/>
 <rect class="bar" x="190" y="166" width="630.0" height="22.0" rx="5"/>
 <text class="value" x="832.0" y="182.0">100%</text>
-<text class="label" x="24" y="216">forgetting</text>
+<text class="label" x="24" y="216">continuity</text>
 <rect class="bg" x="190" y="200" width="630.0" height="22.0" rx="5"/>
-<rect class="bar" x="190" y="200" width="630.0" height="22.0" rx="5"/>
-<text class="value" x="832.0" y="216.0">100%</text>
-<text class="label" x="24" y="250">hallucinated_recall</text>
+<rect class="bar" x="190" y="200" width="315.0" height="22.0" rx="5"/>
+<text class="value" x="832.0" y="216.0">50%</text>
+<text class="label" x="24" y="250">contradiction</text>
 <rect class="bg" x="190" y="234" width="630.0" height="22.0" rx="5"/>
 <rect class="bar" x="190" y="234" width="630.0" height="22.0" rx="5"/>
 <text class="value" x="832.0" y="250.0">100%</text>
-<text class="label" x="24" y="284">hallucination</text>
+<text class="label" x="24" y="284">correction</text>
 <rect class="bg" x="190" y="268" width="630.0" height="22.0" rx="5"/>
 <rect class="bar" x="190" y="268" width="630.0" height="22.0" rx="5"/>
 <text class="value" x="832.0" y="284.0">100%</text>
-<text class="label" x="24" y="318">memory_drift</text>
+<text class="label" x="24" y="318">forgetting</text>
 <rect class="bg" x="190" y="302" width="630.0" height="22.0" rx="5"/>
 <rect class="bar" x="190" y="302" width="630.0" height="22.0" rx="5"/>
 <text class="value" x="832.0" y="318.0">100%</text>
-<text class="label" x="24" y="352">memory_leakage</text>
+<text class="label" x="24" y="352">gdpr_forgetting</text>
 <rect class="bg" x="190" y="336" width="630.0" height="22.0" rx="5"/>
 <rect class="bar" x="190" y="336" width="630.0" height="22.0" rx="5"/>
 <text class="value" x="832.0" y="352.0">100%</text>
-<text class="label" x="24" y="386">memory_poisoning</text>
+<text class="label" x="24" y="386">hallucinated_recall</text>
 <rect class="bg" x="190" y="370" width="630.0" height="22.0" rx="5"/>
 <rect class="bar" x="190" y="370" width="630.0" height="22.0" rx="5"/>
 <text class="value" x="832.0" y="386.0">100%</text>
-<text class="label" x="24" y="420">recall</text>
+<text class="label" x="24" y="420">hallucination</text>
 <rect class="bg" x="190" y="404" width="630.0" height="22.0" rx="5"/>
 <rect class="bar" x="190" y="404" width="630.0" height="22.0" rx="5"/>
 <text class="value" x="832.0" y="420.0">100%</text>
-<text class="label" x="24" y="454">stale_memory</text>
+<text class="label" x="24" y="454">hierarchical_memory</text>
 <rect class="bg" x="190" y="438" width="630.0" height="22.0" rx="5"/>
-<rect class="bar" x="190" y="438" width="456.8" height="22.0" rx="5"/>
-<text class="value" x="832.0" y="454.0">72%</text>
-<text class="label" x="24" y="488">temporal</text>
+<rect class="bar" x="190" y="438" width="630.0" height="22.0" rx="5"/>
+<text class="value" x="832.0" y="454.0">100%</text>
+<text class="label" x="24" y="488">long_horizon</text>
 <rect class="bg" x="190" y="472" width="630.0" height="22.0" rx="5"/>
-<rect class="bar" x="190" y="472" width="598.5" height="22.0" rx="5"/>
-<text class="value" x="832.0" y="488.0">95%</text>
-<text class="label" x="24" y="522">temporal_drift</text>
+<rect class="bar" x="190" y="472" width="630.0" height="22.0" rx="5"/>
+<text class="value" x="832.0" y="488.0">100%</text>
+<text class="label" x="24" y="522">memory_drift</text>
 <rect class="bg" x="190" y="506" width="630.0" height="22.0" rx="5"/>
 <rect class="bar" x="190" y="506" width="630.0" height="22.0" rx="5"/>
 <text class="value" x="832.0" y="522.0">100%</text>
-<text class="label" x="24" y="556">timeline_reasoning</text>
+<text class="label" x="24" y="556">memory_leakage</text>
 <rect class="bg" x="190" y="540" width="630.0" height="22.0" rx="5"/>
 <rect class="bar" x="190" y="540" width="630.0" height="22.0" rx="5"/>
 <text class="value" x="832.0" y="556.0">100%</text>
+<text class="label" x="24" y="590">memory_poisoning</text>
+<rect class="bg" x="190" y="574" width="630.0" height="22.0" rx="5"/>
+<rect class="bar" x="190" y="574" width="630.0" height="22.0" rx="5"/>
+<text class="value" x="832.0" y="590.0">100%</text>
+<text class="label" x="24" y="624">memory_synchronization</text>
+<rect class="bg" x="190" y="608" width="630.0" height="22.0" rx="5"/>
+<rect class="bar" x="190" y="608" width="630.0" height="22.0" rx="5"/>
+<text class="value" x="832.0" y="624.0">100%</text>
+<text class="label" x="24" y="658">noisy_memory</text>
+<rect class="bg" x="190" y="642" width="630.0" height="22.0" rx="5"/>
+<rect class="bar" x="190" y="642" width="630.0" height="22.0" rx="5"/>
+<text class="value" x="832.0" y="658.0">100%</text>
+<text class="label" x="24" y="692">pii_deletion</text>
+<rect class="bg" x="190" y="676" width="630.0" height="22.0" rx="5"/>
+<rect class="bar" x="190" y="676" width="630.0" height="22.0" rx="5"/>
+<text class="value" x="832.0" y="692.0">100%</text>
+<text class="label" x="24" y="726">preference_evolution</text>
+<rect class="bg" x="190" y="710" width="630.0" height="22.0" rx="5"/>
+<rect class="bar" x="190" y="710" width="630.0" height="22.0" rx="5"/>
+<text class="value" x="832.0" y="726.0">100%</text>
+<text class="label" x="24" y="760">recall</text>
+<rect class="bg" x="190" y="744" width="630.0" height="22.0" rx="5"/>
+<rect class="bar" x="190" y="744" width="630.0" height="22.0" rx="5"/>
+<text class="value" x="832.0" y="760.0">100%</text>
+<text class="label" x="24" y="794">relationship_memory</text>
+<rect class="bg" x="190" y="778" width="630.0" height="22.0" rx="5"/>
+<rect class="bar" x="190" y="778" width="630.0" height="22.0" rx="5"/>
+<text class="value" x="832.0" y="794.0">100%</text>
+<text class="label" x="24" y="828">retention_policy</text>
+<rect class="bg" x="190" y="812" width="630.0" height="22.0" rx="5"/>
+<rect class="bar" x="190" y="812" width="630.0" height="22.0" rx="5"/>
+<text class="value" x="832.0" y="828.0">100%</text>
+<text class="label" x="24" y="862">sensitive_classification</text>
+<rect class="bg" x="190" y="846" width="630.0" height="22.0" rx="5"/>
+<rect class="bar" x="190" y="846" width="630.0" height="22.0" rx="5"/>
+<text class="value" x="832.0" y="862.0">100%</text>
+<text class="label" x="24" y="896">shared_memory</text>
+<rect class="bg" x="190" y="880" width="630.0" height="22.0" rx="5"/>
+<rect class="bar" x="190" y="880" width="630.0" height="22.0" rx="5"/>
+<text class="value" x="832.0" y="896.0">100%</text>
+<text class="label" x="24" y="930">stale_memory</text>
+<rect class="bg" x="190" y="914" width="630.0" height="22.0" rx="5"/>
+<rect class="bar" x="190" y="914" width="456.8" height="22.0" rx="5"/>
+<text class="value" x="832.0" y="930.0">72%</text>
+<text class="label" x="24" y="964">temporal</text>
+<rect class="bg" x="190" y="948" width="630.0" height="22.0" rx="5"/>
+<rect class="bar" x="190" y="948" width="598.5" height="22.0" rx="5"/>
+<text class="value" x="832.0" y="964.0">95%</text>
+<text class="label" x="24" y="998">temporal_drift</text>
+<rect class="bg" x="190" y="982" width="630.0" height="22.0" rx="5"/>
+<rect class="bar" x="190" y="982" width="630.0" height="22.0" rx="5"/>
+<text class="value" x="832.0" y="998.0">100%</text>
+<text class="label" x="24" y="1032">timeline_reasoning</text>
+<rect class="bg" x="190" y="1016" width="630.0" height="22.0" rx="5"/>
+<rect class="bar" x="190" y="1016" width="630.0" height="22.0" rx="5"/>
+<text class="value" x="832.0" y="1032.0">100%</text>
 </svg>
