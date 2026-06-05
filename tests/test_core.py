@@ -630,3 +630,27 @@ def test_cli_seed_flag(tmp_path: Path) -> None:
         main(["benchmark", "--category", "recall", "--seed", "42", "--report-dir", str(tmp_path)])
         == 0
     )
+
+
+def test_compare_results_detects_score_and_category_regressions(tmp_path: Path) -> None:
+    from memory_agent_eval_kit.reports import compare_results
+
+    baseline = {
+        "metrics": {"overall_score": 0.95},
+        "category_breakdown": {"recall": {"score": 1.0}, "temporal": {"score": 0.9}},
+    }
+    candidate = {
+        "metrics": {"overall_score": 0.90},
+        "category_breakdown": {"recall": {"score": 0.8}, "temporal": {"score": 0.95}},
+    }
+    baseline_path = tmp_path / "baseline.json"
+    candidate_path = tmp_path / "candidate.json"
+    baseline_path.write_text(json.dumps(baseline), encoding="utf-8")
+    candidate_path.write_text(json.dumps(candidate), encoding="utf-8")
+
+    comparison = compare_results(baseline_path, candidate_path, regression_threshold=-0.01)
+
+    assert comparison.score_delta == pytest.approx(-0.05)
+    assert "overall" in comparison.regressions
+    assert "recall" in comparison.regressions
+    assert comparison.to_dict()["has_regressions"] is True
