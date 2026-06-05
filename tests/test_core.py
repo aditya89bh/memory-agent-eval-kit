@@ -277,6 +277,15 @@ def test_memory_scale_benchmark(tmp_path: Path) -> None:
     assert (tmp_path / "results.json").exists()
 
 
+def test_benchmark_quickstart_notebook_exists() -> None:
+    notebook = json.loads(Path("notebooks/benchmark_quickstart.ipynb").read_text(encoding="utf-8"))
+    assert notebook["nbformat"] == 4
+    assert any(
+        "5-Minute Benchmark Quickstart" in "".join(cell["source"])
+        for cell in notebook["cells"]
+    )
+
+
 def test_benchmark_plugin_registration(tmp_path: Path) -> None:
     from memory_agent_eval_kit.benchmarks import BenchmarkRegistry, register_suite_plugin
 
