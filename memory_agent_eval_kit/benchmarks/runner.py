@@ -15,6 +15,7 @@ from memory_agent_eval_kit.evaluators import (
     ContradictionEvaluator,
     CorrectionEvaluator,
     ForgettingEvaluator,
+    HallucinatedRecallEvaluator,
     HallucinationEvaluator,
     MemoryLeakageEvaluator,
     PoisoningEvaluator,
@@ -56,6 +57,7 @@ class BenchmarkRunner:
             "adversarial_contradiction": AdversarialContradictionEvaluator(),
             "memory_poisoning": PoisoningEvaluator(),
             "memory_leakage": MemoryLeakageEvaluator(),
+            "hallucinated_recall": HallucinatedRecallEvaluator(),
         }
 
     def run(

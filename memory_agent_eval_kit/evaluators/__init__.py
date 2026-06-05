@@ -6,6 +6,7 @@ from memory_agent_eval_kit.evaluators.continuity import ContinuityEvaluator
 from memory_agent_eval_kit.evaluators.contradiction import ContradictionEvaluator
 from memory_agent_eval_kit.evaluators.correction import CorrectionEvaluator
 from memory_agent_eval_kit.evaluators.forgetting import ForgettingEvaluator
+from memory_agent_eval_kit.evaluators.hallucinated_recall import HallucinatedRecallEvaluator
 from memory_agent_eval_kit.evaluators.hallucination import HallucinationEvaluator
 from memory_agent_eval_kit.evaluators.memory_leakage import MemoryLeakageEvaluator
 from memory_agent_eval_kit.evaluators.poisoning import PoisoningEvaluator
@@ -22,6 +23,7 @@ __all__ = [
     "ContradictionEvaluator",
     "CorrectionEvaluator",
     "ForgettingEvaluator",
+    "HallucinatedRecallEvaluator",
     "HallucinationEvaluator",
     "MemoryLeakageEvaluator",
     "PoisoningEvaluator",

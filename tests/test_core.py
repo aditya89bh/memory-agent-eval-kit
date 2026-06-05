@@ -562,3 +562,17 @@ def test_memory_leakage_suite_metrics() -> None:
     metrics = aggregate_results(results)
     assert metrics.leak_rate == 0.0
     assert metrics.delayed_leak_rate == 0.0
+
+
+def test_hallucinated_recall_suite() -> None:
+    from memory_agent_eval_kit.evaluators.hallucinated_recall import HallucinatedRecallEvaluator
+
+    scenarios = load_scenarios(categories=["hallucinated_recall"])
+    assert len(scenarios) == 8
+    results = [
+        HallucinatedRecallEvaluator().evaluate(scenario, SimpleMemoryAgent())
+        for scenario in scenarios
+    ]
+    metrics = aggregate_results(results)
+    assert metrics.hallucinated_recall_accuracy == 1.0
+    assert metrics.false_recall_rate == 0.0
