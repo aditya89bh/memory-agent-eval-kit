@@ -27,6 +27,9 @@ memory-eval = "memory_agent_eval_kit.cli:main"
 [project.optional-dependencies]
 dev = ["pytest>=8", "pytest-cov>=5", "mypy>=1.8", "ruff>=0.5"]
 
+[project.entry-points."memory_agent_eval_kit.benchmark_suites"]
+# External packages can register benchmark suite plugins here.
+
 [tool.setuptools.packages.find]
 include = ["memory_agent_eval_kit*"]
 

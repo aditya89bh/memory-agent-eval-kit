@@ -277,6 +277,20 @@ def test_memory_scale_benchmark(tmp_path: Path) -> None:
     assert (tmp_path / "results.json").exists()
 
 
+def test_benchmark_plugin_registration(tmp_path: Path) -> None:
+    from memory_agent_eval_kit.benchmarks import BenchmarkRegistry, register_suite_plugin
+
+    registry = BenchmarkRegistry()
+    plugin = register_suite_plugin(
+        name="plugin-suite",
+        dataset_path=tmp_path / "plugin.json",
+        description="Plugin suite",
+        version="v1",
+    )
+    plugin(registry)
+    assert registry.get("plugin-suite").description == "Plugin suite"
+
+
 def test_benchmark_registry(tmp_path: Path) -> None:
     from memory_agent_eval_kit.benchmarks import BenchmarkRegistry, register_benchmark_suite
 
