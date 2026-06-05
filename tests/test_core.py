@@ -215,6 +215,18 @@ def test_evaluator_rejects_wrong_category() -> None:
         CorrectionEvaluator().evaluate(scenario, SimpleMemoryAgent())
 
 
+def test_bootstrap_score_interval() -> None:
+    from memory_agent_eval_kit.metrics import EvaluationResult, bootstrap_score_interval
+
+    results = [
+        EvaluationResult("a", "recall", True, 1.0, 1.0),
+        EvaluationResult("b", "recall", False, 0.0, 1.0),
+    ]
+    analysis = bootstrap_score_interval(results, iterations=25, seed=7)
+    assert analysis.sample_size == 2
+    assert 0.0 <= analysis.lower <= analysis.mean_score <= analysis.upper <= 1.0
+
+
 def test_wilson_score_interval() -> None:
     from memory_agent_eval_kit.metrics import wilson_score_interval
 
