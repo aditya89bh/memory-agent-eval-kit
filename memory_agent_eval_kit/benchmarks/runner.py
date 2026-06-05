@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import random
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from pathlib import Path
 
 from memory_agent_eval_kit.adapters import MemoryAgentAdapter
@@ -112,10 +112,12 @@ class BenchmarkRunner:
         if suite_config.seed is not None:
             scenarios = list(scenarios)
             random.Random(suite_config.seed).shuffle(scenarios)
-        results = [
-            self.evaluators[scenario.category].evaluate(scenario, self.adapter)
-            for scenario in scenarios
-        ]
+        results = []
+        for scenario in scenarios:
+            result = self.evaluators[scenario.category].evaluate(scenario, self.adapter)
+            results.append(
+                replace(result, details={**result.details, "difficulty": scenario.difficulty})
+            )
         metrics = aggregate_results(results)
         run = BenchmarkRun(results=results, metrics=metrics)
         if report_dir is not None:

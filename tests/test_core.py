@@ -108,6 +108,22 @@ def test_benchmark_scenario_from_dict_defaults() -> None:
         }
     )
     assert scenario.expected_absent == []
+    assert scenario.difficulty == "medium"
+
+
+def test_benchmark_scenario_accepts_difficulty() -> None:
+    scenario = BenchmarkScenario.from_dict(
+        {
+            "scenario_id": "x",
+            "category": "recall",
+            "memory_events": [],
+            "query": "q",
+            "expected_answer": "a",
+            "difficulty": "hard",
+        }
+    )
+    assert scenario.difficulty == "hard"
+    assert scenario.to_dict()["difficulty"] == "hard"
 
 
 def test_load_default_dataset_has_70_scenarios() -> None:
@@ -242,7 +258,9 @@ def test_report_generator_outputs_files(tmp_path: Path) -> None:
         list(csv.DictReader((tmp_path / "results.csv").open(encoding="utf-8")))[0]["scenario_id"]
         == "x"
     )
-    assert "Overall Score" in (tmp_path / "results.md").read_text(encoding="utf-8")
+    report_json = json.loads((tmp_path / "results.json").read_text(encoding="utf-8"))
+    assert report_json["difficulty_breakdown"]["medium"]["pass"] == 1
+    assert "Difficulty Breakdown" in (tmp_path / "results.md").read_text(encoding="utf-8")
 
 
 def test_cli_parser_has_benchmark() -> None:

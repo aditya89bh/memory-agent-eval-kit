@@ -6,6 +6,7 @@ from dataclasses import dataclass, field
 from typing import Any, Literal, TypeAlias, cast
 
 ScenarioStatus: TypeAlias = Literal["active", "deprecated"]
+Difficulty: TypeAlias = Literal["easy", "medium", "hard"]
 
 Category: TypeAlias = Literal[
     "recall",
@@ -181,6 +182,7 @@ class BenchmarkScenario:
     negative_assertions: list[str] = field(default_factory=list)
     suite_version: str = "v3"
     status: ScenarioStatus = "active"
+    difficulty: Difficulty = "medium"
     deprecation_reason: str = ""
 
     @property
@@ -224,6 +226,7 @@ class BenchmarkScenario:
             negative_assertions=negative_assertions,
             suite_version=str(data.get("suite_version", "v3")),
             status=cast(ScenarioStatus, str(data.get("status", "active"))),
+            difficulty=cast(Difficulty, str(data.get("difficulty", "medium"))),
             deprecation_reason=str(data.get("deprecation_reason", "")),
         )
 
@@ -242,6 +245,7 @@ class BenchmarkScenario:
             "negative_assertions": self.negative_assertions,
             "suite_version": self.suite_version,
             "status": self.status,
+            "difficulty": self.difficulty,
             "deprecation_reason": self.deprecation_reason,
             "expected_absent": self.expected_absent,
             "description": self.description,

@@ -29,6 +29,7 @@ class ReportGenerator:
         payload = {
             "metrics": run.metrics.to_dict(),
             "category_breakdown": _category_breakdown(run.results),
+            "difficulty_breakdown": _difficulty_breakdown(run.results),
             "weakest_categories": _ranked_categories(run.results, reverse=False)[:3],
             "strongest_categories": _ranked_categories(run.results, reverse=True)[:3],
             "results": [result.to_dict() for result in run.results],
@@ -50,6 +51,7 @@ class ReportGenerator:
                 fieldnames=[
                     "scenario_id",
                     "category",
+                    "difficulty",
                     "success",
                     "score",
                     "latency_ms",
@@ -63,6 +65,7 @@ class ReportGenerator:
                     {
                         "scenario_id": result.scenario_id,
                         "category": result.category,
+                        "difficulty": result.details.get("difficulty", "medium"),
                         "success": result.success,
                         "score": f"{result.score:.3f}",
                         "latency_ms": f"{result.latency_ms:.3f}",
@@ -74,6 +77,7 @@ class ReportGenerator:
     def write_markdown(self, run: BenchmarkRun) -> None:
         metrics = run.metrics
         breakdown = _category_breakdown(run.results)
+        difficulty = _difficulty_breakdown(run.results)
         lines = [
             "# Memory Agent Benchmark Results",
             "",
@@ -101,6 +105,22 @@ class ReportGenerator:
         lines.extend(
             [
                 "",
+                "## Difficulty Breakdown",
+                "",
+                "| Difficulty | Pass | Fail | Score | Avg Latency ms |",
+                "|---|---:|---:|---:|---:|",
+            ]
+        )
+        default_difficulty = {"pass": 0, "fail": 0, "score": 0.0, "latency_avg_ms": 0.0}
+        for level in ("easy", "medium", "hard"):
+            item = difficulty.get(level, default_difficulty)
+            lines.append(
+                f"| {level} | {item['pass']} | {item['fail']} | "
+                f"{float(item['score']) * 100:.0f}% | {float(item['latency_avg_ms']):.2f} |"
+            )
+        lines.extend(
+            [
+                "",
                 "## Strongest Categories",
                 "",
                 *[
@@ -117,14 +137,15 @@ class ReportGenerator:
                 "",
                 "## Pass/Fail Table",
                 "",
-                "| Scenario | Category | Result | Score | Latency ms |",
-                "|---|---|---:|---:|---:|",
+                "| Scenario | Category | Difficulty | Result | Score | Latency ms |",
+                "|---|---|---|---:|---:|---:|",
             ]
         )
         for result in run.results:
             outcome = "PASS" if result.success else "FAIL"
             lines.append(
-                f"| {result.scenario_id} | {result.category} | {outcome} | "
+                f"| {result.scenario_id} | {result.category} | "
+                f"{result.details.get('difficulty', 'medium')} | {outcome} | "
                 f"{result.score:.2f} | {result.latency_ms:.2f} |"
             )
         (self.report_dir / "results.md").write_text(
@@ -146,6 +167,23 @@ def _category_breakdown(results: list[EvaluationResult]) -> dict[str, dict[str, 
             "fail": count - passed,
             "score": sum(result.score for result in category_results) / count,
             "latency_avg_ms": sum(result.latency_ms for result in category_results) / count,
+        }
+    return breakdown
+
+
+def _difficulty_breakdown(results: list[EvaluationResult]) -> dict[str, dict[str, float | int]]:
+    grouped: dict[str, list[EvaluationResult]] = defaultdict(list)
+    for result in results:
+        grouped[str(result.details.get("difficulty", "medium"))].append(result)
+    breakdown: dict[str, dict[str, float | int]] = {}
+    for difficulty, difficulty_results in grouped.items():
+        count = len(difficulty_results)
+        passed = sum(1 for result in difficulty_results if result.success)
+        breakdown[difficulty] = {
+            "pass": passed,
+            "fail": count - passed,
+            "score": sum(result.score for result in difficulty_results) / count,
+            "latency_avg_ms": sum(result.latency_ms for result in difficulty_results) / count,
         }
     return breakdown
 
