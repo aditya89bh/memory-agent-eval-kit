@@ -177,6 +177,7 @@ class BenchmarkScenario:
     expected_behavior: ExpectedBehavior = field(default_factory=lambda: ExpectedBehavior(answer=""))
     scoring_rules: ScoringRules = field(default_factory=ScoringRules)
     negative_assertions: list[str] = field(default_factory=list)
+    suite_version: str = "v3"
 
     @property
     def events(self) -> list[MemoryEvent]:
@@ -217,6 +218,7 @@ class BenchmarkScenario:
             expected_behavior=expected_behavior,
             scoring_rules=ScoringRules.from_raw(data.get("scoring_rules")),
             negative_assertions=negative_assertions,
+            suite_version=str(data.get("suite_version", "v3")),
         )
 
     def to_dict(self) -> dict[str, Any]:
@@ -232,6 +234,7 @@ class BenchmarkScenario:
             "expected_behavior": self.expected_behavior.to_dict(),
             "scoring_rules": self.scoring_rules.to_dict(),
             "negative_assertions": self.negative_assertions,
+            "suite_version": self.suite_version,
             "expected_absent": self.expected_absent,
             "description": self.description,
         }

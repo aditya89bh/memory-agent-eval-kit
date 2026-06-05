@@ -888,3 +888,12 @@ def test_collaborative_memory_benchmarks_measure_recall(tmp_path: Path) -> None:
     )
     assert len(run.results) == 3
     assert run.metrics.collaborative_recall == 1.0
+
+
+def test_benchmark_suite_version_metadata_is_attached() -> None:
+    from memory_agent_eval_kit.datasets.versions import CURRENT_SUITE_VERSION, SUITE_VERSIONS
+
+    scenarios = load_scenarios(categories=["recall"])
+    assert CURRENT_SUITE_VERSION == "v3"
+    assert {version.version for version in SUITE_VERSIONS} == {"v1", "v2", "v3"}
+    assert all(scenario.suite_version == "v3" for scenario in scenarios)
