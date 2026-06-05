@@ -806,3 +806,11 @@ def test_gdpr_forgetting_benchmarks_measure_compliance(tmp_path: Path) -> None:
     )
     assert len(run.results) == 3
     assert run.metrics.gdpr_compliance_score == 1.0
+
+
+def test_retention_policy_benchmarks_measure_compliance(tmp_path: Path) -> None:
+    run = BenchmarkRunner(SimpleMemoryAgent()).run(
+        categories=["retention_policy"], report_dir=tmp_path
+    )
+    assert len(run.results) == 3
+    assert run.metrics.retention_compliance == 1.0

@@ -19,6 +19,7 @@ from memory_agent_eval_kit.evaluators.poisoning import PoisoningEvaluator
 from memory_agent_eval_kit.evaluators.preference_evolution import PreferenceEvolutionEvaluator
 from memory_agent_eval_kit.evaluators.recall import RecallEvaluator
 from memory_agent_eval_kit.evaluators.relationship_memory import RelationshipMemoryEvaluator
+from memory_agent_eval_kit.evaluators.retention_policy import RetentionPolicyEvaluator
 from memory_agent_eval_kit.evaluators.stale_memory import StaleMemoryEvaluator
 from memory_agent_eval_kit.evaluators.stress import StressEvaluator
 from memory_agent_eval_kit.evaluators.temporal import TemporalEvaluator
@@ -30,6 +31,7 @@ __all__ = [
     "ScenarioEvaluator",
     "RecallEvaluator",
     "RelationshipMemoryEvaluator",
+    "RetentionPolicyEvaluator",
     "ContradictionEvaluator",
     "CorrectionEvaluator",
     "ForgettingEvaluator",

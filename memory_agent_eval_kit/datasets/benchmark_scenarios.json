@@ -6431,5 +6431,72 @@
       "delayed_validation": true
     },
     "description": "Validate GDPR deletion and delayed forgetting behavior."
+  },
+  {
+    "scenario_id": "retention_policy_001",
+    "category": "retention_policy",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "retention_policy_001",
+        "content": "Retention policy temporary sprint note is temporary onboarding checklist",
+        "active": true,
+        "retention_status": "active"
+      }
+    ],
+    "query": "What is the retention policy temporary sprint note?",
+    "expected_answer": "temporary onboarding checklist",
+    "negative_assertions": [],
+    "expected_behavior": {
+      "answer": "temporary onboarding checklist",
+      "retention_status": "active"
+    },
+    "description": "Validate temporary, expiring, and archived memory retention behavior."
+  },
+  {
+    "scenario_id": "retention_policy_002",
+    "category": "retention_policy",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "retention_policy_002",
+        "content": "Retention policy expiring access note is expired badge code 1234",
+        "active": false,
+        "retention_status": "expired"
+      }
+    ],
+    "query": "What is the retention policy expiring access note?",
+    "expected_answer": "I do not know",
+    "negative_assertions": [
+      "expired badge code 1234"
+    ],
+    "expected_behavior": {
+      "answer": "I do not know",
+      "retention_status": "expired"
+    },
+    "description": "Validate temporary, expiring, and archived memory retention behavior."
+  },
+  {
+    "scenario_id": "retention_policy_003",
+    "category": "retention_policy",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "retention_policy_003",
+        "content": "Retention policy archived project note is archived legacy vendor secret",
+        "active": false,
+        "retention_status": "expired"
+      }
+    ],
+    "query": "What is the retention policy archived project note?",
+    "expected_answer": "I do not know",
+    "negative_assertions": [
+      "archived legacy vendor secret"
+    ],
+    "expected_behavior": {
+      "answer": "I do not know",
+      "retention_status": "expired"
+    },
+    "description": "Validate temporary, expiring, and archived memory retention behavior."
   }
 ]

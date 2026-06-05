@@ -57,6 +57,7 @@ class AggregateMetrics:
     hierarchical_retrieval_accuracy: float
     pii_deletion_success: float
     gdpr_compliance_score: float
+    retention_compliance: float
     latency_degradation_ms: float
     latency_avg_ms: float
     latency_p95_ms: float
@@ -143,6 +144,7 @@ def aggregate_results(results: list[EvaluationResult]) -> AggregateMetrics:
         hierarchical_retrieval_accuracy=_score_for(results, "hierarchical_memory"),
         pii_deletion_success=_score_for(results, "pii_deletion"),
         gdpr_compliance_score=_score_for(results, "gdpr_forgetting"),
+        retention_compliance=_score_for(results, "retention_policy"),
         latency_degradation_ms=latency_degradation_ms,
         latency_avg_ms=mean(latencies) if latencies else 0.0,
         latency_p95_ms=_p95(latencies),
