@@ -434,3 +434,17 @@ def test_evaluator_partial_scoring_mode() -> None:
         }
     )
     assert RecallEvaluator().score_answer(scenario, "Universal Robotics") >= 0.5
+
+
+def test_benchmark_suite_config_filters_categories(tmp_path: Path) -> None:
+    from memory_agent_eval_kit.benchmarks import BenchmarkSuiteConfig
+
+    config = BenchmarkSuiteConfig.for_categories(["hallucination"], suite_name="hallucination-only")
+    run = BenchmarkRunner(SimpleMemoryAgent()).run(report_dir=tmp_path, config=config)
+    assert run.metrics.total_scenarios == 10
+    assert run.metrics.hallucination_accuracy == 1.0
+
+
+def test_cli_category_hallucination(tmp_path: Path, capsys: pytest.CaptureFixture[str]) -> None:
+    assert main(["benchmark", "--category", "hallucination", "--report-dir", str(tmp_path)]) == 0
+    assert "False Recall Rate" in capsys.readouterr().out

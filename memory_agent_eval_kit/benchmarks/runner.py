@@ -6,6 +6,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 from memory_agent_eval_kit.adapters import MemoryAgentAdapter
+from memory_agent_eval_kit.benchmarks.config import BenchmarkSuiteConfig
 from memory_agent_eval_kit.benchmarks.stress import generate_stress_scenarios
 from memory_agent_eval_kit.datasets import load_scenarios
 from memory_agent_eval_kit.evaluators import (
@@ -60,11 +61,13 @@ class BenchmarkRunner:
         categories: list[Category] | None = None,
         report_dir: Path | str | None = "reports",
         stress: bool = False,
+        config: BenchmarkSuiteConfig | None = None,
     ) -> BenchmarkRun:
+        suite_config = config or BenchmarkSuiteConfig(categories=categories, stress=stress)
         scenarios = (
             generate_stress_scenarios()
-            if stress
-            else load_scenarios(self.dataset_path, categories=categories)
+            if suite_config.stress
+            else load_scenarios(self.dataset_path, categories=suite_config.categories)
         )
         results = [
             self.evaluators[scenario.category].evaluate(scenario, self.adapter)
