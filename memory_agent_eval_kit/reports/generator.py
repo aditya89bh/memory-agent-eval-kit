@@ -4,9 +4,10 @@ from __future__ import annotations
 
 import csv
 import json
+import math
 from collections import defaultdict
 from pathlib import Path
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Any
 
 if TYPE_CHECKING:
     from memory_agent_eval_kit.benchmarks.runner import BenchmarkRun
@@ -30,6 +31,7 @@ class ReportGenerator:
             "metrics": run.metrics.to_dict(),
             "category_breakdown": _category_breakdown(run.results),
             "difficulty_breakdown": _difficulty_breakdown(run.results),
+            "confidence_metrics": _confidence_metrics(run.results),
             "weakest_categories": _ranked_categories(run.results, reverse=False)[:3],
             "strongest_categories": _ranked_categories(run.results, reverse=True)[:3],
             "results": [result.to_dict() for result in run.results],
@@ -78,6 +80,7 @@ class ReportGenerator:
         metrics = run.metrics
         breakdown = _category_breakdown(run.results)
         difficulty = _difficulty_breakdown(run.results)
+        confidence = _confidence_metrics(run.results)
         lines = [
             "# Memory Agent Benchmark Results",
             "",
@@ -92,15 +95,25 @@ class ReportGenerator:
             f"- Retention Score: {_pct(metrics.retention_score)}",
             f"- Privacy Score: {_pct(metrics.privacy_score)}",
             "",
+            "## Confidence Metrics",
+            "",
+            f"- Overall 95% CI: {_pct(float(confidence['overall']['lower']))} to "
+            f"{_pct(float(confidence['overall']['upper']))}",
+            f"- Overall estimate: {_pct(float(confidence['overall']['estimate']))}",
+            "- Method: Wilson score interval over scenario pass/fail outcomes.",
+            "",
             "## Category Breakdown",
             "",
-            "| Category | Pass | Fail | Score | Avg Latency ms |",
-            "|---|---:|---:|---:|---:|",
+            "| Category | Pass | Fail | Score | 95% CI | Avg Latency ms |",
+            "|---|---:|---:|---:|---:|---:|",
         ]
+        category_confidence = confidence["categories"]
         for category, item in sorted(breakdown.items()):
+            interval = category_confidence[str(category)]
             lines.append(
                 f"| {category} | {item['pass']} | {item['fail']} | "
-                f"{item['score'] * 100:.0f}% | {item['latency_avg_ms']:.2f} |"
+                f"{item['score'] * 100:.0f}% | {_pct(float(interval['lower']))}-"
+                f"{_pct(float(interval['upper']))} | {item['latency_avg_ms']:.2f} |"
             )
         lines.extend(
             [
@@ -169,6 +182,38 @@ def _category_breakdown(results: list[EvaluationResult]) -> dict[str, dict[str, 
             "latency_avg_ms": sum(result.latency_ms for result in category_results) / count,
         }
     return breakdown
+
+
+def _confidence_metrics(results: list[EvaluationResult]) -> dict[str, Any]:
+    overall_successes = sum(1 for result in results if result.success)
+    overall = _confidence_interval(overall_successes, len(results))
+    grouped: dict[str, list[EvaluationResult]] = defaultdict(list)
+    for result in results:
+        grouped[result.category].append(result)
+    categories = {
+        category: _confidence_interval(
+            sum(1 for result in category_results if result.success),
+            len(category_results),
+        )
+        for category, category_results in grouped.items()
+    }
+    return {"overall": overall, "categories": categories}
+
+
+def _confidence_interval(successes: int, count: int) -> dict[str, float | int]:
+    if count == 0:
+        return {"estimate": 0.0, "lower": 0.0, "upper": 0.0, "count": 0}
+    z = 1.96
+    proportion = successes / count
+    denominator = 1 + z**2 / count
+    centre = proportion + z**2 / (2 * count)
+    margin = z * math.sqrt((proportion * (1 - proportion) + z**2 / (4 * count)) / count)
+    return {
+        "estimate": proportion,
+        "lower": max(0.0, (centre - margin) / denominator),
+        "upper": min(1.0, (centre + margin) / denominator),
+        "count": count,
+    }
 
 
 def _difficulty_breakdown(results: list[EvaluationResult]) -> dict[str, dict[str, float | int]]:

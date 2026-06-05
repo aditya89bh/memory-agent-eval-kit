@@ -260,7 +260,10 @@ def test_report_generator_outputs_files(tmp_path: Path) -> None:
     )
     report_json = json.loads((tmp_path / "results.json").read_text(encoding="utf-8"))
     assert report_json["difficulty_breakdown"]["medium"]["pass"] == 1
-    assert "Difficulty Breakdown" in (tmp_path / "results.md").read_text(encoding="utf-8")
+    assert report_json["confidence_metrics"]["overall"]["estimate"] == 1.0
+    markdown = (tmp_path / "results.md").read_text(encoding="utf-8")
+    assert "Difficulty Breakdown" in markdown
+    assert "Confidence Metrics" in markdown
 
 
 def test_cli_parser_has_benchmark() -> None:
