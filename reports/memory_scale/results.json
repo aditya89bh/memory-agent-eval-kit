@@ -1,0 +1,30 @@
+[
+  {
+    "memory_count": 100,
+    "add_ms": 0.08700002217665315,
+    "query_ms": 0.5842579994350672,
+    "success": true,
+    "answer": "Large scale benchmark target is scale-target-100"
+  },
+  {
+    "memory_count": 1000,
+    "add_ms": 0.8290719997603446,
+    "query_ms": 5.299077020026743,
+    "success": true,
+    "answer": "Large scale benchmark target is scale-target-1000"
+  },
+  {
+    "memory_count": 10000,
+    "add_ms": 8.29484302084893,
+    "query_ms": 53.5779969941359,
+    "success": true,
+    "answer": "Large scale benchmark target is scale-target-10000"
+  },
+  {
+    "memory_count": 100000,
+    "add_ms": 90.67638398846611,
+    "query_ms": 563.373651006259,
+    "success": true,
+    "answer": "Large scale benchmark target is scale-target-100000"
+  }
+]

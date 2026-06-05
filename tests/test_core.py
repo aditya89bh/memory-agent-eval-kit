@@ -259,6 +259,15 @@ def test_aggregate_results() -> None:
     assert metrics.hallucination_rate == 0.0
 
 
+def test_memory_scale_benchmark(tmp_path: Path) -> None:
+    from memory_agent_eval_kit.benchmarks.scale import run_memory_scale_benchmark
+
+    results = run_memory_scale_benchmark((5,), output_dir=tmp_path)
+    assert results[0].memory_count == 5
+    assert results[0].success
+    assert (tmp_path / "results.json").exists()
+
+
 def test_benchmark_runner_runs_all(tmp_path: Path) -> None:
     run = BenchmarkRunner(SimpleMemoryAgent()).run(report_dir=tmp_path)
     assert run.metrics.total_scenarios >= 80
