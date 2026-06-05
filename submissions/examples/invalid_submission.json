@@ -1,0 +1,8 @@
+{
+  "agent_name": "BrokenSubmissionAgent",
+  "adapter_name": "example_adapter",
+  "suite_version": "v3",
+  "benchmark_score": 1.25,
+  "scenario_count": 0,
+  "results": []
+}

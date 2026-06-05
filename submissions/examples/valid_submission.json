@@ -1,0 +1,24 @@
+{
+  "agent_name": "ExampleMemoryAgent",
+  "adapter_name": "example_adapter",
+  "suite_version": "v3",
+  "benchmark_score": 0.94,
+  "scenario_count": 3,
+  "results": [
+    {
+      "scenario_id": "recall_001",
+      "category": "recall",
+      "score": 1.0
+    },
+    {
+      "scenario_id": "forgetting_001",
+      "category": "forgetting",
+      "score": 1.0
+    },
+    {
+      "scenario_id": "hallucination_001",
+      "category": "hallucination",
+      "score": 0.82
+    }
+  ]
+}
