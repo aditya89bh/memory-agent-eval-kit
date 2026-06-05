@@ -58,6 +58,12 @@ def build_parser() -> argparse.ArgumentParser:
         default=None,
         help="Deterministic scenario order seed",
     )
+    benchmark.add_argument(
+        "--fail-under",
+        type=float,
+        default=None,
+        help="Exit non-zero when overall score is below this percentage threshold",
+    )
     validate = subparsers.add_parser("validate", help="Validate benchmark dataset")
     validate.add_argument("--dataset", type=Path, default=None)
 
@@ -98,6 +104,12 @@ def main(argv: list[str] | None = None) -> int:
             seed=args.seed,
         )
         print(_format_summary(run.metrics))
+        if args.fail_under is not None and run.metrics.overall_score * 100 < args.fail_under:
+            print(
+                f"Benchmark score {run.metrics.overall_score * 100:.1f}% "
+                f"is below fail-under threshold {args.fail_under:.1f}%"
+            )
+            return 1
         return 0
     parser.error("Unknown command")
     return 2

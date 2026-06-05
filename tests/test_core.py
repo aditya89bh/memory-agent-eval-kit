@@ -654,3 +654,37 @@ def test_compare_results_detects_score_and_category_regressions(tmp_path: Path) 
     assert "overall" in comparison.regressions
     assert "recall" in comparison.regressions
     assert comparison.to_dict()["has_regressions"] is True
+
+
+def test_cli_fail_under_passes_when_score_meets_threshold(tmp_path: Path) -> None:
+    assert (
+        main(
+            [
+                "benchmark",
+                "--category",
+                "recall",
+                "--fail-under",
+                "90",
+                "--report-dir",
+                str(tmp_path),
+            ]
+        )
+        == 0
+    )
+
+
+def test_cli_fail_under_fails_when_score_drops(tmp_path: Path) -> None:
+    assert (
+        main(
+            [
+                "benchmark",
+                "--category",
+                "hallucination",
+                "--fail-under",
+                "101",
+                "--report-dir",
+                str(tmp_path),
+            ]
+        )
+        == 1
+    )
