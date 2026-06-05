@@ -18,6 +18,7 @@ from memory_agent_eval_kit.evaluators import (
     ForgettingEvaluator,
     HallucinatedRecallEvaluator,
     HallucinationEvaluator,
+    HierarchicalMemoryEvaluator,
     LongHorizonEvaluator,
     MemoryDriftEvaluator,
     MemoryLeakageEvaluator,
@@ -71,6 +72,7 @@ class BenchmarkRunner:
             "noisy_memory": NoisyMemoryEvaluator(),
             "preference_evolution": PreferenceEvolutionEvaluator(),
             "relationship_memory": RelationshipMemoryEvaluator(),
+            "hierarchical_memory": HierarchicalMemoryEvaluator(),
         }
 
     def run(

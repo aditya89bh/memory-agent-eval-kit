@@ -8,6 +8,7 @@ from memory_agent_eval_kit.evaluators.correction import CorrectionEvaluator
 from memory_agent_eval_kit.evaluators.forgetting import ForgettingEvaluator
 from memory_agent_eval_kit.evaluators.hallucinated_recall import HallucinatedRecallEvaluator
 from memory_agent_eval_kit.evaluators.hallucination import HallucinationEvaluator
+from memory_agent_eval_kit.evaluators.hierarchical_memory import HierarchicalMemoryEvaluator
 from memory_agent_eval_kit.evaluators.long_horizon import LongHorizonEvaluator
 from memory_agent_eval_kit.evaluators.memory_drift import MemoryDriftEvaluator
 from memory_agent_eval_kit.evaluators.memory_leakage import MemoryLeakageEvaluator
@@ -32,6 +33,7 @@ __all__ = [
     "ForgettingEvaluator",
     "HallucinatedRecallEvaluator",
     "HallucinationEvaluator",
+    "HierarchicalMemoryEvaluator",
     "LongHorizonEvaluator",
     "MemoryDriftEvaluator",
     "NoisyMemoryEvaluator",

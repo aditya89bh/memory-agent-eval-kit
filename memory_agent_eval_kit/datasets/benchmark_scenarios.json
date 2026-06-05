@@ -6209,5 +6209,59 @@
       "relationship": "customer"
     },
     "description": "Recall relationship contact and role group."
+  },
+  {
+    "scenario_id": "hierarchical_memory_001",
+    "category": "hierarchical_memory",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "hierarchical_memory_001",
+        "content": "Hierarchy path for person Nila is Acme Robotics > AI Platform > Memory Systems > Nila"
+      }
+    ],
+    "query": "What is the hierarchy path for person Nila?",
+    "expected_answer": "Acme Robotics > AI Platform > Memory Systems > Nila",
+    "expected_behavior": {
+      "answer": "Acme Robotics > AI Platform > Memory Systems > Nila",
+      "hierarchy_depth": 4
+    },
+    "description": "Retrieve company-department-team-person hierarchy."
+  },
+  {
+    "scenario_id": "hierarchical_memory_002",
+    "category": "hierarchical_memory",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "hierarchical_memory_002",
+        "content": "Hierarchy path for person Kabir is Helio Labs > Research > Embodied Agents > Kabir"
+      }
+    ],
+    "query": "What is the hierarchy path for person Kabir?",
+    "expected_answer": "Helio Labs > Research > Embodied Agents > Kabir",
+    "expected_behavior": {
+      "answer": "Helio Labs > Research > Embodied Agents > Kabir",
+      "hierarchy_depth": 4
+    },
+    "description": "Retrieve company-department-team-person hierarchy."
+  },
+  {
+    "scenario_id": "hierarchical_memory_003",
+    "category": "hierarchical_memory",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "hierarchical_memory_003",
+        "content": "Hierarchy path for person Sara is Northwind AI > Compliance > Privacy Ops > Sara"
+      }
+    ],
+    "query": "What is the hierarchy path for person Sara?",
+    "expected_answer": "Northwind AI > Compliance > Privacy Ops > Sara",
+    "expected_behavior": {
+      "answer": "Northwind AI > Compliance > Privacy Ops > Sara",
+      "hierarchy_depth": 4
+    },
+    "description": "Retrieve company-department-team-person hierarchy."
   }
 ]

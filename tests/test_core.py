@@ -784,3 +784,11 @@ def test_relationship_memory_benchmarks_measure_relationship_and_role(tmp_path: 
     assert len(run.results) == 4
     assert run.metrics.relationship_recall_accuracy == 1.0
     assert run.metrics.role_recall_accuracy == 1.0
+
+
+def test_hierarchical_memory_benchmarks_measure_retrieval(tmp_path: Path) -> None:
+    run = BenchmarkRunner(SimpleMemoryAgent()).run(
+        categories=["hierarchical_memory"], report_dir=tmp_path
+    )
+    assert len(run.results) == 3
+    assert run.metrics.hierarchical_retrieval_accuracy == 1.0

@@ -26,6 +26,7 @@ Category: TypeAlias = Literal[
     "noisy_memory",
     "preference_evolution",
     "relationship_memory",
+    "hierarchical_memory",
 ]
 
 
