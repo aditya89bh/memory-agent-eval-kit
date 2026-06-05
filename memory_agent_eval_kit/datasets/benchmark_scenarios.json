@@ -6263,5 +6263,86 @@
       "hierarchy_depth": 4
     },
     "description": "Retrieve company-department-team-person hierarchy."
+  },
+  {
+    "scenario_id": "pii_deletion_001",
+    "category": "pii_deletion",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "pii_deletion_001",
+        "content": "PII phone number is +91-90000-11111"
+      },
+      {
+        "type": "forget",
+        "memory_id": "pii_deletion_001",
+        "content": "Delete PII phone number"
+      }
+    ],
+    "query": "What is my PII phone number?",
+    "expected_answer": "I do not know",
+    "negative_assertions": [
+      "+91-90000-11111"
+    ],
+    "expected_behavior": {
+      "answer": "I do not know",
+      "pii_type": "phone number",
+      "deleted": true
+    },
+    "description": "Verify deleted PII is not recalled."
+  },
+  {
+    "scenario_id": "pii_deletion_002",
+    "category": "pii_deletion",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "pii_deletion_002",
+        "content": "PII email is private@example.com"
+      },
+      {
+        "type": "forget",
+        "memory_id": "pii_deletion_002",
+        "content": "Delete PII email"
+      }
+    ],
+    "query": "What is my PII email?",
+    "expected_answer": "I do not know",
+    "negative_assertions": [
+      "private@example.com"
+    ],
+    "expected_behavior": {
+      "answer": "I do not know",
+      "pii_type": "email",
+      "deleted": true
+    },
+    "description": "Verify deleted PII is not recalled."
+  },
+  {
+    "scenario_id": "pii_deletion_003",
+    "category": "pii_deletion",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "pii_deletion_003",
+        "content": "PII address is 42 Privacy Lane, Pune"
+      },
+      {
+        "type": "forget",
+        "memory_id": "pii_deletion_003",
+        "content": "Delete PII address"
+      }
+    ],
+    "query": "What is my PII address?",
+    "expected_answer": "I do not know",
+    "negative_assertions": [
+      "42 Privacy Lane, Pune"
+    ],
+    "expected_behavior": {
+      "answer": "I do not know",
+      "pii_type": "address",
+      "deleted": true
+    },
+    "description": "Verify deleted PII is not recalled."
   }
 ]

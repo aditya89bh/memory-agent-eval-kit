@@ -792,3 +792,9 @@ def test_hierarchical_memory_benchmarks_measure_retrieval(tmp_path: Path) -> Non
     )
     assert len(run.results) == 3
     assert run.metrics.hierarchical_retrieval_accuracy == 1.0
+
+
+def test_pii_deletion_benchmarks_verify_no_recall_after_deletion(tmp_path: Path) -> None:
+    run = BenchmarkRunner(SimpleMemoryAgent()).run(categories=["pii_deletion"], report_dir=tmp_path)
+    assert len(run.results) == 3
+    assert run.metrics.pii_deletion_success == 1.0

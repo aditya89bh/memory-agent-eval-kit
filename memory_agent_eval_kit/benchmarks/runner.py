@@ -23,6 +23,7 @@ from memory_agent_eval_kit.evaluators import (
     MemoryDriftEvaluator,
     MemoryLeakageEvaluator,
     NoisyMemoryEvaluator,
+    PIIDeletionEvaluator,
     PoisoningEvaluator,
     PreferenceEvolutionEvaluator,
     RecallEvaluator,
@@ -73,6 +74,7 @@ class BenchmarkRunner:
             "preference_evolution": PreferenceEvolutionEvaluator(),
             "relationship_memory": RelationshipMemoryEvaluator(),
             "hierarchical_memory": HierarchicalMemoryEvaluator(),
+            "pii_deletion": PIIDeletionEvaluator(),
         }
 
     def run(
