@@ -406,3 +406,31 @@ def test_memory_leak_rate_metric() -> None:
     leaked = EvaluationResult("f", "forgetting", False, 0.0, 1.0)
     metrics = aggregate_results([leaked])
     assert metrics.memory_leak_rate == 1.0
+
+
+def test_semantic_scoring_utilities() -> None:
+    from memory_agent_eval_kit.scoring import (
+        exact_score,
+        normalized_text,
+        partial_score,
+        token_overlap,
+    )
+
+    assert normalized_text("Hello, WORLD!") == "hello world"
+    assert exact_score("Universal Robots", "universal robots") == 1.0
+    assert token_overlap("favorite robot brand", "robot brand is UR") == pytest.approx(2 / 3)
+    assert partial_score("Universal Robots", "Universal Robotics preference") > 0.7
+
+
+def test_evaluator_partial_scoring_mode() -> None:
+    scenario = BenchmarkScenario.from_dict(
+        {
+            "scenario_id": "partial_001",
+            "category": "recall",
+            "events": [],
+            "query": "q",
+            "expected_answer": "Universal Robots",
+            "scoring_rules": {"mode": "partial", "threshold": 0.5, "allow_partial": True},
+        }
+    )
+    assert RecallEvaluator().score_answer(scenario, "Universal Robotics") >= 0.5

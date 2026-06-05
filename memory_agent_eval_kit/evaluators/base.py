@@ -7,6 +7,7 @@ from time import perf_counter
 from memory_agent_eval_kit.adapters import MemoryAgentAdapter
 from memory_agent_eval_kit.metrics import EvaluationResult
 from memory_agent_eval_kit.models import BenchmarkScenario, Category
+from memory_agent_eval_kit.scoring import exact_score, partial_score
 
 
 class ScenarioEvaluator:
@@ -50,14 +51,25 @@ class ScenarioEvaluator:
         )
 
     def score_answer(self, scenario: BenchmarkScenario, answer: str) -> float:
-        normalized = answer.casefold()
-        expected_ok = scenario.expected_answer.casefold() in normalized
+        score = self._positive_score(scenario, answer)
         extra_expected = scenario.expected_behavior.metadata.get("also_contains")
         if extra_expected is not None:
-            expected_ok = expected_ok and str(extra_expected).casefold() in normalized
-        absent_ok = all(absent.casefold() not in normalized for absent in scenario.expected_absent)
-        if expected_ok and absent_ok:
+            score = min(score, self._text_score(str(extra_expected), answer, scenario))
+        absent_ok = all(
+            absent.casefold() not in answer.casefold() for absent in scenario.expected_absent
+        )
+        if score >= scenario.scoring_rules.threshold and absent_ok:
             return 1.0
-        if expected_ok or absent_ok and scenario.expected_absent:
+        if scenario.scoring_rules.allow_partial and absent_ok:
+            return score
+        if score >= scenario.scoring_rules.threshold or absent_ok and scenario.expected_absent:
             return 0.5
         return 0.0
+
+    def _positive_score(self, scenario: BenchmarkScenario, answer: str) -> float:
+        return self._text_score(scenario.expected_answer, answer, scenario)
+
+    def _text_score(self, expected: str, answer: str, scenario: BenchmarkScenario) -> float:
+        if scenario.scoring_rules.mode in {"normalized", "partial", "semantic"}:
+            return partial_score(expected, answer)
+        return exact_score(expected, answer)
