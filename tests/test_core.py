@@ -775,3 +775,12 @@ def test_preference_evolution_benchmarks_measure_updates(tmp_path: Path) -> None
     )
     assert len(run.results) == 6
     assert run.metrics.preference_update_accuracy == 1.0
+
+
+def test_relationship_memory_benchmarks_measure_relationship_and_role(tmp_path: Path) -> None:
+    run = BenchmarkRunner(SimpleMemoryAgent()).run(
+        categories=["relationship_memory"], report_dir=tmp_path
+    )
+    assert len(run.results) == 4
+    assert run.metrics.relationship_recall_accuracy == 1.0
+    assert run.metrics.role_recall_accuracy == 1.0

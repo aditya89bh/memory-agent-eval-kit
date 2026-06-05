@@ -25,6 +25,7 @@ from memory_agent_eval_kit.evaluators import (
     PoisoningEvaluator,
     PreferenceEvolutionEvaluator,
     RecallEvaluator,
+    RelationshipMemoryEvaluator,
     ScenarioEvaluator,
     StaleMemoryEvaluator,
     StressEvaluator,
@@ -69,6 +70,7 @@ class BenchmarkRunner:
             "long_horizon": LongHorizonEvaluator(),
             "noisy_memory": NoisyMemoryEvaluator(),
             "preference_evolution": PreferenceEvolutionEvaluator(),
+            "relationship_memory": RelationshipMemoryEvaluator(),
         }
 
     def run(

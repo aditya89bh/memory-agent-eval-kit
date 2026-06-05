@@ -6133,5 +6133,81 @@
       "preference_stage": "previous"
     },
     "description": "Recall immediately previous preference."
+  },
+  {
+    "scenario_id": "relationship_memory_001",
+    "category": "relationship_memory",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "relationship_memory_001",
+        "content": "Spouse relationship contact is Asha; role group is family"
+      }
+    ],
+    "query": "Who is my spouse relationship contact and what role group is it?",
+    "expected_answer": "Asha",
+    "expected_behavior": {
+      "answer": "Asha",
+      "also_contains": "family",
+      "relationship": "spouse"
+    },
+    "description": "Recall relationship contact and role group."
+  },
+  {
+    "scenario_id": "relationship_memory_002",
+    "category": "relationship_memory",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "relationship_memory_002",
+        "content": "Sibling relationship contact is Rohan; role group is family"
+      }
+    ],
+    "query": "Who is my sibling relationship contact and what role group is it?",
+    "expected_answer": "Rohan",
+    "expected_behavior": {
+      "answer": "Rohan",
+      "also_contains": "family",
+      "relationship": "sibling"
+    },
+    "description": "Recall relationship contact and role group."
+  },
+  {
+    "scenario_id": "relationship_memory_003",
+    "category": "relationship_memory",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "relationship_memory_003",
+        "content": "Manager relationship contact is Meera; role group is work"
+      }
+    ],
+    "query": "Who is my manager relationship contact and what role group is it?",
+    "expected_answer": "Meera",
+    "expected_behavior": {
+      "answer": "Meera",
+      "also_contains": "work",
+      "relationship": "manager"
+    },
+    "description": "Recall relationship contact and role group."
+  },
+  {
+    "scenario_id": "relationship_memory_004",
+    "category": "relationship_memory",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "relationship_memory_004",
+        "content": "Customer relationship contact is Northwind Robotics; role group is enterprise"
+      }
+    ],
+    "query": "Who is my customer relationship contact and what role group is it?",
+    "expected_answer": "Northwind Robotics",
+    "expected_behavior": {
+      "answer": "Northwind Robotics",
+      "also_contains": "enterprise",
+      "relationship": "customer"
+    },
+    "description": "Recall relationship contact and role group."
   }
 ]
