@@ -16,6 +16,7 @@ from memory_agent_eval_kit.evaluators import (
     ContradictionEvaluator,
     CorrectionEvaluator,
     ForgettingEvaluator,
+    GDPRForgettingEvaluator,
     HallucinatedRecallEvaluator,
     HallucinationEvaluator,
     HierarchicalMemoryEvaluator,
@@ -75,6 +76,7 @@ class BenchmarkRunner:
             "relationship_memory": RelationshipMemoryEvaluator(),
             "hierarchical_memory": HierarchicalMemoryEvaluator(),
             "pii_deletion": PIIDeletionEvaluator(),
+            "gdpr_forgetting": GDPRForgettingEvaluator(),
         }
 
     def run(

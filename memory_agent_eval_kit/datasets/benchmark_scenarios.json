@@ -6344,5 +6344,92 @@
       "deleted": true
     },
     "description": "Verify deleted PII is not recalled."
+  },
+  {
+    "scenario_id": "gdpr_forgetting_001",
+    "category": "gdpr_forgetting",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "gdpr_forgetting_001",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "content": "GDPR protected gdpr subject profile is Subject Alpha private profile"
+      },
+      {
+        "type": "forget",
+        "memory_id": "gdpr_forgetting_001",
+        "timestamp": "2026-01-02T00:00:00Z",
+        "content": "Right to be forgotten request for gdpr subject profile"
+      }
+    ],
+    "query": "After the right to be forgotten request, what is the GDPR protected gdpr subject profile?",
+    "expected_answer": "I do not know",
+    "negative_assertions": [
+      "Subject Alpha private profile"
+    ],
+    "expected_behavior": {
+      "answer": "I do not know",
+      "gdpr_request": "right_to_be_forgotten",
+      "delayed_validation": false
+    },
+    "description": "Validate GDPR deletion and delayed forgetting behavior."
+  },
+  {
+    "scenario_id": "gdpr_forgetting_002",
+    "category": "gdpr_forgetting",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "gdpr_forgetting_002",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "content": "GDPR protected right to be forgotten note is Subject Beta travel history"
+      },
+      {
+        "type": "forget",
+        "memory_id": "gdpr_forgetting_002",
+        "timestamp": "2026-01-02T00:00:00Z",
+        "content": "Right to be forgotten request for right to be forgotten note"
+      }
+    ],
+    "query": "After the right to be forgotten request, what is the GDPR protected right to be forgotten note?",
+    "expected_answer": "I do not know",
+    "negative_assertions": [
+      "Subject Beta travel history"
+    ],
+    "expected_behavior": {
+      "answer": "I do not know",
+      "gdpr_request": "right_to_be_forgotten",
+      "delayed_validation": false
+    },
+    "description": "Validate GDPR deletion and delayed forgetting behavior."
+  },
+  {
+    "scenario_id": "gdpr_forgetting_003",
+    "category": "gdpr_forgetting",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "gdpr_forgetting_003",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "content": "GDPR protected delayed deletion validation is Subject Gamma purchase history"
+      },
+      {
+        "type": "forget",
+        "memory_id": "gdpr_forgetting_003",
+        "timestamp": "2026-01-02T00:00:00Z",
+        "content": "Right to be forgotten request for delayed deletion validation"
+      }
+    ],
+    "query": "After the right to be forgotten request, what is the GDPR protected delayed deletion validation?",
+    "expected_answer": "I do not know",
+    "negative_assertions": [
+      "Subject Gamma purchase history"
+    ],
+    "expected_behavior": {
+      "answer": "I do not know",
+      "gdpr_request": "right_to_be_forgotten",
+      "delayed_validation": true
+    },
+    "description": "Validate GDPR deletion and delayed forgetting behavior."
   }
 ]

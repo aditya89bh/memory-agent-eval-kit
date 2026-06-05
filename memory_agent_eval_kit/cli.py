@@ -35,6 +35,7 @@ CATEGORY_CHOICES: tuple[Category, ...] = (
     "relationship_memory",
     "hierarchical_memory",
     "pii_deletion",
+    "gdpr_forgetting",
 )
 
 
