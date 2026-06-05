@@ -18,3 +18,8 @@ flowchart TB
 ```
 
 The adapter interface is intentionally minimal so future integrations can wrap Mem0, LangGraph, OpenAI Memory, personal continuity agents, Memory Agent SDK, Decision Memory Agent, or internal systems.
+
+
+## Leaderboards
+
+`memory-eval leaderboard` reads benchmark report JSON and writes ranked `leaderboards/results.json` and `leaderboards/results.md` files with agent name, suite name, score, category scores, and latency.

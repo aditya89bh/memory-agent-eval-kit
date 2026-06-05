@@ -1,0 +1,25 @@
+[
+  {
+    "agent_name": "SimpleMemoryAgent",
+    "suite_name": "default",
+    "overall_score": 1.0,
+    "category_scores": {
+      "recall": 1.0,
+      "contradiction": 1.0,
+      "correction": 1.0,
+      "forgetting": 1.0,
+      "temporal": 1.0,
+      "stale_memory": 1.0,
+      "continuity": 1.0,
+      "hallucination": 1.0,
+      "stress_recall": 0.0,
+      "temporal_drift": 1.0,
+      "contradiction_resolution": 1.0,
+      "poisoning_resistance": 1.0
+    },
+    "latency": {
+      "avg_ms": 0.01660883048316464,
+      "p95_ms": 0.02471799962222576
+    }
+  }
+]

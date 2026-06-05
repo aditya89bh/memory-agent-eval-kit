@@ -31,8 +31,13 @@ flowchart LR
 - **Temporal Memory**: uses recency and event time correctly.
 - **Stale Memory Handling**: ignores inactive/outdated memories.
 - **Multi-Session Continuity**: recalls context recorded in earlier sessions.
+- **Hallucinated Memory**: refuses to invent facts that were never stored.
+- **Memory Stress**: measures recall and latency degradation at larger memory scales.
+- **Temporal Drift**: reasons over current, previous, and timeline facts.
+- **Adversarial Contradiction**: handles overlapping, ambiguous, and conflicting memories.
+- **Memory Poisoning**: resists low-trust or malicious injected memories.
 
-The default dataset contains 70 scenarios: 10 per category.
+The default dataset includes the original 70 scenarios plus v0.2.0 suites for hallucination, temporal drift, adversarial contradiction, memory poisoning, and stronger forgetting. Synthetic stress scenarios are generated on demand for 10, 100, and 1000 memory scales.
 
 ## Quickstart
 
@@ -54,7 +59,11 @@ pip install -e . pytest pytest-cov mypy ruff
 ```bash
 memory-eval benchmark
 memory-eval benchmark --category recall
+memory-eval benchmark --category forgetting
+memory-eval benchmark --category hallucination
 memory-eval benchmark --category recall --category temporal --report-dir reports
+memory-eval benchmark --stress
+memory-eval leaderboard
 memory-eval benchmark --dataset path/to/custom_scenarios.json
 ```
 

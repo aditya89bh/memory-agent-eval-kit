@@ -24,3 +24,8 @@ Aggregate metrics:
 - `total_scenarios`
 
 Scores are normalized from 0.0 to 1.0 and rendered as percentages in CLI and Markdown reports.
+
+
+## v0.2.0 metrics
+
+New metrics include hallucination rate, false recall rate, memory leak rate, temporal drift accuracy, contradiction resolution, ambiguity handling, poisoning resistance, stress recall accuracy, and latency degradation.
