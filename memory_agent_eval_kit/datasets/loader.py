@@ -7,7 +7,7 @@ from collections.abc import Iterable
 from importlib.resources import files
 from pathlib import Path
 
-from memory_agent_eval_kit.models import BenchmarkScenario, Category
+from memory_agent_eval_kit.models import BenchmarkScenario, Category, ScenarioStatus
 
 DEFAULT_DATASET = "benchmark_scenarios.json"
 
@@ -30,13 +30,18 @@ def _load_json(path: Path | None = None) -> list[dict[str, object]]:
 
 
 def load_scenarios(
-    path: Path | str | None = None, categories: Iterable[Category] | None = None
+    path: Path | str | None = None,
+    categories: Iterable[Category] | None = None,
+    statuses: Iterable[ScenarioStatus] | None = None,
 ) -> list[BenchmarkScenario]:
     selected = set(categories) if categories is not None else None
+    selected_statuses = set(statuses) if statuses is not None else None
     raw = _load_json(None if path is None else Path(path))
     scenarios = [BenchmarkScenario.from_dict(item) for item in raw]
     if selected is not None:
         scenarios = [scenario for scenario in scenarios if scenario.category in selected]
+    if selected_statuses is not None:
+        scenarios = [scenario for scenario in scenarios if scenario.status in selected_statuses]
     ids = [scenario.scenario_id for scenario in scenarios]
     if len(ids) != len(set(ids)):
         raise DatasetError("Scenario IDs must be unique.")

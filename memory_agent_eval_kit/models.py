@@ -5,6 +5,8 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import Any, Literal, TypeAlias, cast
 
+ScenarioStatus: TypeAlias = Literal["active", "deprecated"]
+
 Category: TypeAlias = Literal[
     "recall",
     "contradiction",
@@ -178,6 +180,8 @@ class BenchmarkScenario:
     scoring_rules: ScoringRules = field(default_factory=ScoringRules)
     negative_assertions: list[str] = field(default_factory=list)
     suite_version: str = "v3"
+    status: ScenarioStatus = "active"
+    deprecation_reason: str = ""
 
     @property
     def events(self) -> list[MemoryEvent]:
@@ -219,6 +223,8 @@ class BenchmarkScenario:
             scoring_rules=ScoringRules.from_raw(data.get("scoring_rules")),
             negative_assertions=negative_assertions,
             suite_version=str(data.get("suite_version", "v3")),
+            status=cast(ScenarioStatus, str(data.get("status", "active"))),
+            deprecation_reason=str(data.get("deprecation_reason", "")),
         )
 
     def to_dict(self) -> dict[str, Any]:
@@ -235,6 +241,8 @@ class BenchmarkScenario:
             "scoring_rules": self.scoring_rules.to_dict(),
             "negative_assertions": self.negative_assertions,
             "suite_version": self.suite_version,
+            "status": self.status,
+            "deprecation_reason": self.deprecation_reason,
             "expected_absent": self.expected_absent,
             "description": self.description,
         }

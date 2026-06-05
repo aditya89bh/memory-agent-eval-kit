@@ -919,3 +919,56 @@ def test_dataset_changelog_generation_tracks_added_removed_modified(tmp_path: Pa
     output = tmp_path / "dataset_changelog.json"
     write_dataset_changelog(before, after, output)
     assert json.loads(output.read_text(encoding="utf-8"))["added"] == ["added"]
+
+
+def test_scenario_deprecation_status_support(tmp_path: Path) -> None:
+    from memory_agent_eval_kit.datasets.validation import validate_dataset
+
+    payload = [
+        {
+            "scenario_id": "active_case",
+            "category": "recall",
+            "events": [],
+            "query": "What is active?",
+            "expected_answer": "active",
+            "status": "active",
+        },
+        {
+            "scenario_id": "deprecated_case",
+            "category": "recall",
+            "events": [],
+            "query": "What was deprecated?",
+            "expected_answer": "deprecated",
+            "status": "deprecated",
+            "deprecation_reason": "Replaced by a richer recall scenario.",
+        },
+    ]
+    dataset = tmp_path / "dataset.json"
+    dataset.write_text(json.dumps(payload), encoding="utf-8")
+    assert validate_dataset(dataset).valid
+    assert len(load_scenarios(dataset, statuses=["active"])) == 1
+    assert load_scenarios(dataset, statuses=["deprecated"])[0].status == "deprecated"
+
+
+def test_deprecated_scenarios_require_reason(tmp_path: Path) -> None:
+    from memory_agent_eval_kit.datasets.validation import validate_dataset
+
+    dataset = tmp_path / "dataset.json"
+    dataset.write_text(
+        json.dumps(
+            [
+                {
+                    "scenario_id": "deprecated_without_reason",
+                    "category": "recall",
+                    "events": [],
+                    "query": "q",
+                    "expected_answer": "a",
+                    "status": "deprecated",
+                }
+            ]
+        ),
+        encoding="utf-8",
+    )
+    result = validate_dataset(dataset)
+    assert not result.valid
+    assert "deprecation_reason" in result.errors[0]

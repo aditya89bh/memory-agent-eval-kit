@@ -7,9 +7,10 @@ from pathlib import Path
 from typing import Any, get_args
 
 from memory_agent_eval_kit.datasets.loader import load_scenarios
-from memory_agent_eval_kit.models import Category
+from memory_agent_eval_kit.models import Category, ScenarioStatus
 
 VALID_CATEGORIES = set(get_args(Category))
+VALID_STATUSES = set(get_args(ScenarioStatus))
 
 
 @dataclass(frozen=True)
@@ -37,6 +38,8 @@ def validate_dataset(path: Path | str | None = None) -> DatasetValidationResult:
         seen.add(scenario.scenario_id)
         if scenario.category not in VALID_CATEGORIES:
             errors.append(f"Invalid category for {scenario.scenario_id}: {scenario.category}")
+        if scenario.status not in VALID_STATUSES:
+            errors.append(f"Invalid status for {scenario.scenario_id}: {scenario.status}")
         errors.extend(_schema_errors(scenario.to_dict()))
     return DatasetValidationResult(
         valid=not errors,
@@ -52,6 +55,11 @@ def _schema_errors(payload: dict[str, Any]) -> list[str]:
     for field_name in required:
         if field_name not in payload:
             errors.append(f"{scenario_id}: missing {field_name}")
+    status = str(payload.get("status", "active"))
+    if status not in VALID_STATUSES:
+        errors.append(f"{scenario_id}: status must be active or deprecated")
+    if status == "deprecated" and not payload.get("deprecation_reason"):
+        errors.append(f"{scenario_id}: deprecated scenarios need deprecation_reason")
     if not isinstance(payload.get("events", []), list):
         errors.append(f"{scenario_id}: events must be a list")
     if not isinstance(payload.get("negative_assertions", []), list):
