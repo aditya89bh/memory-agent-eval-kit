@@ -524,6 +524,28 @@ def test_cli_category_hallucination(tmp_path: Path, capsys: pytest.CaptureFixtur
     assert "False Recall Rate" in capsys.readouterr().out
 
 
+def test_benchmark_result_exchange(tmp_path: Path) -> None:
+    from memory_agent_eval_kit.submissions import (
+        EXCHANGE_SCHEMA_VERSION,
+        export_benchmark_results,
+        import_benchmark_results,
+    )
+
+    report_path = tmp_path / "report.json"
+    exchange_path = tmp_path / "exchange.json"
+    report_path.write_text(json.dumps({"metrics": {"overall_score": 1.0}}), encoding="utf-8")
+    package = export_benchmark_results(
+        report_path,
+        exchange_path,
+        agent_name="agent",
+        benchmark_version="v0.test",
+    )
+    imported = import_benchmark_results(exchange_path)
+    assert package.schema_version == EXCHANGE_SCHEMA_VERSION
+    assert imported.agent_name == "agent"
+    assert imported.report["metrics"]["overall_score"] == 1.0
+
+
 def test_leaderboard_generation(tmp_path: Path) -> None:
     from memory_agent_eval_kit.leaderboards import LeaderboardGenerator
 
