@@ -24,6 +24,7 @@ Category: TypeAlias = Literal[
     "memory_drift",
     "long_horizon",
     "noisy_memory",
+    "preference_evolution",
 ]
 
 

@@ -5920,5 +5920,218 @@
       "noise_profile": "relevant+irrelevant+distractor"
     },
     "description": "Retrieve target memory despite noise and distractors."
+  },
+  {
+    "scenario_id": "preference_evolution_001_current",
+    "category": "preference_evolution",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "pref_1_old",
+        "timestamp": "2024-01-01T00:00:00Z",
+        "content": "Old beverage preference was coffee"
+      },
+      {
+        "type": "fact",
+        "memory_id": "pref_1_prior",
+        "timestamp": "2025-01-01T00:00:00Z",
+        "content": "Previous beverage preference was tea"
+      },
+      {
+        "type": "correction",
+        "memory_id": "pref_1_current",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "supersedes": "pref_1_old",
+        "content": "Current beverage preference is espresso"
+      }
+    ],
+    "query": "What is my current beverage preference?",
+    "expected_answer": "espresso",
+    "negative_assertions": [
+      "coffee",
+      "tea"
+    ],
+    "expected_behavior": {
+      "answer": "espresso",
+      "preference_stage": "current"
+    },
+    "description": "Recall latest evolved preference."
+  },
+  {
+    "scenario_id": "preference_evolution_001_previous",
+    "category": "preference_evolution",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "pref_1_old",
+        "timestamp": "2024-01-01T00:00:00Z",
+        "content": "Old beverage preference was coffee"
+      },
+      {
+        "type": "fact",
+        "memory_id": "pref_1_prior",
+        "timestamp": "2025-01-01T00:00:00Z",
+        "content": "Previous beverage preference was tea"
+      },
+      {
+        "type": "correction",
+        "memory_id": "pref_1_current",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "supersedes": "pref_1_old",
+        "content": "Current beverage preference is espresso"
+      }
+    ],
+    "query": "What was my previous beverage preference?",
+    "expected_answer": "tea",
+    "negative_assertions": [
+      "espresso"
+    ],
+    "expected_behavior": {
+      "answer": "tea",
+      "preference_stage": "previous"
+    },
+    "description": "Recall immediately previous preference."
+  },
+  {
+    "scenario_id": "preference_evolution_002_current",
+    "category": "preference_evolution",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "pref_2_old",
+        "timestamp": "2024-01-01T00:00:00Z",
+        "content": "Old editor preference was Vim"
+      },
+      {
+        "type": "fact",
+        "memory_id": "pref_2_prior",
+        "timestamp": "2025-01-01T00:00:00Z",
+        "content": "Previous editor preference was VS Code"
+      },
+      {
+        "type": "correction",
+        "memory_id": "pref_2_current",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "supersedes": "pref_2_old",
+        "content": "Current editor preference is Cursor"
+      }
+    ],
+    "query": "What is my current editor preference?",
+    "expected_answer": "Cursor",
+    "negative_assertions": [
+      "Vim",
+      "VS Code"
+    ],
+    "expected_behavior": {
+      "answer": "Cursor",
+      "preference_stage": "current"
+    },
+    "description": "Recall latest evolved preference."
+  },
+  {
+    "scenario_id": "preference_evolution_002_previous",
+    "category": "preference_evolution",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "pref_2_old",
+        "timestamp": "2024-01-01T00:00:00Z",
+        "content": "Old editor preference was Vim"
+      },
+      {
+        "type": "fact",
+        "memory_id": "pref_2_prior",
+        "timestamp": "2025-01-01T00:00:00Z",
+        "content": "Previous editor preference was VS Code"
+      },
+      {
+        "type": "correction",
+        "memory_id": "pref_2_current",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "supersedes": "pref_2_old",
+        "content": "Current editor preference is Cursor"
+      }
+    ],
+    "query": "What was my previous editor preference?",
+    "expected_answer": "VS Code",
+    "negative_assertions": [
+      "Cursor"
+    ],
+    "expected_behavior": {
+      "answer": "VS Code",
+      "preference_stage": "previous"
+    },
+    "description": "Recall immediately previous preference."
+  },
+  {
+    "scenario_id": "preference_evolution_003_current",
+    "category": "preference_evolution",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "pref_3_old",
+        "timestamp": "2024-01-01T00:00:00Z",
+        "content": "Old workout preference was running"
+      },
+      {
+        "type": "fact",
+        "memory_id": "pref_3_prior",
+        "timestamp": "2025-01-01T00:00:00Z",
+        "content": "Previous workout preference was cycling"
+      },
+      {
+        "type": "correction",
+        "memory_id": "pref_3_current",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "supersedes": "pref_3_old",
+        "content": "Current workout preference is rowing"
+      }
+    ],
+    "query": "What is my current workout preference?",
+    "expected_answer": "rowing",
+    "negative_assertions": [
+      "running",
+      "cycling"
+    ],
+    "expected_behavior": {
+      "answer": "rowing",
+      "preference_stage": "current"
+    },
+    "description": "Recall latest evolved preference."
+  },
+  {
+    "scenario_id": "preference_evolution_003_previous",
+    "category": "preference_evolution",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "pref_3_old",
+        "timestamp": "2024-01-01T00:00:00Z",
+        "content": "Old workout preference was running"
+      },
+      {
+        "type": "fact",
+        "memory_id": "pref_3_prior",
+        "timestamp": "2025-01-01T00:00:00Z",
+        "content": "Previous workout preference was cycling"
+      },
+      {
+        "type": "correction",
+        "memory_id": "pref_3_current",
+        "timestamp": "2026-01-01T00:00:00Z",
+        "supersedes": "pref_3_old",
+        "content": "Current workout preference is rowing"
+      }
+    ],
+    "query": "What was my previous workout preference?",
+    "expected_answer": "cycling",
+    "negative_assertions": [
+      "rowing"
+    ],
+    "expected_behavior": {
+      "answer": "cycling",
+      "preference_stage": "previous"
+    },
+    "description": "Recall immediately previous preference."
   }
 ]

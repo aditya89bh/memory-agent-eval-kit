@@ -23,6 +23,7 @@ from memory_agent_eval_kit.evaluators import (
     MemoryLeakageEvaluator,
     NoisyMemoryEvaluator,
     PoisoningEvaluator,
+    PreferenceEvolutionEvaluator,
     RecallEvaluator,
     ScenarioEvaluator,
     StaleMemoryEvaluator,
@@ -67,6 +68,7 @@ class BenchmarkRunner:
             "memory_drift": MemoryDriftEvaluator(),
             "long_horizon": LongHorizonEvaluator(),
             "noisy_memory": NoisyMemoryEvaluator(),
+            "preference_evolution": PreferenceEvolutionEvaluator(),
         }
 
     def run(

@@ -767,3 +767,11 @@ def test_noisy_memory_benchmarks_measure_precision_and_robustness(tmp_path: Path
     assert len(run.results) == 5
     assert run.metrics.retrieval_precision == 1.0
     assert run.metrics.retrieval_robustness == 1.0
+
+
+def test_preference_evolution_benchmarks_measure_updates(tmp_path: Path) -> None:
+    run = BenchmarkRunner(SimpleMemoryAgent()).run(
+        categories=["preference_evolution"], report_dir=tmp_path
+    )
+    assert len(run.results) == 6
+    assert run.metrics.preference_update_accuracy == 1.0

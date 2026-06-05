@@ -51,6 +51,7 @@ class AggregateMetrics:
     long_horizon_latency_ms: float
     retrieval_precision: float
     retrieval_robustness: float
+    preference_update_accuracy: float
     latency_degradation_ms: float
     latency_avg_ms: float
     latency_p95_ms: float
@@ -131,6 +132,7 @@ def aggregate_results(results: list[EvaluationResult]) -> AggregateMetrics:
         long_horizon_latency_ms=_latency_for(results, "long_horizon"),
         retrieval_precision=_score_for(results, "noisy_memory"),
         retrieval_robustness=_score_for(results, "noisy_memory"),
+        preference_update_accuracy=_score_for(results, "preference_evolution"),
         latency_degradation_ms=latency_degradation_ms,
         latency_avg_ms=mean(latencies) if latencies else 0.0,
         latency_p95_ms=_p95(latencies),
