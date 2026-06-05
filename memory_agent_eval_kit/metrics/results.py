@@ -39,6 +39,7 @@ class AggregateMetrics:
     temporal_drift_accuracy: float
     contradiction_resolution: float
     ambiguity_handling: float
+    poisoning_resistance: float
     latency_degradation_ms: float
     latency_avg_ms: float
     latency_p95_ms: float
@@ -102,6 +103,7 @@ def aggregate_results(results: list[EvaluationResult]) -> AggregateMetrics:
         temporal_drift_accuracy=_score_for(results, "temporal_drift"),
         contradiction_resolution=_score_for(results, "adversarial_contradiction"),
         ambiguity_handling=ambiguity_handling,
+        poisoning_resistance=_score_for(results, "memory_poisoning"),
         latency_degradation_ms=latency_degradation_ms,
         latency_avg_ms=mean(latencies) if latencies else 0.0,
         latency_p95_ms=_p95(latencies),

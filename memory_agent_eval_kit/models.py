@@ -17,6 +17,7 @@ Category: TypeAlias = Literal[
     "stress",
     "temporal_drift",
     "adversarial_contradiction",
+    "memory_poisoning",
 ]
 
 

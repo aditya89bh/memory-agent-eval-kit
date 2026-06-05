@@ -51,6 +51,8 @@ class SimpleMemoryAgent(MemoryAgentAdapter):
         if record.get("active", True) is False:
             self.delete_memory(memory_id)
             return
+        if _is_untrusted(record) and self._has_trusted_overlap(record):
+            return
         self._memories[memory_id] = record
 
     def delete_memory(self, memory_id: str) -> None:
@@ -59,6 +61,15 @@ class SimpleMemoryAgent(MemoryAgentAdapter):
     @property
     def memory_count(self) -> int:
         return len(self._memories)
+
+    def _has_trusted_overlap(self, record: MemoryRecord) -> bool:
+        new_terms = _terms(str(record.get("content", "")))
+        for memory in self._memories.values():
+            if str(memory.get("source", "")).casefold() != "trusted":
+                continue
+            if len(new_terms & _terms(str(memory.get("content", "")))) >= 2:
+                return True
+        return False
 
     def _next_id(self) -> str:
         self._counter += 1
@@ -199,3 +210,8 @@ def _asks_for_previous(prompt: str) -> bool:
 
 def _asks_for_timeline(prompt: str) -> bool:
     return any(word in prompt.casefold() for word in ("timeline", "evolve", "history"))
+
+
+def _is_untrusted(memory: MemoryRecord) -> bool:
+    source = str(memory.get("source", "")).casefold()
+    return source in {"untrusted", "malicious"} or bool(memory.get("malicious", False))

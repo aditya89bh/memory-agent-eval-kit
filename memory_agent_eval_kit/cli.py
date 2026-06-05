@@ -22,6 +22,7 @@ CATEGORY_CHOICES: tuple[Category, ...] = (
     "stress",
     "temporal_drift",
     "adversarial_contradiction",
+    "memory_poisoning",
 )
 
 
