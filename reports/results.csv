@@ -1,0 +1,71 @@
+scenario_id,category,success,score,latency_ms,actual_answer,expected_answer
+recall_001,recall,True,1.000,0.036,Favorite robot brand is Universal Robots,Universal Robots
+recall_002,recall,True,1.000,0.020,Preferred programming language is Python,Python
+recall_003,recall,True,1.000,0.017,Favorite ROS visualization tool is RViz,RViz
+recall_004,recall,True,1.000,0.015,Preferred coffee is cold brew,cold brew
+recall_005,recall,True,1.000,0.016,Home lab computer is named owlnuc12,owlnuc12
+recall_006,recall,True,1.000,0.014,Favorite database for vectors is Qdrant,Qdrant
+recall_007,recall,True,1.000,0.012,Preferred note format is Markdown,Markdown
+recall_008,recall,True,1.000,0.020,Favorite robot arm payload class is collaborative cobot,collaborative cobot
+recall_009,recall,True,1.000,0.014,Preferred task tracker is GitHub Issues,GitHub Issues
+recall_010,recall,True,1.000,0.012,Favorite simulation stack is Gazebo,Gazebo
+contradiction_001,contradiction,True,1.000,0.022,A contradiction is present in memory; this needs clarification.,contradiction
+contradiction_002,contradiction,True,1.000,0.029,A contradiction is present in memory; this needs clarification.,contradiction
+contradiction_003,contradiction,True,1.000,0.021,A contradiction is present in memory; this needs clarification.,contradiction
+contradiction_004,contradiction,True,1.000,0.021,A contradiction is present in memory; this needs clarification.,contradiction
+contradiction_005,contradiction,True,1.000,0.022,A contradiction is present in memory; this needs clarification.,contradiction
+contradiction_006,contradiction,True,1.000,0.023,A contradiction is present in memory; this needs clarification.,contradiction
+contradiction_007,contradiction,True,1.000,0.020,A contradiction is present in memory; this needs clarification.,contradiction
+contradiction_008,contradiction,True,1.000,0.018,A contradiction is present in memory; this needs clarification.,contradiction
+contradiction_009,contradiction,True,1.000,0.018,A contradiction is present in memory; this needs clarification.,contradiction
+contradiction_010,contradiction,True,1.000,0.019,A contradiction is present in memory; this needs clarification.,contradiction
+correction_001,correction,True,1.000,0.013,Favorite robot brand is Universal Robots,Universal Robots
+correction_002,correction,True,1.000,0.012,Preferred language is Python,Python
+correction_003,correction,True,1.000,0.011,Meeting is on Tuesday,Tuesday
+correction_004,correction,True,1.000,0.011,The API endpoint is /v2/search,/v2/search
+correction_005,correction,True,1.000,0.010,Budget is 300 dollars,300 dollars
+correction_006,correction,True,1.000,0.010,Timezone is Asia/Kolkata,Asia/Kolkata
+correction_007,correction,True,1.000,0.011,Use GPT-5 for routing,GPT-5
+correction_008,correction,True,1.000,0.011,Contact name is Priya,Priya
+correction_009,correction,True,1.000,0.010,Deadline is June 12,June 12
+correction_010,correction,True,1.000,0.011,Preferred package manager is uv,uv
+forgetting_001,forgetting,True,1.000,0.005,I do not know.,I do not know
+forgetting_002,forgetting,True,1.000,0.005,I do not know.,I do not know
+forgetting_003,forgetting,True,1.000,0.004,I do not know.,I do not know
+forgetting_004,forgetting,True,1.000,0.004,I do not know.,I do not know
+forgetting_005,forgetting,True,1.000,0.005,I do not know.,I do not know
+forgetting_006,forgetting,True,1.000,0.004,I do not know.,I do not know
+forgetting_007,forgetting,True,1.000,0.005,I do not know.,I do not know
+forgetting_008,forgetting,True,1.000,0.005,I do not know.,I do not know
+forgetting_009,forgetting,True,1.000,0.004,I do not know.,I do not know
+forgetting_010,forgetting,True,1.000,0.009,I do not know.,I do not know
+temporal_001,temporal,True,1.000,0.025,On 2026-02-01 preferred model was GPT-5,GPT-5
+temporal_002,temporal,True,1.000,0.024,On Wednesday meeting was at 3 PM,3 PM
+temporal_003,temporal,True,1.000,0.018,In Q2 budget was 1500,1500
+temporal_004,temporal,True,1.000,0.017,Today status is active,active
+temporal_005,temporal,True,1.000,0.018,This week database is Qdrant,Qdrant
+temporal_006,temporal,True,1.000,0.019,Evening plan was deployment,deployment
+temporal_007,temporal,True,1.000,0.015,Version 2 uses hybrid search,hybrid search
+temporal_008,temporal,True,1.000,0.017,March office was Bengaluru,Bengaluru
+temporal_009,temporal,True,1.000,0.018,New roadmap has memory evals,memory evals
+temporal_010,temporal,True,1.000,0.019,At 12:00 task was coding,coding
+stale_memory_001,stale_memory,True,1.000,0.010,Current preferred model is GPT-5,GPT-5
+stale_memory_002,stale_memory,True,1.000,0.013,Current city is Delhi,Delhi
+stale_memory_003,stale_memory,True,1.000,0.009,Current endpoint is /new,/new
+stale_memory_004,stale_memory,True,1.000,0.009,Current budget is 250,250
+stale_memory_005,stale_memory,True,1.000,0.009,Current owner is Bob,Bob
+stale_memory_006,stale_memory,True,1.000,0.009,Current priority is high,high
+stale_memory_007,stale_memory,True,1.000,0.009,Current framework is FastAPI,FastAPI
+stale_memory_008,stale_memory,True,1.000,0.009,Current branch is main,main
+stale_memory_009,stale_memory,True,1.000,0.009,Current region is ap-south,ap-south
+stale_memory_010,stale_memory,True,1.000,0.009,Current vendor is VendorB,VendorB
+continuity_001,continuity,True,1.000,0.013,Favorite robot brand is Universal Robots,Universal Robots
+continuity_002,continuity,True,1.000,0.012,Project codename is Lotus,Lotus
+continuity_003,continuity,True,1.000,0.010,Preferred timezone is Asia/Kolkata,Asia/Kolkata
+continuity_004,continuity,True,1.000,0.011,User likes concise reports,concise
+continuity_005,continuity,True,1.000,0.011,Current sprint goal is memory evals,memory evals
+continuity_006,continuity,True,1.000,0.011,Preferred CI is GitHub Actions,GitHub Actions
+continuity_007,continuity,True,1.000,0.011,Agent name is Gulab,Gulab
+continuity_008,continuity,True,1.000,0.009,Preferred license is MIT,MIT
+continuity_009,continuity,True,1.000,0.011,Main repo is memory-agent-eval-kit,memory-agent-eval-kit
+continuity_010,continuity,True,1.000,0.012,Benchmark target is 70 scenarios,70

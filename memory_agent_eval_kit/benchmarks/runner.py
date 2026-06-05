@@ -1,0 +1,59 @@
+"""Benchmark runner orchestration."""
+
+from __future__ import annotations
+
+from dataclasses import dataclass
+from pathlib import Path
+
+from memory_agent_eval_kit.adapters import MemoryAgentAdapter
+from memory_agent_eval_kit.datasets import load_scenarios
+from memory_agent_eval_kit.evaluators import (
+    ContinuityEvaluator,
+    ContradictionEvaluator,
+    CorrectionEvaluator,
+    ForgettingEvaluator,
+    RecallEvaluator,
+    ScenarioEvaluator,
+    StaleMemoryEvaluator,
+    TemporalEvaluator,
+)
+from memory_agent_eval_kit.metrics import AggregateMetrics, EvaluationResult, aggregate_results
+from memory_agent_eval_kit.models import Category
+from memory_agent_eval_kit.reports.generator import ReportGenerator
+
+
+@dataclass(frozen=True)
+class BenchmarkRun:
+    results: list[EvaluationResult]
+    metrics: AggregateMetrics
+
+
+class BenchmarkRunner:
+    """Loads scenarios, runs evaluators, aggregates metrics, and writes reports."""
+
+    def __init__(self, adapter: MemoryAgentAdapter, dataset_path: Path | str | None = None) -> None:
+        self.adapter = adapter
+        self.dataset_path = dataset_path
+        self.evaluators: dict[Category, ScenarioEvaluator] = {
+            "recall": RecallEvaluator(),
+            "contradiction": ContradictionEvaluator(),
+            "correction": CorrectionEvaluator(),
+            "forgetting": ForgettingEvaluator(),
+            "temporal": TemporalEvaluator(),
+            "stale_memory": StaleMemoryEvaluator(),
+            "continuity": ContinuityEvaluator(),
+        }
+
+    def run(
+        self, categories: list[Category] | None = None, report_dir: Path | str | None = "reports"
+    ) -> BenchmarkRun:
+        scenarios = load_scenarios(self.dataset_path, categories=categories)
+        results = [
+            self.evaluators[scenario.category].evaluate(scenario, self.adapter)
+            for scenario in scenarios
+        ]
+        metrics = aggregate_results(results)
+        run = BenchmarkRun(results=results, metrics=metrics)
+        if report_dir is not None:
+            ReportGenerator(Path(report_dir)).write(run)
+        return run

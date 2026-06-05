@@ -1,0 +1,987 @@
+{
+  "metrics": {
+    "overall_score": 1.0,
+    "recall_accuracy": 1.0,
+    "contradiction_accuracy": 1.0,
+    "correction_accuracy": 1.0,
+    "forgetting_accuracy": 1.0,
+    "temporal_accuracy": 1.0,
+    "stale_memory_accuracy": 1.0,
+    "continuity_accuracy": 1.0,
+    "latency_avg_ms": 0.013526712843616093,
+    "latency_p95_ms": 0.023061991669237614,
+    "total_scenarios": 70
+  },
+  "results": [
+    {
+      "scenario_id": "recall_001",
+      "category": "recall",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.03578100586310029,
+      "details": {
+        "query": "What robot brand do I prefer?",
+        "expected_answer": "Universal Robots",
+        "expected_absent": [],
+        "actual_answer": "Favorite robot brand is Universal Robots"
+      }
+    },
+    {
+      "scenario_id": "recall_002",
+      "category": "recall",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.01953201717697084,
+      "details": {
+        "query": "What programming language do I prefer?",
+        "expected_answer": "Python",
+        "expected_absent": [],
+        "actual_answer": "Preferred programming language is Python"
+      }
+    },
+    {
+      "scenario_id": "recall_003",
+      "category": "recall",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.016770005458965898,
+      "details": {
+        "query": "What ROS visualization tool do I like?",
+        "expected_answer": "RViz",
+        "expected_absent": [],
+        "actual_answer": "Favorite ROS visualization tool is RViz"
+      }
+    },
+    {
+      "scenario_id": "recall_004",
+      "category": "recall",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.015492987586185336,
+      "details": {
+        "query": "What coffee do I prefer?",
+        "expected_answer": "cold brew",
+        "expected_absent": [],
+        "actual_answer": "Preferred coffee is cold brew"
+      }
+    },
+    {
+      "scenario_id": "recall_005",
+      "category": "recall",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.01637099194340408,
+      "details": {
+        "query": "What is my home lab computer called?",
+        "expected_answer": "owlnuc12",
+        "expected_absent": [],
+        "actual_answer": "Home lab computer is named owlnuc12"
+      }
+    },
+    {
+      "scenario_id": "recall_006",
+      "category": "recall",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.014045013813301921,
+      "details": {
+        "query": "Which vector database do I prefer?",
+        "expected_answer": "Qdrant",
+        "expected_absent": [],
+        "actual_answer": "Favorite database for vectors is Qdrant"
+      }
+    },
+    {
+      "scenario_id": "recall_007",
+      "category": "recall",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.012347998563200235,
+      "details": {
+        "query": "What note format do I prefer?",
+        "expected_answer": "Markdown",
+        "expected_absent": [],
+        "actual_answer": "Preferred note format is Markdown"
+      }
+    },
+    {
+      "scenario_id": "recall_008",
+      "category": "recall",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.019648985471576452,
+      "details": {
+        "query": "What robot arm class do I like?",
+        "expected_answer": "collaborative cobot",
+        "expected_absent": [],
+        "actual_answer": "Favorite robot arm payload class is collaborative cobot"
+      }
+    },
+    {
+      "scenario_id": "recall_009",
+      "category": "recall",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.01375400461256504,
+      "details": {
+        "query": "What task tracker do I prefer?",
+        "expected_answer": "GitHub Issues",
+        "expected_absent": [],
+        "actual_answer": "Preferred task tracker is GitHub Issues"
+      }
+    },
+    {
+      "scenario_id": "recall_010",
+      "category": "recall",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.012189993867650628,
+      "details": {
+        "query": "What simulation stack do I prefer?",
+        "expected_answer": "Gazebo",
+        "expected_absent": [],
+        "actual_answer": "Favorite simulation stack is Gazebo"
+      }
+    },
+    {
+      "scenario_id": "contradiction_001",
+      "category": "contradiction",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.021518004359677434,
+      "details": {
+        "query": "Am I allergic to peanuts?",
+        "expected_answer": "contradiction",
+        "expected_absent": [],
+        "actual_answer": "A contradiction is present in memory; this needs clarification."
+      }
+    },
+    {
+      "scenario_id": "contradiction_002",
+      "category": "contradiction",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.028942013159394264,
+      "details": {
+        "query": "What should you say about my preferred IDE?",
+        "expected_answer": "contradiction",
+        "expected_absent": [],
+        "actual_answer": "A contradiction is present in memory; this needs clarification."
+      }
+    },
+    {
+      "scenario_id": "contradiction_003",
+      "category": "contradiction",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.0206130207516253,
+      "details": {
+        "query": "Where do I live?",
+        "expected_answer": "contradiction",
+        "expected_absent": [],
+        "actual_answer": "A contradiction is present in memory; this needs clarification."
+      }
+    },
+    {
+      "scenario_id": "contradiction_004",
+      "category": "contradiction",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.02143500023521483,
+      "details": {
+        "query": "What is my favorite language?",
+        "expected_answer": "contradiction",
+        "expected_absent": [],
+        "actual_answer": "A contradiction is present in memory; this needs clarification."
+      }
+    },
+    {
+      "scenario_id": "contradiction_005",
+      "category": "contradiction",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.021562009351328015,
+      "details": {
+        "query": "When is the meeting?",
+        "expected_answer": "contradiction",
+        "expected_absent": [],
+        "actual_answer": "A contradiction is present in memory; this needs clarification."
+      }
+    },
+    {
+      "scenario_id": "contradiction_006",
+      "category": "contradiction",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.023061991669237614,
+      "details": {
+        "query": "Which robot brand do I prefer?",
+        "expected_answer": "contradiction",
+        "expected_absent": [],
+        "actual_answer": "A contradiction is present in memory; this needs clarification."
+      }
+    },
+    {
+      "scenario_id": "contradiction_007",
+      "category": "contradiction",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.02027399023063481,
+      "details": {
+        "query": "What is the budget limit?",
+        "expected_answer": "contradiction",
+        "expected_absent": [],
+        "actual_answer": "A contradiction is present in memory; this needs clarification."
+      }
+    },
+    {
+      "scenario_id": "contradiction_008",
+      "category": "contradiction",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.018378981621935964,
+      "details": {
+        "query": "What is the project status?",
+        "expected_answer": "contradiction",
+        "expected_absent": [],
+        "actual_answer": "A contradiction is present in memory; this needs clarification."
+      }
+    },
+    {
+      "scenario_id": "contradiction_009",
+      "category": "contradiction",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.01763098407536745,
+      "details": {
+        "query": "Which units should be used?",
+        "expected_answer": "contradiction",
+        "expected_absent": [],
+        "actual_answer": "A contradiction is present in memory; this needs clarification."
+      }
+    },
+    {
+      "scenario_id": "contradiction_010",
+      "category": "contradiction",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.01884199446067214,
+      "details": {
+        "query": "What is the customer tier?",
+        "expected_answer": "contradiction",
+        "expected_absent": [],
+        "actual_answer": "A contradiction is present in memory; this needs clarification."
+      }
+    },
+    {
+      "scenario_id": "correction_001",
+      "category": "correction",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.013287004549056292,
+      "details": {
+        "query": "What robot brand do I prefer now?",
+        "expected_answer": "Universal Robots",
+        "expected_absent": [
+          "ABB"
+        ],
+        "actual_answer": "Favorite robot brand is Universal Robots"
+      }
+    },
+    {
+      "scenario_id": "correction_002",
+      "category": "correction",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.011925993021577597,
+      "details": {
+        "query": "What programming language do I prefer now?",
+        "expected_answer": "Python",
+        "expected_absent": [
+          "JavaScript"
+        ],
+        "actual_answer": "Preferred language is Python"
+      }
+    },
+    {
+      "scenario_id": "correction_003",
+      "category": "correction",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.011420983355492353,
+      "details": {
+        "query": "When is the meeting now?",
+        "expected_answer": "Tuesday",
+        "expected_absent": [
+          "on Monday"
+        ],
+        "actual_answer": "Meeting is on Tuesday"
+      }
+    },
+    {
+      "scenario_id": "correction_004",
+      "category": "correction",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.011458003427833319,
+      "details": {
+        "query": "What API endpoint should be used now?",
+        "expected_answer": "/v2/search",
+        "expected_absent": [
+          "/v1/search"
+        ],
+        "actual_answer": "The API endpoint is /v2/search"
+      }
+    },
+    {
+      "scenario_id": "correction_005",
+      "category": "correction",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.010303017916157842,
+      "details": {
+        "query": "What is the corrected budget?",
+        "expected_answer": "300 dollars",
+        "expected_absent": [
+          "200 dollars"
+        ],
+        "actual_answer": "Budget is 300 dollars"
+      }
+    },
+    {
+      "scenario_id": "correction_006",
+      "category": "correction",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.009784998837858438,
+      "details": {
+        "query": "What is the corrected timezone?",
+        "expected_answer": "Asia/Kolkata",
+        "expected_absent": [
+          "UTC"
+        ],
+        "actual_answer": "Timezone is Asia/Kolkata"
+      }
+    },
+    {
+      "scenario_id": "correction_007",
+      "category": "correction",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.011130992788821459,
+      "details": {
+        "query": "Which model should route now?",
+        "expected_answer": "GPT-5",
+        "expected_absent": [
+          "Use GPT-4 for routing"
+        ],
+        "actual_answer": "Use GPT-5 for routing"
+      }
+    },
+    {
+      "scenario_id": "correction_008",
+      "category": "correction",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.010692980140447617,
+      "details": {
+        "query": "What is the corrected contact name?",
+        "expected_answer": "Priya",
+        "expected_absent": [
+          "Contact name is Riya"
+        ],
+        "actual_answer": "Contact name is Priya"
+      }
+    },
+    {
+      "scenario_id": "correction_009",
+      "category": "correction",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.010141986422240734,
+      "details": {
+        "query": "What is the corrected deadline?",
+        "expected_answer": "June 12",
+        "expected_absent": [
+          "June 10"
+        ],
+        "actual_answer": "Deadline is June 12"
+      }
+    },
+    {
+      "scenario_id": "correction_010",
+      "category": "correction",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.011185999028384686,
+      "details": {
+        "query": "What package manager do I prefer now?",
+        "expected_answer": "uv",
+        "expected_absent": [
+          "pip"
+        ],
+        "actual_answer": "Preferred package manager is uv"
+      }
+    },
+    {
+      "scenario_id": "forgetting_001",
+      "category": "forgetting",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.005008012522011995,
+      "details": {
+        "query": "What is my temporary password?",
+        "expected_answer": "I do not know",
+        "expected_absent": [
+          "alpha123"
+        ],
+        "actual_answer": "I do not know."
+      }
+    },
+    {
+      "scenario_id": "forgetting_002",
+      "category": "forgetting",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.004581990651786327,
+      "details": {
+        "query": "What is the door code?",
+        "expected_answer": "I do not know",
+        "expected_absent": [
+          "4455"
+        ],
+        "actual_answer": "I do not know."
+      }
+    },
+    {
+      "scenario_id": "forgetting_003",
+      "category": "forgetting",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.004275992978364229,
+      "details": {
+        "query": "What is the private token?",
+        "expected_answer": "I do not know",
+        "expected_absent": [
+          "secret-token"
+        ],
+        "actual_answer": "I do not know."
+      }
+    },
+    {
+      "scenario_id": "forgetting_004",
+      "category": "forgetting",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.004342000465840101,
+      "details": {
+        "query": "What is my old address?",
+        "expected_answer": "I do not know",
+        "expected_absent": [
+          "12 Lake Road"
+        ],
+        "actual_answer": "I do not know."
+      }
+    },
+    {
+      "scenario_id": "forgetting_005",
+      "category": "forgetting",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.004625995643436909,
+      "details": {
+        "query": "What was the discarded codename?",
+        "expected_answer": "I do not know",
+        "expected_absent": [
+          "Falcon"
+        ],
+        "actual_answer": "I do not know."
+      }
+    },
+    {
+      "scenario_id": "forgetting_006",
+      "category": "forgetting",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.003550987457856536,
+      "details": {
+        "query": "What is the OTP?",
+        "expected_answer": "I do not know",
+        "expected_absent": [
+          "123456"
+        ],
+        "actual_answer": "I do not know."
+      }
+    },
+    {
+      "scenario_id": "forgetting_007",
+      "category": "forgetting",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.00467000063508749,
+      "details": {
+        "query": "When was the cancelled appointment?",
+        "expected_answer": "I do not know",
+        "expected_absent": [
+          "Friday"
+        ],
+        "actual_answer": "I do not know."
+      }
+    },
+    {
+      "scenario_id": "forgetting_008",
+      "category": "forgetting",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.004864006768912077,
+      "details": {
+        "query": "What is the deprecated API key?",
+        "expected_answer": "I do not know",
+        "expected_absent": [
+          "xyz-key"
+        ],
+        "actual_answer": "I do not know."
+      }
+    },
+    {
+      "scenario_id": "forgetting_009",
+      "category": "forgetting",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.004494009772315621,
+      "details": {
+        "query": "What is the old phone number?",
+        "expected_answer": "I do not know",
+        "expected_absent": [
+          "555-0101"
+        ],
+        "actual_answer": "I do not know."
+      }
+    },
+    {
+      "scenario_id": "forgetting_010",
+      "category": "forgetting",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.00861799344420433,
+      "details": {
+        "query": "What forgotten preference did I have?",
+        "expected_answer": "I do not know",
+        "expected_absent": [
+          "tea"
+        ],
+        "actual_answer": "I do not know."
+      }
+    },
+    {
+      "scenario_id": "temporal_001",
+      "category": "temporal",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.025165005354210734,
+      "details": {
+        "query": "What model was preferred most recently?",
+        "expected_answer": "GPT-5",
+        "expected_absent": [],
+        "actual_answer": "On 2026-02-01 preferred model was GPT-5"
+      }
+    },
+    {
+      "scenario_id": "temporal_002",
+      "category": "temporal",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.024034990929067135,
+      "details": {
+        "query": "What is the latest meeting time?",
+        "expected_answer": "3 PM",
+        "expected_absent": [],
+        "actual_answer": "On Wednesday meeting was at 3 PM"
+      }
+    },
+    {
+      "scenario_id": "temporal_003",
+      "category": "temporal",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.01824100036174059,
+      "details": {
+        "query": "What is the current budget?",
+        "expected_answer": "1500",
+        "expected_absent": [],
+        "actual_answer": "In Q2 budget was 1500"
+      }
+    },
+    {
+      "scenario_id": "temporal_004",
+      "category": "temporal",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.01740100560709834,
+      "details": {
+        "query": "What is the latest status?",
+        "expected_answer": "active",
+        "expected_absent": [],
+        "actual_answer": "Today status is active"
+      }
+    },
+    {
+      "scenario_id": "temporal_005",
+      "category": "temporal",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.01802900806069374,
+      "details": {
+        "query": "Which database is current?",
+        "expected_answer": "Qdrant",
+        "expected_absent": [],
+        "actual_answer": "This week database is Qdrant"
+      }
+    },
+    {
+      "scenario_id": "temporal_006",
+      "category": "temporal",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.01883797813206911,
+      "details": {
+        "query": "What is the later plan?",
+        "expected_answer": "deployment",
+        "expected_absent": [],
+        "actual_answer": "Evening plan was deployment"
+      }
+    },
+    {
+      "scenario_id": "temporal_007",
+      "category": "temporal",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.015085010090842843,
+      "details": {
+        "query": "What search method is latest?",
+        "expected_answer": "hybrid search",
+        "expected_absent": [],
+        "actual_answer": "Version 2 uses hybrid search"
+      }
+    },
+    {
+      "scenario_id": "temporal_008",
+      "category": "temporal",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.016967009287327528,
+      "details": {
+        "query": "What is the latest office?",
+        "expected_answer": "Bengaluru",
+        "expected_absent": [],
+        "actual_answer": "March office was Bengaluru"
+      }
+    },
+    {
+      "scenario_id": "temporal_009",
+      "category": "temporal",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.01800700556486845,
+      "details": {
+        "query": "What is on the latest roadmap?",
+        "expected_answer": "memory evals",
+        "expected_absent": [],
+        "actual_answer": "New roadmap has memory evals"
+      }
+    },
+    {
+      "scenario_id": "temporal_010",
+      "category": "temporal",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.019495986634865403,
+      "details": {
+        "query": "What task came later?",
+        "expected_answer": "coding",
+        "expected_absent": [],
+        "actual_answer": "At 12:00 task was coding"
+      }
+    },
+    {
+      "scenario_id": "stale_memory_001",
+      "category": "stale_memory",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.010335003025829792,
+      "details": {
+        "query": "What model should be used?",
+        "expected_answer": "GPT-5",
+        "expected_absent": [
+          "GPT-4"
+        ],
+        "actual_answer": "Current preferred model is GPT-5"
+      }
+    },
+    {
+      "scenario_id": "stale_memory_002",
+      "category": "stale_memory",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.012998993042856455,
+      "details": {
+        "query": "Which city is current?",
+        "expected_answer": "Delhi",
+        "expected_absent": [
+          "Pune"
+        ],
+        "actual_answer": "Current city is Delhi"
+      }
+    },
+    {
+      "scenario_id": "stale_memory_003",
+      "category": "stale_memory",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.009320006938651204,
+      "details": {
+        "query": "Which endpoint is current?",
+        "expected_answer": "/new",
+        "expected_absent": [
+          "/old"
+        ],
+        "actual_answer": "Current endpoint is /new"
+      }
+    },
+    {
+      "scenario_id": "stale_memory_004",
+      "category": "stale_memory",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.00902600004337728,
+      "details": {
+        "query": "What budget is current?",
+        "expected_answer": "250",
+        "expected_absent": [
+          "100"
+        ],
+        "actual_answer": "Current budget is 250"
+      }
+    },
+    {
+      "scenario_id": "stale_memory_005",
+      "category": "stale_memory",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.009446986950933933,
+      "details": {
+        "query": "Who is the current owner?",
+        "expected_answer": "Bob",
+        "expected_absent": [
+          "Alice"
+        ],
+        "actual_answer": "Current owner is Bob"
+      }
+    },
+    {
+      "scenario_id": "stale_memory_006",
+      "category": "stale_memory",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.009276991477236152,
+      "details": {
+        "query": "What is the current priority?",
+        "expected_answer": "high",
+        "expected_absent": [
+          "low"
+        ],
+        "actual_answer": "Current priority is high"
+      }
+    },
+    {
+      "scenario_id": "stale_memory_007",
+      "category": "stale_memory",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.008970993803814054,
+      "details": {
+        "query": "Which framework is current?",
+        "expected_answer": "FastAPI",
+        "expected_absent": [
+          "Flask"
+        ],
+        "actual_answer": "Current framework is FastAPI"
+      }
+    },
+    {
+      "scenario_id": "stale_memory_008",
+      "category": "stale_memory",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.008722010534256697,
+      "details": {
+        "query": "Which branch is current?",
+        "expected_answer": "main",
+        "expected_absent": [
+          "master"
+        ],
+        "actual_answer": "Current branch is main"
+      }
+    },
+    {
+      "scenario_id": "stale_memory_009",
+      "category": "stale_memory",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.008672999683767557,
+      "details": {
+        "query": "Which region is current?",
+        "expected_answer": "ap-south",
+        "expected_absent": [
+          "us-east"
+        ],
+        "actual_answer": "Current region is ap-south"
+      }
+    },
+    {
+      "scenario_id": "stale_memory_010",
+      "category": "stale_memory",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.008714006980881095,
+      "details": {
+        "query": "Which vendor is current?",
+        "expected_answer": "VendorB",
+        "expected_absent": [
+          "VendorA"
+        ],
+        "actual_answer": "Current vendor is VendorB"
+      }
+    },
+    {
+      "scenario_id": "continuity_001",
+      "category": "continuity",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.01267399056814611,
+      "details": {
+        "query": "Across sessions, what robot brand do I prefer?",
+        "expected_answer": "Universal Robots",
+        "expected_absent": [],
+        "actual_answer": "Favorite robot brand is Universal Robots"
+      }
+    },
+    {
+      "scenario_id": "continuity_002",
+      "category": "continuity",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.011666998034343123,
+      "details": {
+        "query": "In this new session, what is the project codename?",
+        "expected_answer": "Lotus",
+        "expected_absent": [],
+        "actual_answer": "Project codename is Lotus"
+      }
+    },
+    {
+      "scenario_id": "continuity_003",
+      "category": "continuity",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.010433985153213143,
+      "details": {
+        "query": "Across sessions, what timezone should you use?",
+        "expected_answer": "Asia/Kolkata",
+        "expected_absent": [],
+        "actual_answer": "Preferred timezone is Asia/Kolkata"
+      }
+    },
+    {
+      "scenario_id": "continuity_004",
+      "category": "continuity",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.011217984138056636,
+      "details": {
+        "query": "In another session, how should reports be written?",
+        "expected_answer": "concise",
+        "expected_absent": [],
+        "actual_answer": "User likes concise reports"
+      }
+    },
+    {
+      "scenario_id": "continuity_005",
+      "category": "continuity",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.010752002708613873,
+      "details": {
+        "query": "What is the sprint goal across sessions?",
+        "expected_answer": "memory evals",
+        "expected_absent": [],
+        "actual_answer": "Current sprint goal is memory evals"
+      }
+    },
+    {
+      "scenario_id": "continuity_006",
+      "category": "continuity",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.010563002433627844,
+      "details": {
+        "query": "What CI should be used across sessions?",
+        "expected_answer": "GitHub Actions",
+        "expected_absent": [],
+        "actual_answer": "Preferred CI is GitHub Actions"
+      }
+    },
+    {
+      "scenario_id": "continuity_007",
+      "category": "continuity",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.011363998055458069,
+      "details": {
+        "query": "What is the agent name remembered across sessions?",
+        "expected_answer": "Gulab",
+        "expected_absent": [],
+        "actual_answer": "Agent name is Gulab"
+      }
+    },
+    {
+      "scenario_id": "continuity_008",
+      "category": "continuity",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.009476003469899297,
+      "details": {
+        "query": "What license should be used?",
+        "expected_answer": "MIT",
+        "expected_absent": [],
+        "actual_answer": "Preferred license is MIT"
+      }
+    },
+    {
+      "scenario_id": "continuity_009",
+      "category": "continuity",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.011074997019022703,
+      "details": {
+        "query": "What is the main repo across sessions?",
+        "expected_answer": "memory-agent-eval-kit",
+        "expected_absent": [],
+        "actual_answer": "Main repo is memory-agent-eval-kit"
+      }
+    },
+    {
+      "scenario_id": "continuity_010",
+      "category": "continuity",
+      "success": true,
+      "score": 1.0,
+      "latency_ms": 0.012345000868663192,
+      "details": {
+        "query": "How many scenarios is the benchmark target?",
+        "expected_answer": "70",
+        "expected_absent": [],
+        "actual_answer": "Benchmark target is 70 scenarios"
+      }
+    }
+  ]
+}

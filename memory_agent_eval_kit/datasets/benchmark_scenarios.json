@@ -1,0 +1,1392 @@
+[
+  {
+    "scenario_id": "recall_001",
+    "category": "recall",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "recall_001_memory",
+        "content": "Favorite robot brand is Universal Robots"
+      }
+    ],
+    "query": "What robot brand do I prefer?",
+    "expected_answer": "Universal Robots",
+    "description": "Recall a stored fact."
+  },
+  {
+    "scenario_id": "recall_002",
+    "category": "recall",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "recall_002_memory",
+        "content": "Preferred programming language is Python"
+      }
+    ],
+    "query": "What programming language do I prefer?",
+    "expected_answer": "Python",
+    "description": "Recall a stored fact."
+  },
+  {
+    "scenario_id": "recall_003",
+    "category": "recall",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "recall_003_memory",
+        "content": "Favorite ROS visualization tool is RViz"
+      }
+    ],
+    "query": "What ROS visualization tool do I like?",
+    "expected_answer": "RViz",
+    "description": "Recall a stored fact."
+  },
+  {
+    "scenario_id": "recall_004",
+    "category": "recall",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "recall_004_memory",
+        "content": "Preferred coffee is cold brew"
+      }
+    ],
+    "query": "What coffee do I prefer?",
+    "expected_answer": "cold brew",
+    "description": "Recall a stored fact."
+  },
+  {
+    "scenario_id": "recall_005",
+    "category": "recall",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "recall_005_memory",
+        "content": "Home lab computer is named owlnuc12"
+      }
+    ],
+    "query": "What is my home lab computer called?",
+    "expected_answer": "owlnuc12",
+    "description": "Recall a stored fact."
+  },
+  {
+    "scenario_id": "recall_006",
+    "category": "recall",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "recall_006_memory",
+        "content": "Favorite database for vectors is Qdrant"
+      }
+    ],
+    "query": "Which vector database do I prefer?",
+    "expected_answer": "Qdrant",
+    "description": "Recall a stored fact."
+  },
+  {
+    "scenario_id": "recall_007",
+    "category": "recall",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "recall_007_memory",
+        "content": "Preferred note format is Markdown"
+      }
+    ],
+    "query": "What note format do I prefer?",
+    "expected_answer": "Markdown",
+    "description": "Recall a stored fact."
+  },
+  {
+    "scenario_id": "recall_008",
+    "category": "recall",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "recall_008_memory",
+        "content": "Favorite robot arm payload class is collaborative cobot"
+      }
+    ],
+    "query": "What robot arm class do I like?",
+    "expected_answer": "collaborative cobot",
+    "description": "Recall a stored fact."
+  },
+  {
+    "scenario_id": "recall_009",
+    "category": "recall",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "recall_009_memory",
+        "content": "Preferred task tracker is GitHub Issues"
+      }
+    ],
+    "query": "What task tracker do I prefer?",
+    "expected_answer": "GitHub Issues",
+    "description": "Recall a stored fact."
+  },
+  {
+    "scenario_id": "recall_010",
+    "category": "recall",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "recall_010_memory",
+        "content": "Favorite simulation stack is Gazebo"
+      }
+    ],
+    "query": "What simulation stack do I prefer?",
+    "expected_answer": "Gazebo",
+    "description": "Recall a stored fact."
+  },
+  {
+    "scenario_id": "contradiction_001",
+    "category": "contradiction",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "contradiction_001_a",
+        "content": "I am allergic to peanuts"
+      },
+      {
+        "type": "fact",
+        "memory_id": "contradiction_001_b",
+        "content": "I am not allergic to peanuts"
+      }
+    ],
+    "query": "Am I allergic to peanuts?",
+    "expected_answer": "contradiction",
+    "description": "Detect mutually inconsistent memories."
+  },
+  {
+    "scenario_id": "contradiction_002",
+    "category": "contradiction",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "contradiction_002_a",
+        "content": "Preferred IDE is VS Code"
+      },
+      {
+        "type": "fact",
+        "memory_id": "contradiction_002_b",
+        "content": "Preferred IDE is Vim"
+      }
+    ],
+    "query": "What should you say about my preferred IDE?",
+    "expected_answer": "contradiction",
+    "description": "Detect mutually inconsistent memories."
+  },
+  {
+    "scenario_id": "contradiction_003",
+    "category": "contradiction",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "contradiction_003_a",
+        "content": "I live in Bengaluru"
+      },
+      {
+        "type": "fact",
+        "memory_id": "contradiction_003_b",
+        "content": "I live in Delhi"
+      }
+    ],
+    "query": "Where do I live?",
+    "expected_answer": "contradiction",
+    "description": "Detect mutually inconsistent memories."
+  },
+  {
+    "scenario_id": "contradiction_004",
+    "category": "contradiction",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "contradiction_004_a",
+        "content": "Favorite language is Python"
+      },
+      {
+        "type": "fact",
+        "memory_id": "contradiction_004_b",
+        "content": "Favorite language is Rust"
+      }
+    ],
+    "query": "What is my favorite language?",
+    "expected_answer": "contradiction",
+    "description": "Detect mutually inconsistent memories."
+  },
+  {
+    "scenario_id": "contradiction_005",
+    "category": "contradiction",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "contradiction_005_a",
+        "content": "Meeting is at 10 AM"
+      },
+      {
+        "type": "fact",
+        "memory_id": "contradiction_005_b",
+        "content": "Meeting is at 11 AM"
+      }
+    ],
+    "query": "When is the meeting?",
+    "expected_answer": "contradiction",
+    "description": "Detect mutually inconsistent memories."
+  },
+  {
+    "scenario_id": "contradiction_006",
+    "category": "contradiction",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "contradiction_006_a",
+        "content": "Robot brand preference is Universal Robots"
+      },
+      {
+        "type": "fact",
+        "memory_id": "contradiction_006_b",
+        "content": "Robot brand preference is ABB"
+      }
+    ],
+    "query": "Which robot brand do I prefer?",
+    "expected_answer": "contradiction",
+    "description": "Detect mutually inconsistent memories."
+  },
+  {
+    "scenario_id": "contradiction_007",
+    "category": "contradiction",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "contradiction_007_a",
+        "content": "Budget limit is 500 dollars"
+      },
+      {
+        "type": "fact",
+        "memory_id": "contradiction_007_b",
+        "content": "Budget limit is 1000 dollars"
+      }
+    ],
+    "query": "What is the budget limit?",
+    "expected_answer": "contradiction",
+    "description": "Detect mutually inconsistent memories."
+  },
+  {
+    "scenario_id": "contradiction_008",
+    "category": "contradiction",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "contradiction_008_a",
+        "content": "Project status is active"
+      },
+      {
+        "type": "fact",
+        "memory_id": "contradiction_008_b",
+        "content": "Project status is cancelled"
+      }
+    ],
+    "query": "What is the project status?",
+    "expected_answer": "contradiction",
+    "description": "Detect mutually inconsistent memories."
+  },
+  {
+    "scenario_id": "contradiction_009",
+    "category": "contradiction",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "contradiction_009_a",
+        "content": "Use metric units"
+      },
+      {
+        "type": "fact",
+        "memory_id": "contradiction_009_b",
+        "content": "Use imperial units"
+      }
+    ],
+    "query": "Which units should be used?",
+    "expected_answer": "contradiction",
+    "description": "Detect mutually inconsistent memories."
+  },
+  {
+    "scenario_id": "contradiction_010",
+    "category": "contradiction",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "contradiction_010_a",
+        "content": "Customer tier is enterprise"
+      },
+      {
+        "type": "fact",
+        "memory_id": "contradiction_010_b",
+        "content": "Customer tier is hobbyist"
+      }
+    ],
+    "query": "What is the customer tier?",
+    "expected_answer": "contradiction",
+    "description": "Detect mutually inconsistent memories."
+  },
+  {
+    "scenario_id": "correction_001",
+    "category": "correction",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "correction_001_old",
+        "content": "Favorite robot brand is ABB"
+      },
+      {
+        "type": "correction",
+        "memory_id": "correction_001_new",
+        "content": "Favorite robot brand is Universal Robots",
+        "supersedes": "correction_001_old"
+      }
+    ],
+    "query": "What robot brand do I prefer now?",
+    "expected_answer": "Universal Robots",
+    "expected_absent": [
+      "ABB"
+    ],
+    "description": "Prefer explicit correction over original memory."
+  },
+  {
+    "scenario_id": "correction_002",
+    "category": "correction",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "correction_002_old",
+        "content": "Preferred language is JavaScript"
+      },
+      {
+        "type": "correction",
+        "memory_id": "correction_002_new",
+        "content": "Preferred language is Python",
+        "supersedes": "correction_002_old"
+      }
+    ],
+    "query": "What programming language do I prefer now?",
+    "expected_answer": "Python",
+    "expected_absent": [
+      "JavaScript"
+    ],
+    "description": "Prefer explicit correction over original memory."
+  },
+  {
+    "scenario_id": "correction_003",
+    "category": "correction",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "correction_003_old",
+        "content": "Meeting is on Monday"
+      },
+      {
+        "type": "correction",
+        "memory_id": "correction_003_new",
+        "content": "Meeting is on Tuesday",
+        "supersedes": "correction_003_old"
+      }
+    ],
+    "query": "When is the meeting now?",
+    "expected_answer": "Tuesday",
+    "expected_absent": [
+      "on Monday"
+    ],
+    "description": "Prefer explicit correction over original memory."
+  },
+  {
+    "scenario_id": "correction_004",
+    "category": "correction",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "correction_004_old",
+        "content": "The API endpoint is /v1/search"
+      },
+      {
+        "type": "correction",
+        "memory_id": "correction_004_new",
+        "content": "The API endpoint is /v2/search",
+        "supersedes": "correction_004_old"
+      }
+    ],
+    "query": "What API endpoint should be used now?",
+    "expected_answer": "/v2/search",
+    "expected_absent": [
+      "/v1/search"
+    ],
+    "description": "Prefer explicit correction over original memory."
+  },
+  {
+    "scenario_id": "correction_005",
+    "category": "correction",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "correction_005_old",
+        "content": "Budget is 200 dollars"
+      },
+      {
+        "type": "correction",
+        "memory_id": "correction_005_new",
+        "content": "Budget is 300 dollars",
+        "supersedes": "correction_005_old"
+      }
+    ],
+    "query": "What is the corrected budget?",
+    "expected_answer": "300 dollars",
+    "expected_absent": [
+      "200 dollars"
+    ],
+    "description": "Prefer explicit correction over original memory."
+  },
+  {
+    "scenario_id": "correction_006",
+    "category": "correction",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "correction_006_old",
+        "content": "Timezone is UTC"
+      },
+      {
+        "type": "correction",
+        "memory_id": "correction_006_new",
+        "content": "Timezone is Asia/Kolkata",
+        "supersedes": "correction_006_old"
+      }
+    ],
+    "query": "What is the corrected timezone?",
+    "expected_answer": "Asia/Kolkata",
+    "expected_absent": [
+      "UTC"
+    ],
+    "description": "Prefer explicit correction over original memory."
+  },
+  {
+    "scenario_id": "correction_007",
+    "category": "correction",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "correction_007_old",
+        "content": "Use GPT-4 for routing"
+      },
+      {
+        "type": "correction",
+        "memory_id": "correction_007_new",
+        "content": "Use GPT-5 for routing",
+        "supersedes": "correction_007_old"
+      }
+    ],
+    "query": "Which model should route now?",
+    "expected_answer": "GPT-5",
+    "expected_absent": [
+      "Use GPT-4 for routing"
+    ],
+    "description": "Prefer explicit correction over original memory."
+  },
+  {
+    "scenario_id": "correction_008",
+    "category": "correction",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "correction_008_old",
+        "content": "Contact name is Riya"
+      },
+      {
+        "type": "correction",
+        "memory_id": "correction_008_new",
+        "content": "Contact name is Priya",
+        "supersedes": "correction_008_old"
+      }
+    ],
+    "query": "What is the corrected contact name?",
+    "expected_answer": "Priya",
+    "expected_absent": [
+      "Contact name is Riya"
+    ],
+    "description": "Prefer explicit correction over original memory."
+  },
+  {
+    "scenario_id": "correction_009",
+    "category": "correction",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "correction_009_old",
+        "content": "Deadline is June 10"
+      },
+      {
+        "type": "correction",
+        "memory_id": "correction_009_new",
+        "content": "Deadline is June 12",
+        "supersedes": "correction_009_old"
+      }
+    ],
+    "query": "What is the corrected deadline?",
+    "expected_answer": "June 12",
+    "expected_absent": [
+      "June 10"
+    ],
+    "description": "Prefer explicit correction over original memory."
+  },
+  {
+    "scenario_id": "correction_010",
+    "category": "correction",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "correction_010_old",
+        "content": "Preferred package manager is pip"
+      },
+      {
+        "type": "correction",
+        "memory_id": "correction_010_new",
+        "content": "Preferred package manager is uv",
+        "supersedes": "correction_010_old"
+      }
+    ],
+    "query": "What package manager do I prefer now?",
+    "expected_answer": "uv",
+    "expected_absent": [
+      "pip"
+    ],
+    "description": "Prefer explicit correction over original memory."
+  },
+  {
+    "scenario_id": "forgetting_001",
+    "category": "forgetting",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "forgetting_001_old",
+        "content": "Temporary password is alpha123"
+      },
+      {
+        "type": "forget",
+        "memory_id": "forgetting_001_old",
+        "content": "Temporary password is alpha123",
+        "active": false
+      }
+    ],
+    "query": "What is my temporary password?",
+    "expected_answer": "I do not know",
+    "expected_absent": [
+      "alpha123"
+    ],
+    "description": "Ensure deleted memories are not recalled."
+  },
+  {
+    "scenario_id": "forgetting_002",
+    "category": "forgetting",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "forgetting_002_old",
+        "content": "Door code is 4455"
+      },
+      {
+        "type": "forget",
+        "memory_id": "forgetting_002_old",
+        "content": "Door code is 4455",
+        "active": false
+      }
+    ],
+    "query": "What is the door code?",
+    "expected_answer": "I do not know",
+    "expected_absent": [
+      "4455"
+    ],
+    "description": "Ensure deleted memories are not recalled."
+  },
+  {
+    "scenario_id": "forgetting_003",
+    "category": "forgetting",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "forgetting_003_old",
+        "content": "Private token is secret-token"
+      },
+      {
+        "type": "forget",
+        "memory_id": "forgetting_003_old",
+        "content": "Private token is secret-token",
+        "active": false
+      }
+    ],
+    "query": "What is the private token?",
+    "expected_answer": "I do not know",
+    "expected_absent": [
+      "secret-token"
+    ],
+    "description": "Ensure deleted memories are not recalled."
+  },
+  {
+    "scenario_id": "forgetting_004",
+    "category": "forgetting",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "forgetting_004_old",
+        "content": "Old address is 12 Lake Road"
+      },
+      {
+        "type": "forget",
+        "memory_id": "forgetting_004_old",
+        "content": "Old address is 12 Lake Road",
+        "active": false
+      }
+    ],
+    "query": "What is my old address?",
+    "expected_answer": "I do not know",
+    "expected_absent": [
+      "12 Lake Road"
+    ],
+    "description": "Ensure deleted memories are not recalled."
+  },
+  {
+    "scenario_id": "forgetting_005",
+    "category": "forgetting",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "forgetting_005_old",
+        "content": "Discarded project codename is Falcon"
+      },
+      {
+        "type": "forget",
+        "memory_id": "forgetting_005_old",
+        "content": "Discarded project codename is Falcon",
+        "active": false
+      }
+    ],
+    "query": "What was the discarded codename?",
+    "expected_answer": "I do not know",
+    "expected_absent": [
+      "Falcon"
+    ],
+    "description": "Ensure deleted memories are not recalled."
+  },
+  {
+    "scenario_id": "forgetting_006",
+    "category": "forgetting",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "forgetting_006_old",
+        "content": "One-time OTP is 123456"
+      },
+      {
+        "type": "forget",
+        "memory_id": "forgetting_006_old",
+        "content": "One-time OTP is 123456",
+        "active": false
+      }
+    ],
+    "query": "What is the OTP?",
+    "expected_answer": "I do not know",
+    "expected_absent": [
+      "123456"
+    ],
+    "description": "Ensure deleted memories are not recalled."
+  },
+  {
+    "scenario_id": "forgetting_007",
+    "category": "forgetting",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "forgetting_007_old",
+        "content": "Cancelled appointment is Friday"
+      },
+      {
+        "type": "forget",
+        "memory_id": "forgetting_007_old",
+        "content": "Cancelled appointment is Friday",
+        "active": false
+      }
+    ],
+    "query": "When was the cancelled appointment?",
+    "expected_answer": "I do not know",
+    "expected_absent": [
+      "Friday"
+    ],
+    "description": "Ensure deleted memories are not recalled."
+  },
+  {
+    "scenario_id": "forgetting_008",
+    "category": "forgetting",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "forgetting_008_old",
+        "content": "Deprecated API key is xyz-key"
+      },
+      {
+        "type": "forget",
+        "memory_id": "forgetting_008_old",
+        "content": "Deprecated API key is xyz-key",
+        "active": false
+      }
+    ],
+    "query": "What is the deprecated API key?",
+    "expected_answer": "I do not know",
+    "expected_absent": [
+      "xyz-key"
+    ],
+    "description": "Ensure deleted memories are not recalled."
+  },
+  {
+    "scenario_id": "forgetting_009",
+    "category": "forgetting",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "forgetting_009_old",
+        "content": "Old phone number is 555-0101"
+      },
+      {
+        "type": "forget",
+        "memory_id": "forgetting_009_old",
+        "content": "Old phone number is 555-0101",
+        "active": false
+      }
+    ],
+    "query": "What is the old phone number?",
+    "expected_answer": "I do not know",
+    "expected_absent": [
+      "555-0101"
+    ],
+    "description": "Ensure deleted memories are not recalled."
+  },
+  {
+    "scenario_id": "forgetting_010",
+    "category": "forgetting",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "forgetting_010_old",
+        "content": "Forgotten preference is tea"
+      },
+      {
+        "type": "forget",
+        "memory_id": "forgetting_010_old",
+        "content": "Forgotten preference is tea",
+        "active": false
+      }
+    ],
+    "query": "What forgotten preference did I have?",
+    "expected_answer": "I do not know",
+    "expected_absent": [
+      "tea"
+    ],
+    "description": "Ensure deleted memories are not recalled."
+  },
+  {
+    "scenario_id": "temporal_001",
+    "category": "temporal",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "temporal_001_old",
+        "content": "On 2026-01-01 preferred model was GPT-4",
+        "timestamp": "2026-01-01T09:00:00Z"
+      },
+      {
+        "type": "fact",
+        "memory_id": "temporal_001_new",
+        "content": "On 2026-02-01 preferred model was GPT-5",
+        "timestamp": "2026-02-01T09:00:00Z"
+      }
+    ],
+    "query": "What model was preferred most recently?",
+    "expected_answer": "GPT-5",
+    "description": "Use temporal order to answer with latest relevant memory."
+  },
+  {
+    "scenario_id": "temporal_002",
+    "category": "temporal",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "temporal_002_old",
+        "content": "On Monday meeting was at 9 AM",
+        "timestamp": "2026-01-01T09:00:00Z"
+      },
+      {
+        "type": "fact",
+        "memory_id": "temporal_002_new",
+        "content": "On Wednesday meeting was at 3 PM",
+        "timestamp": "2026-02-01T09:00:00Z"
+      }
+    ],
+    "query": "What is the latest meeting time?",
+    "expected_answer": "3 PM",
+    "description": "Use temporal order to answer with latest relevant memory."
+  },
+  {
+    "scenario_id": "temporal_003",
+    "category": "temporal",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "temporal_003_old",
+        "content": "In Q1 budget was 1000",
+        "timestamp": "2026-01-01T09:00:00Z"
+      },
+      {
+        "type": "fact",
+        "memory_id": "temporal_003_new",
+        "content": "In Q2 budget was 1500",
+        "timestamp": "2026-02-01T09:00:00Z"
+      }
+    ],
+    "query": "What is the current budget?",
+    "expected_answer": "1500",
+    "description": "Use temporal order to answer with latest relevant memory."
+  },
+  {
+    "scenario_id": "temporal_004",
+    "category": "temporal",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "temporal_004_old",
+        "content": "Yesterday status was blocked",
+        "timestamp": "2026-01-01T09:00:00Z"
+      },
+      {
+        "type": "fact",
+        "memory_id": "temporal_004_new",
+        "content": "Today status is active",
+        "timestamp": "2026-02-01T09:00:00Z"
+      }
+    ],
+    "query": "What is the latest status?",
+    "expected_answer": "active",
+    "description": "Use temporal order to answer with latest relevant memory."
+  },
+  {
+    "scenario_id": "temporal_005",
+    "category": "temporal",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "temporal_005_old",
+        "content": "Last week database was Pinecone",
+        "timestamp": "2026-01-01T09:00:00Z"
+      },
+      {
+        "type": "fact",
+        "memory_id": "temporal_005_new",
+        "content": "This week database is Qdrant",
+        "timestamp": "2026-02-01T09:00:00Z"
+      }
+    ],
+    "query": "Which database is current?",
+    "expected_answer": "Qdrant",
+    "description": "Use temporal order to answer with latest relevant memory."
+  },
+  {
+    "scenario_id": "temporal_006",
+    "category": "temporal",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "temporal_006_old",
+        "content": "Morning plan was testing",
+        "timestamp": "2026-01-01T09:00:00Z"
+      },
+      {
+        "type": "fact",
+        "memory_id": "temporal_006_new",
+        "content": "Evening plan was deployment",
+        "timestamp": "2026-02-01T09:00:00Z"
+      }
+    ],
+    "query": "What is the later plan?",
+    "expected_answer": "deployment",
+    "description": "Use temporal order to answer with latest relevant memory."
+  },
+  {
+    "scenario_id": "temporal_007",
+    "category": "temporal",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "temporal_007_old",
+        "content": "Version 1 used BM25",
+        "timestamp": "2026-01-01T09:00:00Z"
+      },
+      {
+        "type": "fact",
+        "memory_id": "temporal_007_new",
+        "content": "Version 2 uses hybrid search",
+        "timestamp": "2026-02-01T09:00:00Z"
+      }
+    ],
+    "query": "What search method is latest?",
+    "expected_answer": "hybrid search",
+    "description": "Use temporal order to answer with latest relevant memory."
+  },
+  {
+    "scenario_id": "temporal_008",
+    "category": "temporal",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "temporal_008_old",
+        "content": "January office was Delhi",
+        "timestamp": "2026-01-01T09:00:00Z"
+      },
+      {
+        "type": "fact",
+        "memory_id": "temporal_008_new",
+        "content": "March office was Bengaluru",
+        "timestamp": "2026-02-01T09:00:00Z"
+      }
+    ],
+    "query": "What is the latest office?",
+    "expected_answer": "Bengaluru",
+    "description": "Use temporal order to answer with latest relevant memory."
+  },
+  {
+    "scenario_id": "temporal_009",
+    "category": "temporal",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "temporal_009_old",
+        "content": "Old roadmap had agents",
+        "timestamp": "2026-01-01T09:00:00Z"
+      },
+      {
+        "type": "fact",
+        "memory_id": "temporal_009_new",
+        "content": "New roadmap has memory evals",
+        "timestamp": "2026-02-01T09:00:00Z"
+      }
+    ],
+    "query": "What is on the latest roadmap?",
+    "expected_answer": "memory evals",
+    "description": "Use temporal order to answer with latest relevant memory."
+  },
+  {
+    "scenario_id": "temporal_010",
+    "category": "temporal",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "temporal_010_old",
+        "content": "At 10:00 task was email",
+        "timestamp": "2026-01-01T09:00:00Z"
+      },
+      {
+        "type": "fact",
+        "memory_id": "temporal_010_new",
+        "content": "At 12:00 task was coding",
+        "timestamp": "2026-02-01T09:00:00Z"
+      }
+    ],
+    "query": "What task came later?",
+    "expected_answer": "coding",
+    "description": "Use temporal order to answer with latest relevant memory."
+  },
+  {
+    "scenario_id": "stale_memory_001",
+    "category": "stale_memory",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "stale_memory_001_old",
+        "content": "Old preferred model is GPT-4",
+        "active": false
+      },
+      {
+        "type": "fact",
+        "memory_id": "stale_memory_001_new",
+        "content": "Current preferred model is GPT-5",
+        "active": true
+      }
+    ],
+    "query": "What model should be used?",
+    "expected_answer": "GPT-5",
+    "expected_absent": [
+      "GPT-4"
+    ],
+    "description": "Ignore inactive stale memory."
+  },
+  {
+    "scenario_id": "stale_memory_002",
+    "category": "stale_memory",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "stale_memory_002_old",
+        "content": "Old city is Pune",
+        "active": false
+      },
+      {
+        "type": "fact",
+        "memory_id": "stale_memory_002_new",
+        "content": "Current city is Delhi",
+        "active": true
+      }
+    ],
+    "query": "Which city is current?",
+    "expected_answer": "Delhi",
+    "expected_absent": [
+      "Pune"
+    ],
+    "description": "Ignore inactive stale memory."
+  },
+  {
+    "scenario_id": "stale_memory_003",
+    "category": "stale_memory",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "stale_memory_003_old",
+        "content": "Old endpoint is /old",
+        "active": false
+      },
+      {
+        "type": "fact",
+        "memory_id": "stale_memory_003_new",
+        "content": "Current endpoint is /new",
+        "active": true
+      }
+    ],
+    "query": "Which endpoint is current?",
+    "expected_answer": "/new",
+    "expected_absent": [
+      "/old"
+    ],
+    "description": "Ignore inactive stale memory."
+  },
+  {
+    "scenario_id": "stale_memory_004",
+    "category": "stale_memory",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "stale_memory_004_old",
+        "content": "Old budget is 100",
+        "active": false
+      },
+      {
+        "type": "fact",
+        "memory_id": "stale_memory_004_new",
+        "content": "Current budget is 250",
+        "active": true
+      }
+    ],
+    "query": "What budget is current?",
+    "expected_answer": "250",
+    "expected_absent": [
+      "100"
+    ],
+    "description": "Ignore inactive stale memory."
+  },
+  {
+    "scenario_id": "stale_memory_005",
+    "category": "stale_memory",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "stale_memory_005_old",
+        "content": "Old owner is Alice",
+        "active": false
+      },
+      {
+        "type": "fact",
+        "memory_id": "stale_memory_005_new",
+        "content": "Current owner is Bob",
+        "active": true
+      }
+    ],
+    "query": "Who is the current owner?",
+    "expected_answer": "Bob",
+    "expected_absent": [
+      "Alice"
+    ],
+    "description": "Ignore inactive stale memory."
+  },
+  {
+    "scenario_id": "stale_memory_006",
+    "category": "stale_memory",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "stale_memory_006_old",
+        "content": "Old priority is low",
+        "active": false
+      },
+      {
+        "type": "fact",
+        "memory_id": "stale_memory_006_new",
+        "content": "Current priority is high",
+        "active": true
+      }
+    ],
+    "query": "What is the current priority?",
+    "expected_answer": "high",
+    "expected_absent": [
+      "low"
+    ],
+    "description": "Ignore inactive stale memory."
+  },
+  {
+    "scenario_id": "stale_memory_007",
+    "category": "stale_memory",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "stale_memory_007_old",
+        "content": "Old framework is Flask",
+        "active": false
+      },
+      {
+        "type": "fact",
+        "memory_id": "stale_memory_007_new",
+        "content": "Current framework is FastAPI",
+        "active": true
+      }
+    ],
+    "query": "Which framework is current?",
+    "expected_answer": "FastAPI",
+    "expected_absent": [
+      "Flask"
+    ],
+    "description": "Ignore inactive stale memory."
+  },
+  {
+    "scenario_id": "stale_memory_008",
+    "category": "stale_memory",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "stale_memory_008_old",
+        "content": "Old branch is master",
+        "active": false
+      },
+      {
+        "type": "fact",
+        "memory_id": "stale_memory_008_new",
+        "content": "Current branch is main",
+        "active": true
+      }
+    ],
+    "query": "Which branch is current?",
+    "expected_answer": "main",
+    "expected_absent": [
+      "master"
+    ],
+    "description": "Ignore inactive stale memory."
+  },
+  {
+    "scenario_id": "stale_memory_009",
+    "category": "stale_memory",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "stale_memory_009_old",
+        "content": "Old region is us-east",
+        "active": false
+      },
+      {
+        "type": "fact",
+        "memory_id": "stale_memory_009_new",
+        "content": "Current region is ap-south",
+        "active": true
+      }
+    ],
+    "query": "Which region is current?",
+    "expected_answer": "ap-south",
+    "expected_absent": [
+      "us-east"
+    ],
+    "description": "Ignore inactive stale memory."
+  },
+  {
+    "scenario_id": "stale_memory_010",
+    "category": "stale_memory",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "stale_memory_010_old",
+        "content": "Old vendor is VendorA",
+        "active": false
+      },
+      {
+        "type": "fact",
+        "memory_id": "stale_memory_010_new",
+        "content": "Current vendor is VendorB",
+        "active": true
+      }
+    ],
+    "query": "Which vendor is current?",
+    "expected_answer": "VendorB",
+    "expected_absent": [
+      "VendorA"
+    ],
+    "description": "Ignore inactive stale memory."
+  },
+  {
+    "scenario_id": "continuity_001",
+    "category": "continuity",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "continuity_001_memory",
+        "session_id": "session-1",
+        "content": "Favorite robot brand is Universal Robots"
+      }
+    ],
+    "query": "Across sessions, what robot brand do I prefer?",
+    "expected_answer": "Universal Robots",
+    "description": "Retrieve memory recorded in a previous session."
+  },
+  {
+    "scenario_id": "continuity_002",
+    "category": "continuity",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "continuity_002_memory",
+        "session_id": "session-1",
+        "content": "Project codename is Lotus"
+      }
+    ],
+    "query": "In this new session, what is the project codename?",
+    "expected_answer": "Lotus",
+    "description": "Retrieve memory recorded in a previous session."
+  },
+  {
+    "scenario_id": "continuity_003",
+    "category": "continuity",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "continuity_003_memory",
+        "session_id": "session-2",
+        "content": "Preferred timezone is Asia/Kolkata"
+      }
+    ],
+    "query": "Across sessions, what timezone should you use?",
+    "expected_answer": "Asia/Kolkata",
+    "description": "Retrieve memory recorded in a previous session."
+  },
+  {
+    "scenario_id": "continuity_004",
+    "category": "continuity",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "continuity_004_memory",
+        "session_id": "session-2",
+        "content": "User likes concise reports"
+      }
+    ],
+    "query": "In another session, how should reports be written?",
+    "expected_answer": "concise",
+    "description": "Retrieve memory recorded in a previous session."
+  },
+  {
+    "scenario_id": "continuity_005",
+    "category": "continuity",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "continuity_005_memory",
+        "session_id": "session-3",
+        "content": "Current sprint goal is memory evals"
+      }
+    ],
+    "query": "What is the sprint goal across sessions?",
+    "expected_answer": "memory evals",
+    "description": "Retrieve memory recorded in a previous session."
+  },
+  {
+    "scenario_id": "continuity_006",
+    "category": "continuity",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "continuity_006_memory",
+        "session_id": "session-3",
+        "content": "Preferred CI is GitHub Actions"
+      }
+    ],
+    "query": "What CI should be used across sessions?",
+    "expected_answer": "GitHub Actions",
+    "description": "Retrieve memory recorded in a previous session."
+  },
+  {
+    "scenario_id": "continuity_007",
+    "category": "continuity",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "continuity_007_memory",
+        "session_id": "session-4",
+        "content": "Agent name is Gulab"
+      }
+    ],
+    "query": "What is the agent name remembered across sessions?",
+    "expected_answer": "Gulab",
+    "description": "Retrieve memory recorded in a previous session."
+  },
+  {
+    "scenario_id": "continuity_008",
+    "category": "continuity",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "continuity_008_memory",
+        "session_id": "session-4",
+        "content": "Preferred license is MIT"
+      }
+    ],
+    "query": "What license should be used?",
+    "expected_answer": "MIT",
+    "description": "Retrieve memory recorded in a previous session."
+  },
+  {
+    "scenario_id": "continuity_009",
+    "category": "continuity",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "continuity_009_memory",
+        "session_id": "session-5",
+        "content": "Main repo is memory-agent-eval-kit"
+      }
+    ],
+    "query": "What is the main repo across sessions?",
+    "expected_answer": "memory-agent-eval-kit",
+    "description": "Retrieve memory recorded in a previous session."
+  },
+  {
+    "scenario_id": "continuity_010",
+    "category": "continuity",
+    "memory_events": [
+      {
+        "type": "fact",
+        "memory_id": "continuity_010_memory",
+        "session_id": "session-5",
+        "content": "Benchmark target is 70 scenarios"
+      }
+    ],
+    "query": "How many scenarios is the benchmark target?",
+    "expected_answer": "70",
+    "description": "Retrieve memory recorded in a previous session."
+  }
+]
