@@ -36,6 +36,7 @@ class AggregateMetrics:
     hallucination_rate: float
     false_recall_rate: float
     stress_recall_accuracy: float
+    temporal_drift_accuracy: float
     latency_degradation_ms: float
     latency_avg_ms: float
     latency_p95_ms: float
@@ -87,6 +88,7 @@ def aggregate_results(results: list[EvaluationResult]) -> AggregateMetrics:
         hallucination_rate=hallucination_rate,
         false_recall_rate=hallucination_rate,
         stress_recall_accuracy=_score_for(results, "stress"),
+        temporal_drift_accuracy=_score_for(results, "temporal_drift"),
         latency_degradation_ms=latency_degradation_ms,
         latency_avg_ms=mean(latencies) if latencies else 0.0,
         latency_p95_ms=_p95(latencies),

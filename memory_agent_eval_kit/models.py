@@ -15,6 +15,7 @@ Category: TypeAlias = Literal[
     "continuity",
     "hallucination",
     "stress",
+    "temporal_drift",
 ]
 
 

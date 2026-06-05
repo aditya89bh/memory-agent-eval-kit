@@ -1638,5 +1638,224 @@
       "Qdrant"
     ],
     "description": "Agent should not invent facts that were never stored."
+  },
+  {
+    "scenario_id": "temporal_drift_1_current",
+    "category": "temporal_drift",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "temporal_drift_1_old",
+        "timestamp": "2026-01-01T09:00:00Z",
+        "content": "Previous preferred model was GPT-4"
+      },
+      {
+        "type": "fact",
+        "memory_id": "temporal_drift_1_new",
+        "timestamp": "2026-03-01T09:00:00Z",
+        "content": "Current preferred model is GPT-5"
+      }
+    ],
+    "query": "What is the current preferred model?",
+    "expected_answer": "GPT-5",
+    "description": "Answer current fact after drift."
+  },
+  {
+    "scenario_id": "temporal_drift_1_previous",
+    "category": "temporal_drift",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "temporal_drift_1_old",
+        "timestamp": "2026-01-01T09:00:00Z",
+        "content": "Previous preferred model was GPT-4"
+      },
+      {
+        "type": "fact",
+        "memory_id": "temporal_drift_1_new",
+        "timestamp": "2026-03-01T09:00:00Z",
+        "content": "Current preferred model is GPT-5"
+      }
+    ],
+    "query": "What was the previous preferred model?",
+    "expected_answer": "GPT-4",
+    "negative_assertions": [
+      "GPT-5"
+    ],
+    "description": "Answer previous fact after drift."
+  },
+  {
+    "scenario_id": "temporal_drift_1_timeline",
+    "category": "temporal_drift",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "temporal_drift_1_old",
+        "timestamp": "2026-01-01T09:00:00Z",
+        "content": "Previous preferred model was GPT-4"
+      },
+      {
+        "type": "fact",
+        "memory_id": "temporal_drift_1_new",
+        "timestamp": "2026-03-01T09:00:00Z",
+        "content": "Current preferred model is GPT-5"
+      }
+    ],
+    "query": "Summarize the preferred model timeline.",
+    "expected_answer": "GPT-4",
+    "expected_behavior": {
+      "answer": "GPT-4",
+      "also_contains": "GPT-5"
+    },
+    "scoring_rules": {
+      "mode": "contains_all"
+    },
+    "description": "Return timeline containing old and new facts."
+  },
+  {
+    "scenario_id": "temporal_drift_2_current",
+    "category": "temporal_drift",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "temporal_drift_2_old",
+        "timestamp": "2026-01-01T09:00:00Z",
+        "content": "Previous office city was Delhi"
+      },
+      {
+        "type": "fact",
+        "memory_id": "temporal_drift_2_new",
+        "timestamp": "2026-03-01T09:00:00Z",
+        "content": "Current office city is Bengaluru"
+      }
+    ],
+    "query": "What is the current office city?",
+    "expected_answer": "Bengaluru",
+    "description": "Answer current fact after drift."
+  },
+  {
+    "scenario_id": "temporal_drift_2_previous",
+    "category": "temporal_drift",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "temporal_drift_2_old",
+        "timestamp": "2026-01-01T09:00:00Z",
+        "content": "Previous office city was Delhi"
+      },
+      {
+        "type": "fact",
+        "memory_id": "temporal_drift_2_new",
+        "timestamp": "2026-03-01T09:00:00Z",
+        "content": "Current office city is Bengaluru"
+      }
+    ],
+    "query": "What was the previous office city?",
+    "expected_answer": "Delhi",
+    "negative_assertions": [
+      "Bengaluru"
+    ],
+    "description": "Answer previous fact after drift."
+  },
+  {
+    "scenario_id": "temporal_drift_2_timeline",
+    "category": "temporal_drift",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "temporal_drift_2_old",
+        "timestamp": "2026-01-01T09:00:00Z",
+        "content": "Previous office city was Delhi"
+      },
+      {
+        "type": "fact",
+        "memory_id": "temporal_drift_2_new",
+        "timestamp": "2026-03-01T09:00:00Z",
+        "content": "Current office city is Bengaluru"
+      }
+    ],
+    "query": "Summarize the office city timeline.",
+    "expected_answer": "Delhi",
+    "expected_behavior": {
+      "answer": "Delhi",
+      "also_contains": "Bengaluru"
+    },
+    "scoring_rules": {
+      "mode": "contains_all"
+    },
+    "description": "Return timeline containing old and new facts."
+  },
+  {
+    "scenario_id": "temporal_drift_3_current",
+    "category": "temporal_drift",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "temporal_drift_3_old",
+        "timestamp": "2026-01-01T09:00:00Z",
+        "content": "Previous project phase was research"
+      },
+      {
+        "type": "fact",
+        "memory_id": "temporal_drift_3_new",
+        "timestamp": "2026-03-01T09:00:00Z",
+        "content": "Current project phase is deployment"
+      }
+    ],
+    "query": "What is the current project phase?",
+    "expected_answer": "deployment",
+    "description": "Answer current fact after drift."
+  },
+  {
+    "scenario_id": "temporal_drift_3_previous",
+    "category": "temporal_drift",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "temporal_drift_3_old",
+        "timestamp": "2026-01-01T09:00:00Z",
+        "content": "Previous project phase was research"
+      },
+      {
+        "type": "fact",
+        "memory_id": "temporal_drift_3_new",
+        "timestamp": "2026-03-01T09:00:00Z",
+        "content": "Current project phase is deployment"
+      }
+    ],
+    "query": "What was the previous project phase?",
+    "expected_answer": "research",
+    "negative_assertions": [
+      "deployment"
+    ],
+    "description": "Answer previous fact after drift."
+  },
+  {
+    "scenario_id": "temporal_drift_3_timeline",
+    "category": "temporal_drift",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "temporal_drift_3_old",
+        "timestamp": "2026-01-01T09:00:00Z",
+        "content": "Previous project phase was research"
+      },
+      {
+        "type": "fact",
+        "memory_id": "temporal_drift_3_new",
+        "timestamp": "2026-03-01T09:00:00Z",
+        "content": "Current project phase is deployment"
+      }
+    ],
+    "query": "Summarize the project phase timeline.",
+    "expected_answer": "research",
+    "expected_behavior": {
+      "answer": "research",
+      "also_contains": "deployment"
+    },
+    "scoring_rules": {
+      "mode": "contains_all"
+    },
+    "description": "Return timeline containing old and new facts."
   }
 ]

@@ -112,8 +112,8 @@ def test_benchmark_scenario_from_dict_defaults() -> None:
 
 def test_load_default_dataset_has_70_scenarios() -> None:
     scenarios = load_scenarios()
-    assert len(scenarios) == 80
-    assert len({scenario.scenario_id for scenario in scenarios}) == 80
+    assert len(scenarios) >= 80
+    assert len({scenario.scenario_id for scenario in scenarios}) == len(scenarios)
 
 
 def test_load_dataset_filter_category() -> None:
@@ -213,7 +213,7 @@ def test_aggregate_results() -> None:
 
 def test_benchmark_runner_runs_all(tmp_path: Path) -> None:
     run = BenchmarkRunner(SimpleMemoryAgent()).run(report_dir=tmp_path)
-    assert run.metrics.total_scenarios == 80
+    assert run.metrics.total_scenarios >= 80
     assert (tmp_path / "results.json").exists()
 
 
@@ -331,3 +331,23 @@ def test_stress_runner_and_metrics(tmp_path: Path) -> None:
 def test_cli_stress_flag(tmp_path: Path, capsys: pytest.CaptureFixture[str]) -> None:
     assert main(["benchmark", "--stress", "--report-dir", str(tmp_path)]) == 0
     assert "Stress Recall" in capsys.readouterr().out
+
+
+def test_temporal_drift_dataset_current_previous_timeline() -> None:
+    scenarios = load_scenarios(categories=["temporal_drift"])
+    assert len(scenarios) == 9
+    ids = {scenario.scenario_id for scenario in scenarios}
+    assert "temporal_drift_1_current" in ids
+    assert "temporal_drift_1_previous" in ids
+    assert "temporal_drift_1_timeline" in ids
+
+
+def test_temporal_drift_evaluator_supports_timeline() -> None:
+    from memory_agent_eval_kit.evaluators.temporal_drift import TemporalDriftEvaluator
+
+    scenarios = load_scenarios(categories=["temporal_drift"])
+    results = [
+        TemporalDriftEvaluator().evaluate(scenario, SimpleMemoryAgent()) for scenario in scenarios
+    ]
+    assert all(result.success for result in results)
+    assert aggregate_results(results).temporal_drift_accuracy == 1.0

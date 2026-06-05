@@ -18,6 +18,7 @@ from memory_agent_eval_kit.evaluators import (
     ScenarioEvaluator,
     StaleMemoryEvaluator,
     StressEvaluator,
+    TemporalDriftEvaluator,
     TemporalEvaluator,
 )
 from memory_agent_eval_kit.metrics import AggregateMetrics, EvaluationResult, aggregate_results
@@ -47,6 +48,7 @@ class BenchmarkRunner:
             "continuity": ContinuityEvaluator(),
             "hallucination": HallucinationEvaluator(),
             "stress": StressEvaluator(),
+            "temporal_drift": TemporalDriftEvaluator(),
         }
 
     def run(

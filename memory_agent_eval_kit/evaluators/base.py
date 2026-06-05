@@ -51,6 +51,9 @@ class ScenarioEvaluator:
     def score_answer(self, scenario: BenchmarkScenario, answer: str) -> float:
         normalized = answer.casefold()
         expected_ok = scenario.expected_answer.casefold() in normalized
+        extra_expected = scenario.expected_behavior.metadata.get("also_contains")
+        if extra_expected is not None:
+            expected_ok = expected_ok and str(extra_expected).casefold() in normalized
         absent_ok = all(absent.casefold() not in normalized for absent in scenario.expected_absent)
         if expected_ok and absent_ok:
             return 1.0

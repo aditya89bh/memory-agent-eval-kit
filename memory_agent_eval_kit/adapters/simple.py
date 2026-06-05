@@ -28,6 +28,10 @@ class SimpleMemoryAgent(MemoryAgentAdapter):
         ]
         if self._asks_for_unknown(prompt) and not self._rank(prompt, candidates):
             return "I do not know."
+        if _asks_for_timeline(prompt):
+            timeline = self._timeline(prompt, candidates)
+            if timeline:
+                return " | ".join(timeline)
         ranked = self._rank(prompt, candidates)
         if not ranked:
             return "I do not know."
@@ -77,7 +81,22 @@ class SimpleMemoryAgent(MemoryAgentAdapter):
             if memory.get("type") == "correction":
                 score += 2.0
             ranked.append((score, memory))
-        return sorted(ranked, key=lambda item: (item[0], _timestamp_value(item[1])), reverse=True)
+        reverse_time = not _asks_for_previous(prompt)
+        return sorted(
+            ranked,
+            key=lambda item: (item[0], _timestamp_value(item[1])),
+            reverse=reverse_time,
+        )
+
+    def _timeline(self, prompt: str, memories: list[MemoryRecord]) -> list[str]:
+        ranked = self._rank(prompt, memories)
+        if not ranked:
+            return []
+        unique = {
+            str(memory.get("memory_id", index)): memory for index, (_, memory) in enumerate(ranked)
+        }
+        ordered = sorted(unique.values(), key=_timestamp_value)
+        return [str(memory.get("content", "")) for memory in ordered]
 
     def _looks_contradictory(self, prompt: str, memories: list[MemoryRecord]) -> bool:
         if len(memories) < 2:
@@ -172,3 +191,11 @@ def _object_fragment(content: str) -> str:
         if separator in content:
             return content.rsplit(separator, 1)[-1].strip()
     return content.strip()
+
+
+def _asks_for_previous(prompt: str) -> bool:
+    return any(word in prompt.casefold() for word in ("previous", "old", "prior", "before"))
+
+
+def _asks_for_timeline(prompt: str) -> bool:
+    return any(word in prompt.casefold() for word in ("timeline", "evolve", "history"))

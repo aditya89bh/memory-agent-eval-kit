@@ -8,6 +8,7 @@ from memory_agent_eval_kit.evaluators.recall import RecallEvaluator
 from memory_agent_eval_kit.evaluators.stale_memory import StaleMemoryEvaluator
 from memory_agent_eval_kit.evaluators.stress import StressEvaluator
 from memory_agent_eval_kit.evaluators.temporal import TemporalEvaluator
+from memory_agent_eval_kit.evaluators.temporal_drift import TemporalDriftEvaluator
 
 __all__ = [
     "ScenarioEvaluator",
@@ -17,6 +18,7 @@ __all__ = [
     "ForgettingEvaluator",
     "HallucinationEvaluator",
     "TemporalEvaluator",
+    "TemporalDriftEvaluator",
     "StaleMemoryEvaluator",
     "StressEvaluator",
     "ContinuityEvaluator",
