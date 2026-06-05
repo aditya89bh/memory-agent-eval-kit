@@ -4,7 +4,6 @@ from __future__ import annotations
 
 import csv
 import json
-import math
 import platform
 import tomllib
 from collections import defaultdict
@@ -12,6 +11,8 @@ from datetime import UTC, datetime
 from importlib import metadata
 from pathlib import Path
 from typing import TYPE_CHECKING, Any
+
+from memory_agent_eval_kit.metrics.confidence import wilson_score_interval
 
 if TYPE_CHECKING:
     from memory_agent_eval_kit.benchmarks.runner import BenchmarkRun
@@ -240,19 +241,7 @@ def _confidence_metrics(results: list[EvaluationResult]) -> dict[str, Any]:
 
 
 def _confidence_interval(successes: int, count: int) -> dict[str, float | int]:
-    if count == 0:
-        return {"estimate": 0.0, "lower": 0.0, "upper": 0.0, "count": 0}
-    z = 1.96
-    proportion = successes / count
-    denominator = 1 + z**2 / count
-    centre = proportion + z**2 / (2 * count)
-    margin = z * math.sqrt((proportion * (1 - proportion) + z**2 / (4 * count)) / count)
-    return {
-        "estimate": proportion,
-        "lower": max(0.0, (centre - margin) / denominator),
-        "upper": min(1.0, (centre + margin) / denominator),
-        "count": count,
-    }
+    return wilson_score_interval(successes, count).to_dict()
 
 
 def _difficulty_breakdown(results: list[EvaluationResult]) -> dict[str, dict[str, float | int]]:

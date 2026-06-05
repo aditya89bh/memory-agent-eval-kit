@@ -215,6 +215,15 @@ def test_evaluator_rejects_wrong_category() -> None:
         CorrectionEvaluator().evaluate(scenario, SimpleMemoryAgent())
 
 
+def test_wilson_score_interval() -> None:
+    from memory_agent_eval_kit.metrics import wilson_score_interval
+
+    interval = wilson_score_interval(9, 10)
+    assert interval.estimate == 0.9
+    assert 0.0 <= interval.lower <= interval.estimate <= interval.upper <= 1.0
+    assert interval.count == 10
+
+
 def test_aggregate_results() -> None:
     results = [
         EvaluationResult("a", "recall", True, 1.0, 1.0),
