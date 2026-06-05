@@ -1,21 +1,36 @@
 # Benchmark Design
 
-Each scenario is a JSON object containing:
+Each scenario is a JSON object containing stable identifiers, category metadata, memory events, a query, scoring expectations, and optional negative assertions.
+
+Core fields:
 
 - `scenario_id`: stable identifier
-- `category`: one of the seven benchmark categories
-- `memory_events`: memory writes/deletes/corrections applied before the query
+- `category`: benchmark category
+- `events` / `memory_events`: memory writes, deletes, corrections, and session events applied before the query
 - `query`: user prompt sent to the agent
 - `expected_answer`: substring expected in a successful answer
-- `expected_absent`: optional substrings that must not appear
+- `expected_behavior`: structured expectations such as refusal, ambiguity handling, or poisoning type
+- `scoring_rules`: threshold and assertion behavior
+- `negative_assertions`: substrings that must not appear
 
-The default benchmark contains 70 scenarios, split evenly across recall, contradiction detection, correction handling, forgetting, temporal memory, stale memory handling, and continuity.
+## v0.3.0 suites
 
-Scenario scoring is intentionally transparent: a result succeeds when the expected answer is present and forbidden stale/deleted strings are absent.
+The v0.3.0 corpus covers recall, contradiction, correction, forgetting, temporal memory, stale memory, continuity, hallucination, hallucinated recall, memory leakage, timeline reasoning, memory drift, temporal drift, adversarial contradiction, and memory poisoning. Stress cases are generated programmatically rather than stored in the JSON dataset.
 
+Dataset validation checks schema shape, duplicate scenario IDs, supported categories, and category consistency. Run:
 
-## v0.2.0 suites
+```bash
+memory-eval validate
+```
 
-Additional suites cover hallucinated memory, temporal drift, adversarial contradictions, memory poisoning, and stress testing. Stress cases are generated programmatically rather than stored in the JSON dataset.
+Scenario scoring is intentionally transparent: a result succeeds when the expected behavior is met and forbidden stale, deleted, poisoned, or hallucinated strings are absent.
 
-The richer scenario schema supports `events`, `sessions`, `timestamps`, `expected_behavior`, `scoring_rules`, and `negative_assertions` while preserving v0.1 fields.
+## Reproducibility
+
+`BenchmarkRunner` accepts a seed and the CLI exposes it as:
+
+```bash
+memory-eval benchmark --seed 42
+```
+
+The seed creates deterministic scenario ordering without changing scenario content or adapter behavior.
