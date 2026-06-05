@@ -897,3 +897,25 @@ def test_benchmark_suite_version_metadata_is_attached() -> None:
     assert CURRENT_SUITE_VERSION == "v3"
     assert {version.version for version in SUITE_VERSIONS} == {"v1", "v2", "v3"}
     assert all(scenario.suite_version == "v3" for scenario in scenarios)
+
+
+def test_dataset_changelog_generation_tracks_added_removed_modified(tmp_path: Path) -> None:
+    from memory_agent_eval_kit.datasets import generate_dataset_changelog, write_dataset_changelog
+
+    before = [
+        {"scenario_id": "same", "category": "recall", "query": "q", "expected_answer": "a"},
+        {"scenario_id": "removed", "category": "recall", "query": "q", "expected_answer": "a"},
+        {"scenario_id": "modified", "category": "recall", "query": "q", "expected_answer": "a"},
+    ]
+    after = [
+        {"scenario_id": "same", "category": "recall", "query": "q", "expected_answer": "a"},
+        {"scenario_id": "modified", "category": "recall", "query": "q2", "expected_answer": "a"},
+        {"scenario_id": "added", "category": "recall", "query": "q", "expected_answer": "a"},
+    ]
+    changelog = generate_dataset_changelog(before, after)
+    assert changelog.added == ["added"]
+    assert changelog.removed == ["removed"]
+    assert changelog.modified == ["modified"]
+    output = tmp_path / "dataset_changelog.json"
+    write_dataset_changelog(before, after, output)
+    assert json.loads(output.read_text(encoding="utf-8"))["added"] == ["added"]
