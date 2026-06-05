@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import json
-from dataclasses import asdict, dataclass
+from dataclasses import asdict, dataclass, replace
 from pathlib import Path
 from typing import Any
 
@@ -15,6 +15,9 @@ class LeaderboardEntry:
     overall_score: float
     category_scores: dict[str, float]
     latency: dict[str, float]
+    overall_rank: int = 0
+    category_rank: int = 0
+    latency_rank: int = 0
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
@@ -57,7 +60,7 @@ class LeaderboardGenerator:
 
     def write(self, entries: list[LeaderboardEntry]) -> None:
         self.output_dir.mkdir(parents=True, exist_ok=True)
-        ordered = sorted(entries, key=lambda entry: entry.overall_score, reverse=True)
+        ordered = rank_entries(entries)
         (self.output_dir / "results.json").write_text(
             json.dumps([entry.to_dict() for entry in ordered], indent=2),
             encoding="utf-8",
@@ -65,13 +68,55 @@ class LeaderboardGenerator:
         lines = [
             "# Memory Agent Leaderboard",
             "",
-            "| Rank | Agent | Suite | Overall | Avg Latency ms | P95 Latency ms |",
-            "|---:|---|---|---:|---:|---:|",
+            "| Overall Rank | Category Rank | Latency Rank | Agent | Suite | "
+            "Overall | Avg Latency ms | P95 Latency ms |",
+            "|---:|---:|---:|---|---|---:|---:|---:|",
         ]
-        for rank, entry in enumerate(ordered, start=1):
+        for entry in ordered:
             lines.append(
-                f"| {rank} | {entry.agent_name} | {entry.suite_name} | "
+                f"| {entry.overall_rank} | {entry.category_rank} | {entry.latency_rank} | "
+                f"{entry.agent_name} | {entry.suite_name} | "
                 f"{entry.overall_score * 100:.0f}% | {entry.latency['avg_ms']:.2f} | "
                 f"{entry.latency['p95_ms']:.2f} |"
             )
         (self.output_dir / "results.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
+def rank_entries(entries: list[LeaderboardEntry]) -> list[LeaderboardEntry]:
+    """Return entries with overall, category, and latency ranks assigned."""
+
+    overall_ranks = _rank_map(entries, key=lambda entry: entry.overall_score, reverse=True)
+    category_ranks = _rank_map(entries, key=_category_mean, reverse=True)
+    latency_ranks = _rank_map(
+        entries, key=lambda entry: entry.latency.get("avg_ms", 0.0), reverse=False
+    )
+    ranked = [
+        replace(
+            entry,
+            overall_rank=overall_ranks[id(entry)],
+            category_rank=category_ranks[id(entry)],
+            latency_rank=latency_ranks[id(entry)],
+        )
+        for entry in entries
+    ]
+    return sorted(ranked, key=lambda entry: (entry.overall_rank, entry.latency_rank))
+
+
+def _category_mean(entry: LeaderboardEntry) -> float:
+    if not entry.category_scores:
+        return 0.0
+    return sum(entry.category_scores.values()) / len(entry.category_scores)
+
+
+def _rank_map(entries: list[LeaderboardEntry], *, key: Any, reverse: bool) -> dict[int, int]:
+    ordered = sorted(entries, key=key, reverse=reverse)
+    ranks: dict[int, int] = {}
+    previous_value: object | None = None
+    previous_rank = 0
+    for index, entry in enumerate(ordered, start=1):
+        value = key(entry)
+        rank = previous_rank if value == previous_value else index
+        ranks[id(entry)] = rank
+        previous_value = value
+        previous_rank = rank
+    return ranks

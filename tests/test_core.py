@@ -688,3 +688,37 @@ def test_cli_fail_under_fails_when_score_drops(tmp_path: Path) -> None:
         )
         == 1
     )
+
+
+def test_leaderboard_assigns_overall_category_and_latency_ranks(tmp_path: Path) -> None:
+    from memory_agent_eval_kit.leaderboards.generator import (
+        LeaderboardEntry,
+        LeaderboardGenerator,
+        rank_entries,
+    )
+
+    entries = [
+        LeaderboardEntry(
+            "fast",
+            "suite",
+            0.90,
+            {"recall": 0.90, "temporal": 0.90},
+            {"avg_ms": 5.0, "p95_ms": 6.0},
+        ),
+        LeaderboardEntry(
+            "accurate",
+            "suite",
+            0.95,
+            {"recall": 0.95, "temporal": 0.95},
+            {"avg_ms": 10.0, "p95_ms": 12.0},
+        ),
+    ]
+    ranked = rank_entries(entries)
+    assert ranked[0].agent_name == "accurate"
+    assert ranked[0].overall_rank == 1
+    assert ranked[0].category_rank == 1
+    assert ranked[0].latency_rank == 2
+
+    LeaderboardGenerator(tmp_path).write(entries)
+    payload = json.loads((tmp_path / "results.json").read_text(encoding="utf-8"))
+    assert {"overall_rank", "category_rank", "latency_rank"} <= set(payload[0])
