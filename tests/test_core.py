@@ -477,8 +477,11 @@ def test_leaderboard_generation(tmp_path: Path) -> None:
     generator = LeaderboardGenerator(output_dir)
     entry = generator.from_report(report_dir / "results.json", "agent", "recall")
     generator.write([entry])
-    assert (output_dir / "results.json").exists()
-    assert "agent" in (output_dir / "results.md").read_text(encoding="utf-8")
+    payload = json.loads((output_dir / "results.json").read_text(encoding="utf-8"))
+    assert payload[0]["hallucination_rate"] == 0.0
+    markdown = (output_dir / "results.md").read_text(encoding="utf-8")
+    assert "agent" in markdown
+    assert "Hallucination Rate" in markdown
 
 
 def test_cli_leaderboard(tmp_path: Path, capsys: pytest.CaptureFixture[str]) -> None:
@@ -736,10 +739,13 @@ def test_leaderboard_assigns_overall_category_and_latency_ranks(tmp_path: Path) 
     assert ranked[0].overall_rank == 1
     assert ranked[0].category_rank == 1
     assert ranked[0].latency_rank == 2
+    assert ranked[0].hallucination_rank == 1
 
     LeaderboardGenerator(tmp_path).write(entries)
     payload = json.loads((tmp_path / "results.json").read_text(encoding="utf-8"))
-    assert {"overall_rank", "category_rank", "latency_rank"} <= set(payload[0])
+    assert {"overall_rank", "category_rank", "latency_rank", "hallucination_rank"} <= set(
+        payload[0]
+    )
 
 
 def test_generate_visual_assets_writes_svg_files(tmp_path: Path) -> None:

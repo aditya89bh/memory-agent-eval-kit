@@ -15,9 +15,12 @@ class LeaderboardEntry:
     overall_score: float
     category_scores: dict[str, float]
     latency: dict[str, float]
+    hallucination_rate: float = 0.0
+    false_recall_rate: float = 0.0
     overall_rank: int = 0
     category_rank: int = 0
     latency_rank: int = 0
+    hallucination_rank: int = 0
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
@@ -58,6 +61,8 @@ class LeaderboardGenerator:
             overall_score=float(metrics["overall_score"]),
             category_scores=category_scores,
             latency=latency,
+            hallucination_rate=float(metrics.get("hallucination_rate", 0.0)),
+            false_recall_rate=float(metrics.get("false_recall_rate", 0.0)),
         )
 
     def write(self, entries: list[LeaderboardEntry]) -> None:
@@ -70,15 +75,18 @@ class LeaderboardGenerator:
         lines = [
             "# Memory Agent Leaderboard",
             "",
-            "| Overall Rank | Category Rank | Latency Rank | Agent | Suite | "
-            "Overall | Avg Latency ms | P95 Latency ms |",
-            "|---:|---:|---:|---|---|---:|---:|---:|",
+            "| Overall Rank | Category Rank | Latency Rank | Hallucination Rank | Agent | "
+            "Suite | Overall | Hallucination Rate | False Recall Rate | Avg Latency ms | "
+            "P95 Latency ms |",
+            "|---:|---:|---:|---:|---|---|---:|---:|---:|---:|---:|",
         ]
         for entry in ordered:
             lines.append(
                 f"| {entry.overall_rank} | {entry.category_rank} | {entry.latency_rank} | "
-                f"{entry.agent_name} | {entry.suite_name} | "
-                f"{entry.overall_score * 100:.0f}% | {entry.latency['avg_ms']:.2f} | "
+                f"{entry.hallucination_rank} | {entry.agent_name} | {entry.suite_name} | "
+                f"{entry.overall_score * 100:.0f}% | "
+                f"{entry.hallucination_rate * 100:.0f}% | "
+                f"{entry.false_recall_rate * 100:.0f}% | {entry.latency['avg_ms']:.2f} | "
                 f"{entry.latency['p95_ms']:.2f} |"
             )
         (self.output_dir / "results.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
@@ -92,16 +100,22 @@ def rank_entries(entries: list[LeaderboardEntry]) -> list[LeaderboardEntry]:
     latency_ranks = _rank_map(
         entries, key=lambda entry: entry.latency.get("avg_ms", 0.0), reverse=False
     )
+    hallucination_ranks = _rank_map(entries, key=_hallucination_sort_score, reverse=False)
     ranked = [
         replace(
             entry,
             overall_rank=overall_ranks[id(entry)],
             category_rank=category_ranks[id(entry)],
             latency_rank=latency_ranks[id(entry)],
+            hallucination_rank=hallucination_ranks[id(entry)],
         )
         for entry in entries
     ]
-    return sorted(ranked, key=lambda entry: (entry.overall_rank, entry.latency_rank))
+    return sorted(ranked, key=lambda entry: (entry.overall_rank, entry.hallucination_rank))
+
+
+def _hallucination_sort_score(entry: LeaderboardEntry) -> float:
+    return entry.hallucination_rate + entry.false_recall_rate
 
 
 def _category_mean(entry: LeaderboardEntry) -> float:
