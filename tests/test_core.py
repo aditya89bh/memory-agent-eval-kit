@@ -972,3 +972,34 @@ def test_deprecated_scenarios_require_reason(tmp_path: Path) -> None:
     result = validate_dataset(dataset)
     assert not result.valid
     assert "deprecation_reason" in result.errors[0]
+
+
+def test_benchmark_version_comparison_generates_deltas(tmp_path: Path) -> None:
+    from memory_agent_eval_kit.reports import (
+        compare_benchmark_versions,
+        write_benchmark_version_comparison,
+    )
+
+    v1 = {
+        "metrics": {"overall_score": 0.8},
+        "category_breakdown": {"recall": {"score": 0.8}},
+    }
+    v2 = {
+        "metrics": {"overall_score": 0.9},
+        "category_breakdown": {"recall": {"score": 0.95}, "temporal": {"score": 0.7}},
+    }
+    v3 = {
+        "metrics": {"overall_score": 0.85},
+        "category_breakdown": {"recall": {"score": 0.9}, "temporal": {"score": 0.8}},
+    }
+    report = compare_benchmark_versions({"v1": v1, "v2": v2, "v3": v3})
+    assert len(report.comparisons) == 2
+    assert report.comparisons[0].baseline_version == "v1"
+    assert report.comparisons[0].candidate_version == "v2"
+    assert report.comparisons[0].comparison.score_delta == pytest.approx(0.1)
+    output = tmp_path / "version_comparison.json"
+    write_benchmark_version_comparison({"v1": v1, "v2": v2, "v3": v3}, output)
+    payload = json.loads(output.read_text(encoding="utf-8"))
+    assert payload["comparisons"][1]["baseline_version"] == "v2"
+    assert payload["comparisons"][1]["candidate_version"] == "v3"
+    assert payload["comparisons"][1]["category_deltas"][0]["category"] == "recall"
