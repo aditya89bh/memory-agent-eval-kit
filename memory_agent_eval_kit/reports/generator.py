@@ -6,6 +6,7 @@ import csv
 import json
 import math
 import platform
+import tomllib
 from collections import defaultdict
 from datetime import UTC, datetime
 from importlib import metadata
@@ -210,6 +211,12 @@ def _category_breakdown(results: list[EvaluationResult]) -> dict[str, dict[str, 
 
 
 def _package_version() -> str:
+    pyproject_path = Path(__file__).resolve().parents[2] / "pyproject.toml"
+    if pyproject_path.exists():
+        payload = tomllib.loads(pyproject_path.read_text(encoding="utf-8"))
+        version = payload.get("project", {}).get("version")
+        if isinstance(version, str):
+            return version
     try:
         return metadata.version("memory-agent-eval-kit")
     except metadata.PackageNotFoundError:

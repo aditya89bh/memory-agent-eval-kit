@@ -34,11 +34,14 @@
       "privacy_score": 1.0
     },
     "latency": {
-      "avg_ms": 0.023412865493630645,
-      "p95_ms": 0.03542602644301951
+      "avg_ms": 0.023572474926076975,
+      "p95_ms": 0.03664300311356783
     },
+    "hallucination_rate": 0.0,
+    "false_recall_rate": 0.0,
     "overall_rank": 1,
     "category_rank": 1,
-    "latency_rank": 1
+    "latency_rank": 1,
+    "hallucination_rank": 1
   }
 ]
