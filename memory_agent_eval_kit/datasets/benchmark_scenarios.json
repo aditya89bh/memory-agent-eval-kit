@@ -6588,5 +6588,71 @@
       "classification": "personal"
     },
     "description": "Classify memory sensitivity as personal, sensitive, or public."
+  },
+  {
+    "scenario_id": "shared_memory_001",
+    "category": "shared_memory",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "shared_memory_001",
+        "content": "Shared memory store for agent alpha and agent beta says shared roadmap checkpoint"
+      }
+    ],
+    "query": "What does the shared memory store say for agent alpha and agent beta?",
+    "expected_answer": "shared roadmap checkpoint",
+    "expected_behavior": {
+      "answer": "shared roadmap checkpoint",
+      "agents": [
+        "alpha",
+        "beta"
+      ],
+      "shared_store": true
+    },
+    "description": "Both agents should observe the same shared memory fact."
+  },
+  {
+    "scenario_id": "shared_memory_002",
+    "category": "shared_memory",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "shared_memory_002",
+        "content": "Shared memory store for agent alpha and agent beta says shared customer preference"
+      }
+    ],
+    "query": "What does the shared memory store say for agent alpha and agent beta?",
+    "expected_answer": "shared customer preference",
+    "expected_behavior": {
+      "answer": "shared customer preference",
+      "agents": [
+        "alpha",
+        "beta"
+      ],
+      "shared_store": true
+    },
+    "description": "Both agents should observe the same shared memory fact."
+  },
+  {
+    "scenario_id": "shared_memory_003",
+    "category": "shared_memory",
+    "events": [
+      {
+        "type": "fact",
+        "memory_id": "shared_memory_003",
+        "content": "Shared memory store for agent alpha and agent beta says shared incident summary"
+      }
+    ],
+    "query": "What does the shared memory store say for agent alpha and agent beta?",
+    "expected_answer": "shared incident summary",
+    "expected_behavior": {
+      "answer": "shared incident summary",
+      "agents": [
+        "alpha",
+        "beta"
+      ],
+      "shared_store": true
+    },
+    "description": "Both agents should observe the same shared memory fact."
   }
 ]

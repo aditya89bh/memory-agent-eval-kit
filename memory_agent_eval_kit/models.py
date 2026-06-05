@@ -31,6 +31,7 @@ Category: TypeAlias = Literal[
     "gdpr_forgetting",
     "retention_policy",
     "sensitive_classification",
+    "shared_memory",
 ]
 
 

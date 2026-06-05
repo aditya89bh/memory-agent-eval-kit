@@ -846,3 +846,11 @@ def test_enterprise_compliance_metrics_surface_in_reports_and_leaderboard(tmp_pa
 
     entry = LeaderboardGenerator(tmp_path / "leaderboard").from_report(report_dir / "results.json")
     assert entry.category_scores["compliance_score"] == 1.0
+
+
+def test_shared_memory_benchmarks_measure_consistency(tmp_path: Path) -> None:
+    run = BenchmarkRunner(SimpleMemoryAgent()).run(
+        categories=["shared_memory"], report_dir=tmp_path
+    )
+    assert len(run.results) == 3
+    assert run.metrics.shared_memory_consistency == 1.0

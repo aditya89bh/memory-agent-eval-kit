@@ -38,6 +38,7 @@ CATEGORY_CHOICES: tuple[Category, ...] = (
     "gdpr_forgetting",
     "retention_policy",
     "sensitive_classification",
+    "shared_memory",
 )
 
 

@@ -23,6 +23,7 @@ from memory_agent_eval_kit.evaluators.retention_policy import RetentionPolicyEva
 from memory_agent_eval_kit.evaluators.sensitive_classification import (
     SensitiveClassificationEvaluator,
 )
+from memory_agent_eval_kit.evaluators.shared_memory import SharedMemoryEvaluator
 from memory_agent_eval_kit.evaluators.stale_memory import StaleMemoryEvaluator
 from memory_agent_eval_kit.evaluators.stress import StressEvaluator
 from memory_agent_eval_kit.evaluators.temporal import TemporalEvaluator
@@ -53,6 +54,7 @@ __all__ = [
     "TemporalDriftEvaluator",
     "TimelineReasoningEvaluator",
     "SensitiveClassificationEvaluator",
+    "SharedMemoryEvaluator",
     "StaleMemoryEvaluator",
     "StressEvaluator",
     "ContinuityEvaluator",

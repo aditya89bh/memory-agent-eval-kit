@@ -32,6 +32,7 @@ from memory_agent_eval_kit.evaluators import (
     RetentionPolicyEvaluator,
     ScenarioEvaluator,
     SensitiveClassificationEvaluator,
+    SharedMemoryEvaluator,
     StaleMemoryEvaluator,
     StressEvaluator,
     TemporalDriftEvaluator,
@@ -81,6 +82,7 @@ class BenchmarkRunner:
             "gdpr_forgetting": GDPRForgettingEvaluator(),
             "retention_policy": RetentionPolicyEvaluator(),
             "sensitive_classification": SensitiveClassificationEvaluator(),
+            "shared_memory": SharedMemoryEvaluator(),
         }
 
     def run(

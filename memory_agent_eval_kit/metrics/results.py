@@ -63,6 +63,7 @@ class AggregateMetrics:
     deletion_score: float
     retention_score: float
     privacy_score: float
+    shared_memory_consistency: float
     latency_degradation_ms: float
     latency_avg_ms: float
     latency_p95_ms: float
@@ -176,6 +177,7 @@ def aggregate_results(results: list[EvaluationResult]) -> AggregateMetrics:
         deletion_score=deletion_score,
         retention_score=retention_score,
         privacy_score=privacy_score,
+        shared_memory_consistency=_score_for(results, "shared_memory"),
         latency_degradation_ms=latency_degradation_ms,
         latency_avg_ms=mean(latencies) if latencies else 0.0,
         latency_p95_ms=_p95(latencies),
